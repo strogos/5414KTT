@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;hello.go, src&apos; to &apos;cmd&apos;" description="Move 2 resources to &apos;cmd&apos;" destination="src/cmd" element1="src/hello.go" element2="src/src" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1421679798779" updateReferences="true"/>
+</session>

@@ -1,0 +1,56 @@
+// Go 1.2
+// go run helloworld_go.go
+
+package main
+
+import (
+	. "fmt" // Using '.' to avoid prefixing functions with their package names
+	//   This is probably not a good idea for large projects...
+	"runtime"
+	"sync"
+	//"time"
+)
+
+var global int
+
+var m sync.Mutex
+var channel = make(chan bool, 1)
+
+func someThreadRout() {
+
+	for j := 1; j <= 1000000; j++ {
+		//<-channel //grab ticket
+		m.Lock()
+		global++
+		m.Unlock()
+		//channel <- true //give it back
+	}
+
+}
+
+func someThreadRout2() {
+
+	for j := 1; j <= 1000000; j++ {
+		//<-channel //grab ticket
+		m.Lock()
+		global = 2
+		m.Unlock()
+		//channel <- true //give it back
+	}
+
+}
+
+func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU()) // I guess this is a hint to what GOMAXPROCS does...
+	// Try doing the exercise both with and without it!
+	channel <- true // Put the initial value into the channel
+	//	<-channel
+
+	go someThreadRout() // This spawns someThreadRout() as a goroutine
+	go someThreadRout2()
+
+	// We have no way to wait for the completion of a goroutine (without additional syncronization of some sort)
+	// We'll come back to using channels in Exercise 2. For now: Sleep.
+	//time.Sleep(100 * time.Millisecond)
+	Println(global)
+}

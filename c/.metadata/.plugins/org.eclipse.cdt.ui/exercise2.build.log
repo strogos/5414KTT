@@ -1,0 +1,18 @@
+14:30:57 **** Incremental Build of configuration Debug for project exercise2 ****
+make all 
+Building file: ../main.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -pthread -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:44:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+../main.c:48:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+Finished building: ../main.c
+ 
+Building target: exercise2
+Invoking: Cross GCC Linker
+gcc  -o "exercise2"  ./main.o   -lpthread
+Finished building target: exercise2
+ 
+
+14:30:58 Build Finished (took 224ms)
+
