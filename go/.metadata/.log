@@ -1264,3 +1264,16 @@ java.lang.NullPointerException
 
 !ENTRY com.googlecode.goclipse.core 1 0 2015-01-19 16:16:01.879
 !MESSAGE starting gocode server [/home/svein/downloads/eclipse/plugins/com.googlecode.goclipse.gocode_0.9.0.v201410241902/tools/linux_amd64/gocode]
+!SESSION 2015-01-22 11:24:15.437 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -data /home/sveigri/workspace/5414KTT/go -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-01-22 11:24:17.185
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.googlecode.goclipse.core 1 0 2015-01-22 11:45:53.930
+!MESSAGE starting gocode server [/home/sveigri/Downloads/eclipse/plugins/com.googlecode.goclipse.gocode_0.9.0.v201410241902/tools/linux_amd64/gocode]

@@ -1,1 +1,8 @@
-DELSTRmain
+INSTUPmain
+/home/sveigri/workspace/5414KTT/python/exercise2/src/main.py
+INFOS:&&3|1|2|0&&3|3|2|0&&2|4|2|0&&2|5|2|0&&2|2|2|0
+someThreadFunction2=5
+lock=3
+someThreadFunction1=4
+main=2
+i=1

@@ -133,10 +133,11 @@
           <tags>persp.showIn:org.eclipse.ui.views.ResourceNavigator</tags>
           <tags>persp.showIn:org.python.pydev.navigator.view</tags>
           <tags>persp.showIn:org.eclipse.ui.views.ContentOutline</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_fNotkZ0IEeStT7mCHzQUew" selectedElement="_fNotlJ0IEeStT7mCHzQUew" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_fNotkZ0IEeStT7mCHzQUew" selectedElement="_fNotkp0IEeStT7mCHzQUew" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_fNotkp0IEeStT7mCHzQUew" elementId="topLeft" containerData="2600" selectedElement="_fNotk50IEeStT7mCHzQUew">
               <tags>newtablook</tags>
               <tags>noFocus</tags>
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_fNotk50IEeStT7mCHzQUew" elementId="org.python.pydev.navigator.view" ref="_fNgKsJ0IEeStT7mCHzQUew"/>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_fNotlJ0IEeStT7mCHzQUew" containerData="7400" selectedElement="_fNotlp0IEeStT7mCHzQUew">
@@ -180,14 +181,12 @@
         <tags>newtablook</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
+        <tags>noFocus</tags>
         <children xsi:type="basic:Part" xmi:id="_I9lGEJ_gEeSStJLD2EdC_w" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="main" iconURI="platform:/plugin/org.python.pydev/icons/python_file.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;main.py&quot; partName=&quot;main&quot; title=&quot;main&quot; tooltip=&quot;exercise2/src/main.py&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/exercise2/src/main.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;921&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.python.pydev.editor.PythonEditor&quot; name=&quot;main.py&quot; partName=&quot;main&quot; title=&quot;main&quot; tooltip=&quot;exercise2/src/main.py&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/exercise2/src/main.py&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;412&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.python.pydev.editor.PythonEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
@@ -261,9 +260,11 @@
       <tags>categoryTag:Mylyn</tags>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_fNgKsJ0IEeStT7mCHzQUew" elementId="org.python.pydev.navigator.view" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="PyDev Package Explorer" iconURI="platform:/plugin/org.python.pydev/icons/pydev_package_explorer.gif" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1421363573340&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/svein/workspace/python/exercise2&quot;/>&#xA;&lt;expanded IMemento.internal.id=&quot;/home/svein/workspace/python/exercise2/src&quot;/>&#xA;&lt;selected IMemento.internal.id=&quot;/home/svein/workspace/python/exercise2&quot;/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1421363573340&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:PyDev</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_fOPxkJ0IEeStT7mCHzQUew" elementId="org.python.pydev.navigator.view">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -285,7 +286,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZEYQUJ0IEeStT7mCHzQUew" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_vbvDgJ_fEeSStJLD2EdC_w" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_YQR5650IEeStT7mCHzQUew"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_v4dckaIgEeSql_Ka_N3idg" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_YQR5650IEeStT7mCHzQUew"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZEYQUZ0IEeStT7mCHzQUew" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -312,7 +313,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZEY3YJ0IEeStT7mCHzQUew" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_vb-UEp_fEeSStJLD2EdC_w" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_YP-X4Z0IEeStT7mCHzQUew"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_v4jjMaIgEeSql_Ka_N3idg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_YP-X4Z0IEeStT7mCHzQUew"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZEchwJ0IEeStT7mCHzQUew" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -524,7 +525,7 @@
     <bindings xmi:id="_YS9acp0IEeStT7mCHzQUew" keySequence="CTRL+#" command="_YQPdvJ0IEeStT7mCHzQUew"/>
     <bindings xmi:id="_YS_2sJ0IEeStT7mCHzQUew" keySequence="ALT+SHIFT+H" command="_YQbq4J0IEeStT7mCHzQUew"/>
     <bindings xmi:id="_YTCS8J0IEeStT7mCHzQUew" keySequence="ALT+CTRL+SHIFT+ARROW_DOWN" command="_YQU9MZ0IEeStT7mCHzQUew"/>
-    <bindings xmi:id="_AxG84J0MEeSjGft4MZhuCg" keySequence="ALT+SHIFT+G" command="_AvSX8p0MEeSjGft4MZhuCg"/>
+    <bindings xmi:id="_vk8DoaIgEeSql_Ka_N3idg" keySequence="ALT+SHIFT+G" command="_AvSX8p0MEeSjGft4MZhuCg"/>
   </bindingTables>
   <bindingTables xmi:id="_YRZUNZ0IEeStT7mCHzQUew" elementId="org.eclipse.ui.textEditorScope" bindingContext="_YQjmvJ0IEeStT7mCHzQUew">
     <bindings xmi:id="_YRZ7QJ0IEeStT7mCHzQUew" keySequence="CTRL+SHIFT+NUMPAD_MULTIPLY" command="_YP-X6p0IEeStT7mCHzQUew"/>
@@ -803,10 +804,10 @@
   <bindingTables xmi:id="_Z0FO850IEeStT7mCHzQUew" bindingContext="_Z0FO8p0IEeStT7mCHzQUew"/>
   <bindingTables xmi:id="_Z0F2AZ0IEeStT7mCHzQUew" bindingContext="_Z0F2AJ0IEeStT7mCHzQUew"/>
   <bindingTables xmi:id="_AxG84Z0MEeSjGft4MZhuCg" elementId="com.googlecode.goclipse.editor" bindingContext="_AvXQcJ0MEeSjGft4MZhuCg">
-    <bindings xmi:id="_AxHj8J0MEeSjGft4MZhuCg" keySequence="CTRL+SHIFT+F" command="_AvSX8Z0MEeSjGft4MZhuCg"/>
-    <bindings xmi:id="_AxVmYJ0MEeSjGft4MZhuCg" keySequence="F3" command="_AvSX9J0MEeSjGft4MZhuCg"/>
-    <bindings xmi:id="_AxWNcJ0MEeSjGft4MZhuCg" keySequence="CTRL+/" command="_AvSX9Z0MEeSjGft4MZhuCg"/>
-    <bindings xmi:id="_Axf-cJ0MEeSjGft4MZhuCg" keySequence="CTRL+SHIFT+P" command="_AvSX8J0MEeSjGft4MZhuCg"/>
+    <bindings xmi:id="_vk8qsKIgEeSql_Ka_N3idg" keySequence="CTRL+SHIFT+F" command="_AvSX8Z0MEeSjGft4MZhuCg"/>
+    <bindings xmi:id="_vlCKQKIgEeSql_Ka_N3idg" keySequence="F3" command="_AvSX9J0MEeSjGft4MZhuCg"/>
+    <bindings xmi:id="_vlCxUKIgEeSql_Ka_N3idg" keySequence="CTRL+/" command="_AvSX9Z0MEeSjGft4MZhuCg"/>
+    <bindings xmi:id="_vlHp0KIgEeSql_Ka_N3idg" keySequence="CTRL+SHIFT+P" command="_AvSX8J0MEeSjGft4MZhuCg"/>
   </bindingTables>
   <bindingTables xmi:id="_BfklYZ0MEeSjGft4MZhuCg" bindingContext="_BfklYJ0MEeSjGft4MZhuCg"/>
   <rootContext xmi:id="_YO29lJ0IEeStT7mCHzQUew" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">

@@ -1,12 +1,18 @@
 -- VERSION_4
 -- START DISKCACHE
-/home/svein/workspace/python/.metadata/.plugins/org.eclipse.core.resources/.projects/exercise2/com.python.pydev.analysis/v2_indexcache
+/home/sveigri/workspace/5414KTT/python/.metadata/.plugins/org.eclipse.core.resources/.projects/exercise2/com.python.pydev.analysis/v2_indexcache
+main|1421921824000|/home/sveigri/workspace/5414KTT/python/exercise2/src/main.py
 -- END DISKCACHE
 -- START DICTIONARY
-0
+1
+1=main
 -- END DICTIONARY
 -- START TREE 1
-0
+4
+i|1|i!11@
+loc|1|lock!11@
+mai|1|main!10@
+som|2|someThreadFunction2!10@someThreadFunction1!10@
 -- END TREE
 -- START TREE 2
 0
