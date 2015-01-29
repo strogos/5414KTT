@@ -1,0 +1,18 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 28, 2015
+ *      Author: strogos
+ */
+
+#include "ace/conffig-linux.h"
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	cout <<"dfsgdfg"<<endl;
+
+	return 0;
+}

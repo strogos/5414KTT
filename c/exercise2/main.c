@@ -22,6 +22,7 @@ void* thread1Function()
     return NULL;
 }
 
+
 void* thread2Function()
 {
     int j;
@@ -39,7 +40,7 @@ void* thread2Function()
 int main()
 {
     pthread_t thread[2];
-
+    pthread_mutex_init(&mutex1,NULL);
     int pthreadCreateReturn;
     if(pthreadCreateReturn = pthread_create(&thread[0], NULL, thread1Function, NULL))
     {

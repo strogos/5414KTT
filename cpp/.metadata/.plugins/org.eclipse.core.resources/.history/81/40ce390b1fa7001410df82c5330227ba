@@ -1,0 +1,32 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 28, 2015
+ *      Author: strogos
+ */
+
+//#include "ace/OS.h"
+
+#include "ace/INET_Addr.h"
+#include "ace/SOCK_Connector.h"
+#include "ace/SOCK_Stream.h"
+
+#include<iostream>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+	const char *pathname =
+			argc > 1 ? argv[1] : "index.html";
+	const char *server_hostname =
+			argc > 2 ? argv[2] : "ace.ece.uci.edu";
+
+	ACE_SOCK_Connector connector;
+	ACE_SOCK_Stream peer;
+	ACE_INET_Addr peer_addr;
+
+
+	cout <<"dfsgdfg"<<endl;
+
+	return 0;
+}

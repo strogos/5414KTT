@@ -1,0 +1,10 @@
+12:42:09 **** Incremental Build of configuration Debug for project Exer ****
+make all 
+Building file: ../src/Exer.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Exer.d" -MT"src/Exer.d" -o "src/Exer.o" "../src/Exer.cpp"
+/bin/sh: 1: g++: not found
+make: *** [src/Exer.o] Error 127
+
+12:42:09 Build Finished (took 57ms)
+

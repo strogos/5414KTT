@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Exercise3/udp-send&apos;" deleteContents="false" description="Delete resource &apos;Exercise3/udp-send&apos;" element1="/Exercise3/udp-send" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1422494583850"/>
+</session>

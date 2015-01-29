@@ -1,0 +1,148 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 22, 2015
+ *      Author: sveigri
+ */
+
+#define PORT 20016
+#define BUFSIZE 2048
+#define BROADCAST "129.241.187.255"
+#define BROADCAST_ON 0
+#define HOST "itk-d666-ubuntu"//"78.91.48.183"//"itk-d666-ubuntu"
+//#define
+
+#include<stdio.h>
+#include <sys/types.h>
+#include<sys/socket.h>
+#include<netinet/in.h>
+//#include<error.h>
+#include <netdb.h>
+#include <string.h> /* for memcpy */
+
+void paddr(struct hostent *hp)
+{
+	int i;
+	unsigned char* a;
+	for (i=0; hp->h_addr_list[i] != 0; i++)
+	{
+		a=(unsigned char*) hp->h_addr_list[i];
+		printf("%d.%d.%d.%d\n", a[0], a[1], a[2], a[3]);
+	}
+}
+
+
+/*socket(domain, type, protocol)
+ * domain, or address family —
+    communication domain in which the socket should be created. Some of address families are AF_INET (IP), AF_INET6 (IPv6), AF_UNIX (local channel, similar to pipes), AF_ISO (ISO protocols), and AF_NS (Xerox Network Systems protocols).
+type —
+    type of service. This is selected according to the properties required by the application: SOCK_STREAM (virtual circuit service), SOCK_DGRAM (datagram service), SOCK_RAW (direct IP service). Check with your address family to see whether a particular service is available.
+protocol —
+    indicate a specific protocol to use in supporting the sockets operation. This is useful in cases where some families may have more than one protocol to support a given type of service. The return value is a file descriptor (a small integer). The analogy of creating a socket is that of requesting a telephone line from the phone company. */
+int CreateSocket(int *fd)
+{
+
+	if((*fd=socket(AF_INET,SOCK_DGRAM,0)) < 0)
+	{
+		perror("Thread creation: " );
+		return 0;
+	}
+	else
+		return -1;
+}
+
+int CreateClient(int *fd, struct sockaddr_in clientAddr )
+{
+	if (BROADCAST_ON)
+	{
+		int on=1;
+		setsockopt(fd,SOL_SOCKET,SO_BROADCAST,&on,sizeof(on));
+	}
+
+	memset((char*)&clientAddr,0,sizeof(clientAddr));
+	clientAddr.sin_family = AF_INET;
+	clientAddr.sin_port = htons(0); //system picks port number
+	clientAddr.sin_addr.s_addr = htonl(INADDR_ANY); //system picks IP addr
+
+	if(bind(fd,(struct sockaddr *)&clientAddr,sizeof(clientAddr)))
+	{
+		perror("Bind socket: ");
+		return -1;
+	}
+	return 0;
+}
+
+int CreateServer()
+{
+	return 0;
+}
+
+
+int main()
+{
+
+	int fd_send; 	//socket for sending
+	int fd_receive; //socket for receiving
+	CreateSocket(&fd_send);
+	CreateSocket(&fd_receive);
+	CreateClient(fd_send);
+	CreateClient(fd_receive);
+
+
+	/*Create Server*/
+	struct hostent *hp; //host info
+	struct sockaddr_in serverAddr; //server address info
+	char *my_msg="I am Client...Cunt...bag";
+
+	/*fill server address*/
+	memset((char*)&serverAddr,0,sizeof(serverAddr));
+	serverAddr.sin_family=AF_INET;
+	serverAddr.sin_port=htons(PORT);
+
+
+	/*Find server address when hostname is known*/
+	hp=gethostbyname((char*)HOST);
+	if (!hp)
+	{
+		fprintf(stderr, "could not find the IP to host %s\n", (char*)HOST);
+		return -1;
+	}
+	/*put host IP into the server address structure serverAddr*/
+	memcpy((void*)&serverAddr.sin_addr,hp->h_addr_list[0],hp->h_length);
+	/*END Create Server*/
+
+
+
+	 if (bind(fd_receive, (struct sockaddr*)&serverAddr, sizeof(serverAddr)) < 0)
+	 {
+		 perror("bind failed");
+		 return -1;
+	 }
+
+
+	paddr(hp);
+
+	/*send msg to server*/
+	if(sendto(fd_send,my_msg,strlen(my_msg),0,(struct sockaddr*)&serverAddr,sizeof(serverAddr)) < 0)
+	{
+		perror("msg send to server error");
+		return -1;
+	}
+
+	int recvlen;
+	unsigned char buffer[BUFSIZE];
+	/*Receive msg from server*/
+	while(1)
+	{
+		printf("waiting on port %d\n", PORT);
+		recvlen=recvfrom(fd_receive,buffer,BUFSIZE,0,(struct socketaddr*)&serverAddr,sizeof(serverAddr));
+		printf("received %d bytes\n", recvlen);
+		if (recvlen)
+		{
+			buffer[recvlen]=0;
+			printf("received message: \"%s\"\n", buffer);
+		}
+	}
+
+	return 0;
+}

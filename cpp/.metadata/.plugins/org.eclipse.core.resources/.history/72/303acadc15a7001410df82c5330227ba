@@ -1,0 +1,14 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 28, 2015
+ *      Author: strogos
+ */
+
+#include<iostream>
+using namespace std;
+
+void main()
+{
+	cout <<"dfsgdfg"<<endl;
+}
