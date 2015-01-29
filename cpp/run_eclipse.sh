@@ -6,10 +6,10 @@
 
 
 
-export ACE_ROOT="/home/strogos/ACE/ACE_wrappers"
-export LD_LIBRARY_PATH=/home/strogos/ACE/ACE_wrappers/lib:$LD_LIBRARY_PATH
+export ACE_ROOT="/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/"
+export LD_LIBRARY_PATH=/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib:$LD_LIBRARY_PATH
 
-cd /home/strogos/eclipse
+cd /home/bengteh/eclipse
 ./eclipse&
 
 

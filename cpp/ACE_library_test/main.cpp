@@ -11,7 +11,7 @@
 #include "ace/SOCK_Connector.h"
 #include "ace/SOCK_Stream.h"
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main(int argc, char *argv[])
