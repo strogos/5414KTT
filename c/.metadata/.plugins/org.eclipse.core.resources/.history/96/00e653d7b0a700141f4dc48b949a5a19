@@ -14,7 +14,7 @@
  * digits of your id + 1024
  */
 
-#define SERVICE_PORT 20001	//30000	/* hard-coded port number */
+#define SERVICE_PORT	21234	/* hard-coded port number */
 #undef UDP_SEND //TEST!!
 #define UDP_RECV //TEST!!
 

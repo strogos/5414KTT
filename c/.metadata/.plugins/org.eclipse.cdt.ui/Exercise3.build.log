@@ -1,30 +1,6 @@
-21:17:58 **** Incremental Build of configuration Debug for project Exercise3 ****
+14:08:11 **** Incremental Build of configuration Debug for project Exercise3 ****
 make all 
-Building file: ../tcp_client.c
-Invoking: Cross GCC Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tcp_client.d" -MT"tcp_client.d" -o "tcp_client.o" "../tcp_client.c"
-Finished building: ../tcp_client.c
- 
-Building file: ../tcp_serv.c
-Invoking: Cross GCC Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tcp_serv.d" -MT"tcp_serv.d" -o "tcp_serv.o" "../tcp_serv.c"
-Finished building: ../tcp_serv.c
- 
-Building file: ../udp-send.c
-Invoking: Cross GCC Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
-../udp-send.c: In function ‘main’:
-../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
-../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
-../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
-../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
-Finished building: ../udp-send.c
- 
-Building target: Exercise3
-Invoking: Cross GCC Linker
-gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
-Finished building target: Exercise3
- 
+make: Nothing to be done for `all'.
 
-21:17:58 Build Finished (took 751ms)
+14:08:11 Build Finished (took 72ms)
 

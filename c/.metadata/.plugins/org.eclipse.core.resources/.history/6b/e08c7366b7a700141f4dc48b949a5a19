@@ -67,6 +67,8 @@ int main(int argc, char *argv[])
 
 	}
 
+
+
 	memset((char*)&clientAddr,0,sizeof(clientAddr));
 	clientAddr.sin_family = AF_INET;
 	clientAddr.sin_port = htons(PORT);//htons(0); //system picks port number
@@ -95,7 +97,7 @@ int main(int argc, char *argv[])
 	printIP(hp);
 
 	/*send msg to server*/
-	char *my_msg="FUCK A SHY LAPPLANDER!";
+	char *my_msg="GRUPPE 1!";
 	if(sendto(fd,my_msg,strlen(my_msg),0,(struct sockaddr*)&serverAddr,sizeof(serverAddr)) < 0)
 	{
 		perror("msg send to server error");

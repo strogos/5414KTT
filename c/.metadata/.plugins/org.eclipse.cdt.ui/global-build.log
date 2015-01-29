@@ -1,5 +1,10 @@
-21:17:58 **** Incremental Build of configuration Debug for project Exercise3 ****
+13:19:43 **** Build of configuration Debug for project Exercise3 ****
 make all 
+Building file: ../main.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
 Building file: ../tcp_client.c
 Invoking: Cross GCC Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tcp_client.d" -MT"tcp_client.d" -o "tcp_client.o" "../tcp_client.c"
@@ -10,14 +15,14 @@ Invoking: Cross GCC Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tcp_serv.d" -MT"tcp_serv.d" -o "tcp_serv.o" "../tcp_serv.c"
 Finished building: ../tcp_serv.c
  
+Building file: ../udp-recv.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-recv.d" -MT"udp-recv.d" -o "udp-recv.o" "../udp-recv.c"
+Finished building: ../udp-recv.c
+ 
 Building file: ../udp-send.c
 Invoking: Cross GCC Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
-../udp-send.c: In function ‘main’:
-../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
-../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
-../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
-../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
 Finished building: ../udp-send.c
  
 Building target: Exercise3
@@ -25,3 +30,571 @@ Invoking: Cross GCC Linker
 gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
 Finished building target: Exercise3
  
+13:19:49 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:22:25 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-recv.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-recv.d" -MT"udp-recv.d" -o "udp-recv.o" "../udp-recv.c"
+Finished building: ../udp-recv.c
+ 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
+  char buf[BUFLEN];
+       ^
+../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
+  char *server = "localhost";//"127.0.0.1"; /* change this to use a different server */
+        ^
+../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
+  int fd, i, slen=sizeof(remaddr);
+          ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:22:32 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:23:35 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
+  char buf[BUFLEN];
+       ^
+../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
+  char *server = "129.241.187.255";//"localhost";//"127.0.0.1"; /* change this to use a different server */
+        ^
+../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
+  int fd, i, slen=sizeof(remaddr);
+          ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:24:02 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:24:44 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
+  char buf[BUFLEN];
+       ^
+../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
+  char *server = "129.241.187.255";//"localhost";//"127.0.0.1"; /* change this to use a different server */
+        ^
+../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
+  int fd, i, slen=sizeof(remaddr);
+          ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:24:55 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:24:58 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:27:07 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:27:35 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
+  char buf[BUFLEN];
+       ^
+../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
+  char *server = "localhost";//"127.0.0.1"; /* change this to use a different server */
+        ^
+../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
+  int fd, i, slen=sizeof(remaddr);
+          ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:27:37 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:28:10 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+../udp-send.c:25:7: warning: unused variable ‘buf’ [-Wunused-variable]
+  char buf[BUFLEN];
+       ^
+../udp-send.c:24:8: warning: unused variable ‘server’ [-Wunused-variable]
+  char *server = "127.0.0.1"; /* change this to use a different server */
+        ^
+../udp-send.c:23:10: warning: unused variable ‘i’ [-Wunused-variable]
+  int fd, i, slen=sizeof(remaddr);
+          ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:28:12 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:28:52 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:51:2: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+  if (inet_aton(server, &remaddr.sin_addr)==0) {
+  ^
+../udp-send.c:73:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:28:54 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:39:27 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:106:6: error: invalid type argument of unary ‘*’ (have ‘int’)
+  if((*fd=socket(AF_INET,SOCK_DGRAM,0)) < 0)
+      ^
+../udp-send.c:113:16: error: invalid type argument of unary ‘*’ (have ‘int’)
+  if(setsockopt(*fd,SOL_SOCKET,SO_REUSEADDR,&on,sizeof(int)))
+                ^
+../udp-send.c:120:18: error: invalid type argument of unary ‘*’ (have ‘int’)
+   if (setsockopt(*fd,SOL_SOCKET,SO_BROADCAST,&on,sizeof(int)))
+                  ^
+../udp-send.c:144:3: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+   if (inet_aton(HOST, &serverAddr.sin_addr)==0)
+   ^
+../udp-send.c:153:47: error: cannot convert to a pointer type
+  if(sendto(fd,my_msg,strlen(my_msg),0,(struct sockaddr*)serverAddr,sizeof(*serverAddr)) < 0)
+                                               ^
+../udp-send.c:153:75: error: invalid type argument of unary ‘*’ (have ‘struct sockaddr_in’)
+  if(sendto(fd,my_msg,strlen(my_msg),0,(struct sockaddr*)serverAddr,sizeof(*serverAddr)) < 0)
+                                                                           ^
+make: *** [udp-send.o] Error 1
+13:39:49 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:144:3: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+   if (inet_aton(HOST, &serverAddr.sin_addr)==0)
+   ^
+../udp-send.c:153:47: error: cannot convert to a pointer type
+  if(sendto(fd,my_msg,strlen(my_msg),0,(struct sockaddr*)serverAddr,sizeof(*serverAddr)) < 0)
+                                               ^
+../udp-send.c:153:75: error: invalid type argument of unary ‘*’ (have ‘struct sockaddr_in’)
+  if(sendto(fd,my_msg,strlen(my_msg),0,(struct sockaddr*)serverAddr,sizeof(*serverAddr)) < 0)
+                                                                           ^
+make: *** [udp-send.o] Error 1
+13:40:07 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:144:3: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+   if (inet_aton(HOST, &serverAddr.sin_addr)==0)
+   ^
+../udp-send.c:153:76: error: invalid type argument of unary ‘*’ (have ‘struct sockaddr_in’)
+  if(sendto(fd,my_msg,strlen(my_msg),0,(struct sockaddr*)&serverAddr,sizeof(*serverAddr)) < 0)
+                                                                            ^
+make: *** [udp-send.o] Error 1
+13:40:12 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:144:3: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+   if (inet_aton(HOST, &serverAddr.sin_addr)==0)
+   ^
+../udp-send.c:149:9: warning: ‘hp’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  printIP(hp);
+         ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:40:39 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../main.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:40:42 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:44:59 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:145:4: error: incompatible types when assigning to type ‘struct hostent’ from type ‘struct hostent *’
+  hp=gethostbyname((char*)HOST);
+    ^
+../udp-send.c:146:6: error: wrong type argument to unary exclamation mark
+  if (!hp)
+      ^
+../udp-send.c:154:27: error: invalid type argument of ‘->’ (have ‘struct sockaddr_in’)
+  memcpy((void*)&serverAddr->sin_addr,hp.h_addr_list[0],hp.h_length);
+                           ^
+../udp-send.c:155:2: error: incompatible type for argument 1 of ‘printIP’
+  printIP(hp);
+  ^
+../udp-send.c:82:6: note: expected ‘struct hostent *’ but argument is of type ‘struct hostent’
+ void printIP(struct hostent *hp)
+      ^
+make: *** [udp-send.o] Error 1
+13:46:32 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:154:27: error: invalid type argument of ‘->’ (have ‘struct sockaddr_in’)
+  memcpy((void*)&serverAddr->sin_addr,hp->h_addr_list[0],hp->h_length);
+                           ^
+make: *** [udp-send.o] Error 1
+13:46:57 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:47:00 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:47:22 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:47:24 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:47:59 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:48:01 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:53:43 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:56:2: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+  if (inet_aton(server, &remaddr.sin_addr)==0) {
+  ^
+../udp-send.c:78:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:53:45 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:54:12 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:56:21 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:56:2: warning: implicit declaration of function ‘inet_aton’ [-Wimplicit-function-declaration]
+  if (inet_aton(server, &remaddr.sin_addr)==0) {
+  ^
+../udp-send.c:78:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+  close(fd);
+  ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+13:56:23 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+13:59:47 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+../udp-send.c: In function ‘main’:
+../udp-send.c:155:2: warning: implicit declaration of function ‘printIP’ [-Wimplicit-function-declaration]
+  printIP(hp);
+  ^
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+./udp-send.o: In function `main':
+/home/bengteh/workspace/5414KTT/c/Exercise3/Debug/../udp-send.c:155: undefined reference to `printIP'
+collect2: error: ld returned 1 exit status
+make: *** [Exercise3] Error 1
+13:59:58 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+14:00:02 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:00:16 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+14:00:19 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:00:49 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+14:00:51 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:09 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:09 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:10 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:11 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:12 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:13 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:14 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:15 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:30 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+14:01:33 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:34 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:35 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:36 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:36 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:01:38 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:04:27 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+14:07:47 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+14:07:48 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:07:49 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:07:49 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:07:50 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:07:50 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:07:50 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:05 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:07 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:07 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:08 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:09 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:10 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+14:08:11 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
