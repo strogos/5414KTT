@@ -1,0 +1,24 @@
+/*
+ * InterProcCom.h
+ *
+ *  Created on: Jan 29, 2015
+ *      Author: bengteh
+ */
+#include "ace/ACE.h"
+#include "ace/SOCK_Dgram.h"
+#include "ace/INET_Addr.h"
+
+
+class Client
+{
+public:
+	Client();
+	virtual ~Client();
+};
+
+class Server
+{
+public:
+	Server();
+	virtual ~Server();
+};

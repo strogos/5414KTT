@@ -598,3 +598,61 @@ make: Nothing to be done for `all'.
 14:08:11 **** Incremental Build of configuration Debug for project Exercise3 ****
 make all 
 make: Nothing to be done for `all'.
+18:13:00 **** Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../main.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../tcp_client.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tcp_client.d" -MT"tcp_client.d" -o "tcp_client.o" "../tcp_client.c"
+Finished building: ../tcp_client.c
+ 
+Building file: ../tcp_serv.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tcp_serv.d" -MT"tcp_serv.d" -o "tcp_serv.o" "../tcp_serv.c"
+Finished building: ../tcp_serv.c
+ 
+Building file: ../udp-recv.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-recv.d" -MT"udp-recv.d" -o "udp-recv.o" "../udp-recv.c"
+Finished building: ../udp-recv.c
+ 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+18:13:03 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+18:13:20 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+Building file: ../udp-recv.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-recv.d" -MT"udp-recv.d" -o "udp-recv.o" "../udp-recv.c"
+Finished building: ../udp-recv.c
+ 
+Building file: ../udp-send.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"udp-send.d" -MT"udp-send.d" -o "udp-send.o" "../udp-send.c"
+Finished building: ../udp-send.c
+ 
+Building target: Exercise3
+Invoking: Cross GCC Linker
+gcc  -o "Exercise3"  ./main.o ./tcp_client.o ./tcp_serv.o ./udp-recv.o ./udp-send.o   
+Finished building target: Exercise3
+ 
+18:13:22 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.
+18:36:10 **** Incremental Build of configuration Debug for project Exercise3 ****
+make all 
+make: Nothing to be done for `all'.

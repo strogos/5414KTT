@@ -1,16 +1,446 @@
-15:49:20 **** Clean-only build of configuration Debug for project ACE_library_test ****
+19:58:56 **** Clean-only build of configuration Debug for project ACE_UDP_test ****
 make clean 
-rm -rf  ./main.o  ./main.d  ACE_library_test
+rm -rf  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o  ./InterProcCom.d ./copyPaste.d ./copyPasteUDP_classes.d ./main.d  ACE_UDP_test
  
-15:49:21 **** Build of configuration Debug for project ACE_library_test ****
+19:59:04 **** Incremental Build of configuration Debug for project ACE_TCP_test ****
 make all 
+make: Nothing to be done for `all'.
+19:59:04 **** Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building file: ../copyPaste.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"copyPaste.d" -MT"copyPaste.d" -o "copyPaste.o" "../copyPaste.cpp"
+Finished building: ../copyPaste.cpp
+ 
+Building file: ../copyPasteUDP_classes.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"copyPasteUDP_classes.d" -MT"copyPasteUDP_classes.d" -o "copyPasteUDP_classes.o" "../copyPasteUDP_classes.cpp"
+Finished building: ../copyPasteUDP_classes.cpp
+ 
 Building file: ../main.cpp
 Invoking: GCC C++ Compiler
 c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+../main.cpp:53:15: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        send_unicast("129.241.187.136:20004","suckie dickie");
+                     ^
+../main.cpp:53:39: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
+        send_unicast("129.241.187.136:20004","suckie dickie");
+                                             ^
+2 warnings generated.
 Finished building: ../main.cpp
  
-Building target: ACE_library_test
+Building target: ACE_UDP_test
 Invoking: GCC C++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_library_test"  ./main.o   -lACE
-Finished building target: ACE_library_test
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+19:59:25 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+make: Nothing to be done for `all'.
+20:01:03 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+../InterProcCom.cpp:10:1: error: use of undeclared identifier 'Client'
+Client::Client() {
+^
+../InterProcCom.cpp:15:1: error: use of undeclared identifier 'Client'
+Client::~Client() {
+^
+../InterProcCom.cpp:15:10: error: expected the class name after '~' to name a destructor
+Client::~Client() {
+         ^
+3 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:01:38 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:01:49 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:02:58 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:06:39 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:14:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:14:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:07:16 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:14:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:14:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:07:31 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:08:02 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:08 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:11 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:13 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:16 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:21 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:23 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:08:33 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:36 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: unknown class name 'ACE_Event_Handler'; did you mean 'ACE_SignalHandler'?
+class Client : public ACE_Event_Handler
+                      ^~~~~~~~~~~~~~~~~
+                      ACE_SignalHandler
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/os_include/os_signal.h:156:18: note: 'ACE_SignalHandler' declared here
+  typedef void (*ACE_SignalHandler)(int);
+                 ^
+In file included from ../InterProcCom.cpp:8:
+../InterProcCom.h:27:23: error: base specifier must name a class
+class Client : public ACE_Event_Handler
+               ~~~~~~~^~~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [InterProcCom.o] Error 1
+20:08:38 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:09:00 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:09:16 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:11:39 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+../InterProcCom.cpp:10:9: error: out-of-line definition of 'Client' does not match any declaration in 'Client'
+Client::Client()
+        ^~~~~~
+1 error generated.
+make: *** [InterProcCom.o] Error 1
+20:11:55 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:13:43 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+./InterProcCom.o:(.rodata+0x20): undefined reference to `Client::get_handle() const'
+./InterProcCom.o:(.rodata+0x40): undefined reference to `Client::handle_input(int)'
+./InterProcCom.o:(.rodata+0x68): undefined reference to `Client::handle_close(int, unsigned long)'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [ACE_UDP_test] Error 1
+20:20:05 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+./InterProcCom.o:(.rodata+0x40): undefined reference to `Client::handle_input(int)'
+./InterProcCom.o:(.rodata+0x68): undefined reference to `Client::handle_close(int, unsigned long)'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [ACE_UDP_test] Error 1
+20:24:39 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+../InterProcCom.cpp:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+./InterProcCom.o:(.rodata+0x68): undefined reference to `Client::handle_close(int, unsigned long)'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [ACE_UDP_test] Error 1
+20:25:30 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+../InterProcCom.cpp:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
+ 
+20:25:42 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+make all 
+Building file: ../InterProcCom.cpp
+Invoking: GCC C++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"InterProcCom.d" -MT"InterProcCom.d" -o "InterProcCom.o" "../InterProcCom.cpp"
+../InterProcCom.cpp:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../InterProcCom.cpp
+ 
+Building target: ACE_UDP_test
+Invoking: GCC C++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./InterProcCom.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
+Finished building target: ACE_UDP_test
  

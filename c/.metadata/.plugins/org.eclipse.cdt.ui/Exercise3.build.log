@@ -1,6 +1,6 @@
-14:08:11 **** Incremental Build of configuration Debug for project Exercise3 ****
+18:36:10 **** Incremental Build of configuration Debug for project Exercise3 ****
 make all 
 make: Nothing to be done for `all'.
 
-14:08:11 Build Finished (took 72ms)
+18:36:10 Build Finished (took 80ms)
 

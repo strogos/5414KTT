@@ -1,0 +1,18 @@
+/*
+ * InterProcCom.cpp
+ *
+ *  Created on: Jan 29, 2015
+ *      Author: bengteh
+ */
+
+#include "InterProcCom.h"
+
+Client::Client() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Client::~Client() {
+	// TODO Auto-generated destructor stub
+}
+

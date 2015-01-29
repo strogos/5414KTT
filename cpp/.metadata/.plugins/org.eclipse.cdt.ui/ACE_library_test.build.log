@@ -1,15 +1,6 @@
-15:49:21 **** Build of configuration Debug for project ACE_library_test ****
+18:38:07 **** Incremental Build of configuration Debug for project ACE_library_test ****
 make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
-Finished building: ../main.cpp
- 
-Building target: ACE_library_test
-Invoking: GCC C++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_library_test"  ./main.o   -lACE
-Finished building target: ACE_library_test
- 
+make: Nothing to be done for `all'.
 
-15:49:22 Build Finished (took 461ms)
+18:38:07 Build Finished (took 75ms)
 

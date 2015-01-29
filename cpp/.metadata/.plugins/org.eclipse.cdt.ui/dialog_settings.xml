@@ -2,8 +2,24 @@
 <section name="Workbench">
 	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<section name="completion_proposal_size">
+		<item value="298" key="contextSelector.size.x"/>
+		<item value="228" key="contextSelector.size.y"/>
+	</section>
+	<section name="PDOMSearchPage">
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="800" key="size.width"/>
+		<item value="205" key="size.height"/>
 	</section>
 	<section name="NewClassWizardPage">
+		<item value="true" key="stubSelected1"/>
+		<item value="false" key="testFileSelected"/>
+		<item value="false" key="namespaceSelected"/>
+		<item value="false" key="stubInline1"/>
+		<item value="true" key="stubVirtual1"/>
+		<item value="false" key="stubInline0"/>
+		<item value="true" key="stubSelected0"/>
+		<item value="" key="namespace"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

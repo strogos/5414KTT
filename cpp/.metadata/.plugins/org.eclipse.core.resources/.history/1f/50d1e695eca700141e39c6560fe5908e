@@ -1,0 +1,39 @@
+/*
+ * InterProcCom.cpp
+ *
+ *  Created on: Jan 29, 2015
+ *      Author: bengteh
+ */
+
+#include "InterProcCom.h"
+
+Client::Client(const ACE_INET_Addr &addr, const ACE_INET_Addr &remote_addr) : endpoint_ (addr), remote_addr_ (remote_addr)
+{
+	// TODO Auto-generated constructor stub
+}
+
+Client::~Client()
+{
+	// TODO Auto-generated destructor stub
+}
+
+ACE_HANDLE Client::get_handle (void) const
+{
+  return endpoint_.get_handle ();
+}
+
+int Client::handle_input(ACE_HANDLE)
+{
+
+}
+
+Server::Server()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+Server::~Server()
+{
+	// TODO Auto-generated destructor stub
+}

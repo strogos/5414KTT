@@ -1,0 +1,7 @@
+//lab "server"
+129.241.187.136
+
+//arbeidsplass 16
+129.241.187.147
+
+TTK4125 ...også et heisprosjekt..

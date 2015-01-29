@@ -1,0 +1,20 @@
+/*
+ * InterProcCom.h
+ *
+ *  Created on: Jan 29, 2015
+ *      Author: bengteh
+ */
+
+class Client
+{
+public:
+	Client();
+	virtual ~Client();
+};
+
+class Server
+{
+public:
+	Server();
+	virtual ~Server();
+};

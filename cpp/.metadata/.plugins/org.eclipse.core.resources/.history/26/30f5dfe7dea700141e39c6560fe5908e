@@ -1,0 +1,15 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 29, 2015
+ *      Author: bengteh
+ */
+
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char ** argv)
+{
+	return 0;
+}

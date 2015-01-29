@@ -1,0 +1,30 @@
+/*
+ * InterProcCom.cpp
+ *
+ *  Created on: Jan 29, 2015
+ *      Author: bengteh
+ */
+
+#include "InterProcCom.h"
+
+Client::Client(const ACE_INET_Addr &addr, const ACE_INET_Addr &remote_addr)
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+Client::~Client()
+{
+	// TODO Auto-generated destructor stub
+}
+
+Server::Server()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+Server::~Server()
+{
+	// TODO Auto-generated destructor stub
+}
