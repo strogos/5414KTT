@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ACE_UDP_test/InterProcCom.cpp&apos; to &apos;IPC_Client_Server.cpp&apos;" description="Rename resource &apos;InterProcCom.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="InterProcCom.cpp" name="IPC_Client_Server.cpp" stamp="1422767030866" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ACE_UDP_test/InterProcCom.h&apos; to &apos;IPC_Client_Server.h&apos;" description="Rename resource &apos;InterProcCom.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="InterProcCom.h" name="IPC_Client_Server.h" stamp="1422767061512" updateReferences="true"/>
+</session>
