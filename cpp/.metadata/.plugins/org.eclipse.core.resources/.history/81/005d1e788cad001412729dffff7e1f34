@@ -1,0 +1,40 @@
+//============================================================================
+// Name        : IPC_Server.h
+// Author      :
+// Version     :
+// Copyright   : Your copyright notice
+// Description : ACE IPC wrapper
+//============================================================================
+#ifndef ICP_SERVER_H_
+#define ICP_SERVER_H_
+
+#include "ace/Log_Msg.h"
+#include "ace/SOCK_Dgram.h"
+#include "ace/INET_Addr.h"
+
+
+
+namespace IPC_Server
+{
+	class Server //: public ACE_Event_Handler
+	{
+	public:
+		Server(const unsigned short local_port);
+		Server(const unsigned short local_port, const unsigned short data_buffer_size, const unsigned short dgram_byte_size);
+		//virtual ~Server();
+		~Server();
+
+		int accept_data();
+		int send_data();
+
+	private:
+		ACE_INET_Addr remote_addr_;
+		ACE_INET_Addr local_addr_;
+		ACE_SOCK_Dgram socket_;
+		char *data_buff;
+		const unsigned short dgram_byte_size;
+
+	};
+}
+
+#endif /* ICP_SERVER_H_ */

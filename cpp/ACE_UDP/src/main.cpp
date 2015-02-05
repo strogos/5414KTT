@@ -3,7 +3,7 @@
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Hello ACE  UDP in C++, Ansi-style
 //============================================================================
 
 #include "IPC_Client.h"
@@ -26,12 +26,12 @@ int main()
 {
 
 
-	IPC_Server::Server server(28000);
+	IPC_Server::Server server(20011);
 	server.accept_data();
 	server.~Server();
 
-	IPC_Client_Broadcast::Client client(20008);
-	client.send_data();
+//	IPC_Client_Broadcast::Client client(20008);
+//	client.send_data();
 
 
 	return 0;

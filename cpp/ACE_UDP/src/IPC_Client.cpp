@@ -1,10 +1,10 @@
-/*
- * ICP_Client.cpp
- *
- *  Created on: Feb 5, 2015
- *      Author: sveigri
- */
-
+//============================================================================
+// Name        : ICP_Client.cpp
+// Author      :
+// Version     :
+// Copyright   : Your copyright notice
+// Description : ACE IPC wrapper
+//============================================================================
 #ifndef IPC_CLIENT_CPP_
 #define IPC_CLIENT_CPP_
 
@@ -120,28 +120,17 @@ namespace IPC_Client_Broadcast
 
 	int Client::send_data()
 	{
-		//this->open_socket();
 		ACE_DEBUG((LM_DEBUG,"Preparing to broadcast data over port %hu\n",
-				this->remote_port));
-
-		ACE_OS::sprintf(this->data_buff,"Heil from client\n");
-
-//		while(this->socket_.send(this->data_buff,ACE_OS::strlen(this->data_buff),this->remote_addr_)!=-1)
-//		{
-//			ACE_OS::sleep(1);
-//			if(this->accept_data()==-1)
-//				break;
-//		}
+					this->remote_port));
+		ACE_OS::sprintf(this->data_buff,"$Heil from broadcast client€\n");
 
 		if (socket_.send (this->data_buff, ACE_OS::strlen (this->data_buff) + 1, this->remote_port) == -1)
-		    ACE_ERROR_RETURN ((LM_ERROR,
-		                       "%p\n",
-		                       "send"),
-		                      -1);
+				ACE_ERROR_RETURN ((LM_ERROR,
+									"%p\n",
+									"send"),
+									-1);
 		this->accept_data();
-
-
-		return -1;
+		return 0;
 	}
 }
 #endif /* ICP_CLIENT_CPP_ */

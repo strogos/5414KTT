@@ -1,10 +1,10 @@
-/*
- * ICP_Client.h
- *
- *  Created on: Feb 5, 2015
- *      Author: sveigri
- */
-
+//============================================================================
+// Name        : ICP_Client.h
+// Author      :
+// Version     :
+// Copyright   : Your copyright notice
+// Description : ACE IPC wrapper
+//============================================================================
 #ifndef IPC_CLIENT_H_
 #define IPC_CLIENT_H_
 

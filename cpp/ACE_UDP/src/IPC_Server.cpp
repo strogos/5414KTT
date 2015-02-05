@@ -1,10 +1,10 @@
-/*
- * IPC_Client_Server.cpp
- *
- *  Created on: Feb 5, 2015
- *      Author: sveigri
- */
-
+//============================================================================
+// Name        : IPC_Client_Server.cpp
+// Author      :
+// Version     :
+// Copyright   : Your copyright notice
+// Description : ACE IPC wrapper
+//============================================================================
 
 #ifndef IPC_SERVER_CPP_
 #define IPC_SERVER_CPP_
@@ -12,13 +12,14 @@
 #include "IPC_Server.h"
 
 #include <iostream>
+#include <string>
 
 namespace IPC_Server
 {
 	Server::Server(const unsigned short local_port)
 		:local_addr_(local_port),socket_(local_addr_),dgram_byte_size(32)
 	{
-		this->data_buff=new char[4096];//4096=default data buffer size
+		this->data_buff=new char[4096];//4096=default max data buffer size
 
 	}
 
@@ -37,8 +38,14 @@ namespace IPC_Server
 
 	int Server::accept_data()
 	{
-		std::cout<<"...listening on host: "<<this->remote_addr_.get_host_addr()<<std::endl;
+		std::string data_string;
+		const std::string data_msg_end="€";
+		const std::string data_msg_start="$";
+		int found_msg_end=0;
+		int found_msg_start=0;
 		ssize_t bytes_received=0;
+
+		std::cout<<"...listening on host: "<<this->remote_addr_.get_host_addr()<<std::endl;
 		while((bytes_received = this->socket_.recv(this->data_buff,this->dgram_byte_size,this->remote_addr_))!=-1)
 		{
 			data_buff[bytes_received]=0;
@@ -47,8 +54,16 @@ namespace IPC_Server
 						this->remote_addr_.get_host_addr(), this->data_buff));
 			ACE_OS::sleep(1);
 
-			if(this->send_data()==-1)
-				break;
+			data_string.assign(data_buff,ACE_OS::strlen (this->data_buff));
+
+			found_msg_start=data_string.find(data_msg_start);
+			found_msg_end=data_string.find(data_msg_end);
+			if ((found_msg_start && found_msg_end)!=std::string::npos)
+			{
+				ACE_DEBUG((LM_DEBUG,"Got a complete message!\n"));
+				if(this->send_data()==-1)
+					break;
+			}
 		}
 		return 0;
 	}
@@ -57,11 +72,19 @@ namespace IPC_Server
 	{
 		ACE_DEBUG((LM_DEBUG,"Preparing to send reply to client %s:%d\n",
 					this->remote_addr_.get_host_addr(),this->remote_addr_.get_port_number()));
-		ACE_OS::sprintf(this->data_buff,"Msg acknowledged by server");
+		ACE_OS::sprintf(this->data_buff,"Msg acknowledged by server\n");
 		if(this->socket_.send(this->data_buff, ACE_OS::strlen(data_buff)+1,this->remote_addr_)==-1)
-			return -1;
+		{
+			ACE_ERROR_RETURN ((LM_ERROR,
+							   "%p\n",
+							   "send"),
+							  -1);
+		}
 		else
+		{
+			ACE_DEBUG((LM_DEBUG,"successfully sent ack to client!\n"));
 			return 0;
+		}
 	}
 }
-#endif /* ICP_SERVER_CPP_ */
+#endif /* IPC_SERVER_CPP_ */
