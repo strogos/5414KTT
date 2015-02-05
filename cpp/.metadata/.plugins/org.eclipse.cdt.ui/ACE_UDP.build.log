@@ -1,18 +1,9 @@
-00:23:06 **** Incremental Build of configuration Debug for project ACE_UDP ****
+00:44:10 **** Incremental Build of configuration Debug for project ACE_UDP ****
 make all 
-Building file: ../src/IPC_Server.cpp
+Building file: ../src/IPC_Client.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-../src/IPC_Server.cpp:61:42: warning: comparison of constant 18446744073709551615 with expression of type 'bool' is always true [-Wtautological-constant-out-of-range-compare]
-                        if ((found_msg_start && found_msg_end)!=std::string::npos)
-                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ ~~~~~~~~~~~~~~~~~
-1 warning generated.
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
  
 Building target: ACE_UDP
 Invoking: Cross G++ Linker
@@ -20,5 +11,5 @@ c++ -L/home/sveigri/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP"  ./src/IPC_C
 Finished building target: ACE_UDP
  
 
-00:23:07 Build Finished (took 910ms)
+00:44:11 Build Finished (took 459ms)
 

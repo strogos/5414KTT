@@ -24,15 +24,13 @@ void *thread_worker(void*)
 
 int main()
 {
-
-
 	IPC_Server::Server server(20011);
 	server.accept_data();
 	server.~Server();
 
-//	IPC_Client_Broadcast::Client client(20008);
-//	client.send_data();
-
+	IPC_Client_Broadcast::Client client(20011);
+	client.send_data();
+	client.~Client();
 
 	return 0;
 }
