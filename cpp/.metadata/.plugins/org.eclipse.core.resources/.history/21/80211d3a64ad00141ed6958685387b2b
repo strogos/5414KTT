@@ -1,0 +1,18 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include "IPC_Client.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	IPC_Client_Broadcast::Client client(const_cast<unsigned short>201457);
+	client.send_data();
+	return 0;
+}

@@ -1,0 +1,17 @@
+/*
+ * IPC_Client_Server.cpp
+ *
+ *  Created on: Feb 5, 2015
+ *      Author: sveigri
+ */
+
+
+
+
+#pragma once
+
+
+namespace IPC_Client_Server
+{
+
+}

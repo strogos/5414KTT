@@ -14,6 +14,7 @@
 #include  <ace/Asynch_IO.h>
 #include  <ace/Message_Block.h>
 
+
 namespace IPC_Client_Server
 {
 
@@ -22,7 +23,8 @@ class Client //: public ACE_Event_Handler
 public:
 	Client(const char * remote_host_and_port);
 	Client (const char * remote_host_and_port, unsigned short data_buffer_size);
-	virtual ~Client();
+	//virtual ~Client();
+	~Client();
 
 	int accept_data();
 	int send_data();
@@ -33,14 +35,17 @@ private:
 	ACE_INET_Addr local_addr_;
 	ACE_SOCK_Dgram socket_;
 	char *data_buff;
+
+
 };
 
 class Server //: public ACE_Event_Handler
 {
 public:
 	Server(const unsigned short local_port);
-	Server(const unsigned short local_port, const unsigned short data_buffer_size);
-	virtual ~Server();
+	Server(const unsigned short local_port, const unsigned short data_buffer_size, const unsigned short dgram_byte_size);
+	//virtual ~Server();
+	~Server();
 
 	int accept_data();
 	int send_data();
@@ -50,6 +55,8 @@ private:
 	ACE_INET_Addr local_addr_;
 	ACE_SOCK_Dgram socket_;
 	char *data_buff;
+	const unsigned short dgram_byte_size;
+
 };
 
 class Receiver : public ACE_Handler

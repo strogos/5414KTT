@@ -26,7 +26,8 @@ Client::Client (const char * remote_host_and_port, unsigned short data_buffer_si
 
 Client::~Client()
 {
-	// TODO Auto-generated destructor stub
+	delete this->data_buff;
+	socket_.close();
 }
 
 int Client::accept_data()
@@ -57,32 +58,37 @@ int Client::send_data()
 	return -1;
 }
 Server::Server(unsigned short local_port)
-	:local_addr_(local_port),socket_(local_addr_)
+	:local_addr_(local_port),socket_(local_addr_),dgram_byte_size(32)
 {
 	this->data_buff=new char[4096];//4096=default data buffer size
+
 }
 
-Server::Server(unsigned short local_port,unsigned short data_buffer_size)
-	:local_addr_(local_port),socket_(local_addr_)
+Server::Server(unsigned short local_port,unsigned short data_buffer_size,const unsigned short dgram_byte_size)
+	:local_addr_(local_port),socket_(local_addr_),dgram_byte_size(dgram_byte_size)
 {
 	this->data_buff=new char[data_buffer_size];
+
 }
 
 Server::~Server()
 {
-	// TODO Auto-generated destructor stub
+	delete this->data_buff;
+	this->socket_.close();
 }
 
 int Server::accept_data()
 {
-	std::cout<<"...listening on host: "<<this->remote_addr_.get_host_name()<<std::endl;
+	std::cout<<"...listening on host: "<<this->remote_addr_.get_host_addr()<<std::endl;
 	ssize_t bytes_received=0;
-	while((bytes_received = this->socket_.recv(this->data_buff,sizeof(this->data_buff),this->remote_addr_))!=-1)
+	while((bytes_received = this->socket_.recv(this->data_buff,this->dgram_byte_size,this->remote_addr_))!=-1)
 	{
-		this->data_buff[bytes_received]=0;
+		data_buff[bytes_received]=0;
+		std::cout<<bytes_received<<" bytes recv\n";
 		ACE_DEBUG((LM_DEBUG, "Data received from client %s was %s \n",
-					this->remote_addr_.get_host_name(), this->data_buff));
+					this->remote_addr_.get_host_addr(), this->data_buff));
 		ACE_OS::sleep(1);
+
 		if(this->send_data()==-1)
 			break;
 	}
@@ -92,14 +98,13 @@ int Server::accept_data()
 int Server::send_data()
 {
 	ACE_DEBUG((LM_DEBUG,"Preparing to send reply to client %s:%d\n",
-				this->remote_addr_.get_host_name(),this->remote_addr_.get_port_number()));
+				this->remote_addr_.get_host_addr(),this->remote_addr_.get_port_number()));
 	ACE_OS::sprintf(this->data_buff,"Msg acknowledged by server");
 	if(this->socket_.send(this->data_buff, ACE_OS::strlen(data_buff)+1,this->remote_addr_)==-1)
 		return -1;
 	else
 		return 0;
 }
-
 
 Receiver::Receiver(ACE_Proactor* actor, const  char* ip_port_str)
 					:ACE_Handler(actor), addr_(ip_port_str), read_msg_(4096)

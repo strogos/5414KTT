@@ -1,0 +1,43 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include "IPC_Client.h"
+#include <pthread.h>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+void *thread_worker(void*)
+{
+
+	return NULL;
+}
+
+int main()
+{
+
+//	std::vector<pthread_t> thread_vec;
+	pthread_t thread;
+	pthread_create(&thread,NULL,thread_worker,NULL);
+
+	IPC_Client_Unicast::Client client_u("129.241.187.136:30010");
+	client_u.send_data();
+
+//	IPC_Client_Broadcast::Client client(20008);
+//	client.send_data();
+
+//	for(int thread = 0; thread < 1; thread++)
+//	        thread_vec.push_back(pthread_create(&))
+//
+//	for(auto& thread : thread_vec)
+//
+	pthread_join(thread,NULL);
+
+
+	return 0;
+}

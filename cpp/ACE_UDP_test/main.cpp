@@ -14,6 +14,8 @@
 #include "ace/SOCK_Dgram.h"
 #include "ace/Thread_Manager.h"
 
+#include "ace/Reactor.h"
+
 #include "IPC_Client_Server.h"
 
 #include <iostream>
@@ -114,28 +116,32 @@ int ACE_TMAIN (int argc, ACE_TCHAR *argv[])
 
 	//IPC_Client_Server::Client client("localhost:31246");
 	//client.send_data();
-	IPC_Client_Server::Server srvr(31000);
+	IPC_Client_Server::Server srvr(30000);
 
 	srvr.accept_data();
 
-
-
-	char c='N';
-	int i=0;
-	while (c!='b')
-	{
-
-		send_broadcast(31000,"BROADCAST\n");
-		//send_unicast("localhost:20001","suckie dickie");
-
-		cout<<"sent msg no: "<<i<<endl;
-		i++;
-		cin>>c;
-
-	}
+//	IPC_Client_Server::Client client("localhost:30000");
+//	client.accept_data();
+//	char c='N';
+//	int i=0;
+//
+//
+//	while (c!='b')
+//	{
+//
+//		send_broadcast(31000,"BROADCAST\n");
+//		//send_unicast("localhost:20001","suckie dickie");
+//
+//		cout<<"sent msg no: "<<i<<endl;
+//		i++;
+//		cin>>c;
+//
+//	}
 	//listen("129.241.223.189:20001");
-
 
 
 	return 0;
 }
+
+
+

@@ -1,0 +1,7 @@
+17:48:38 **** Clean-only build of configuration Debug for project ACE_Reactor_test ****
+make clean 
+rm -rf  ./ICP_Client.o ./IPC_Server.o ./main.o  ./ICP_Client.d ./IPC_Server.d ./main.d  ACE_Reactor_test
+ 
+
+17:48:38 Build Finished (took 64ms)
+

@@ -1,0 +1,33 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+#include <thread>
+#include "IPC_Client.h"
+#include <vector>
+#include <iostream>
+using namespace std;
+
+void thread_one()
+{
+
+}
+
+int main()
+{
+
+	std::vector<std::thread> threads;
+
+	IPC_Client_Unicast::Client client_u("129.241.187.136:30010");
+	client_u.send_data();
+
+//	IPC_Client_Broadcast::Client client(20008);
+//	client.send_data();
+
+
+
+	return 0;
+}

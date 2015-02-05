@@ -1,0 +1,15 @@
+21:34:05 **** Incremental Build of configuration Debug for project ACE_UDP ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: ACE_UDP
+Invoking: Cross G++ Linker
+c++ -L/home/sveigri/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE
+Finished building target: ACE_UDP
+ 
+
+21:34:05 Build Finished (took 770ms)
+

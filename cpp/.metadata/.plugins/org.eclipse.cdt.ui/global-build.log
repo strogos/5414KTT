@@ -1,41 +1,62 @@
-06:09:15 **** Build of configuration Debug for project ACE_UDP_test ****
+21:18:07 **** Incremental Build of configuration Debug for project ACE_UDP ****
 make all 
-Building file: ../IPC_Client_Server.cpp
-Invoking: GCC C++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"IPC_Client_Server.d" -MT"IPC_Client_Server.d" -o "IPC_Client_Server.o" "../IPC_Client_Server.cpp"
-../IPC_Client_Server.cpp:7:9: warning: #pragma once in main file
-#pragma once
-        ^
-1 warning generated.
-Finished building: ../IPC_Client_Server.cpp
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
  
-Building file: ../copyPaste.cpp
-Invoking: GCC C++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"copyPaste.d" -MT"copyPaste.d" -o "copyPaste.o" "../copyPaste.cpp"
-Finished building: ../copyPaste.cpp
+Building target: ACE_UDP
+Invoking: Cross G++ Linker
+c++ -L/home/sveigri/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE
+Finished building target: ACE_UDP
  
-Building file: ../copyPasteUDP_classes.cpp
-Invoking: GCC C++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"copyPasteUDP_classes.d" -MT"copyPasteUDP_classes.d" -o "copyPasteUDP_classes.o" "../copyPasteUDP_classes.cpp"
-Finished building: ../copyPasteUDP_classes.cpp
- 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
-../main.cpp:7:9: warning: #pragma once in main file
-#pragma once
-        ^
-../main.cpp:128:24: warning: conversion from string literal to 'char *' is deprecated [-Wc++11-compat-deprecated-writable-strings]
-                send_broadcast(31000,"BROADCAST\n");
-                                     ^
-2 warnings generated.
-Finished building: ../main.cpp
- 
-Building target: ACE_UDP_test
-Invoking: GCC C++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP_test"  ./IPC_Client_Server.o ./copyPaste.o ./copyPasteUDP_classes.o ./main.o   -lACE
-Finished building target: ACE_UDP_test
- 
-06:09:27 **** Incremental Build of configuration Debug for project ACE_UDP_test ****
+21:28:15 **** Incremental Build of configuration Debug for project ACE_UDP ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:30:2: error: use of undeclared identifier 'IPC_Server'
+        IPC_Server::Server server(28000);
+        ^
+../src/main.cpp:31:2: error: use of undeclared identifier 'server'
+        server.accept_data();
+        ^
+../src/main.cpp:32:2: error: use of undeclared identifier 'server'
+        server.~Server();
+        ^
+../src/main.cpp:32:10: error: expected the class name after '~' to name a destructor
+        server.~Server();
+                ^
+4 errors generated.
+make: *** [src/main.o] Error 1
+21:28:55 **** Incremental Build of configuration Debug for project ACE_UDP ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: ACE_UDP
+Invoking: Cross G++ Linker
+c++ -L/home/sveigri/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE
+/usr/bin/ld: ./src/main.o: undefined reference to symbol 'pthread_create@@GLIBC_2.2.5'
+//lib/x86_64-linux-gnu/libpthread.so.0: error adding symbols: DSO missing from command line
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [ACE_UDP] Error 1
+21:34:05 **** Incremental Build of configuration Debug for project ACE_UDP ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: ACE_UDP
+Invoking: Cross G++ Linker
+c++ -L/home/sveigri/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE
+Finished building target: ACE_UDP
+ 

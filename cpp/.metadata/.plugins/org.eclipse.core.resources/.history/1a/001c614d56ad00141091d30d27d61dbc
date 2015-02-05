@@ -1,0 +1,15 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 5, 2015
+ *      Author: sveigri
+ */
+#pragma once
+
+
+
+int ACE_TMAIN (int argc, ACE_TCHAR *argv[])
+{
+
+	return 0;
+}
