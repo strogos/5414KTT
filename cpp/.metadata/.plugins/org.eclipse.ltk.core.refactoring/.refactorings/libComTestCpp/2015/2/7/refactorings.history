@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;libComTestCpp/src/libComTestCpp.cpp&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;libComTestCpp.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/libComTestCpp.cpp" name="main.cpp" stamp="1423676276628" updateReferences="true"/>
+</session>

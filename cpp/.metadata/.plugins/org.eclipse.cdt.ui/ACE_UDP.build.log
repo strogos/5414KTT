@@ -1,15 +1,6 @@
-00:44:10 **** Incremental Build of configuration Debug for project ACE_UDP ****
+17:25:18 **** Incremental Build of configuration Debug for project ACE_UDP ****
 make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/sveigri/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: ACE_UDP
-Invoking: Cross G++ Linker
-c++ -L/home/sveigri/5414KTT/libraries/ACE_wrappers/lib -o "ACE_UDP"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE
-Finished building target: ACE_UDP
- 
+make: Nothing to be done for `all'.
 
-00:44:11 Build Finished (took 459ms)
+17:25:18 Build Finished (took 56ms)
 

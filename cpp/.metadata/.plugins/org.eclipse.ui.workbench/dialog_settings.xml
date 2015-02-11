@@ -13,8 +13,8 @@
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="504" key="DIALOG_X_ORIGIN"/>
+		<item value="-57" key="DIALOG_Y_ORIGIN"/>
+		<item value="-591" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
 	</section>
@@ -27,6 +27,16 @@
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.team.ccvs.ui"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.cdt.ui.projectSettingsImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.cdt.ui.projectSettingsExportWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.cdt.ui.exportWizardCategory"/>
 		</list>
 	</section>
 </section>

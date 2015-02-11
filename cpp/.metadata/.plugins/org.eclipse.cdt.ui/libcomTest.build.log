@@ -1,0 +1,6 @@
+18:13:25 **** Incremental Build of configuration Default for project libcomTest ****
+make all 
+make: Nothing to be done for `all'.
+
+18:13:25 Build Finished (took 59ms)
+
