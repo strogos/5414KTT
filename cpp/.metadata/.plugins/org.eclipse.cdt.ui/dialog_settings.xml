@@ -23,21 +23,38 @@
 		<item value="112" key="y"/>
 		<item value="2567" key="x"/>
 	</section>
-	<section name="PDOMSearchPage">
+	<section name="org.eclipse.cdt.internal.ui.wizards.classwizard.NewBaseClassSelectionDialogSettings">
+		<item value="true" key="show_structs"/>
+		<item value="true" key="show_lowlevel"/>
+		<item value="false" key="show_macros"/>
+		<item value="false" key="show_variables"/>
+		<item value="414" key="width"/>
+		<item value="false" key="show_functions"/>
+		<item value="false" key="show_enums"/>
+		<item value="747" key="height"/>
+		<item value="true" key="show_classes"/>
+		<item value="false" key="show_typedefs"/>
+		<item value="false" key="show_namespaces"/>
+		<item value="false" key="show_unions"/>
+		<item value="false" key="show_enumerators"/>
+		<item value="529" key="y"/>
+		<item value="2909" key="x"/>
 	</section>
-	<section name="NewClassWizardPage">
-		<item value="true" key="stubSelected1"/>
-		<item value="false" key="namespaceSelected"/>
-		<item value="false" key="testFileSelected"/>
-		<item value="false" key="stubInline1"/>
-		<item value="true" key="stubVirtual1"/>
-		<item value="false" key="stubInline0"/>
-		<item value="" key="namespace"/>
-		<item value="true" key="stubSelected0"/>
+	<section name="PDOMSearchPage">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
 		<item value="800" key="size.width"/>
 		<item value="205" key="size.height"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="true" key="stubSelected1"/>
+		<item value="false" key="testFileSelected"/>
+		<item value="false" key="namespaceSelected"/>
+		<item value="false" key="stubInline1"/>
+		<item value="true" key="stubVirtual1"/>
+		<item value="false" key="stubInline0"/>
+		<item value="true" key="stubSelected0"/>
+		<item value="" key="namespace"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

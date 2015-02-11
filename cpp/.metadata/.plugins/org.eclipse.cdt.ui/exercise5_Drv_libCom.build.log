@@ -1,5 +1,20 @@
-18:38:20 **** Incremental Build of configuration Debug for project exercise5_Drv_libCom ****
+21:52:21 **** Build of configuration Debug for project exercise5_Drv_libCom ****
 make all 
+Building file: ../src/elev.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -lcomedi -lm -MMD -MP -MF"src/elev.d" -MT"src/elev.d" -o "src/elev.o" "../src/elev.c"
+Finished building: ../src/elev.c
+ 
+Building file: ../src/io.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -lcomedi -lm -MMD -MP -MF"src/io.d" -MT"src/io.d" -o "src/io.o" "../src/io.c"
+Finished building: ../src/io.c
+ 
+Building file: ../src/main.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -lcomedi -lm -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
 Building target: exercise5_Drv_libCom
 Invoking: Cross G++ Linker
 c++ -lcomedi -lm -o "exercise5_Drv_libCom"  ./src/elev.o ./src/io.o ./src/main.o   
@@ -29,5 +44,5 @@ c++ -lcomedi -lm -o "exercise5_Drv_libCom"  ./src/elev.o ./src/io.o ./src/main.o
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 make: *** [exercise5_Drv_libCom] Error 1
 
-18:38:20 Build Finished (took 354ms)
+21:52:21 Build Finished (took 159ms)
 

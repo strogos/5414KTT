@@ -1,10 +1,6 @@
-18:55:03 **** Incremental Build of configuration Debug for project libComTestCpp ****
+22:06:00 **** Incremental Build of configuration Debug for project libComTestCpp ****
 make all 
-Building target: libComTestCpp
-Invoking: Cross G++ Linker
-c++ -L/usr/lib -lcomedi -lm -o "libComTestCpp"  ./src/main.o   -lm -lcomedi
-Finished building target: libComTestCpp
- 
+make: Nothing to be done for `all'.
 
-18:55:03 Build Finished (took 56ms)
+22:06:00 Build Finished (took 55ms)
 
