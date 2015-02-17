@@ -5,16 +5,17 @@
 // Copyright   : Your copyright notice
 // Description : ACE IPC wrapper
 //============================================================================
-#ifndef EXERCISE4_UDP_SRC_IPC_CLIENT_H_
-#define EXERCISE4_UDP_SRC_IPC_CLIENT_H_
+#ifndef IPC_CLIENT_H_
+#define IPC_CLIENT_H_
 
 #include "ace/Log_Msg.h"
 #include "ace/SOCK_Dgram.h"
 #include "ace/SOCK_Dgram_Bcast.h"
 #include "ace/INET_Addr.h"
 
-//#include <iostream>
+#include <iostream>
 #include <string>
+
 
 namespace IPC_Client_Unicast
 {
@@ -26,7 +27,7 @@ namespace IPC_Client_Unicast
 			//virtual ~Client();
 			~Client();
 
-			int send_data(const std::string msg);
+			int send_data(std::string msg);
 
 
 		private:
@@ -50,7 +51,7 @@ namespace IPC_Client_Broadcast
 			//virtual ~Client();
 			~Client();
 
-			int send_data(const std::string msg);
+			int send_data(std::string msg);
 
 
 		private:
@@ -60,10 +61,14 @@ namespace IPC_Client_Broadcast
 			char *data_buff;
 			const unsigned short dgram_byte_size;
 			const unsigned short remote_port;
+			const std::string data_msg_end="€"; //this works as c++11 defines.. where's the smart pointers????
+			const std::string data_msg_start="$";
+			int found_msg_end=0;
+			int found_msg_start=0;
 
 			int accept_data(const std::string msg_sent);
 			int open_socket();
 		};
 }
 
-#endif /* EXERCISE4_UDP_SRC_IPC_CLIENT_H_ */
+#endif /* IPC_CLIENT_H_ */

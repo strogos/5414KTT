@@ -1,0 +1,34 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include "IPC_Server.h"
+#include "IPC_Client.h"
+
+#include <pthread.h>
+
+#include <iostream>
+using namespace std;
+
+void  *thread_worker1(void* voidPtr)
+{
+		IPC_Server::Server srv(42000);
+		srv.accept_data();
+		srv.~Server();
+
+	return NULL;
+}
+
+int main()
+{
+
+	IPC_Client_Broadcast::Client client(42000);
+	client.send_data("shit");
+	client.~Client();
+
+	return 0;
+}

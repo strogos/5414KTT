@@ -1,0 +1,52 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include "IPC_Server.h"
+#include "IPC_Client.h"
+
+#include <pthread.h>
+
+#include <iostream>
+using namespace std;
+
+void  *thread_worker1(void* voidPtr)
+{
+		IPC_Server::Server srv(42000);
+		srv.accept_data();
+		srv.~Server();
+
+	return NULL;
+}
+
+void  *thread_worker2(void* voidPtr)
+{
+		IPC_Client_Broadcast::Client client(42000);
+		client.send_data("$012345");
+		client.~Client();
+
+	return NULL;
+}
+
+int main()
+{
+	int voidPtrArg1=0;
+	int voidPtrArg2=0;
+	pthread_t thread1;
+	pthread_t thread2;
+	pthread_create(&thread1,NULL,thread_worker1,NULL);
+	pthread_create(&thread2,NULL,thread_worker2,NULL);
+	/* wait for the second thread to finish */
+	if(pthread_join(thread1, NULL) && pthread_join(thread2, NULL))
+	{
+		cout<<"Error joining thread\n";
+		return -1;
+	}
+
+
+	return 0;
+}

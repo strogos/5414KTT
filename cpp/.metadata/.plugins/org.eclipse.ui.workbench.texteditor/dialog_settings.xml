@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="289" key="DIALOG_WIDTH"/>
-		<item value="388" key="DIALOG_Y_ORIGIN"/>
-		<item value="432" key="DIALOG_HEIGHT"/>
-		<item value="10" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="285" key="DIALOG_WIDTH"/>
+		<item value="664" key="DIALOG_Y_ORIGIN"/>
+		<item value="938" key="DIALOG_X_ORIGIN"/>
+		<item value="415" key="DIALOG_HEIGHT"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Server" key="selection"/>
+		<item value="recv" key="selection"/>
 		<list key="findhistory">
+			<item value="recv"/>
+			<item value="std"/>
+			<item value="WTF"/>
+			<item value="Data received from remote server"/>
 			<item value="Client"/>
 			<item value="main"/>
 			<item value="size"/>
