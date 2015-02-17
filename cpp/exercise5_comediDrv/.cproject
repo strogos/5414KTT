@@ -37,14 +37,13 @@
 							<tool command="c++" id="cdt.managedbuild.tool.gnu.cross.cpp.linker.921773460" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
 								<option id="gnu.cpp.link.option.flags.1813285444" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-lcomedi -lm simulation_elevator.a" valueType="string"/>
 								<option id="gnu.cpp.link.option.libs.1433266746" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="m"/>
-									<listOptionValue builtIn="false" value="pthread"/>
 									<listOptionValue builtIn="false" value="phobos2"/>
+									<listOptionValue builtIn="false" value="pthread"/>
 									<listOptionValue builtIn="false" value="comedi"/>
+									<listOptionValue builtIn="false" value="m"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.335624831" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/home/bengteh/workspace/5414KTT/libraries/elevator_sim"/>
-									<listOptionValue builtIn="false" value="/usr/lib"/>
 								</option>
 								<option id="gnu.cpp.link.option.userobjs.178667061" name="Other objects" superClass="gnu.cpp.link.option.userobjs" valueType="userObjs">
 									<listOptionValue builtIn="false" value="/home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a"/>

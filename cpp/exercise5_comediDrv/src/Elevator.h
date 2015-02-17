@@ -5,8 +5,8 @@
  *      Author: bengteh
  */
 
-#ifndef ELEVATOR_H_
-#define ELEVATOR_H_
+#ifndef EXERCISE5_COMEDIDRV_SRC_ELEVATOR_H_
+#define EXERCISE5_COMEDIDRV_SRC_ELEVATOR_H_
 
 class Elevator
 {
@@ -16,5 +16,5 @@ public:
 private:
 
 };
-#endif /* ELEVATOR_H_ */
+#endif /* EXERCISE5_COMEDIDRV_SRC_ELEVATOR_H_ */
 
