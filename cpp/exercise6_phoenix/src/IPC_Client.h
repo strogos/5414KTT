@@ -16,7 +16,6 @@
 #include <iostream>
 #include <string>
 
-
 namespace IPC_Client_Unicast
 {
 	class Client //: public ACE_Event_Handler
@@ -34,10 +33,14 @@ namespace IPC_Client_Unicast
 			ACE_INET_Addr remote_addr_;
 			ACE_INET_Addr local_addr_;
 			ACE_SOCK_Dgram socket_;
-			char *data_buff;
-			const unsigned short dgram_byte_size;
+			char *data_buff_;
+			const unsigned short dgram_byte_size_;
+			const std::string data_msg_end_="€";
+			const std::string data_msg_start_="$";
+			int found_msg_end_=0;
+			int found_msg_start_=0;
 
-			int accept_data(const std::string msg_sent);
+			int accept_data_(const std::string msg_sent);
 		};
 }
 
@@ -58,16 +61,15 @@ namespace IPC_Client_Broadcast
 			ACE_INET_Addr remote_addr_;
 			ACE_INET_Addr local_addr_;
 			ACE_SOCK_Dgram_Bcast socket_;
-			char *data_buff;
-			const unsigned short dgram_byte_size;
-			const unsigned short remote_port;
-			const std::string data_msg_end="€"; //this works as c++11 defines.. where's the smart pointers????
-			const std::string data_msg_start="$";
-			int found_msg_end=0;
-			int found_msg_start=0;
+			char *data_buff_;
+			const unsigned short dgram_byte_size_;
+			const unsigned short remote_port_;
+			const std::string data_msg_end_="€";
+			const std::string data_msg_start_="$";
+			int found_msg_end_=0;
+			int found_msg_start_=0;
 
-			int accept_data(const std::string msg_sent);
-			int open_socket();
+			int accept_data_(const std::string msg_sent);
 		};
 }
 

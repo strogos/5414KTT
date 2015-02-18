@@ -10,7 +10,6 @@
 #include "IPC_Client.h"
 
 #include <pthread.h>
-
 #include <iostream>
 using namespace std;
 
@@ -25,15 +24,17 @@ void  *thread_worker1(void* voidPtr)
 
 void  *thread_worker2(void* voidPtr)
 {
-		IPC_Client_Broadcast::Client client(42000);
-		client.send_data("0123456789");//implemented automatic insertion of message integrity markers $ and €...
+		IPC_Client_Unicast::Client client("localhost:42000");
+		client.send_data("0123456789");
 		client.~Client();
+		client.
 
 	return NULL;
 }
 
 int main()
 {
+
 	int voidPtrArg1=0;
 	int voidPtrArg2=0;
 	pthread_t thread1;

@@ -1,2103 +1,4 @@
-17:32:42 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:126:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:32:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:37:26 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:147:6: error: ‘cout’ is not a member of ‘std’
-      std::cout<<"WTF\n";
-      ^
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-17:38:27 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:41:21 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:41:50 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:42:08 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:42:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:42:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:42:58 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:43:07 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:43:18 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:43:23 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:43:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:47:18 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:138:39: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-     if ((found_msg_end)!=std::string::npos)
-                                       ^
-../src/IPC_Client.cpp:128:8: warning: variable ‘found_msg_start’ set but not used [-Wunused-but-set-variable]
-    int found_msg_start=0;
-        ^
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:47:41 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:128:8: warning: variable ‘found_msg_start’ set but not used [-Wunused-but-set-variable]
-    int found_msg_start=0;
-        ^
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:49:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:49:28 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:53:52 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:54:03 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:54:42 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:57:40 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:138:39: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-     if ((found_msg_end)!=std::string::npos)
-                                       ^
-../src/IPC_Client.cpp:140:6: error: ‘cout’ is not a member of ‘std’
-      std::cout << "Period found at: " << found_msg_end << '\n';
-      ^
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-17:58:07 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:138:39: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-     if ((found_msg_end)!=std::string::npos)
-                                       ^
-../src/IPC_Client.cpp:128:8: warning: variable ‘found_msg_start’ set but not used [-Wunused-but-set-variable]
-    int found_msg_start=0;
-        ^
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:58:14 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-17:59:43 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:138:39: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-     if ((found_msg_end)!=std::string::npos)
-                                       ^
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-17:59:52 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:01:23 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:01:40 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:04:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:05:10 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:05:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:05:53 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:09:21 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:40:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:139:6: error: ‘cout’ is not a member of ‘std’
-      std::cout << "end found at: " << found_msg_end << '\n';
-      ^
-../src/IPC_Client.cpp:140:6: error: ‘cout’ is not a member of ‘std’
-      std::cout << "start found at: " << found_msg_start << '\n';
-      ^
-../src/IPC_Client.cpp:128:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-18:10:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:40:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:128:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:10:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:10:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:11:03 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:11:09 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:11:16 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:11:26 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:11:51 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:11:58 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:12:16 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:12:20 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:12:36 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:12:52 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:44:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:40:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:128:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:45:09 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:45:52 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:47:18 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:47:49 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:172:28: error: expected primary-expression before ‘<<’ token
-    std::cout<<resend_count=<<"\n";
-                            ^
-make: *** [src/IPC_Client.o] Error 1
-18:47:54 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:50:49 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:53:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:53:40 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:53:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:53:51 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:53:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:54:14 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:54:21 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-18:54:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:55:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:56:52 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:58:54 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-18:58:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-19:00:13 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:01:17 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:02:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:10:06 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:10:15 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-19:10:20 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-19:10:30 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-19:14:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:15:07 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-19:15:33 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:18:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:19:40 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:23:12 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:24:44 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:26:43 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:29:01 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-In file included from ../src/IPC_Client.h:11:0,
-                 from ../src/IPC_Client.cpp:11:
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:73:13: error: ‘class IPC_Client_Unicast::Client’ has no member named ‘remote_port’
-       this->remote_port));/*Server did not receive our message; must re-send*/
-             ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:100:17: note: in definition of macro ‘ACE_DEBUG’
-     ace___->log X; \
-                 ^
-../src/IPC_Client.cpp:75:74: error: ‘class IPC_Client_Unicast::Client’ has no member named ‘remote_port’
-   if (socket_.send (msg.c_str(), ACE_OS::strlen (msg.c_str()) + 1, this->remote_port) == -1)
-                                                                          ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:136:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-19:29:45 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:129:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:47:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:140:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-19:53:07 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:41:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:140:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:172:10: error: no match for ‘operator<<’ (operand types are ‘const char [2]’ and ‘const string {aka const std::basic_string<char>}’)
-   msg="$"<<msg<<"€";
-          ^
-../src/IPC_Client.cpp:172:10: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note: std::ostream& operator<<(std::ostream&, const ACE_Time_Value&)
- extern ACE_Export ostream &operator<<( ostream &o, const ACE_Time_Value &v );
-                            ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note:   no known conversion for argument 1 from ‘const char [2]’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
-     ^
-/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
-     ^
-/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/ostream:609:0,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
-     ^
-/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
-     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
-     ^
-/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
-     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
-     ^
-/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
-     operator<<(basic_ostream<char, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
-     ^
-/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/string:52:0,
-                 from ../src/IPC_Client.h:17,
-                 from ../src/IPC_Client.cpp:11:
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
-     operator<<(basic_ostream<_CharT, _Traits>& __os,
-     ^
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:172:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-make: *** [src/IPC_Client.o] Error 1
-19:54:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:173:10: error: no match for ‘operator<<’ (operand types are ‘const char [2]’ and ‘const string {aka const std::basic_string<char>}’)
-   msg="$"<<msg<<"€";
-          ^
-../src/IPC_Client.cpp:173:10: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note: std::ostream& operator<<(std::ostream&, const ACE_Time_Value&)
- extern ACE_Export ostream &operator<<( ostream &o, const ACE_Time_Value &v );
-                            ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note:   no known conversion for argument 1 from ‘const char [2]’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
-     ^
-/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
-     ^
-/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/ostream:609:0,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
-     ^
-/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
-     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
-     ^
-/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
-     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
-     ^
-/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
-     operator<<(basic_ostream<char, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
-     ^
-/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/string:52:0,
-                 from ../src/IPC_Client.h:17,
-                 from ../src/IPC_Client.cpp:11:
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
-     operator<<(basic_ostream<_CharT, _Traits>& __os,
-     ^
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:173:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   msg="$"<<msg<<"€";
-            ^
-make: *** [src/IPC_Client.o] Error 1
-19:57:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:174:10: error: no match for ‘operator<<’ (operand types are ‘const char [2]’ and ‘const string {aka const std::basic_string<char>}’)
-   *ss="$"<<msg<<"€";
-          ^
-../src/IPC_Client.cpp:174:10: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note: std::ostream& operator<<(std::ostream&, const ACE_Time_Value&)
- extern ACE_Export ostream &operator<<( ostream &o, const ACE_Time_Value &v );
-                            ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note:   no known conversion for argument 1 from ‘const char [2]’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
-     ^
-/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
-     ^
-/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/ostream:609:0,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
-     ^
-/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
-     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
-     ^
-/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
-     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
-     ^
-/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
-     operator<<(basic_ostream<char, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
-     ^
-/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/string:52:0,
-                 from ../src/IPC_Client.h:17,
-                 from ../src/IPC_Client.cpp:11:
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
-     operator<<(basic_ostream<_CharT, _Traits>& __os,
-     ^
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-../src/IPC_Client.cpp:175:7: error: no match for ‘operator*’ (operand type is ‘std::basic_stringstream<char>::__string_type {aka std::basic_string<char>}’)
-   msg=*ss->str();
-       ^
-../src/IPC_Client.cpp:175:7: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:416:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note: ACE_Time_Value operator*(double, const ACE_Time_Value&)
- operator * (double d, const ACE_Time_Value &tv)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note:   candidate expects 2 arguments, 1 provided
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note: ACE_Time_Value operator*(const ACE_Time_Value&, double)
- operator * (const ACE_Time_Value &tv, double d)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note:   candidate expects 2 arguments, 1 provided
-make: *** [src/IPC_Client.o] Error 1
-19:58:33 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:174:10: error: no match for ‘operator<<’ (operand types are ‘const char [2]’ and ‘const string {aka const std::basic_string<char>}’)
-   *ss="$"<<msg<<"€";
-          ^
-../src/IPC_Client.cpp:174:10: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note: std::ostream& operator<<(std::ostream&, const ACE_Time_Value&)
- extern ACE_Export ostream &operator<<( ostream &o, const ACE_Time_Value &v );
-                            ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:410:28: note:   no known conversion for argument 1 from ‘const char [2]’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:548:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
-     ^
-/usr/include/c++/4.8/ostream:548:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:543:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
-     ^
-/usr/include/c++/4.8/ostream:543:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:530:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
-     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/ostream:530:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/ostream:609:0,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
-     ^
-/usr/include/c++/4.8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:513:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
-     ^
-/usr/include/c++/4.8/ostream:513:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:493:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
-     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
-     ^
-/usr/include/c++/4.8/ostream:493:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:488:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
-     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
-     ^
-/usr/include/c++/4.8/ostream:488:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:482:5: note: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
-     operator<<(basic_ostream<char, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:482:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<char, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:476:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
-     ^
-/usr/include/c++/4.8/ostream:476:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from ../src/IPC_Client.cpp:12:
-/usr/include/c++/4.8/ostream:471:5: note: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
-     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
-     ^
-/usr/include/c++/4.8/ostream:471:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-In file included from /usr/include/c++/4.8/string:52:0,
-                 from ../src/IPC_Client.h:17,
-                 from ../src/IPC_Client.cpp:11:
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
-     operator<<(basic_ostream<_CharT, _Traits>& __os,
-     ^
-/usr/include/c++/4.8/bits/basic_string.h:2753:5: note:   template argument deduction/substitution failed:
-../src/IPC_Client.cpp:174:12: note:   mismatched types ‘std::basic_ostream<_CharT, _Traits>’ and ‘const char [2]’
-   *ss="$"<<msg<<"€";
-            ^
-../src/IPC_Client.cpp:175:7: error: no match for ‘operator*’ (operand type is ‘std::basic_stringstream<char>::__string_type {aka std::basic_string<char>}’)
-   msg=*ss->str();
-       ^
-../src/IPC_Client.cpp:175:7: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:416:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note: ACE_Time_Value operator*(double, const ACE_Time_Value&)
- operator * (double d, const ACE_Time_Value &tv)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note:   candidate expects 2 arguments, 1 provided
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note: ACE_Time_Value operator*(const ACE_Time_Value&, double)
- operator * (const ACE_Time_Value &tv, double d)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note:   candidate expects 2 arguments, 1 provided
-make: *** [src/IPC_Client.o] Error 1
-19:59:33 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:175:7: error: no match for ‘operator*’ (operand type is ‘std::basic_stringstream<char>::__string_type {aka std::basic_string<char>}’)
-   msg=*ss->str();
-       ^
-../src/IPC_Client.cpp:175:7: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:416:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_NS_unistd.h:29,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.inl:5,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:748,
-                 from ../src/IPC_Client.h:11,
-                 from ../src/IPC_Client.cpp:11:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note: ACE_Time_Value operator*(double, const ACE_Time_Value&)
- operator * (double d, const ACE_Time_Value &tv)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note:   candidate expects 2 arguments, 1 provided
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note: ACE_Time_Value operator*(const ACE_Time_Value&, double)
- operator * (const ACE_Time_Value &tv, double d)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note:   candidate expects 2 arguments, 1 provided
-make: *** [src/IPC_Client.o] Error 1
-20:02:08 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:175:11: error: request for member ‘str’ in ‘ss’, which is of pointer type ‘std::stringstream* {aka std::basic_stringstream<char>*}’ (maybe you meant to use ‘->’ ?)
-   msg=*ss.str();
-           ^
-make: *** [src/IPC_Client.o] Error 1
-20:02:25 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-20:03:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:173:26: error: expected primary-expression before ‘=’ token
-   std::stringstream *ss; =new std::stringstream;
-                          ^
-../src/IPC_Client.cpp:175:10: error: request for member ‘str’ in ‘ss’, which is of pointer type ‘std::stringstream* {aka std::basic_stringstream<char>*}’ (maybe you meant to use ‘->’ ?)
-   msg=ss.str();
-          ^
-make: *** [src/IPC_Client.o] Error 1
-20:04:06 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:175:10: error: request for member ‘str’ in ‘ss’, which is of pointer type ‘std::stringstream* {aka std::basic_stringstream<char>*}’ (maybe you meant to use ‘->’ ?)
-   msg=ss.str();
-          ^
-make: *** [src/IPC_Client.o] Error 1
-20:04:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:175:24: error: request for member ‘str’ in ‘ss’, which is of pointer type ‘std::stringstream* {aka std::basic_stringstream<char>*}’ (maybe you meant to use ‘->’ ?)
-   msg=(std::string)*ss.str();
-                        ^
-make: *** [src/IPC_Client.o] Error 1
-20:05:13 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:175:23: error: request for member ‘str’ in ‘ss’, which is of pointer type ‘std::stringstream* {aka std::basic_stringstream<char>*}’ (maybe you meant to use ‘->’ ?)
-   msg=(std::string)ss.str();
-                       ^
-make: *** [src/IPC_Client.o] Error 1
-20:06:23 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-20:07:02 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-20:07:15 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-make: Nothing to be done for `all'.
-20:07:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-20:10:58 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:63:35: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
-    const std::string data_msg_end="€";
-                                   ^
-../src/IPC_Client.h:64:37: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
-    const std::string data_msg_start="$";
-                                     ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-In file included from ../src/main.cpp:10:0:
-../src/IPC_Client.h:63:35: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
-    const std::string data_msg_end="€";
-                                   ^
-../src/IPC_Client.h:64:37: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11 [enabled by default]
-    const std::string data_msg_start="$";
-                                     ^
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-20:12:26 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lACE -lpthread
-Finished building target: exercise6_phoenix
- 
-20:26:45 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:11:25: fatal error: ace/Log_Msg.h: No such file or directory
- #include "ace/Log_Msg.h"
-                         ^
-compilation terminated.
-make: *** [src/IPC_Client.o] Error 1
-20:29:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:65:4: error: ‘unique_ptr’ in namespace ‘std’ does not name a type
-    std::unique_ptr<int> shit=new int;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:29:41 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+21:23:07 **** Build of configuration Debug for project exercise6_phoenix ****
 make all 
 Building file: ../src/IPC_Client.cpp
 Invoking: Cross G++ Compiler
@@ -2107,7 +8,7 @@ c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -f
    ssize_t bytes_received=0;
            ^
 ../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+../src/IPC_Client.cpp:143:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
     ssize_t bytes_received=0;
             ^
 Finished building: ../src/IPC_Client.cpp
@@ -2134,207 +35,39 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
 Finished building target: exercise6_phoenix
  
-20:31:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:66:4: error: ‘unique_ptr’ in namespace ‘std’ does not name a type
-    std::unique_ptr<int> shit= new int;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:36:14 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:64:10: error: ‘ststd’ does not name a type
-    const ststd::smart-pthreadd::string data_msg_end="€";
-          ^
-../src/IPC_Client.h:68:4: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
-    std::shared_ptr<int> shit
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: At global scope:
-../src/IPC_Client.cpp:134:52: error: no ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’ member function declared in class ‘IPC_Client_Broadcast::Client’
-  int Client::accept_data(const std::string msg_sent)
-                                                    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
-../src/IPC_Client.cpp:192:14: error: ‘class IPC_Client_Broadcast::Client’ has no member named ‘accept_data’
-    if (this->accept_data(msg)!=-1)
-              ^
-make: *** [src/IPC_Client.o] Error 1
-20:36:40 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:64:10: error: ‘ststd’ does not name a type
-    const ststd::smart-pthreadd::string data_msg_end="€";
-          ^
-../src/IPC_Client.h:68:4: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
-    std::shared_ptr<int> shit=new int;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:37:06 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:68:4: error: ‘shared_ptr’ in namespace ‘std’ does not name a type
-    std::shared_ptr<int> shit=new int;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:37:22 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:67:4: error: ‘unique_ptr’ in namespace ‘std’ does not name a type
-    std::unique_ptr<int> shit= new int;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:38:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:67:4: error: ‘unique_ptr’ in namespace ‘std’ does not name a type
-    std::unique_ptr<int *> ptr;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:38:42 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-In file included from ../src/IPC_Client.cpp:11:0:
-../src/IPC_Client.h:67:4: error: ‘unique_ptr’ in namespace ‘std’ does not name a type
-    std::unique_ptr<int> ptr;
-    ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:142:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-make: *** [src/IPC_Client.o] Error 1
-20:41:43 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
-make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:141:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -pthread -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
-Finished building target: exercise6_phoenix
- 
-20:42:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+21:23:15 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 make: Nothing to be done for `all'.
-20:42:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+21:23:29 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:24:13 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:29:33 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 Building file: ../src/IPC_Client.cpp
 Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+In file included from ../src/IPC_Client.cpp:11:0:
+../src/IPC_Client.h:68:33: error: expected identifier before ‘new’
+    std::unique_ptr<int> threads(new int_t[2]);
+                                 ^
+../src/IPC_Client.h:68:33: error: expected ‘,’ or ‘...’ before ‘new’
 ../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
 ../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
    ssize_t bytes_received=0;
            ^
 ../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:137:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+../src/IPC_Client.cpp:143:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
     ssize_t bytes_received=0;
             ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -pthread -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
-Finished building target: exercise6_phoenix
- 
-20:46:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make: *** [src/IPC_Client.o] Error 1
+22:04:07 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 Building file: ../src/IPC_Client.cpp
 Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
 ../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
 ../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
    ssize_t bytes_received=0;
@@ -2347,7 +80,279 @@ Finished building: ../src/IPC_Client.cpp
  
 Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:2: error: ‘unique_ptr’ is not a member of ‘std’
+  std::unique_ptr<int> threads(new int[2]);
+  ^
+../src/main.cpp:37:18: error: expected primary-expression before ‘int’
+  std::unique_ptr<int> threads(new int[2]);
+                  ^
+../src/main.cpp:37:18: error: expected ‘;’ before ‘int’
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+make: *** [src/main.o] Error 1
+22:04:35 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:2: error: ‘unique_ptr’ was not declared in this scope
+  unique_ptr<int> threads(new int[2]);
+  ^
+../src/main.cpp:37:13: error: expected primary-expression before ‘int’
+  unique_ptr<int> threads(new int[2]);
+             ^
+../src/main.cpp:37:13: error: expected ‘;’ before ‘int’
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+make: *** [src/main.o] Error 1
+22:08:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:09:15 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:38:54: error: conversion from ‘pthread_t* {aka long unsigned int*}’ to non-scalar type ‘std::unique_ptr<long unsigned int>’ requested
+  std::unique_ptr<pthread_t> threads = new pthread_t[2];
+                                                      ^
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:40:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+make: *** [src/main.o] Error 1
+22:09:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:38:55: error: expected primary-expression before ‘]’ token
+  std::unique_ptr<pthread_t> threads[] = new pthread_t[];
+                                                       ^
+../src/main.cpp:38:55: error: initializer fails to determine size of ‘threads’
+../src/main.cpp:38:55: error: conversion from ‘pthread_t* {aka long unsigned int*}’ to non-scalar type ‘std::unique_ptr<long unsigned int>’ requested
+../src/main.cpp:38:29: warning: unused variable ‘threads’ [-Wunused-variable]
+  std::unique_ptr<pthread_t> threads[] = new pthread_t[];
+                             ^
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:40:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+make: *** [src/main.o] Error 1
+22:12:34 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:38:51: error: expected primary-expression before ‘]’ token
+  std::unique_ptr<pthread_t> threads(new pthread_t[]);
+                                                   ^
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:40:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+make: *** [src/main.o] Error 1
+22:12:45 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:39:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:40:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:25:12 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+   ssize_t bytes_received=0;
+           ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:143:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+    ssize_t bytes_received=0;
+            ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
+../src/IPC_Client.cpp:175:3: error: ‘unique_ptr’ is not a member of ‘std’
+   std::unique_ptr<stringstream> ss(new stringstream);
+   ^
+../src/IPC_Client.cpp:175:19: error: ‘stringstream’ was not declared in this scope
+   std::unique_ptr<stringstream> ss(new stringstream);
+                   ^
+../src/IPC_Client.cpp:175:19: note: suggested alternative:
+In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/iosfwd.h:46:0,
+                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_Log_Msg_Attributes.h:25,
+                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:116,
+                 from ../src/IPC_Client.h:11,
+                 from ../src/IPC_Client.cpp:11:
+/usr/include/c++/4.8/iosfwd:151:37: note:   ‘std::stringstream’
+   typedef basic_stringstream<char>  stringstream;
+                                     ^
+../src/IPC_Client.cpp:175:40: error: expected type-specifier before ‘stringstream’
+   std::unique_ptr<stringstream> ss(new stringstream);
+                                        ^
+../src/IPC_Client.cpp:175:52: error: ‘ss’ was not declared in this scope
+   std::unique_ptr<stringstream> ss(new stringstream);
+                                                    ^
+../src/IPC_Client.cpp:179:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+   delete ss;
+          ^
+make: *** [src/IPC_Client.o] Error 1
+22:25:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:43:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+   ssize_t bytes_received=0;
+           ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:144:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+    ssize_t bytes_received=0;
+            ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
+../src/IPC_Client.cpp:176:19: error: ‘stringstream’ was not declared in this scope
+   std::unique_ptr<stringstream> ss(new stringstream);
+                   ^
+../src/IPC_Client.cpp:176:19: note: suggested alternative:
+In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/iosfwd.h:46:0,
+                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_Log_Msg_Attributes.h:25,
+                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:116,
+                 from ../src/IPC_Client.h:11,
+                 from ../src/IPC_Client.cpp:11:
+/usr/include/c++/4.8/iosfwd:151:37: note:   ‘std::stringstream’
+   typedef basic_stringstream<char>  stringstream;
+                                     ^
+../src/IPC_Client.cpp:176:31: error: template argument 1 is invalid
+   std::unique_ptr<stringstream> ss(new stringstream);
+                               ^
+../src/IPC_Client.cpp:176:31: error: template argument 2 is invalid
+../src/IPC_Client.cpp:176:35: error: invalid type in declaration before ‘(’ token
+   std::unique_ptr<stringstream> ss(new stringstream);
+                                   ^
+../src/IPC_Client.cpp:176:40: error: expected type-specifier before ‘stringstream’
+   std::unique_ptr<stringstream> ss(new stringstream);
+                                        ^
+../src/IPC_Client.cpp:178:4: error: invalid type argument of unary ‘*’ (have ‘int’)
+   *ss<<"$"<<msg<<"€";
+    ^
+../src/IPC_Client.cpp:179:9: error: base operand of ‘->’ is not a pointer
+   msg=ss->str();
+         ^
+../src/IPC_Client.cpp:180:10: error: type ‘int’ argument given to ‘delete’, expected pointer
+   delete ss;
+          ^
+make: *** [src/IPC_Client.o] Error 1
+22:26:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:43:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+   ssize_t bytes_received=0;
+           ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:144:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+    ssize_t bytes_received=0;
+            ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::send_data(std::string)’:
+../src/IPC_Client.cpp:176:19: error: ‘stringstream’ was not declared in this scope
+   std::unique_ptr<stringstream> ss(new stringstream);
+                   ^
+../src/IPC_Client.cpp:176:19: note: suggested alternative:
+In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/iosfwd.h:46:0,
+                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/OS_Log_Msg_Attributes.h:25,
+                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:116,
+                 from ../src/IPC_Client.h:11,
+                 from ../src/IPC_Client.cpp:11:
+/usr/include/c++/4.8/iosfwd:151:37: note:   ‘std::stringstream’
+   typedef basic_stringstream<char>  stringstream;
+                                     ^
+../src/IPC_Client.cpp:176:31: error: template argument 1 is invalid
+   std::unique_ptr<stringstream> ss(new stringstream);
+                               ^
+../src/IPC_Client.cpp:176:31: error: template argument 2 is invalid
+../src/IPC_Client.cpp:176:35: error: invalid type in declaration before ‘(’ token
+   std::unique_ptr<stringstream> ss(new stringstream);
+                                   ^
+../src/IPC_Client.cpp:176:40: error: expected type-specifier before ‘stringstream’
+   std::unique_ptr<stringstream> ss(new stringstream);
+                                        ^
+../src/IPC_Client.cpp:178:4: error: invalid type argument of unary ‘*’ (have ‘int’)
+   *ss<<"$"<<msg<<"€";
+    ^
+../src/IPC_Client.cpp:179:9: error: base operand of ‘->’ is not a pointer
+   msg=ss->str();
+         ^
+make: *** [src/IPC_Client.o] Error 1
+22:29:09 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:43:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+   ssize_t bytes_received=0;
+           ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:144:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+    ssize_t bytes_received=0;
+            ^
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 ../src/main.cpp: In function ‘int main()’:
 ../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
   int voidPtrArg1=0;
@@ -2359,6 +364,214 @@ Finished building: ../src/main.cpp
  
 Building target: exercise6_phoenix
 Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -pthread -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
 Finished building target: exercise6_phoenix
  
+22:29:36 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:43:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+   ssize_t bytes_received=0;
+           ^
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
+../src/IPC_Client.cpp:144:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
+    ssize_t bytes_received=0;
+            ^
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:34:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:34:59 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+22:36:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:36:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+22:37:42 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:45:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:48:50 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:51:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:52:16 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+22:52:31 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+22:54:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::send_data(std::string)’:
+../src/IPC_Client.cpp:90:75: error: ‘class IPC_Client_Unicast::Client’ has no member named ‘remote_port_’
+    if (socket_.send (msg.c_str(), ACE_OS::strlen (msg.c_str()) + 1, this->remote_port_) == -1)
+                                                                           ^
+make: *** [src/IPC_Client.o] Error 1
+22:55:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:56:23 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
+  int voidPtrArg1=0;
+      ^
+../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
+  int voidPtrArg2=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+22:56:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
