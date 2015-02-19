@@ -9,8 +9,10 @@
 #define ICP_SERVER_H_
 
 
+/*
 #define ACE_NDEBUG 0
 #define ACE_NLOGGING 0
+*/
 
 
 #include "ace/Log_Msg.h"
@@ -42,6 +44,8 @@ namespace IPC_Server
 		std::string data_string_;
 		const std::string data_msg_end_="€";
 		const std::string data_msg_start_="$";
+		int found_msg_end_=0;
+		int found_msg_start_=0;
 		const unsigned short dgram_byte_size_;
 
 	};

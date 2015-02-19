@@ -6,11 +6,16 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+/*
 #define ACE_NDEBUG 0
 #define ACE_NLOGGING 0
+*/
 
 #include "IPC_Server.h"
 #include "IPC_Client.h"
+
+#include <unistd.h>
+#include <sys/types.h>
 
 //#include <pthread.h> //Fuck this; will use c+11(boost) threads..
 #include <thread>
@@ -19,6 +24,8 @@
 #include <vector>
 #include <signal.h>
 #include <memory>
+#include <string>
+
 #include "ace/Log_Msg.h"
 
 #include <iostream>
@@ -33,7 +40,7 @@ void  thread_worker1(int tid)
 
 void  thread_worker2(int tid)
 {
-	IPC_Client_Broadcast::Client client(42000);
+	IPC_Client_Unicast::Client client("localhost:42000");
 	while(1)
 	{
 
@@ -64,83 +71,109 @@ int thread_join_all(std::vector<std::thread>& my_threads)
 
 void listener(int child_tid);
 void primary_service(int);
-void backup_service(int);
+//void backup_service(int);
 void new_primary_service(int);
 
 int main(int argc, char* argv[])
 {
-	//const unsigned short nr_threads=2;
-	std::vector<thread> my_threads;
+	/*using threads (NOT IMPLEMENTED)*/
+//	const unsigned short nr_threads=2;
+//	std::vector<thread> my_threads;
 
-	/*Launch a group of threads*/
-	//my_threads.push_back(std::thread(thread_worker1,0));
-	my_threads.push_back(std::thread(listener,0));
-	my_threads.push_back(std::thread(thread_worker2,1));
+//	/*Launch a group of threads*/
+//	//my_threads.push_back(std::thread(thread_worker1,0));
+//	my_threads.push_back(std::thread(listener,0));
+//	my_threads.push_back(std::thread(thread_worker2,1));
+//
+//
+//	/*Synchronize threads*/
+//	if(!thread_join_all(my_threads))
+//		std::cout<<"error joining threads!\n";
 
-
-	/*Synchronize threads*/
-	if(!thread_join_all(my_threads))
-		std::cout<<"error joining threads!\n";
-
-
-//	pthread_t thread1;
-//	pthread_t thread2;
-//	pthread_create(&thread1,NULL,thread_worker1,NULL);
-//	pthread_create(&thread2,NULL,thread_worker2,NULL);
-//	/* wait for the second thread to finish */
-//	if(pthread_join(thread1, NULL) && pthread_join(thread2, NULL))
-//	{
-//		cout<<"Error joining thread\n";
-//		return -1;
-//	}
-
-
-
+	/*using processes instead of threads*/
+	//listener(0);
+	new_primary_service(0);
 	return 0;
 }
 
-void listener(int tid)
+void new_primary_service(int count)
 {
-	ACE_DEBUG((LM_DEBUG, "LISTER IS ALIVE/n"));
-	IPC_Server::Server listener(42000);
-	unsigned int hit_rate_second=0;
-	unsigned int hit=0;
-	unsigned int hit_check_counter=0;
+	pid_t pid=fork();//vfork(); //create child process //should spawn instead...
 
-	/*wait to be primary*/
+	if (pid==0)
+		primary_service(count); //child
+	else if (pid>0)
+		listener(pid);//parent
+	else
+		ACE_ERROR((LM_WARNING, "failed creating child(primary_service) process\n"));
+}
+
+void primary_service(int count)
+{
+	ACE_DEBUG((LM_DEBUG, "PRIMARY_SERVICE IS ALIVE\n"));
+	IPC_Client_Unicast::Client udp("localhost:42000");
+
 	while(true)
 	{
-		cout<<hit<<endl;
+		udp.send_data(std::to_string(count));//"ALIVE");
+		// std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		count++;
+		std::cout<<count<<endl;
+	}
+
+	udp.~Client();
+}
+
+void listener(int child_pid)
+{
+	int count=0;
+	ACE_DEBUG((LM_DEBUG, "LISTENER IS ALIVE\n"));
+	IPC_Server::Server listener(42000);
+	unsigned int miss_rate_second=0;
+	unsigned int miss=0;
+	unsigned int miss_check_counter=0;
+
+
+	/*wait to launch primary*/
+	while(true)
+	{
+		ACE_DEBUG((LM_DEBUG, "miss : %d\n",miss));
 		/*check whether primary is alive*/
-		if (listener.accept_data() && listener.get_data()=="$ALIVE€")
-			hit++;
-		cout<<"hits : "<<hit<<endl;
-		//std::this_thread::sleep_for(std::chrono::milliseconds(100));
-		hit_check_counter++;
-		cout<<"hit check cnt: "<<hit_check_counter<<endl;
+		if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+			miss++;
+
+		count=atoi(listener.get_data().c_str())+1;
+
+		ACE_DEBUG((LM_DEBUG, "GET COUNTER DATA FROM PRIMARY:  %d\n",count));
+
+		miss_check_counter++;
+		ACE_DEBUG((LM_DEBUG, "miss check cnt: %d\n",miss_check_counter));
+		//std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		/*Calculate hit_rate per second*/
-		if (hit_check_counter==10)
+		if (miss_check_counter==10)
 		{
-			cout<<"hit check==10!\n";
-			hit_rate_second=(hit*100)/(hit_check_counter);
-			cout<<"hit rate:"<<hit_rate_second<<"\n";
-			hit_check_counter=0;
+			//cout<<"miss check==10!\n";
+			miss_rate_second=(miss*100)/(miss_check_counter);
+			ACE_DEBUG((LM_DEBUG, "miss rate: %d\n",miss_rate_second));
+			miss_check_counter=0;
 		}
-		//cout<<"hit rate:"<<hit_rate_second<<"\n";
-		/*50% hit rate acceptable?*/
-		if (hit_rate_second>5)
+
+		/*10% miss rate acceptable?*/
+		if (miss_rate_second>10)
 		{
-			ACE_DEBUG((LM_DEBUG, "Hit rate: %d Backup is assuming primary role/n",hit_rate_second));
+			ACE_DEBUG((LM_DEBUG, "Miss rate: %d assume primary process is dead; spawn new..\n",miss_rate_second));
+			listener.~Server();
+			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 			break;
 		}
 	}
 
-
-/*	if (data_available)
-		//check msg for  PRIM_ALIVE!!
-		if (!PRIM_ALIVE)*/
-
-
-
+	if (child_pid!=0)
+	{
+		/*Burn,rape and kill primary_service (child); it's not responding */
+		kill(child_pid,SIGKILL);
+		waitpid(child_pid,NULL,0);
+	}
+	new_primary_service(count);//get the backup rolling as new primary and init it with the last known counter status
 
 }

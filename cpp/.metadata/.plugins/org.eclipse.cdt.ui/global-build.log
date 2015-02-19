@@ -1869,3 +1869,1419 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
 Finished building target: exercise6_phoenix
  
+04:13:32 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘void new_primary_service(int)’:
+../src/main.cpp:105:14: error: ‘primary’ was not declared in this scope
+   primary(tid);
+              ^
+make: *** [src/main.o] Error 1
+04:14:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:14:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:15:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:15:58 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:16:36 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:17:03 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:18:00 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:18:40 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:38:00 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:42:35 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:43:02 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:44:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:45:39 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:47:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:48:06 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:49:30 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:49:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:50:29 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+04:53:34 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:53:59 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+04:54:15 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+04:54:43 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:54:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+04:56:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:56:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+04:57:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘void thread_worker2(int)’:
+../src/main.cpp:38:41: error: invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]
+  IPC_Client_Unicast::Client client(42000);
+                                         ^
+In file included from ../src/main.cpp:15:0:
+../src/IPC_Client.h:31:4: error:   initializing argument 1 of ‘IPC_Client_Unicast::Client::Client(const char*)’ [-fpermissive]
+    Client(const char * remote_host_and_port);
+    ^
+make: *** [src/main.o] Error 1
+04:58:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+04:59:24 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+05:00:10 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:00:28 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+05:01:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:01:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:03:16 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:04:16 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:55:33 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:55:36 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+05:57:34 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+05:58:02 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+06:00:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:00:45 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:01:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:01:09 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+06:02:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:02:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:07:56 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:09:50 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+06:10:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:10:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:113:44: error: invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]
+  IPC_Client_Unicast::Client broadcast(42000);
+                                            ^
+In file included from ../src/main.cpp:15:0:
+../src/IPC_Client.h:31:4: error:   initializing argument 1 of ‘IPC_Client_Unicast::Client::Client(const char*)’ [-fpermissive]
+    Client(const char * remote_host_and_port);
+    ^
+make: *** [src/main.o] Error 1
+06:11:07 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:13:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:13:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:15:24 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:15:48 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:129:6: warning: unused variable ‘tid’ [-Wunused-variable]
+  int tid=0;
+      ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:16:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:19:20 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:76:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:22:12 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:22:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+06:27:22 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:28:41 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:29:38 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:36:13 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:38:53 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:53:25 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:55:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/IPC_Server.h:18:0,
+                 from ../src/main.cpp:14:
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:144:57: error: cannot pass objects of non-trivially-copyable type ‘std::string {aka class std::basic_string<char>}’ through ‘...’
+   ACE_DEBUG((LM_DEBUG, "GET DATA %s",listener.get_data()));
+                                                         ^
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:100:17: note: in definition of macro ‘ACE_DEBUG’
+     ace___->log X; \
+                 ^
+make: *** [src/main.o] Error 1
+06:55:22 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:55:45 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+06:56:41 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:57:00 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:57:44 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:58:01 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+06:58:17 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:58:34 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+06:59:29 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:00:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:02:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/IPC_Server.h:18:0,
+                 from ../src/main.cpp:14:
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:144:24: warning: unknown escape sequence: '\d' [enabled by default]
+   ACE_DEBUG((LM_DEBUG, "GET DATA %s\d\n",atoi(listener.get_data().c_str())));
+                        ^
+/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Log_Msg.h:100:17: note: in definition of macro ‘ACE_DEBUG’
+     ace___->log X; \
+                 ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:02:26 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+07:04:01 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:04:42 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:05:41 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:06:04 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:07:58 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:09:28 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:10:30 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:13:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:21:35 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:25:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:26:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:29:08 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:29:39 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:30:53 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:33:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:34:54 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:35:39 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:162:28: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   if (miss_check_counter=10)//miss_rate_second>5)
+                            ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:35:58 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:36:44 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:37:54 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:38:28 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:38:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:39:46 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:40:26 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:40:41 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:40:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+07:42:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:45:25 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:46:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:47:29 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:48:12 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:48:49 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:50:52 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:51:25 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:52:09 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:162:28: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   if (miss_check_counter=20);//miss_rate_second>10)
+                            ^
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:54:25 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:55:10 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
+07:56:22 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: exercise6_phoenix
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
+Finished building target: exercise6_phoenix
+ 
