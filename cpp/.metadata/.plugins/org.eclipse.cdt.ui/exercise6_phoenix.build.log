@@ -1,35 +1,6 @@
-20:46:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+13:38:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Unicast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:42:11: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-   ssize_t bytes_received=0;
-           ^
-../src/IPC_Client.cpp: In member function ‘int IPC_Client_Broadcast::Client::accept_data(std::string)’:
-../src/IPC_Client.cpp:143:12: warning: unused variable ‘bytes_received’ [-Wunused-variable]
-    ssize_t bytes_received=0;
-            ^
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -D__GNU_EXPERIMENTAL_CXX0X__=__GNU_EXPERIMENTAL_CXX0X__ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -pthread -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:37:6: warning: unused variable ‘voidPtrArg1’ [-Wunused-variable]
-  int voidPtrArg1=0;
-      ^
-../src/main.cpp:38:6: warning: unused variable ‘voidPtrArg2’ [-Wunused-variable]
-  int voidPtrArg2=0;
-      ^
-Finished building: ../src/main.cpp
- 
-Building target: exercise6_phoenix
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -std=c++11 -pthread -o "exercise6_phoenix"  ./src/IPC_Client.o ./src/IPC_Server.o ./src/main.o   -lpthread -lACE
-Finished building target: exercise6_phoenix
- 
+make: Nothing to be done for `all'.
 
-20:46:20 Build Finished (took 1s.558ms)
+13:38:05 Build Finished (took 60ms)
 

@@ -9,10 +9,14 @@
 #define ICP_SERVER_H_
 
 
-/*
-#define ACE_NDEBUG 0
-#define ACE_NLOGGING 0
-*/
+
+#ifndef ACE_NDEBUG
+#define ACE_NDEBUG 1
+#endif
+#ifndef ACE_NLOGGING
+#define ACE_NLOGGING 1
+#endif
+
 
 
 #include "ace/Log_Msg.h"

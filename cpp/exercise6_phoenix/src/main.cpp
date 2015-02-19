@@ -6,10 +6,12 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-/*
-#define ACE_NDEBUG 0
-#define ACE_NLOGGING 0
-*/
+#ifndef ACE_NDEBUG
+#define ACE_NDEBUG 1
+#endif
+#ifndef ACE_NLOGGING
+#define ACE_NLOGGING 1
+#endif
 
 #include "IPC_Server.h"
 #include "IPC_Client.h"
@@ -115,10 +117,10 @@ void primary_service(int count)
 
 	while(true)
 	{
-		udp.send_data(std::to_string(count));//"ALIVE");
-		// std::this_thread::sleep_for(std::chrono::milliseconds(500));
-		count++;
+		udp.send_data(std::to_string(count+1));//"ALIVE");
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		std::cout<<count<<endl;
+		count++;
 	}
 
 	udp.~Client();
@@ -126,6 +128,7 @@ void primary_service(int count)
 
 void listener(int child_pid)
 {
+	int fake_primary_fail=0;
 	int count=0;
 	ACE_DEBUG((LM_DEBUG, "LISTENER IS ALIVE\n"));
 	IPC_Server::Server listener(42000);
@@ -134,15 +137,15 @@ void listener(int child_pid)
 	unsigned int miss_check_counter=0;
 
 
-	/*wait to launch primary*/
+	/*check whether primary is alive*/
 	while(true)
 	{
 		ACE_DEBUG((LM_DEBUG, "miss : %d\n",miss));
-		/*check whether primary is alive*/
+
 		if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
 			miss++;
 
-		count=atoi(listener.get_data().c_str())+1;
+		count=atoi(listener.get_data().c_str());
 
 		ACE_DEBUG((LM_DEBUG, "GET COUNTER DATA FROM PRIMARY:  %d\n",count));
 
@@ -158,19 +161,25 @@ void listener(int child_pid)
 			miss_check_counter=0;
 		}
 
+		if (fake_primary_fail>0)
+			fake_primary_fail++;
+
 		/*10% miss rate acceptable?*/
-		if (miss_rate_second>10)
+		if ((miss_rate_second>10) || (fake_primary_fail==5))
 		{
 			ACE_DEBUG((LM_DEBUG, "Miss rate: %d assume primary process is dead; spawn new..\n",miss_rate_second));
+			cout<<"FAKE PRIMARY DEATH: Miss rate: "<<miss_rate_second<<" assume primary process is dead; spawn new..\n";
 			listener.~Server();
-			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			if (fake_primary_fail>0)
+				fake_primary_fail=0;
 			break;
 		}
 	}
 
 	if (child_pid!=0)
 	{
-		/*Burn,rape and kill primary_service (child); it's not responding */
+		/*Burn,rape and kill primary_service (child process); it's not responding */
 		kill(child_pid,SIGKILL);
 		waitpid(child_pid,NULL,0);
 	}
