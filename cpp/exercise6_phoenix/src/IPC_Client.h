@@ -8,6 +8,13 @@
 #ifndef IPC_CLIENT_H_
 #define IPC_CLIENT_H_
 
+
+/*
+#define ACE_NDEBUG 1
+#define ACE_NLOGGING 1
+*/
+
+
 #include "ace/Log_Msg.h"
 #include "ace/SOCK_Dgram.h"
 #include "ace/SOCK_Dgram_Bcast.h"

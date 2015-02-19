@@ -29,7 +29,7 @@ namespace IPC_Client_Unicast
 
 	Client::~Client()
 	{
-		delete this->data_buff_;
+		delete [] this->data_buff_;
 		socket_.close();
 	}
 

@@ -1,0 +1,68 @@
+//============================================================================
+// Name       : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include "IPC_Server.h"
+#include "IPC_Client.h"
+
+//#include <pthread.h>
+#include <thread>
+#include <memory>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+void  *thread_worker1(void* voidPtr)
+{
+		IPC_Server::Server srv(42000);
+		srv.accept_data();
+		srv.~Server();
+
+	return NULL;
+}
+
+void  *thread_worker2(void* voidPtr)
+{
+		IPC_Client_Unicast::Client client("localhost:42000");
+		client.send_data("0123456789");
+		client.~Client();
+
+	return NULL;
+}
+
+int main(int argc, char* argv[])
+{
+
+	int voidPtrArg1=0;
+	int voidPtrArg2=0;
+	vector<thread> mythreads;
+
+
+//	pthread_t thread1;
+//	pthread_t thread2;
+//	pthread_create(&thread1,NULL,thread_worker1,NULL);
+//	pthread_create(&thread2,NULL,thread_worker2,NULL);
+//	/* wait for the second thread to finish */
+//	if(pthread_join(thread1, NULL) && pthread_join(thread2, NULL))
+//	{
+//		cout<<"Error joining thread\n";
+//		return -1;
+//	}
+
+	for (int i=0; i<4; i++)
+	{
+	        //myThreads[i].start(exec, i); //?? create, start, run
+	        //new (&myThreads[i]) std::thread(exec, i); //I tried it and it seems to work, but it looks like a bad design or an anti-pattern.
+	}
+
+	 for (int i=0; i<4; i++)
+	 {
+	        myThreads[i].join();
+	 }
+
+	return 0;
+}
