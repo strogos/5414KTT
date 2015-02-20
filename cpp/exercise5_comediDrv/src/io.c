@@ -48,18 +48,20 @@ int io_init(ElevatorType type){
 
 
 
-void io_set_bit(int channel){
-    switch(elevatorType){
-    case ET_comedi:
-        comedi_dio_write(it_g, channel >> 8, channel & 0xff, 1);
-        break;
+void io_set_bit(int channel)
+{
+    switch(elevatorType)
+    {
+		case ET_comedi:
+			comedi_dio_write(it_g, channel >> 8, channel & 0xff, 1);
+			break;
 
-    case ET_simulation:
-        simulation_dio_write(channel, 1);
-        break;
+		case ET_simulation:
+			simulation_dio_write(channel, 1);
+			break;
 
-    default:
-        break;
+		default:
+			break;
     }
 }
 

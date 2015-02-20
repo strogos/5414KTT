@@ -1,6 +1,6 @@
-13:38:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+01:24:13 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 make: Nothing to be done for `all'.
 
-13:38:05 Build Finished (took 60ms)
+01:24:13 Build Finished (took 77ms)
 

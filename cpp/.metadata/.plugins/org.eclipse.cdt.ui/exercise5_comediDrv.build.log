@@ -1,0 +1,15 @@
+04:10:59 **** Incremental Build of configuration Debug for project exercise5_comediDrv ****
+make all 
+Building file: ../src/elevator_driver.cpp
+Invoking: Cross G++ Compiler
+c++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/elevator_driver.d" -MT"src/elevator_driver.d" -o "src/elevator_driver.o" "../src/elevator_driver.cpp"
+Finished building: ../src/elevator_driver.cpp
+ 
+Building target: exercise5_comediDrv
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -lcomedi -lm simulation_elevator.a -std=c++11 -o "exercise5_comediDrv"  ./src/Elevator.o ./src/elev.o ./src/elevator_driver.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lm
+Finished building target: exercise5_comediDrv
+ 
+
+04:11:00 Build Finished (took 757ms)
+

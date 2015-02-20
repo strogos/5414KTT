@@ -181,6 +181,7 @@ void listener(int child_pid)
 	{
 		/*Burn,rape and kill primary_service (child process); it's not responding */
 		kill(child_pid,SIGKILL);
+		/*Wait for primary_service (child process to terminate)*/
 		waitpid(child_pid,NULL,0);
 	}
 	new_primary_service(count);//get the backup rolling as new primary and init it with the last known counter status

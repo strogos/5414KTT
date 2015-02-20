@@ -1,6 +1,6 @@
 /*
  * elevator.cpp
- *
+ *	TODO: Implement elevator API state machine here
  *  Created on: Feb 11, 2015
  *      Author: bengteh
  */

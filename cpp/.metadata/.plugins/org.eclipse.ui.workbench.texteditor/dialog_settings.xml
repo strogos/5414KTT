@@ -3,28 +3,29 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="285" key="DIALOG_WIDTH"/>
 		<item value="664" key="DIALOG_Y_ORIGIN"/>
-		<item value="938" key="DIALOG_X_ORIGIN"/>
 		<item value="415" key="DIALOG_HEIGHT"/>
+		<item value="938" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="recv" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
+			<item value="elev_"/>
+			<item value="simu"/>
 			<item value="recv"/>
 			<item value="std"/>
 			<item value="WTF"/>
 			<item value="Data received from remote server"/>
 			<item value="Client"/>
 			<item value="main"/>
-			<item value="size"/>
-			<item value="BUFSIZ"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="Server"/>
 		</list>
 	</section>
