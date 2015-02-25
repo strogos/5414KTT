@@ -1,0 +1,6 @@
+gcc-4.6 -c -g -g -gnato -gnatwa -gnatQ -gnat05 -I- -gnatA /home/bengteh/workspace/ADA/exercise7-backward_error_recovery/src/exercise7.adb
+exercise7.adb:5:22: warning: no entities of "integer_text_io" are referenced
+exercise7.adb:110:30: warning: comparison with True is redundant
+completed 1 out of 1 (100%)...
+gnatbind -I- -x /home/bengteh/workspace/ADA/exercise7-backward_error_recovery/obj/exercise7.ali
+gnatlink /home/bengteh/workspace/ADA/exercise7-backward_error_recovery/obj/exercise7.ali -g -o /home/bengteh/workspace/ADA/exercise7-backward_error_recovery/obj/exercise7

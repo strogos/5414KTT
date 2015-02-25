@@ -1,0 +1,40 @@
+<?xml version="1.0" ?><GPS>
+<!-- This is an XML model for launching gnatinspect, the cross-references parser -->
+<target-model name="gnatinspect" category="">
+   <description>Launch cross-reference recompilation</description>
+   <icon>gps-custom-build</icon>
+   <output-parsers>
+       gnatinspect_onexit_hook
+   </output-parsers>
+   <is-run>True</is-run>
+   <switches command=""/>
+</target-model>
+
+<!-- Targets to launch cross-reference recompilation  -->
+<target model="gnatinspect" category="_Project" name="Recompute _Xref info">
+    <in-toolbar>FALSE</in-toolbar>
+    <in-menu>FALSE</in-menu>
+    <in-contextual-menus-for-projects>False</in-contextual-menus-for-projects>
+    <icon>gps-compute-xref</icon>
+    <launch-mode>MANUALLY_WITH_NO_DIALOG</launch-mode>
+    <read-only>TRUE</read-only>
+    <output-parsers>
+        end_of_build
+        output_chopper
+        utf_converter
+        progress_parser
+        gnatinspect_onexit_hook
+    </output-parsers>
+    <command-line>
+       <arg>gnatinspect</arg>
+       <arg>-d</arg>
+       <arg>--exit</arg>
+       <arg>--tracefile=%GPS/gnatinspect_traces.cfg</arg>
+       <arg>--encoding=iso-8859-1</arg>
+       <arg>-P%PP</arg>
+       <arg>%X</arg>
+       <arg>%subdirsarg</arg>
+    </command-line>
+</target>
+</GPS>
+

@@ -1,0 +1,5 @@
+#
+#Thu Feb 26 00:58:35 CET 2015
+buildall_history_0=%builder -d %eL -P%PP %X
+cleanall_history_0=%gprclean -r %eL -P%PP %X
+compilefile_history_0=%builder -ws -c -u %eL -P%PP %X %fp
