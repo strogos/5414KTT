@@ -40,7 +40,8 @@ procedure exercise7 is
             Aborted:=False;
             --Should_Commit:=False;
          end if;
-
+         
+         --if a thread aboorts: disallow commits and so we can "backward recover"
          if Aborted then
             Should_Commit:=False;
          end if;
