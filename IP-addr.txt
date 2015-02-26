@@ -7,6 +7,21 @@
 //arbeidsplass 1 (DEFAULT)
 129.241.187.140
 
+//gnatbench for eclipse
+http://libre.adacore.com/download/configurations
+direct:
+http://mirrors.cdn.adacore.com/art/50dbd7482c93a86c035b8842140d398b8a96496d
+
+
+
+
+
+
+
+
+
+
+
 TTK4125 ...også et heisprosjekt..
 
 TODO:: 
