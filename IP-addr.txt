@@ -4,6 +4,9 @@
 //arbeidsplass 16
 129.241.187.147
 
+//arbeidsplass 1 (DEFAULT)
+129.241.187.140
+
 TTK4125 ...også et heisprosjekt..
 
 TODO:: 
