@@ -18,8 +18,17 @@ http://mirrors.cdn.adacore.com/art/50dbd7482c93a86c035b8842140d398b8a96496d
 
 
 
+Jap
+{
+	otsu kyoto travel time ~10 min! (but not to hote)-> take Kosei Line (stop OGOTOONSEN or OGOTO-ONSEN ~21min)
+	
+	http://www.hyperdia.com/en/cgi/en/search.html?dep_node=KYOTO&arv_node=OTSU&via_node01=&via_node02=&via_node03=&year=2015&month=03&day=10&hour=19&minute=18&search_type=0&search_way=&transtime=undefined&sort=0&max_route=5&faretype=0&ship=off&lmlimit=null&search_target=route&facility=reserved&sum_target=7
+	http://jprail.com/travel-informations/basic-informations/station-information/kyoto-station-guide-how-to-transfer-among-shinkansen-kintetsu-subway-and-jr-local-trains.html
+	http://www.bae.se/kitayama/kosei.htm#R49L2508
 
-
+	 JR Central (Tokaido Shinkansen to Tokyo, Nagoya, Shin-Osaka), JR west (Kyoto line, Biwako line, Nara line, Sagano line, Haruka and many more)
+	 are covered by the Rail Pass..
+}
 
 
 TTK4125 ...også et heisprosjekt..
