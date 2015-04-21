@@ -1,0 +1,23 @@
+/*
+ * elevator.cpp
+ *	TODO: Implement elevator API state machine here
+ *  Created on: Feb 11, 2015
+ *      Author: bengteh
+ */
+
+#include "Control.h"
+
+
+namespace Elevator
+{
+	Control::Control()
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+	Control::~Control()
+	{
+		// TODO Auto-generated destructor stub
+	}
+
+}

@@ -11,7 +11,8 @@
 //	#include"elev.h"
 //}
 
-#include "Ace_event_test.cpp"
+#include "ACE_event_test.h"
+#include "Ace_Task_producer_consumer_test.h"
 #include <unistd.h>//sleep
 #include <iostream>
 #include "Driver.h"//A quick class wrapper based on elev.c;
@@ -21,11 +22,12 @@ using namespace std;
 
 int test_driver();
 int test_ACE_event_handler();
+int test_ACE_Task();
 
 int main()
 {
 
-	test_ACE_event_handler();
+
 
 	return 0;
 }
@@ -85,4 +87,17 @@ int test_ACE_event_handler()
 	/*start the reactors event loop*/
 	while(true)
 		ACE_Reactor::instance()->handle_events();
+}
+
+int test_ACE_Task()
+{
+	Consumer *consumer = new Consumer;
+	Producer *producer = new Producer(consumer);
+
+	producer->open(0);
+	consumer->open(0);
+	//Wait for all the tasks to exit.
+	ACE_Thread_Manager::instance()->wait();
+
+	return 0;
 }

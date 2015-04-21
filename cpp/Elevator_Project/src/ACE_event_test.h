@@ -1,3 +1,14 @@
+/*
+ * ACE_event_test.h
+ *
+ *  Created on: Apr 21, 2015
+ *      Author: bengteh
+ */
+
+#ifndef ACE_EVENT_TEST_H_
+#define ACE_EVENT_TEST_H_
+
+
 #include <signal.h>
 #include "ace/Reactor.h"
 #include "ace/Event_Handler.h"
@@ -25,3 +36,7 @@ class MyEventHandler : public ACE_Event_Handler
 		return 0;
 	}
 };
+
+
+
+#endif /* ACE_EVENT_TEST_H_ */
