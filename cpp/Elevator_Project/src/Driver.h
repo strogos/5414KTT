@@ -5,6 +5,9 @@
  *
  *  Created on: Feb 19, 2015
  *      Author: bengteh
+ *
+ *     Note: this file is pretty much just a direct copy of the elev c-module
+ *
  */
 
 #ifndef DRIVER_H_
@@ -62,8 +65,11 @@ namespace Elevator
 			Driver(int min_floor, int max_floor);
 			~Driver();
 
-		    int get_min_floor() const {return this->min_floor_;}
-		    int get_max_floor() const {return this->max_floor_;}
+		    int get_min_floor() const {return min_floor_;}
+		    int get_max_floor() const {return max_floor_;}
+			bool is_moving();
+			tag_motor_direction get_movement();
+			tag_motor_direction get_last_movement();
 
 		    /**
 			  Initialize elevator.
@@ -152,10 +158,15 @@ namespace Elevator
 			void set_button_lamp(button_type_t button, int floor, int value);
 
 
+
+
+
 		private:
 		    const int min_floor_;
 		    const int max_floor_;
-		    tag_motor_direction last_direction_;//does nothing yet
+		    tag_motor_direction last_direction_;
+		    tag_motor_direction direction_;
+		    bool moving_;
 
 	};
 

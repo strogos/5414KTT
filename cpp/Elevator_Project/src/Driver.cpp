@@ -44,10 +44,11 @@ namespace Elevator
 	{
 		stop_elevator();
 	}
-	Driver::~Driver()
-	{
-		stop_elevator();
-	}
+	Driver::~Driver() {stop_elevator();}
+
+	tag_motor_direction Driver::get_movement(){return direction_;}
+
+	tag_motor_direction Driver::get_last_movement() {return last_direction_;}
 
 	int Driver::init(ElevatorType session)
 	{
