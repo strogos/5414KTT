@@ -10,6 +10,7 @@
 //{
 //	#include"elev.h"
 //}
+#pragma once
 
 #include "Control.h"
 
@@ -29,7 +30,7 @@ int test_ACE_Task();
 int main()
 {
 	ACE_DEBUG((LM_DEBUG,
-											   "in main"));
+					   "in main\n"));
 	Elevator::Control test;
 
 	return 0;

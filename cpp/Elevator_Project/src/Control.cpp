@@ -6,24 +6,24 @@
  */
 
 #include "Control.h"
+#include "Driver.h"
+#include "Elevator.h"
 
+#include "ace/Log_Msg.h"
 
 namespace Elevator
 {
 	Control::Control()
 	{
 		ACE_DEBUG((LM_DEBUG,
-								   "in control constructor\n"));
+						   "in control constructor\n"));
 		elevator_=new Elevator(this);
 
 
 		//handle elevator IO using the signal/slots principle
 	//	ctrl_signals->signal_button_press.connect()
 
-
 	}
-
-
 
 	Control::~Control()
 	{
@@ -37,15 +37,15 @@ namespace Elevator
 							 "in slot for button press\n"));
 			switch (button)
 			{
-				case button_type_t::BUTTON_CALL_DOWN:
+				case BUTTON_CALL_DOWN:
 					ACE_DEBUG((LM_DEBUG,
 							   "User pressed CALL DOWN button\n"));
 					break;
-				case button_type_t::BUTTON_CALL_UP:
+				case BUTTON_CALL_UP:
 								ACE_DEBUG((LM_DEBUG,
 										   "User pressed CALL UP button\n"));
 								break;
-				case button_type_t::BUTTON_COMMAND:
+				case BUTTON_COMMAND:
 								ACE_DEBUG((LM_DEBUG,
 										   "User pressed GO TO FLOOR button\n"));
 								break;

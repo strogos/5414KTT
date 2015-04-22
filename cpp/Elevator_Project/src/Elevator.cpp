@@ -5,8 +5,12 @@
  *      Author: bengteh
  */
 
-
+#include "Control.h"
+#include "Driver.h"
 #include "Elevator.h"
+
+
+#include "ace/Log_Msg.h"
 
 namespace Elevator
 {
@@ -16,13 +20,12 @@ namespace Elevator
 												   "in elevator constructor\n"));
 
 		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
-//		ctrl_signals_->signal_button_press.connect(ctrl_handle,&Control::slot_button_press);
-//
-//		ctrl_signals_->signal_button_press.emit(button_type_t::BUTTON_CALL_UP);
-
 		ctrl_signals_= new Control_Signals;
-		ctrl_signals_->signal_floor_prox.connect(ctrl_handle,&Control::slot_floor_prox);
 
+		ctrl_signals_->signal_button_press.connect(ctrl_handle,&Control::slot_button_press);
+		ctrl_signals_->signal_button_press.emit(button_type_t::BUTTON_CALL_UP);
+
+		ctrl_signals_->signal_floor_prox.connect(ctrl_handle,&Control::slot_floor_prox);
 		ctrl_signals_->signal_floor_prox.emit(1);
 
 	}

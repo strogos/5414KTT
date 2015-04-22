@@ -13,9 +13,8 @@
 #ifndef DRIVER_H_
 #define DRIVER_H_
 
-//#include <tuple>
 #include <limits>
-#include "Elevator.h"
+
 extern "C"
 {
 	#include "io.h"
@@ -25,12 +24,15 @@ namespace Elevator
 {
 	enum class Button_t : int {CALL_UP=0,CALL_DOWN=1,GOTO_FLOOR=2};
 	enum class Direction_t : int {DOWN=-1,STOP=0,UP=1};
-	typedef enum tag_lamp_type {
+
+	typedef enum tag_lamp_type : int
+	{
 	    BUTTON_CALL_UP = 0,
 	    BUTTON_CALL_DOWN = 1,
 	    BUTTON_COMMAND = 2
 	} button_type_t;
-	typedef enum tag_motor_direction {
+	typedef enum tag_motor_direction : int
+	{
 	    DIRN_DOWN = -1,
 	    DIRN_STOP = 0,
 	    DIRN_UP = 1

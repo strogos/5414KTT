@@ -7,15 +7,13 @@
 #ifndef CONTROL_H_
 #define CONTROL_H_
 
-#include "Driver.h"
-#include "Elevator.h"
+
 #include "tools/signalslot/W_Slot.h"
 #include "tools/signalslot/W_Signal.h"
 
 
 //#include <ace/OS.h>
 #include "ace/Task.h"
-#include "ace/Log_Msg.h"
 //#include <ace/Message_Block.h>
 //#include <ace/Reactor.h>
 //#include <ace/Event_Handler.h>
@@ -25,9 +23,13 @@
 
 namespace Elevator
 {
+	/*FWD DECLARATIONS*/
 	class Elevator;
+	enum tag_lamp_type : int;
+	typedef tag_lamp_type button_type_t;
 
-	class Control : public ACE_Task<ACE_MT_SYNCH>, //Elevator control task
+	/*CONTROL [ace]TASK */
+	class Control : //public ACE_Task<ACE_MT_SYNCH>,
 		            public W::Slot
 			     // public ACE_Event_Handler
 	{

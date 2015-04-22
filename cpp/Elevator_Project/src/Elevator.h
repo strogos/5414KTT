@@ -8,45 +8,41 @@
 #ifndef ELEVATOR_H_
 #define ELEVATOR_H_
 
-
-#include "Control.h"
-#include "Driver.h"
-
 #include "tools/signalslot/W_Slot.h"
 #include "tools/signalslot/W_Signal.h"
 
-#include "ace/Log_Msg.h"
 #include "ace/Task.h"
 //#include <ace/Reactor.h>
 //#include <ace/Event_Handler.h>
 
 namespace Elevator
 {
-	class Control; //fwd decl. Control class so that the Elevator constr. is usable
+	/*FWD DECLARATIONS*/
+	class Control;
+	enum tag_lamp_type : int;
+	typedef tag_lamp_type button_type_t;
 
 	struct Control_Signals
 	{
-		/*thread safe signals*/
-	//	W::Signal<button_type_t> signal_button_press;  //signal for user input
+		/*thread-safe*/
+		W::Signal<button_type_t> signal_button_press;  //signal for user input
 		W::Signal<int> signal_floor_prox;              //signal for floor proximity sensors
 		W::Signal<int> signal_stop_prox;               //signal for stop proximity sensors
 		W::Signal<int> signal_obstruct_prox;           //signal for obstruction proximity sensor
-
 	};
-	class Elevator : public ACE_Task<ACE_MT_SYNCH>, public W::Slot
+
+	/*ELEVATOR [ace]TASK */
+	class Elevator : public ACE_Task<ACE_MT_SYNCH>,
+	                 public W::Slot
 	{
 		public:
-	//		Elevator();
 			Elevator(Control * ctrl_handle);
 			~Elevator();
-
-
 
 			int start();
 
 		private:
 			Control_Signals *ctrl_signals_=nullptr;
-
 
 	};
 }
