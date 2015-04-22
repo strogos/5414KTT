@@ -10,13 +10,23 @@
 
 namespace Elevator
 {
-	Elevator::Elevator()
+	Elevator::Elevator(Control * ctrl_handle)// : test_(button_type_t::BUTTON_CALL_DOWN)
 	{
-		//instantiate event handler
+		ACE_DEBUG((LM_DEBUG,
+												   "in elevator constructor\n"));
 
+		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+//		ctrl_signals_->signal_button_press.connect(ctrl_handle,&Control::slot_button_press);
+//
+//		ctrl_signals_->signal_button_press.emit(button_type_t::BUTTON_CALL_UP);
+
+		ctrl_signals_= new Control_Signals;
+		ctrl_signals_->signal_floor_prox.connect(ctrl_handle,&Control::slot_floor_prox);
+
+		ctrl_signals_->signal_floor_prox.emit(1);
 
 	}
-	Elevator::~Elevator(){}
-
+	Elevator::~Elevator(){delete ctrl_signals_;}
+	int Elevator::start(){return 0;}
 }
 

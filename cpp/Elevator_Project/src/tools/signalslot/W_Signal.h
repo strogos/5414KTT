@@ -3,8 +3,8 @@
 
 #include <list>
 
-#include "W_SignalBase.h"
-#include "W_Connection.h"
+#include "../signalslot/W_Connection.h"
+#include "../signalslot/W_SignalBase.h"
 
 namespace W {
 

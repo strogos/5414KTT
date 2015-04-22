@@ -9,32 +9,46 @@
 
 #include "Driver.h"
 #include "Elevator.h"
+#include "tools/signalslot/W_Slot.h"
+#include "tools/signalslot/W_Signal.h"
 
-#include <ace/OS.h>
-#include <ace/Task.h>
-#include <ace/Message_Block.h>
-#include <ace/Reactor.h>
-#include <ace/Event_Handler.h>
-#include <ace/Thread_Manager.h>
+
+//#include <ace/OS.h>
+#include "ace/Task.h"
+#include "ace/Log_Msg.h"
+//#include <ace/Message_Block.h>
+//#include <ace/Reactor.h>
+//#include <ace/Event_Handler.h>
+//#include <ace/Thread_Manager.h>
 
 
 
 namespace Elevator
 {
-	class Control : //public ACE_Task<ACE_MT_SYNCH>//, //Elevator control task
-                   public ACE_Event_Handler
+	class Elevator;
+
+	class Control : public ACE_Task<ACE_MT_SYNCH>, //Elevator control task
+		            public W::Slot
+			     // public ACE_Event_Handler
 	{
 		public:
 			Control();
 			~Control();
 
-			int handle_signal(button_type_t button_pressed);
+			/*FUNCTIONS*/
+			//function slots to to launch on signal
+			void slot_button_press(button_type_t button);
+			void slot_floor_prox(int floor);
+
+
 		private:
-			Driver *driver_;
-			Elevator *elevator_;
+			//Driver *driver_;
+			Elevator *elevator_=nullptr;
+		//	Control_Signals * ctrl_signals=nullptr;
 
 			//*local network socket handlers
 			//*elevator network handler
+
 
 
 

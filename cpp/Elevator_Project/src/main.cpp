@@ -11,6 +11,8 @@
 //	#include"elev.h"
 //}
 
+#include "Control.h"
+
 #include "ACE_event_test.h"
 #include "Ace_Task_producer_consumer_test.h"
 #include <unistd.h>//sleep
@@ -26,8 +28,9 @@ int test_ACE_Task();
 
 int main()
 {
-
-
+	ACE_DEBUG((LM_DEBUG,
+											   "in main"));
+	Elevator::Control test;
 
 	return 0;
 }

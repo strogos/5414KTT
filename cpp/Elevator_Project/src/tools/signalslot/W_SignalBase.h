@@ -3,9 +3,9 @@
 
 #include <list>
 
-#include "W_ConnectionBase.h"
-#include "W_Mutex.h"
-#include "W_Slot.h"
+#include "../signalslot/W_ConnectionBase.h"
+#include "../signalslot/W_Mutex.h"
+#include "../signalslot/W_Slot.h"
 
 namespace W {
 

@@ -15,6 +15,7 @@
 
 namespace Elevator
 {
+class Elevator;
 	//TODO IF TIME: get rid of arrays as it hinders portability
 	static const int N_FLOORS = 4;
 	static const int N_BUTTONS = 3;

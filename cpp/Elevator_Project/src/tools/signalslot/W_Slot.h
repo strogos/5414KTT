@@ -3,7 +3,7 @@
 
 #include <set>
 
-#include "W_Mutex.h"
+#include "../signalslot/W_Mutex.h"
 
 namespace W {
     class __SignalBase;
@@ -55,8 +55,8 @@ namespace W {
  * Implementation
  * Solves circular dependency problems without separate .cpp file
  */
-#include "W_Slot.h"
-#include "W_SignalBase.h"
+#include "../signalslot/W_Slot.h"
+#include "../signalslot/W_SignalBase.h"
 
 namespace W {
 
