@@ -6,5 +6,17 @@
  */
 
 
+#include "Elevator.h"
 
+namespace Elevator
+{
+	Elevator::Elevator()
+	{
+		//instantiate event handler
+
+
+	}
+	Elevator::~Elevator(){}
+
+}
 

@@ -15,7 +15,10 @@ namespace Elevator
 {
 	class State //: public ACE_Data_Block
 	{
-		//use message queue
+		//use DAta block object and change udp to send message_block (essentially pointer to data blocks)?
+		//
+		//dataBlock=direction;
+		//dataBlock2=floor;
 	};
 }
 
