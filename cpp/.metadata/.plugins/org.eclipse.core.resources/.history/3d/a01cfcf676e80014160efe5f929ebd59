@@ -1,0 +1,21 @@
+/*
+ * Control.h
+ *
+ *  Created on: Feb 11, 2015
+ *      Author: bengteh
+ */
+
+#ifndef CONTROL_H_
+#define CONTROL_H_
+
+class Control
+{
+public:
+	Control();
+	~Control();
+private:
+
+
+};
+#endif /* CONTROL_H_ */
+

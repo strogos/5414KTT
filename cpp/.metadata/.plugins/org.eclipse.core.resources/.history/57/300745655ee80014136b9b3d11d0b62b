@@ -1,0 +1,101 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+//extern "C"
+//{
+//	#include"elev.h"
+//}
+
+#include "Ace_event_test.h"
+#include "Ace_Task_producer_consumer_test.h"
+#include <unistd.h>//sleep
+#include <iostream>
+#include "Driver.h"//A quick class wrapper based on elev.c;
+
+using namespace std;
+
+
+int test_driver();
+int test_ACE_event_handler();
+int test_ACE_Task();
+
+int main()
+{
+
+	test_ACE_event_handler();
+
+	return 0;
+}
+
+int test_driver()
+{
+	Elevator::Driver drv(1,4);
+
+	 // Initialize hardware
+	    if (!drv.init(ET_simulation))
+	    {
+	        cout<<"Unable to initialize elevator hardware!\n";
+	        return 1;
+	    }
+
+	    cout<<"Press STOP button to stop elevator and exit program.\n";
+
+	    drv.set_motor_direction(Elevator::DIRN_UP);
+
+	    while (1) {
+	        // Change direction when we reach top/bottom floor
+	        if (drv.get_floor_sensor_signal() == drv.get_max_floor() - 1)
+	        {
+	            drv.set_motor_direction(Elevator::DIRN_DOWN);
+	        } else if (drv.get_floor_sensor_signal() == 0)
+	        {
+	            drv.set_motor_direction(Elevator::DIRN_UP);
+	        }
+
+	        // Stop elevator and exit program if the stop button is pressed
+	        if (drv.get_stop_signal())
+	        {
+	            drv.set_motor_direction(Elevator::DIRN_STOP);
+	            break;
+	        }
+	        usleep(1000);
+	    }
+
+	    cout<<"DONE!\n";
+
+	    return 0;
+}
+
+int test_ACE_event_handler()
+{
+	MyEventHandler *eh = new MyEventHandler;
+	//Register the handler asking to call back when either SIGWINCH
+	//or SIGINT signals occur. Note that in both the cases we asked the
+	//Reactor to call back the same Event_Handler i.e., MyEventHandler.
+	//This is the reason why we had to write a switch statement in the
+	//handle_signal() method above. Also note that the ACE_Reactor is
+	//being used as a Singleton object (Singleton pattern)
+
+	ACE_Reactor::instance()->register_handler(SIGWINCH,eh);//eh to be called back on terminal window change
+	ACE_Reactor::instance()->register_handler(SIGINT,eh); // eh to be called back on interrupt signal
+
+	/*start the reactors event loop*/
+	while(true)
+		ACE_Reactor::instance()->handle_events();
+}
+
+int test_ACE_Task()
+{
+	Consumer *consumer = new Consumer;
+	Producer * producer = new Producer(consumer);
+
+	producer->open(0);
+	consumer->open(0);
+	//Wait for all the tasks to exit.	ACE_Thread_Manager::instance()->wait();
+
+}

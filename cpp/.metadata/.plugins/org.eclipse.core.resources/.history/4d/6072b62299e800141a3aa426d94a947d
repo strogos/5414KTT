@@ -1,0 +1,22 @@
+/*
+ * Elevator.cpp
+ *
+ *  Created on: Apr 22, 2015
+ *      Author: bengteh
+ */
+
+
+#include "Elevator.h"
+
+namespace Elevator
+{
+	Elevator::Elevator()
+	{
+		//instantiate event handler
+		Control *event_handler=new Control;
+		ACE_Reactor::instance()->register_handler()
+	}
+	Elevator::~Elevator(){}
+
+}
+

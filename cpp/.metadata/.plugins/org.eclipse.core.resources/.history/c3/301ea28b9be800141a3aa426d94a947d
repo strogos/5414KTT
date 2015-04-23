@@ -1,0 +1,40 @@
+/*
+ * Elevator.h
+ *
+ *  Created on: Apr 22, 2015
+ *      Author: bengteh
+ */
+
+#ifndef ELEVATOR_H_
+#define ELEVATOR_H_
+
+#include "tools/signalslot/W_Slot.h"
+#include "tools/signalslot/W_Signal.h"
+
+#include <ace/Log_Msg.h>
+#include <ace/Task.h>
+#include <ace/Reactor.h>
+#include <ace/Event_Handler.h>
+
+
+namespace Elevator
+{
+	class Elevator : public ACE_Task<ACE_MT_SYNCH>
+	{
+		public:
+			Elevator();
+			~Elevator();
+
+
+
+			void start();
+
+		private:
+			button_type_t test_;
+	};
+}
+
+
+
+
+#endif /* ELEVATOR_H_ */

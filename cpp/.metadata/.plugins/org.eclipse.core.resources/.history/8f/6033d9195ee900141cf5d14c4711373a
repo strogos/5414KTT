@@ -1,0 +1,84 @@
+/*
+ * Elevator.cpp
+ *
+ *  Created on: Apr 22, 2015
+ *      Author: bengteh
+ */
+
+#include "Control.h"
+#include "Driver.h"
+#include "Elevator.h"
+
+#include <unistd.h>//sleep
+#include "ace/Log_Msg.h"
+
+namespace Elevator
+{
+	Elevator::Elevator(Control * ctrl_handle)
+	       // : ctrl_handle_(ctrl_handle)
+	{
+		ACE_DEBUG((LM_DEBUG,
+						   "in elevator constructor\n"));
+
+		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+		ctrl_signal_(new Control_Signals))));
+		ctrl_signal_->button_press.connect(ctrl_handle,&Control::slot_button_press);
+//		ctrl_signals_->signal_button_press.connect(ctrl_handle,&Control::slot_button_press);
+//		ctrl_signals_->signal_button_press.emit(button_type_t::BUTTON_CALL_UP);
+//
+//		ctrl_signals_->signal_floor_sensor.connect(ctrl_handle,&Control::slot_floor_sensor);
+//		ctrl_signals_->signal_floor_sensor.emit(1);
+
+	}
+	Elevator::~Elevator(void){delete ctrl_signal_;}
+
+	int Elevator::open(void*)
+	{
+		ACE_DEBUG((LM_DEBUG,
+				            "(%t) Active Elevator Object opened \n"));
+		//activate object with a thread in it
+		activate(THR_NEW_LWP,1); //using a kernel thread
+		return 0;
+	}
+
+	int Elevator::close(u_long)
+	{
+		ACE_DEBUG((LM_DEBUG, "(%t) Active Elevator Object is being closed down \n"));
+		return 0;
+	}
+
+	int Elevator::svc(void)
+	{
+		poll_sensor_status(); //service the sensor/switch IO (this runs in it's own thread)
+		return 0; //service done; ACE_Task will call Elevator::close() and close off
+				  //any threads in this object
+	}
+
+	void Elevator::poll_sensor_status()
+	{
+		while(true)
+		{
+			ctrl_signal_->button_press.emit(button_type_t::BUTTON_CALL_UP);
+			usleep(1000000);
+			ctrl_signal_->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
+			usleep(1000000);
+			ctrl_signal_->button_press.emit(button_type_t::BUTTON_COMMAND);
+			usleep(1000000);
+			break;
+		}
+	}
+
+	void Elevator::read_floor_sensor()
+	{}
+
+	void Elevator::read_buttons()
+	{}
+
+	void Elevator::read_stop_sensor()
+	{}
+
+	void Elevator::read_obstruct_sensor()
+	{}
+
+}
+

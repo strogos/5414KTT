@@ -1,0 +1,35 @@
+/*
+ * elevator.cpp
+ *	TODO: Implement elevator API state machine here
+ *  Created on: Feb 11, 2015
+ *      Author: bengteh
+ */
+
+#include "Control.h"
+
+
+namespace Elevator
+{
+	Control::Control()
+	{
+		//elevator_=new Elevator(Control s);
+
+		//handle elevator IO using the signal/slots principle
+	//	ctrl_signals->signal_button_press.connect()
+
+
+	}
+
+
+
+	Control::~Control()
+	{
+		//delete elevator_;
+		// TODO Auto-generated destructor stub
+	}
+
+	void Control::slot_button_press(int n)
+	{
+		n=2;
+	}
+}
