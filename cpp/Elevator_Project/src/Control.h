@@ -29,13 +29,16 @@ namespace Elevator
 	typedef tag_lamp_type button_type_t;
 
 	/*CONTROL [ace]TASK */
-	class Control : //public ACE_Task<ACE_MT_SYNCH>,
+	class Control : public ACE_Task<ACE_MT_SYNCH>,
 		            public W::Slot
 			     // public ACE_Event_Handler
 	{
 		public:
 			Control();
 			~Control();
+
+
+
 
 			/*FUNCTIONS*/
 			//function slots to to launch on signal

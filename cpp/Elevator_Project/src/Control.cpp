@@ -18,6 +18,7 @@ namespace Elevator
 		ACE_DEBUG((LM_DEBUG,
 						   "in control constructor\n"));
 		elevator_=new Elevator(this);
+		elevator_->open(0);
 
 
 		//handle elevator IO using the signal/slots principle
@@ -27,7 +28,7 @@ namespace Elevator
 
 	Control::~Control()
 	{
-		delete elevator_;
+	//	delete elevator_;
 		// TODO Auto-generated destructor stub
 	}
 

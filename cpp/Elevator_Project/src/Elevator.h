@@ -19,16 +19,16 @@ namespace Elevator
 {
 	/*FWD DECLARATIONS*/
 	class Control;
+	class Driver;
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
-	struct Control_Signals
+	struct Control_Signals /*thread-safe*/
 	{
-		/*thread-safe*/
-		W::Signal<button_type_t> signal_button_press;  //signal for user input
-		W::Signal<int> signal_floor_prox;              //signal for floor proximity sensors
-		W::Signal<int> signal_stop_prox;               //signal for stop proximity sensors
-		W::Signal<int> signal_obstruct_prox;           //signal for obstruction proximity sensor
+		W::Signal<button_type_t>button_press;  //signal for user input
+		W::Signal<int> floor_prox;              //signal for floor proximity sensors
+		W::Signal<int> stop_prox;               //signal for stop proximity sensors
+		W::Signal<int> obstruct_prox;           //signal for obstruction proximity sensor
 	};
 
 	/*ELEVATOR [ace]TASK */
@@ -37,12 +37,26 @@ namespace Elevator
 	{
 		public:
 			Elevator(Control * ctrl_handle);
-			~Elevator();
+			~Elevator(void);
 
-			int start();
+			//Implement the ACE specific service init/termination methods
+			int open(void*);
+			int close (u_long);
+			int svc(void);
 
 		private:
-			Control_Signals *ctrl_signals_=nullptr;
+			/*VARIABLES*/
+			bool elevator_running_=false;
+			Control_Signals *ctrl_signal_=nullptr;
+			Control * ctrl_handle_=nullptr;
+			Driver * handle_driver_=nullptr;
+
+			/*FUNCTIONS*/
+			void poll_sensor_status();
+			void read_floor_prox();
+			void read_buttons();
+			void read_stop_prox();
+			void read_obstruct_prox();
 
 	};
 }

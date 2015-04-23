@@ -22,8 +22,8 @@ extern "C"
 
 namespace Elevator
 {
-	enum class Button_t : int {CALL_UP=0,CALL_DOWN=1,GOTO_FLOOR=2};
-	enum class Direction_t : int {DOWN=-1,STOP=0,UP=1};
+//	enum class Button_t : int {CALL_UP=0,CALL_DOWN=1,GOTO_FLOOR=2};
+//	enum class Direction_t : int {DOWN=-1,STOP=0,UP=1};
 
 	typedef enum tag_lamp_type : int
 	{
@@ -31,6 +31,7 @@ namespace Elevator
 	    BUTTON_CALL_DOWN = 1,
 	    BUTTON_COMMAND = 2
 	} button_type_t;
+
 	typedef enum tag_motor_direction : int
 	{
 	    DIRN_DOWN = -1,
@@ -38,27 +39,27 @@ namespace Elevator
 	    DIRN_UP = 1
 	} motor_direction_t;
 
-	struct Button
-	{
-		public:
-			Button()
-			{
-				this->button_type_=Button_t::CALL_UP;
-				this->floor_=std::numeric_limits<int>::min();
-			}
-			Button(Button_t button_type, int floor)
-			{
-				this->button_type_=button_type;
-				this->floor_=floor;
-			}
-
-			int get_floor() const {return this->floor_;}
-			Button_t get_button_type() const {return this->button_type_;}
-
-		private:
-			int floor_;
-			Button_t button_type_;
-	};
+//	struct Button
+//	{
+//		public:
+//			Button()
+//			{
+//				this->button_type_=Button_t::CALL_UP;
+//				this->floor_=std::numeric_limits<int>::min();
+//			}
+//			Button(Button_t button_type, int floor)
+//			{
+//				this->button_type_=button_type;
+//				this->floor_=floor;
+//			}
+//
+//			int get_floor() const {return this->floor_;}
+//			Button_t get_button_type() const {return this->button_type_;}
+//
+//		private:
+//			int floor_;
+//			Button_t button_type_;
+//	};
 
 	class Driver
 	{
@@ -69,7 +70,7 @@ namespace Elevator
 
 		    int get_min_floor() const {return min_floor_;}
 		    int get_max_floor() const {return max_floor_;}
-			bool is_moving();
+
 			tag_motor_direction get_movement();
 			tag_motor_direction get_last_movement();
 

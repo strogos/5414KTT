@@ -32,6 +32,10 @@ int main()
 	ACE_DEBUG((LM_DEBUG,
 					   "in main\n"));
 	Elevator::Control test;
+	test.open(0);
+
+	//Wait for all the tasks to exit.
+	ACE_Thread_Manager::instance()->wait();
 
 	return 0;
 }
@@ -91,6 +95,8 @@ int test_ACE_event_handler()
 	/*start the reactors event loop*/
 	while(true)
 		ACE_Reactor::instance()->handle_events();
+
+	return 0;
 }
 
 int test_ACE_Task()
