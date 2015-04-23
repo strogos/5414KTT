@@ -11,6 +11,7 @@
 #include "tools/signalslot/W_Slot.h"
 #include "tools/signalslot/W_Signal.h"
 
+#include <memory>
 #include "ace/Task.h"
 //#include <ace/Reactor.h>
 //#include <ace/Event_Handler.h>
@@ -26,9 +27,9 @@ namespace Elevator
 	struct Control_Signals /*thread-safe*/
 	{
 		W::Signal<button_type_t>button_press;  //signal for user input
-		W::Signal<int> floor_prox;              //signal for floor proximity sensors
-		W::Signal<int> stop_prox;               //signal for stop proximity sensors
-		W::Signal<int> obstruct_prox;           //signal for obstruction proximity sensor
+		W::Signal<int> floor_sensor;              //signal for floor proximity sensors
+		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
+		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
 	};
 
 	/*ELEVATOR [ace]TASK */
@@ -47,16 +48,16 @@ namespace Elevator
 		private:
 			/*VARIABLES*/
 			bool elevator_running_=false;
-			Control_Signals *ctrl_signal_=nullptr;
+			std::unique_ptr<Control_Signals> ctrl_signal_=nullptr;
 			Control * ctrl_handle_=nullptr;
 			Driver * handle_driver_=nullptr;
 
 			/*FUNCTIONS*/
 			void poll_sensor_status();
-			void read_floor_prox();
+			void read_floor_sensor();
 			void read_buttons();
-			void read_stop_prox();
-			void read_obstruct_prox();
+			void read_stop_sensor();
+			void read_obstruct_sensor();
 
 	};
 }

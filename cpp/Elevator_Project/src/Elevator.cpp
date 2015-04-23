@@ -15,22 +15,22 @@
 namespace Elevator
 {
 	Elevator::Elevator(Control * ctrl_handle)
-	       // : ctrl_handle_(ctrl_handle)
+	        : ctrl_handle_(ctrl_handle)
 	{
 		ACE_DEBUG((LM_DEBUG,
 						   "in elevator constructor\n"));
 
 		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
-		ctrl_signal_= new Control_Signals;
+		ctrl_signal_ = std::unique_ptr<Control_Signals>(new Control_Signals);
 		ctrl_signal_->button_press.connect(ctrl_handle,&Control::slot_button_press);
-//		ctrl_signals_->signal_button_press.connect(ctrl_handle,&Control::slot_button_press);
-//		ctrl_signals_->signal_button_press.emit(button_type_t::BUTTON_CALL_UP);
-//
-//		ctrl_signals_->signal_floor_prox.connect(ctrl_handle,&Control::slot_floor_prox);
-//		ctrl_signals_->signal_floor_prox.emit(1);
+		ctrl_signal_->floor_sensor.connect(ctrl_handle,&Control::slot_floor_sensor);
+
+
+//		ctrl_signals_->signal_floor_sensor.connect(ctrl_handle,&Control::slot_floor_sensor);
+//		ctrl_signals_->signal_floor_sensor.emit(1);
 
 	}
-	Elevator::~Elevator(void){delete ctrl_signal_;}
+	Elevator::~Elevator(void){}
 
 	int Elevator::open(void*)
 	{
@@ -68,16 +68,16 @@ namespace Elevator
 		}
 	}
 
-	void Elevator::read_floor_prox()
+	void Elevator::read_floor_sensor()
 	{}
 
 	void Elevator::read_buttons()
 	{}
 
-	void Elevator::read_stop_prox()
+	void Elevator::read_stop_sensor()
 	{}
 
-	void Elevator::read_obstruct_prox()
+	void Elevator::read_obstruct_sensor()
 	{}
 
 }

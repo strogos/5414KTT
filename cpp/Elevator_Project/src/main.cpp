@@ -32,8 +32,10 @@ int main()
 	ACE_DEBUG((LM_DEBUG,
 					   "in main\n"));
 	Elevator::Control test;
-	test.open(0);
+//	test.open(0);
 
+//	test_ACE_Task();
+//	test_driver();
 	//Wait for all the tasks to exit.
 	ACE_Thread_Manager::instance()->wait();
 
@@ -71,7 +73,7 @@ int test_driver()
 	            drv.set_motor_direction(Elevator::DIRN_STOP);
 	            break;
 	        }
-	        usleep(1000);
+	        usleep(1000000); std::cout<<"counting sec\n";
 	    }
 
 	    cout<<"DONE!\n";

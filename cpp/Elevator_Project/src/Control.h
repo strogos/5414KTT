@@ -28,6 +28,8 @@ namespace Elevator
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
+	enum class Serviced_Slot : int {ON_BUTTON, ON_FLOOR};
+
 	/*CONTROL [ace]TASK */
 	class Control : public ACE_Task<ACE_MT_SYNCH>,
 		            public W::Slot
@@ -37,22 +39,28 @@ namespace Elevator
 			Control();
 			~Control();
 
-
-
+			//Implement the ACE specific service init/termination methods
+			int open(void*);
+			int close (u_long);
+			int svc(void);
 
 			/*FUNCTIONS*/
 			//function slots to to launch on signal
 			void slot_button_press(button_type_t button);
-			void slot_floor_prox(int floor);
+			void slot_floor_sensor(int floor);
 
 
 		private:
 			//Driver *driver_;
 			Elevator *elevator_=nullptr;
 		//	Control_Signals * ctrl_signals=nullptr;
-
+			Serviced_Slot Slot_;
 			//*local network socket handlers
 			//*elevator network handler
+
+			/*FUNCTION*/
+			void svc_on_button_press();
+			void svc_on_floor_sensor();
 
 
 
