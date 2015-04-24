@@ -16,7 +16,7 @@
 //#include <ace/Reactor.h>
 //#include <ace/Event_Handler.h>
 
-namespace Elevator
+namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Control;
@@ -24,13 +24,6 @@ namespace Elevator
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
-	struct Control_Signals /*thread-safe*/
-	{
-		W::Signal<button_type_t>button_press;  //signal for user input
-		W::Signal<int> floor_sensor;              //signal for floor proximity sensors
-		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
-		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
-	};
 
 	/*ELEVATOR [ace]TASK */
 	class Elevator : public ACE_Task<ACE_MT_SYNCH>,
@@ -48,12 +41,12 @@ namespace Elevator
 		private:
 			/*VARIABLES*/
 			bool elevator_running_=false;
-			std::unique_ptr<Control_Signals> ctrl_signal_=nullptr;
+//			std::unique_ptr<Control_Signals> ctrl_signal_=nullptr;
 			Control * ctrl_handle_=nullptr;
 			Driver * handle_driver_=nullptr;
 
 			/*FUNCTIONS*/
-			void poll_sensor_status();
+			int poll_sensor_status();
 			void read_floor_sensor();
 			void read_buttons();
 			void read_stop_sensor();

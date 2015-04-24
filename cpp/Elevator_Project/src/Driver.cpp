@@ -13,7 +13,7 @@
 #include <assert.h>
 #include "channels.h"
 
-namespace Elevator
+namespace elevator
 {
 class Elevator;
 	//TODO IF TIME: get rid of arrays as it hinders portability

@@ -20,7 +20,7 @@ extern "C"
 	#include "io.h"
 }
 
-namespace Elevator
+namespace elevator
 {
 //	enum class Button_t : int {CALL_UP=0,CALL_DOWN=1,GOTO_FLOOR=2};
 //	enum class Direction_t : int {DOWN=-1,STOP=0,UP=1};
@@ -38,28 +38,6 @@ namespace Elevator
 	    DIRN_STOP = 0,
 	    DIRN_UP = 1
 	} motor_direction_t;
-
-//	struct Button
-//	{
-//		public:
-//			Button()
-//			{
-//				this->button_type_=Button_t::CALL_UP;
-//				this->floor_=std::numeric_limits<int>::min();
-//			}
-//			Button(Button_t button_type, int floor)
-//			{
-//				this->button_type_=button_type;
-//				this->floor_=floor;
-//			}
-//
-//			int get_floor() const {return this->floor_;}
-//			Button_t get_button_type() const {return this->button_type_;}
-//
-//		private:
-//			int floor_;
-//			Button_t button_type_;
-//	};
 
 	class Driver
 	{

@@ -12,9 +12,9 @@
 #include <unistd.h>//sleep
 #include "ace/Log_Msg.h"
 
-namespace Elevator
+namespace elevator
 {
-	Control::Control()
+	Control::Control() : servicing_(false)
 	{
 		ACE_DEBUG((LM_DEBUG,
 						   "in control constructor\n"));
@@ -23,10 +23,11 @@ namespace Elevator
 		elevator_=new Elevator(this);
 		elevator_->open(0);
 
-
-		//handle elevator IO using the signal/slots principle
-	//	ctrl_signals->signal_button_press.connect()
-
+//		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+//		ctrl_signal = std::unique_ptr<Control_Signals>(new Control_Signals);
+//		ctrl_signal->button_press.connect(this,&Control::slot_button_press);
+//		ctrl_signal->floor_sensor.connect(this,&Control::slot_floor_sensor);
+		this->open(0);
 	}
 
 	Control::~Control()
@@ -40,7 +41,8 @@ namespace Elevator
 		ACE_DEBUG((LM_DEBUG,
 							"(%t) Active Control Object opened \n"));
 		//activate object with a thread in it
-		this->activate(THR_NEW_LWP | THR_SUSPENDED,1); //using a kernel thread
+		//this->activate(THR_NEW_LWP | THR_SUSPENDED,1); //using a kernel thread
+		activate();
 		return 0;
 	}
 
@@ -52,14 +54,23 @@ namespace Elevator
 
 	int Control::svc(void)
 	{
-		ACE_DEBUG((LM_DEBUG, "(%t) Control thread is servicing\n"));
-		this->suspend();
+		ACE_Thread_Manager *mgr = this->thr_mgr ();
 
-		return 0; //service done; ACE_Task will call Elevator::close() and close off
+		while (true)
+		{	//check whether thread manager wants to cancel thread
+			if (mgr->testcancel (mgr->thr_self ()))
+			          return 0;
+
+			if (servicing_)
+			{
+				usleep(5000000);
+				ACE_DEBUG((LM_DEBUG, "(%t) Control thread is servicing : %d\n"));
+				servicing_=false;
+			}
+		}
+		return 0; //service done; ACE_Task will call elevator::close() and close off
 				  //any threads in this object
 	}
-
-
 
 	void Control::slot_button_press(button_type_t button)
 	{
@@ -71,20 +82,23 @@ namespace Elevator
 			case BUTTON_CALL_DOWN:
 				ACE_DEBUG((LM_DEBUG,
 						   "User pressed CALL DOWN button\n"));
+				servicing_=true;
 				break;
 			case BUTTON_CALL_UP:
 							ACE_DEBUG((LM_DEBUG,
 									   "User pressed CALL UP button\n"));
+				servicing_=true;
 							break;
 			case BUTTON_COMMAND:
 							ACE_DEBUG((LM_DEBUG,
 									   "User pressed GO TO FLOOR button\n"));
+				servicing_=true;
 							break;
 			default:
 				break;
 		}
-		this->resume();
-		this->activate(THR_NEW_LWP | THR_SUSPENDED,1);
+//		this->resume();
+//		this->activate(THR_NEW_LWP | THR_SUSPENDED,1);
 
 	}
 

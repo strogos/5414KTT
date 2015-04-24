@@ -11,7 +11,7 @@
 #include <ace/Message_Block.h>
 
 
-namespace Elevator
+namespace elevator
 {
 	class State //: public ACE_Data_Block
 	{

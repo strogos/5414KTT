@@ -11,7 +11,7 @@
 #include <chrono>
 #include <cstdint>
 
-namespace Elevator
+namespace clock_time
 {
 	using time_m_seconds = int64_t;
 
@@ -21,13 +21,13 @@ namespace Elevator
 			std::chrono::steady_clock::now().time_since_epoch()).count();
 	}
 
-	static inline std::chrono::milliseconds toSystemTime(time_m_seconds mtime)
+	static inline std::chrono::milliseconds to_system_time(time_m_seconds mtime)
 	{
 		return std::chrono::milliseconds(mtime);
 	}
 
 	template<class Rep, class Period>
-	static time_m_seconds fromSystemTime(const std::chrono::duration< Rep, Period >& d)
+	static time_m_seconds from_system_time(const std::chrono::duration< Rep, Period >& d)
 	{
 		return std::chrono::duration_cast< std::chrono::milliseconds >(d).count();
 	}

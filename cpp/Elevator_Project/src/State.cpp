@@ -9,7 +9,7 @@
 
 #include "State.h"
 
-namespace Elevator
+namespace elevator
 {
 
 }

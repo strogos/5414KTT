@@ -18,10 +18,11 @@
 //#include <ace/Reactor.h>
 //#include <ace/Event_Handler.h>
 //#include <ace/Thread_Manager.h>
+#include <memory>
+#include <atomic>
 
 
-
-namespace Elevator
+namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Elevator;
@@ -30,10 +31,18 @@ namespace Elevator
 
 	enum class Serviced_Slot : int {ON_BUTTON, ON_FLOOR};
 
+	struct Control_Signals /*thread-safe*/
+	{
+		W::Signal<button_type_t>button_press;     //signal for user input
+		W::Signal<int> floor_sensor;              //signal for floor proximity sensors
+		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
+		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
+	};
+
 	/*CONTROL [ace]TASK */
 	class Control : public ACE_Task<ACE_MT_SYNCH>,
 		            public W::Slot
-			     // public ACE_Event_Handler
+
 	{
 		public:
 			Control();
@@ -49,12 +58,14 @@ namespace Elevator
 			void slot_button_press(button_type_t button);
 			void slot_floor_sensor(int floor);
 
+			/*SIGNALS*/
+	//		std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
 
 		private:
 			//Driver *driver_;
 			Elevator *elevator_=nullptr;
-		//	Control_Signals * ctrl_signals=nullptr;
-			Serviced_Slot Slot_;
+			std::atomic<bool> servicing_;//(false);
+		//	Serviced_Slot Slot_;
 			//*local network socket handlers
 			//*elevator network handler
 

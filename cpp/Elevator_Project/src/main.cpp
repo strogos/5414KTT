@@ -12,8 +12,9 @@
 //}
 #pragma once
 
+#include "Elevator_Object.h"
 #include "Control.h"
-
+#include "Timer.h"
 #include "ACE_event_test.h"
 #include "Ace_Task_producer_consumer_test.h"
 #include <unistd.h>//sleep
@@ -31,8 +32,18 @@ int main()
 {
 	ACE_DEBUG((LM_DEBUG,
 					   "in main\n"));
-	Elevator::Control test;
+	elevator::Control ctr_test;
 //	test.open(0);
+//	ACE_Reactor * reac= new ACE_Reactor;
+	Timer timer_test(Timer_Type::INTERVAL,1000);
+
+	usleep(3000000);
+	std::cout<<timer_test.get_ms_time()<<std::endl;
+	timer_test.stop();
+//	while (!test.is_done())
+//	{
+//		reac->handle_events();
+//	}
 
 //	test_ACE_Task();
 //	test_driver();
@@ -44,7 +55,7 @@ int main()
 
 int test_driver()
 {
-	Elevator::Driver drv(1,4);
+	elevator::Driver drv(1,4);
 
 	 // Initialize hardware
 	    if (!drv.init(ET_simulation))
@@ -55,22 +66,22 @@ int test_driver()
 
 	    cout<<"Press STOP button to stop elevator and exit program.\n";
 
-	    drv.set_motor_direction(Elevator::DIRN_UP);
+	    drv.set_motor_direction(elevator::DIRN_UP);
 
 	    while (1) {
 	        // Change direction when we reach top/bottom floor
 	        if (drv.get_floor_sensor_signal() == drv.get_max_floor() - 1)
 	        {
-	            drv.set_motor_direction(Elevator::DIRN_DOWN);
+	            drv.set_motor_direction(elevator::DIRN_DOWN);
 	        } else if (drv.get_floor_sensor_signal() == 0)
 	        {
-	            drv.set_motor_direction(Elevator::DIRN_UP);
+	            drv.set_motor_direction(elevator::DIRN_UP);
 	        }
 
 	        // Stop elevator and exit program if the stop button is pressed
 	        if (drv.get_stop_signal())
 	        {
-	            drv.set_motor_direction(Elevator::DIRN_STOP);
+	            drv.set_motor_direction(elevator::DIRN_STOP);
 	            break;
 	        }
 	        usleep(1000000); std::cout<<"counting sec\n";

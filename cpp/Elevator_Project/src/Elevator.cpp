@@ -12,22 +12,13 @@
 #include <unistd.h>//sleep
 #include "ace/Log_Msg.h"
 
-namespace Elevator
+namespace elevator
 {
 	Elevator::Elevator(Control * ctrl_handle)
 	        : ctrl_handle_(ctrl_handle)
 	{
 		ACE_DEBUG((LM_DEBUG,
 						   "in elevator constructor\n"));
-
-		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
-		ctrl_signal_ = std::unique_ptr<Control_Signals>(new Control_Signals);
-		ctrl_signal_->button_press.connect(ctrl_handle,&Control::slot_button_press);
-		ctrl_signal_->floor_sensor.connect(ctrl_handle,&Control::slot_floor_sensor);
-
-
-//		ctrl_signals_->signal_floor_sensor.connect(ctrl_handle,&Control::slot_floor_sensor);
-//		ctrl_signals_->signal_floor_sensor.emit(1);
 
 	}
 	Elevator::~Elevator(void){}
@@ -44,6 +35,8 @@ namespace Elevator
 	int Elevator::close(u_long)
 	{
 		ACE_DEBUG((LM_DEBUG, "(%t) Active Elevator Object is being closed down \n"));
+		ACE_Thread_Manager::instance()->cancel_task(ctrl_handle_);
+
 		return 0;
 	}
 
@@ -54,18 +47,27 @@ namespace Elevator
 				  //any threads in this object
 	}
 
-	void Elevator::poll_sensor_status()
+	int Elevator::poll_sensor_status()
 	{
+		ACE_Thread_Manager *mgr = this->thr_mgr (); //cache status
+
 		while(true)
 		{
-			ctrl_signal_->button_press.emit(button_type_t::BUTTON_CALL_UP);
+			if (mgr->testcancel (mgr->thr_self ()))
+				  return 0;
+
+//			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_UP);
+			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_UP);
 			usleep(1000000);
-			ctrl_signal_->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
+//			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
+			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_DOWN);
 			usleep(1000000);
-			ctrl_signal_->button_press.emit(button_type_t::BUTTON_COMMAND);
+//			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_COMMAND);
+			ctrl_handle_->slot_button_press(button_type_t::BUTTON_COMMAND);
 			usleep(1000000);
 			break;
 		}
+		return 0;
 	}
 
 	void Elevator::read_floor_sensor()
