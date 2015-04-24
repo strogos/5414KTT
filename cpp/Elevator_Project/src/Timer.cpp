@@ -122,6 +122,8 @@ int Timer::svc(void)
 {
 	ACE_DEBUG((LM_DEBUG, "(%t) servicing Timer events \n"));
 
+	//handler MUST be allocated here as this is where new threads will run
+	//(ACE events does not (sadly) trigger for all threads in an ACE Task Object)
 	std::unique_ptr<ACE_Reactor> reac(new ACE_Reactor);
 	std::unique_ptr<Timer::Handler> handle(new Timer::Handler(timer_type_,time_ms_,reac.get()));
 	handler_=handle.get();
