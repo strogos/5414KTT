@@ -2,31 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="285" key="DIALOG_WIDTH"/>
-		<item value="664" key="DIALOG_Y_ORIGIN"/>
+		<item value="378" key="DIALOG_Y_ORIGIN"/>
+		<item value="765" key="DIALOG_X_ORIGIN"/>
 		<item value="415" key="DIALOG_HEIGHT"/>
-		<item value="938" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
-		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="true" key="wholeword"/>
+		<item value="new" key="selection"/>
 		<list key="findhistory">
-			<item value="elev_"/>
-			<item value="simu"/>
-			<item value="recv"/>
-			<item value="std"/>
-			<item value="WTF"/>
-			<item value="Data received from remote server"/>
-			<item value="Client"/>
-			<item value="main"/>
+			<item value="new"/>
+			<item value="delete"/>
+			<item value="is_done"/>
+			<item value="cancel_timer"/>
+			<item value="chronos::"/>
+			<item value="chronos"/>
+			<item value="Elevator::"/>
+			<item value="namespace Elevator"/>
 		</list>
 		<list key="replacehistory">
-			<item value=""/>
-			<item value="Server"/>
+			<item value="is_running"/>
+			<item value="stop"/>
+			<item value="clock_time::"/>
+			<item value="clock_time"/>
+			<item value="clock"/>
+			<item value="clock::"/>
+			<item value="elevator::"/>
+			<item value="namespace elevator"/>
 		</list>
 	</section>
 </section>

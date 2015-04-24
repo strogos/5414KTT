@@ -1,8 +1,11 @@
 /*
- * elevator.cpp
- *	TODO: Implement elevator API state machine here
+ * Control.cpp
+ *
  *  Created on: Feb 11, 2015
  *      Author: bengteh
+ *
+ *      Note:
+ *      This is an elevator control module.
  */
 
 #include "Control.h"
@@ -24,10 +27,10 @@ namespace elevator
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 		elevator_->open(0);
 
-//		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
-//		ctrl_signal = std::unique_ptr<Control_Signals>(new Control_Signals);
-//		ctrl_signal->button_press.connect(this,&Control::slot_button_press);
-//		ctrl_signal->floor_sensor.connect(this,&Control::slot_floor_sensor);
+		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+		ctrl_signal = std::unique_ptr<Control_Signals>(new Control_Signals);
+		ctrl_signal->button_press.connect(this,&Control::slot_button_press);
+		ctrl_signal->floor_sensor.connect(this,&Control::slot_floor_sensor);
 		this->open(0);
 	}
 

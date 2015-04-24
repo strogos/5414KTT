@@ -56,14 +56,14 @@ namespace elevator
 			if (mgr->testcancel (mgr->thr_self ()))
 				  return 0;
 
-//			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_UP);
-			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_UP);
+			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_UP);
+//			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_UP);
 			usleep(1000000);
-//			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
-			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_DOWN);
+			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
+//			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_DOWN);
 			usleep(1000000);
-//			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_COMMAND);
-			ctrl_handle_->slot_button_press(button_type_t::BUTTON_COMMAND);
+			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_COMMAND);
+//			ctrl_handle_->slot_button_press(button_type_t::BUTTON_COMMAND);
 			usleep(1000000);
 			break;
 		}

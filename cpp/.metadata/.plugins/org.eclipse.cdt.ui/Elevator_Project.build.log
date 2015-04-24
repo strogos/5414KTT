@@ -1,6 +1,41 @@
-06:43:27 **** Incremental Build of configuration Debug for project Elevator_Project ****
+22:23:58 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building file: ../src/Driver.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
+Finished building: ../src/Driver.cpp
+ 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+In file included from ../src/Elevator.cpp:8:0:
+../src/Control.h: In member function ‘int elevator::Elevator::poll_sensor_status()’:
+../src/Control.h:63:49: error: ‘std::unique_ptr<elevator::Control_Signals> elevator::Control::ctrl_signal’ is protected
+    std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
+                                                 ^
+../src/Elevator.cpp:59:18: error: within this context
+    ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_UP);
+                  ^
+In file included from ../src/Elevator.cpp:8:0:
+../src/Control.h:63:49: error: ‘std::unique_ptr<elevator::Control_Signals> elevator::Control::ctrl_signal’ is protected
+    std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
+                                                 ^
+../src/Elevator.cpp:62:18: error: within this context
+    ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
+                  ^
+In file included from ../src/Elevator.cpp:8:0:
+../src/Control.h:63:49: error: ‘std::unique_ptr<elevator::Control_Signals> elevator::Control::ctrl_signal’ is protected
+    std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
+                                                 ^
+../src/Elevator.cpp:65:18: error: within this context
+    ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_COMMAND);
+                  ^
+make: *** [src/Elevator.o] Error 1
 
-06:43:27 Build Finished (took 64ms)
+22:24:00 Build Finished (took 2s.512ms)
 

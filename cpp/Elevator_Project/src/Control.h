@@ -59,11 +59,12 @@ namespace elevator
 			void slot_floor_sensor(int floor);
 
 			/*SIGNALS*/
-	//		std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
+			int signal_subscribe(Control_Signals * subscribe);
 
 		private:
 			std::unique_ptr<Elevator> elevator_;
 			std::atomic<bool> servicing_;//(false);
+			std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
 			//*local network socket handlers
 			//*elevator network handler
 
