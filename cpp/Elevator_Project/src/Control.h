@@ -62,10 +62,8 @@ namespace elevator
 	//		std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
 
 		private:
-			//Driver *driver_;
-			Elevator *elevator_=nullptr;
+			std::unique_ptr<Elevator> elevator_;
 			std::atomic<bool> servicing_;//(false);
-		//	Serviced_Slot Slot_;
 			//*local network socket handlers
 			//*elevator network handler
 

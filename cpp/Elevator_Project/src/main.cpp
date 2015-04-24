@@ -20,6 +20,7 @@
 #include <unistd.h>//sleep
 #include <iostream>
 #include "Driver.h"//A quick class wrapper based on elev.c;
+#include <mutex>
 
 using namespace std;
 
@@ -28,27 +29,25 @@ int test_driver();
 int test_ACE_event_handler();
 int test_ACE_Task();
 
+void signal_int_timer_test(int);
+void signal_oneshot_timer_test(int);
+
 int main()
 {
 	ACE_DEBUG((LM_DEBUG,
 					   "in main\n"));
+	//connect signals to slots
+	signal(SIGNAL_INTERVAL,signal_int_timer_test);
+	signal(SIGNAL_ONESHOT,signal_oneshot_timer_test);
 	elevator::Control ctr_test;
-//	test.open(0);
-//	ACE_Reactor * reac= new ACE_Reactor;
-	Timer timer_test(Timer_Type::INTERVAL,1000);
 
-	usleep(3000000);
-	std::cout<<timer_test.get_ms_time()<<std::endl;
-	timer_test.stop();
-//	while (!test.is_done())
-//	{
-//		reac->handle_events();
-//	}
-
-//	test_ACE_Task();
-//	test_driver();
+	//Timer tmr_test(Timer_Type::ONE_SHOT,2000);
+	Timer tmr_test2(Timer_Type::INTERVAL,100);
+	usleep(10000000);
+	tmr_test2.stop();
 	//Wait for all the tasks to exit.
 	ACE_Thread_Manager::instance()->wait();
+
 
 	return 0;
 }
@@ -91,6 +90,20 @@ int test_driver()
 
 	    return 0;
 }
+
+std::mutex g_mutex;
+int county=0;
+void signal_int_timer_test(int signum)
+{
+	std::unique_lock<std::mutex> lock(g_mutex);
+	county++;
+	ACE_DEBUG((LM_DEBUG,
+						   "timer interrupt no %d\n",
+						   county));
+}
+void signal_oneshot_timer_test(int signum){std::cout<<"timer one shot\n";}
+
+
 
 int test_ACE_event_handler()
 {

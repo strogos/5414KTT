@@ -20,7 +20,8 @@ namespace elevator
 						   "in control constructor\n"));
 
 
-		elevator_=new Elevator(this);
+
+		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 		elevator_->open(0);
 
 //		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
@@ -32,7 +33,6 @@ namespace elevator
 
 	Control::~Control()
 	{
-	//	delete elevator_;
 		// TODO Auto-generated destructor stub
 	}
 

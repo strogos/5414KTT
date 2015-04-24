@@ -5,8 +5,11 @@
  *      Author: bengteh
  *
  *  Note: This is a timer which can be configured to signal (process-wide)
- *        on interrupt, one-shot or simply run and stop on client code request.
- *        FIY; for now - POSIX only!
+ *        on interrupt, one-shot or it can be configured to simply run and
+ *        stop on client code request.
+ *        FIY; because of time restrictions -> POSIX only for now
+ *        and only one of each INTERVAL and ONESHOT timer running at a time
+ *        as only two signals are implemented!!
  */
 
 #ifndef TIMER_H_
@@ -15,6 +18,10 @@
 #include "ace/Task.h"
 
 #include  <memory>
+#include <signal.h>
+
+#define SIGNAL_INTERVAL 10 //SIGUSR1
+#define SIGNAL_ONESHOT 12 //SIGUSR2
 
 enum class Timer_Type : int {ONE_SHOT=0,INTERVAL=1, RUNNING=2};
 

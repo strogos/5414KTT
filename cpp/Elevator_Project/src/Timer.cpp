@@ -12,7 +12,6 @@
 #include "ace/Reactor.h"
 
 #include <atomic>
-//#include <chrono>
 
 /*HANDLER CLASS*/
 class Timer::Handler : public ACE_Event_Handler
@@ -59,15 +58,14 @@ class Timer::Handler : public ACE_Event_Handler
 			if (last_epoch_<0)
 				last_epoch_=0;
 
-			ACE_DEBUG ((LM_DEBUG, "Timer #%d timed after %d ms!\n",
-						 timer_id_, last_epoch_));
-
-			long tt=reinterpret_cast<long>(arg);
-			ACE_DEBUG ((LM_DEBUG, "handle_timout ARG value:%d!\n",
-									static_cast<Timer_Type>(tt)));
-
-			if (static_cast<Timer_Type>(tt)==Timer_Type::ONE_SHOT)
+			Timer_Type tt=static_cast<Timer_Type>(reinterpret_cast<long>(arg));
+			if (tt==Timer_Type::ONE_SHOT)
+			{
+				raise(SIGNAL_ONESHOT);
 				done_=true;
+			}
+			else if (tt==Timer_Type::INTERVAL)
+				raise(SIGNAL_INTERVAL);
 
 			//Keep yourself registered with the Reactor.
 			return 0;
@@ -102,7 +100,7 @@ Timer::Timer(Timer_Type tt, long time_ms)
 	open(0);
 }
 
-Timer::~Timer(){}
+Timer::~Timer(){delete handler_;}
 
 int Timer::open(void*)
 {
