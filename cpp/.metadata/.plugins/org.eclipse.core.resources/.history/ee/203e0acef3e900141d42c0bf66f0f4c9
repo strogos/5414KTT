@@ -1,0 +1,32 @@
+/*
+ * Timer.h
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ */
+
+#ifndef TIMER_H_
+#define TIMER_H_
+
+#include "ace/Timer_Queue.h"
+#include "ace/Reactor.h"
+
+
+
+class Timer : public ACE_Event_Handler
+{
+public:
+	//Method which is called back by the Reactor when timeout occurs.
+	virtual int handle_timeout (const ACE_Time_Value &tv,const void *arg);
+
+	private:
+		const int NUMBER_TIMERS_=10;
+		static int done;
+		static int count;
+
+
+};
+
+
+
+#endif /* TIMER_H_ */

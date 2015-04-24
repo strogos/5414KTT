@@ -1,0 +1,31 @@
+/*
+ * Scheduler.h
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ */
+
+#ifndef SCHEDULER_H_
+#define SCHEDULER_H_
+
+
+class Scheduler : public ACE_Task_Base
+{
+public:
+  Scheduler();
+
+  virtual int svc (void);
+
+  int enqueue (ACE_Method_Request *request)
+  {
+    ACE_TRACE (ACE_TEXT ("Scheduler::enqueue"));
+    return this->activation_queue_.enqueue (request);
+  }
+
+private:
+  ACE_Activation_Queue activation_queue_;
+};
+
+
+
+#endif /* SCHEDULER_H_ */

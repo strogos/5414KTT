@@ -1,0 +1,48 @@
+/*
+ * Timer.h
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ */
+
+#ifndef TIMER_H_
+#define TIMER_H_
+
+#include "ace/Timer_Queue.h"
+#include "ace/Reactor.h"
+
+
+
+class Timer : public ACE_Event_Handler
+{
+public:
+	//Method which is called back by the Reactor when timeout occurs.
+	virtual int handle_timeout (const ACE_Time_Value &tv,const void *arg)
+	{
+		long current_count = long (arg);
+		ACE_ASSERT (current_count == count);
+		ACE_DEBUG ((LM_DEBUG, ”%d: Timer #%d timed out at %d!\n”,
+					count, current_count, tv.sec()));
+		//Increment count
+		count ++;
+		//Make sure assertion doesn’t fail for missing 5th timer.
+		if (count ==5)
+			count++;
+
+		//If all timers done then set done flag
+		if (current_count == NUMBER_TIMERS - 1)
+			done = 1;
+		//Keep yourself registered with the Reactor.
+		return 0;
+		}
+	private:
+		const int NUMBER_TIMERS_ =10
+		static int done;
+		static int count;
+
+
+};
+
+
+
+#endif /* TIMER_H_ */

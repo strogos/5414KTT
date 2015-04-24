@@ -1,0 +1,103 @@
+/*
+ * Timer.cpp
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ */
+
+#include "Timer.h"
+#include "time.h"
+
+#include "ace/Log_Msg.h"
+#include "ace/Reactor.h"
+
+#include <atomic>
+//#include <chrono>
+
+/*HANDLER CLASS*/
+class Timer::Handler : public ACE_Event_Handler
+{
+	public:
+		Handler(long time_out, ACE_Reactor * reac)
+					: done_(false), reactor_(reac)
+		{
+
+			timer_id_=reactor_->schedule_timer(this,  				  //timer handler
+											(const void *)0,          // argument (arg) sent to handle_timeout()
+											ACE_Time_Value(time_out));//time to timeout
+
+			if (timer_id_==-1)
+				done_=true; //failed to create timer TODO:throw exception
+
+			time_ms_=clock_time::now();
+		}
+		~Handler(){}
+
+		int handle_timeout (const ACE_Time_Value &tv,const void *arg) //Method which is called back
+		{															  //by the Reactor when timeout occurs.
+			ACE_DEBUG ((LM_DEBUG, "Timer #%d timed after %d ms!\n",
+						 timer_id_, clock_time::now()-time_ms_));//tv.sec()));
+			done_=true;
+			//Keep yourself registered with the Reactor.
+			return 0;
+		}
+		int get_id(){return timer_id_;}
+		bool is_done(){return done_;}
+		void cancel_timer(int timer_id)
+		{
+			reactor_->cancel_timer(timer_id);
+			done_=true;
+		}
+	private:
+		std::atomic<bool> done_;
+		ACE_Reactor *reactor_=nullptr;
+		int timer_id_;
+		ACE_Time_Value time_value_;
+		//unsigned long ms_since_epoch_;
+		clock_time::time_m_seconds time_ms_;
+};
+
+/*PROXY CLASS (semi-pimpl style)*/
+Timer::Timer(Timer_Type tt)
+	 :timeout_(timeout)
+
+{
+	open(0);
+}
+
+Timer::~Timer(){}
+
+int Timer::open(void*)
+{
+	ACE_DEBUG((LM_DEBUG,
+						"(%t) Timer Implementation opened \n"));
+	//activate object with a thread in it
+	//this->activate(THR_NEW_LWP | THR_SUSPENDED,1); //using a kernel thread
+	activate();
+	return 0;
+}
+
+int Timer::close(u_long)
+{
+	ACE_DEBUG((LM_DEBUG, "(%t) Timer Implementation is being closed down \n"));
+	return 0;
+}
+
+int Timer::svc(void)
+{
+	ACE_DEBUG((LM_DEBUG, "(%t) servicing Timer events \n"));
+
+	std::unique_ptr<ACE_Reactor> reac(new ACE_Reactor);
+	Timer::Handler handle(timeout_,reac.get());
+
+	while (!handle.is_done())
+	{
+		reac->handle_events();
+	}
+	return 0;
+}
+
+/*FORWARDs*/
+int Timer::get_id(){return handler_->get_id();}
+bool Timer::is_done(){return handler_->is_done();}
+void Timer::cancel_timer(int timer_id){handler_->cancel_timer(timer_id);}

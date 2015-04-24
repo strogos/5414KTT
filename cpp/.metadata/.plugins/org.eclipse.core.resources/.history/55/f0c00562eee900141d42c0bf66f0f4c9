@@ -1,0 +1,35 @@
+/*
+ * Scheduler.h
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ *
+ *  Note: This class are the heart of the active objects...
+ *  The scheduler class derives from ACE_Task and redefines a
+ *  method into a request. Subclasses represent necessary state and behavior.
+ *  It subsequently removes each method request and invokes its call() method.
+ */
+
+#ifndef SCHEDULER_H_
+#define SCHEDULER_H_
+
+#include "ace/Activation_Queue.h"
+#include "ace/Method_Request.h"
+
+class Scheduler : public ACE_Task_Base
+{
+public:
+  Scheduler();
+
+  virtual int svc (void);
+
+  int enqueue (ACE_Method_Request *request);
+
+
+private:
+  ACE_Activation_Queue activation_queue_;
+};
+
+
+
+#endif /* SCHEDULER_H_ */

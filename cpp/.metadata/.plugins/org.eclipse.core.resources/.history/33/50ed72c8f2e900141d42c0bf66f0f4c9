@@ -1,0 +1,16 @@
+/*
+ * Timer.cpp
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ */
+
+
+
+#include "Timer.h"
+#include "ace/Log_Msg.h"
+
+
+
+static int Timer::done;
+static int Timer::count;
