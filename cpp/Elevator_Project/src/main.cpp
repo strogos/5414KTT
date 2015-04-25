@@ -41,8 +41,7 @@ int main()
 	signal(SIGNAL_INTERVAL,signal_int_timer_test);
 	signal(SIGNAL_ONESHOT,signal_oneshot_timer_test);
 
-	elevator::Control * ctrl=new elevator::Control(elevator::COMEDI);
-
+	elevator::Control ctrl(elevator::COMEDI);
 
 	//Timer tmr_test(Timer_Type::ONE_SHOT,2000);
 //	Timer tmr_test2(Timer_Type::INTERVAL,100);
@@ -51,8 +50,6 @@ int main()
 	//Wait for all the tasks to exit.
 	ACE_Thread_Manager::instance()->wait();
 
-
-	delete ctrl;
 	return 0;
 }
 

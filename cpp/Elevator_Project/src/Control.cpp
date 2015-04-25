@@ -33,8 +33,9 @@ namespace elevator
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
 		//start tasks (and their corresponding threads)
-		this->open(0);
 		elevator_->open(0);
+		this->open(0);
+
 
 	}
 
