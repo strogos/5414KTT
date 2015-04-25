@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<targets>
+  <target model="execute" category="_Run" menu="/_Build/" name="Custom...">
+    <in-toolbar>FALSE</in-toolbar>
+    <icon>gtk-media-play</icon>
+    <visible>TRUE</visible>
+    <in-menu>TRUE</in-menu>
+    <in-contextual-menus-for-projects>FALSE</in-contextual-menus-for-projects>
+    <in-contextual-menus-for-files>FALSE</in-contextual-menus-for-files>
+    <launch-mode>MANUALLY_WITH_DIALOG</launch-mode>
+    <read-only>TRUE</read-only>
+    <target-type />
+    <key />
+    <server>GPS_SERVER</server>
+    <command-line>
+      <arg />
+    </command-line>
+  </target>
+  <target model="custom" category="_Project" menu="/_Build/" name="Custom _Build...">
+    <in-toolbar>FALSE</in-toolbar>
+    <icon>gps-custom-build</icon>
+    <visible>TRUE</visible>
+    <in-menu>TRUE</in-menu>
+    <in-contextual-menus-for-projects>FALSE</in-contextual-menus-for-projects>
+    <in-contextual-menus-for-files>FALSE</in-contextual-menus-for-files>
+    <launch-mode>MANUALLY_WITH_DIALOG</launch-mode>
+    <read-only>TRUE</read-only>
+    <target-type />
+    <key />
+    <server>GPS_SERVER</server>
+    <command-line>
+      <arg />
+    </command-line>
+  </target>
+</targets>

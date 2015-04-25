@@ -33,10 +33,9 @@ namespace elevator
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
 		//start tasks (and their corresponding threads)
+		//Note the order in which tasks are opened [memory leaks can happen here if not careful]
 		elevator_->open(0);
 		this->open(0);
-
-
 	}
 
 	Control::~Control()

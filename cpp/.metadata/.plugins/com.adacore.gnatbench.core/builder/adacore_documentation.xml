@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<index>
+   <doc_path>share/doc</doc_path>
+
+   <documentation_file>
+      <name>ajis/html/ajis_ug.html</name>
+      <descr>GNAT Ada-Java Interfacing Suite User's Guide</descr>
+      <category>GNAT-AJIS</category>
+      <menu>/Help/GNAT-AJIS/GNAT Ada-Java Interfacing Suite User's Guide</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>gnatcoll/gnatcoll.html</name>
+      <descr>GNATColl: GNAT Reusable Components</descr>
+      <category>GNATcoll</category>
+      <menu>/Help/GNATColl/GNATColl: GNAT Reusable Components</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>xmlada/xml.html</name>
+      <descr>The Ada95 XML Library</descr>
+      <category>XML/Ada</category>
+      <menu>/Help/XMLAda/The Ada95 XML Library</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>xmlada/index.html</name>
+      <descr>The XML Library for Ada 4.4.0w documentation</descr>
+      <category>XML/Ada</category>
+      <menu>/Help/XMLAda/The XML Library for Ada 4.4.0w documentation</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>aws/aws.html</name>
+      <descr>Ada Web Server User's Guide</descr>
+      <category>AWS</category>
+      <menu>/Help/AWS/Ada Web Server User's Guide</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>gtkada/gtkada_rm/index.html</name>
+      <descr>GtkAda Reference Manual</descr>
+      <category>GtkAda</category>
+      <menu>/Help/GtkAda/GtkAda Reference Manual</menu>
+   </documentation_file>
+   
+   <documentation_file>
+      <name>gtkada/gtkada_ug/index.html</name>
+      <descr>GtkAda User’s Guide</descr>
+      <category>GtkAda</category>
+      <menu>/Help/GtkAda/GtkAda User’s Guide</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>asis/html/asis_rm.html</name>
+      <descr>ASIS-for-GNAT Reference Manual</descr>
+      <category>ASIS</category>
+      <menu>/Help/ASIS/ASIS-for-GNAT Reference Manual</menu>
+   </documentation_file>
+
+   <documentation_file>
+      <name>asis/html/asis_ug.html</name>
+      <descr>ASIS-for-GNAT User's Guide</descr>
+      <category>ASIS</category>
+      <menu>/Help/ASIS/ASIS-for-GNAT User's Guide</menu>
+   </documentation_file>
+
+</index>

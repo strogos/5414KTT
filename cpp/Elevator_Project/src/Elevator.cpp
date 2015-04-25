@@ -91,7 +91,20 @@ namespace elevator
 			if (mgr->testcancel(mgr->thr_self()))
 				  return 0;
 
+			/*cache status of all elevator buttons*/
+			for (int i = 0; i < handle_driver_->get_max_floor(); i++)
+			{
+				if (handle_driver_->get_button_signal(BUTTON_COMMAND, i))
+					cur |= (1 << i); // cache passenger command calls for every floor
 
+				if ((i != handle_driver_->get_max_floor()-1) &&
+					handle_driver_->get_button_signal(BUTTON_CALL_UP, i))
+	                	up |= (1 << i); // cache "goin' up calls" for floors 0-2
+
+				if (i != 0 &&
+					handle_driver_->get_button_signal(BUTTON_CALL_DOWN, i))
+	                	down |= (1 << i); // cache "goin' up calls" for floors 1-3
+	        }
 
 
 
