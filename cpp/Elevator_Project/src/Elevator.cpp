@@ -14,8 +14,6 @@
 
 namespace elevator
 {
-	static const int SPEED = 100;
-
 	Elevator::Elevator(Control * ctrl_handle)
 	        : ctrl_handle_(ctrl_handle)
 	{
@@ -60,9 +58,35 @@ namespace elevator
 	{
 		ACE_Thread_Manager *mgr = this->thr_mgr();
 		handle_driver_->init(ctrl_handle_->get_session());
+		handle_driver_->set_motor_speed(0);
+
+		/*status variables*/
+	    int last_floor = -1;
+	    int last_up = 0;
+	    int last_down = 0;
+	    int last_int = 0;
+	    bool last_stop = false;
+	    bool last_obstuction = false;
+
+	    if (handle_driver_->get_floor_sensor_signal()==-1)
+	    {
+	    	handle_driver_->set_motor_speed(direction_*SPEED_);
+	    	is_running_=true;
+	    }
 
 		while(true)
 		{
+			int cur, up, down, tmp;
+
+			cur = handle_driver_->get_floor_sensor_signal();
+			if ((cur!=last_floor) && (cur!=-1))
+			{
+				floor_=cur;
+				on_floor_sensor(); //elevator reached a new floor; update accordingly
+			}
+
+			last_floor=cur;
+
 			//check if thread manager wants to abort the current thread.
 			if (mgr->testcancel(mgr->thr_self()))
 				  return 0;
@@ -95,5 +119,20 @@ namespace elevator
 	void Elevator::read_obstruct_sensor()
 	{}
 
+	void Elevator::on_floor_sensor()
+	{
+		if ( !((floor_ > 0) || (floor_ < handle_driver_->get_max_floor())) )
+		{
+			handle_driver_->stop_elevator();					//@ stop at last or first floor
+		}
+
+		if((floor_==requested_floor_) && (requested_floor_!=-1))
+			handle_driver_->stop_elevator();					//stop @ requested floor
+
+		set_floor_indicator(floor_);
+	}
+
+	/*FORWARDs*/
+	void Elevator::set_floor_indicator(int floor) {handle_driver_->set_floor_indicator(floor);}
 }
 

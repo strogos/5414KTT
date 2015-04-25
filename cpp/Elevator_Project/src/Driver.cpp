@@ -50,9 +50,11 @@ class Elevator;
 	}
 	Driver::~Driver() {stop_elevator();}
 
-	tag_motor_direction Driver::get_movement(){return direction_;}
+	tag_motor_direction Driver::get_direction(){return direction_;}
 
-	tag_motor_direction Driver::get_last_movement() {return last_direction_;}
+	tag_motor_direction Driver::get_last_direction() {return last_direction_;}
+
+	bool Driver::is_running(){return moving_;}
 
 	int Driver::init(elevator_type session)
 	{
@@ -93,6 +95,7 @@ class Elevator;
 	void Driver::stop_elevator()
 	{
 		io_write_analog(MOTOR, 0 );//stop
+		moving_=false;
 	}
 
 	void Driver::set_motor_speed(int speed)

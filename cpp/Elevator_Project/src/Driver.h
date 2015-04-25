@@ -47,8 +47,9 @@ namespace elevator
 		    int get_min_floor() const {return min_floor_;}
 		    int get_max_floor() const {return max_floor_;}
 
-			tag_motor_direction get_movement();
-			tag_motor_direction get_last_movement();
+			tag_motor_direction get_direction();
+			tag_motor_direction get_last_direction();
+			bool is_running();
 
 		    /**
 			  Initialize elevator.
@@ -143,9 +144,9 @@ namespace elevator
 		private:
 		    const int min_floor_;
 		    const int max_floor_;
-		    tag_motor_direction last_direction_;
-		    tag_motor_direction direction_;
-		    bool moving_;
+		    tag_motor_direction last_direction_=DIRN_STOP;
+		    tag_motor_direction direction_=DIRN_STOP ;
+		    bool moving_=false;
 
 	};
 

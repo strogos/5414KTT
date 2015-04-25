@@ -27,6 +27,8 @@ namespace elevator
 	typedef tag_elevator_type elevator_type;
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
+	enum tag_motor_direction : int;
+	typedef tag_motor_direction motor_direction_t;
 
 
 	/*ELEVATOR [ace]TASK */
@@ -43,11 +45,18 @@ namespace elevator
 			int close (u_long);
 			int svc(void);
 
+			/*FUCNTIONS*/
+			void set_floor_indicator(int floor);
+
 		private:
 			/*VARIABLES*/
-			bool elevator_running_=false;
+			const int SPEED_ = 100;
+			bool is_running_=false;
+		    int floor_=-1;
+			int requested_floor_=-1;
+		    int direction_= DIRN_DOWN;
 			Control * ctrl_handle_=nullptr;
-			std::unique_ptr<Driver> handle_driver_=nullptr;
+			std::unique_ptr<Driver> handle_driver_;
 			Control_Signals * signal_control_=nullptr;
 
 			/*FUNCTIONS*/
@@ -56,6 +65,8 @@ namespace elevator
 			void read_buttons();
 			void read_stop_sensor();
 			void read_obstruct_sensor();
+
+			void on_floor_sensor();
 
 	};
 }
