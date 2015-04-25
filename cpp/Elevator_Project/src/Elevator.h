@@ -67,6 +67,8 @@ namespace elevator
 			void read_obstruct_sensor();
 
 			void on_floor_sensor();
+			void on_stop_sensor(int set_lamp);
+			void on_obstruction_sensor();
 
 	};
 }

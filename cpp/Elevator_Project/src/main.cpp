@@ -41,7 +41,7 @@ int main()
 	signal(SIGNAL_INTERVAL,signal_int_timer_test);
 	signal(SIGNAL_ONESHOT,signal_oneshot_timer_test);
 
-	elevator::Control ctrl(elevator::COMEDI);
+	elevator::Control ctrl(elevator::SIMULATION);
 
 	//Timer tmr_test(Timer_Type::ONE_SHOT,2000);
 //	Timer tmr_test2(Timer_Type::INTERVAL,100);

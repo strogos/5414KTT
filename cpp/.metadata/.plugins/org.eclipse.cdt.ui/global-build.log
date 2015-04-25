@@ -3109,3 +3109,438 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
+19:48:23 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In member function ‘void elevator::Control::slot_button_press(elevator::button_type_t, int)’:
+../src/Control.cpp:146:50: error: no matching function for call to ‘elevator::Control::On_Button_Press::On_Button_Press(elevator::button_type_t&)’
+   slot_queue_.enqueue (new On_Button_Press(button));
+                                                  ^
+../src/Control.cpp:146:50: note: candidate is:
+../src/Control.cpp:108:4: note: elevator::Control::On_Button_Press::On_Button_Press(elevator::button_type_t, int)
+    On_Button_Press(button_type_t button, int floor) : button_(button), floor_(floor)
+    ^
+../src/Control.cpp:108:4: note:   candidate expects 2 arguments, 1 provided
+make: *** [src/Control.o] Error 1
+19:48:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building file: ../src/Driver.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
+Finished building: ../src/Driver.cpp
+ 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+../src/Elevator.cpp: In member function ‘int elevator::Elevator::poll_sensor_status()’:
+../src/Elevator.cpp:136:68: error: no matching function for call to ‘W::Signal<elevator::tag_lamp_type, int>::emit(elevator::tag_lamp_type)’
+    signal_control_->button_press.emit(button_type_t::BUTTON_CALL_UP);
+                                                                    ^
+../src/Elevator.cpp:136:68: note: candidate is:
+In file included from ../src/Control.h:12:0,
+                 from ../src/Elevator.cpp:8:
+../src/tools/signalslot/W_Signal.h:63:18: note: void W::Signal<T>::emit(T ...) [with T = {elevator::tag_lamp_type, int}]
+             void emit(T ...t) {
+                  ^
+../src/tools/signalslot/W_Signal.h:63:18: note:   candidate expects 2 arguments, 1 provided
+../src/Elevator.cpp:138:70: error: no matching function for call to ‘W::Signal<elevator::tag_lamp_type, int>::emit(elevator::tag_lamp_type)’
+    signal_control_->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
+                                                                      ^
+../src/Elevator.cpp:138:70: note: candidate is:
+In file included from ../src/Control.h:12:0,
+                 from ../src/Elevator.cpp:8:
+../src/tools/signalslot/W_Signal.h:63:18: note: void W::Signal<T>::emit(T ...) [with T = {elevator::tag_lamp_type, int}]
+             void emit(T ...t) {
+                  ^
+../src/tools/signalslot/W_Signal.h:63:18: note:   candidate expects 2 arguments, 1 provided
+../src/Elevator.cpp:140:68: error: no matching function for call to ‘W::Signal<elevator::tag_lamp_type, int>::emit(elevator::tag_lamp_type)’
+    signal_control_->button_press.emit(button_type_t::BUTTON_COMMAND);
+                                                                    ^
+../src/Elevator.cpp:140:68: note: candidate is:
+In file included from ../src/Control.h:12:0,
+                 from ../src/Elevator.cpp:8:
+../src/tools/signalslot/W_Signal.h:63:18: note: void W::Signal<T>::emit(T ...) [with T = {elevator::tag_lamp_type, int}]
+             void emit(T ...t) {
+                  ^
+../src/tools/signalslot/W_Signal.h:63:18: note:   candidate expects 2 arguments, 1 provided
+../src/Elevator.cpp:79:23: warning: unused variable ‘tmp’ [-Wunused-variable]
+    int cur, up, down, tmp;
+                       ^
+../src/Elevator.cpp:65:10: warning: unused variable ‘last_up’ [-Wunused-variable]
+      int last_up = 0;
+          ^
+../src/Elevator.cpp:66:10: warning: unused variable ‘last_down’ [-Wunused-variable]
+      int last_down = 0;
+          ^
+../src/Elevator.cpp:67:10: warning: unused variable ‘last_cmd’ [-Wunused-variable]
+      int last_cmd = 0;
+          ^
+../src/Elevator.cpp:68:11: warning: unused variable ‘last_stop’ [-Wunused-variable]
+      bool last_stop = false;
+           ^
+../src/Elevator.cpp:69:11: warning: unused variable ‘last_obstuction’ [-Wunused-variable]
+      bool last_obstuction = false;
+           ^
+make: *** [src/Elevator.o] Error 1
+19:49:11 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+../src/Elevator.cpp: In member function ‘int elevator::Elevator::poll_sensor_status()’:
+../src/Elevator.cpp:79:23: warning: unused variable ‘tmp’ [-Wunused-variable]
+    int cur, up, down, tmp;
+                       ^
+../src/Elevator.cpp:65:10: warning: unused variable ‘last_up’ [-Wunused-variable]
+      int last_up = 0;
+          ^
+../src/Elevator.cpp:66:10: warning: unused variable ‘last_down’ [-Wunused-variable]
+      int last_down = 0;
+          ^
+../src/Elevator.cpp:67:10: warning: unused variable ‘last_cmd’ [-Wunused-variable]
+      int last_cmd = 0;
+          ^
+../src/Elevator.cpp:68:11: warning: unused variable ‘last_stop’ [-Wunused-variable]
+      bool last_stop = false;
+           ^
+../src/Elevator.cpp:69:11: warning: unused variable ‘last_obstuction’ [-Wunused-variable]
+      bool last_obstuction = false;
+           ^
+Finished building: ../src/Elevator.cpp
+ 
+Building file: ../src/Scheduler.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Scheduler.d" -MT"src/Scheduler.d" -o "src/Scheduler.o" "../src/Scheduler.cpp"
+Finished building: ../src/Scheduler.cpp
+ 
+Building file: ../src/State.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+Finished building: ../src/State.cpp
+ 
+Building file: ../src/Timer.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
+Finished building: ../src/Timer.cpp
+ 
+Building file: ../src/io.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -MMD -MP -MF"src/io.d" -MT"src/io.d" -o "src/io.o" "../src/io.c"
+Finished building: ../src/io.c
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+19:55:58 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+../src/Elevator.cpp: In member function ‘int elevator::Elevator::poll_sensor_status()’:
+../src/Elevator.cpp:68:11: warning: unused variable ‘last_stop’ [-Wunused-variable]
+      bool last_stop = false;
+           ^
+../src/Elevator.cpp:69:11: warning: unused variable ‘last_obstuction’ [-Wunused-variable]
+      bool last_obstuction = false;
+           ^
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:16:32 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:16:39 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:21:30 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:21:34 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:21:57 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:22:01 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:22:51 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:23:54 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:23:59 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:24:59 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:25:04 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:27:29 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:27:33 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:35:36 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:35:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:38:42 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+../src/Elevator.cpp: In member function ‘int elevator::Elevator::poll_sensor_status()’:
+../src/Elevator.cpp:157:20: error: expected ‘)’ before ‘;’ token
+      usleep(1000000;)
+                    ^
+../src/Elevator.cpp:157:21: error: expected primary-expression before ‘)’ token
+      usleep(1000000;)
+                     ^
+../src/Elevator.cpp:157:21: error: expected ‘;’ before ‘)’ token
+make: *** [src/Elevator.o] Error 1
+20:38:49 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:42:27 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:43:47 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:43:51 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:44:16 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:45:03 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:54:19 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:56:58 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:58:10 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:58:28 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+21:01:44 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+21:03:11 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+21:03:37 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 

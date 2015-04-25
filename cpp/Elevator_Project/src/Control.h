@@ -35,9 +35,10 @@ namespace elevator
 
 	enum class Serviced_Slot : int {ON_BUTTON, ON_FLOOR};
 
+	/*SIGNAL CONTAINER*/
 	struct Control_Signals /*thread-safe*/
 	{
-		W::Signal<button_type_t>button_press;     //signal for user input
+		W::Signal<button_type_t,int>button_press;     //signal for user input
 		W::Signal<int> floor_sensor;              //signal for floor proximity sensors
 		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
 		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
@@ -62,7 +63,7 @@ namespace elevator
 			elevator_type get_session();
 
 			/*SLOTS*/
-			void slot_button_press(button_type_t button);
+			void slot_button_press(button_type_t button, int floor);
 			void slot_floor_sensor(int floor);
 			void slot_exit_task(void*);
 
@@ -72,7 +73,7 @@ namespace elevator
 		private:
 			std::unique_ptr<Elevator> elevator_;
 			std::atomic<bool> servicing_;
-			std::unique_ptr<Control_Signals> ctrl_signal_; //signal memory mgmt shall be done in control task
+			std::unique_ptr<Control_Signals> ctrl_signal_; //signal container memory mgmt shall be done in control task
 			elevator_type session_;
 			ACE_Activation_Queue slot_queue_;
 

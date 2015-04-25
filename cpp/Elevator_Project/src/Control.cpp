@@ -65,17 +65,17 @@ namespace elevator
 		ACE_Thread_Manager *mgr = this->thr_mgr ();
 		while (true)
 		{
-			std::unique_ptr<ACE_Method_Request>
-			request (this->slot_queue_.dequeue ()); // Dequeue the next method object
-
-			if (request->call () == -1)  // Invoke the method request
-				break;
-
 			if (servicing_)
 			{
 				ACE_DEBUG((LM_DEBUG, "(%t) Control thread IS servicing : %d\n",(int)servicing_));
 				servicing_=false;
 			}
+
+			std::unique_ptr<ACE_Method_Request>
+			request (this->slot_queue_.dequeue ()); // Dequeue the next method object
+
+			if (request->call () == -1)  // Invoke the method request
+				break;
 
 			if (mgr->testcancel (mgr->thr_self ())) //check if thread manager wants to stop
 				break;
@@ -96,7 +96,7 @@ namespace elevator
 			return subscribe;
 		else
 		{
-			ACE_ERROR((LM_EMERGENCY,"PANIC: control SIGNAL subscription FAIL!\n"));
+			ACE_ERROR((LM_EMERGENCY,"PANIC: control task SIGNAL subscription FAIL!\n"));
 			throw std::bad_alloc();
 		}
 
@@ -105,17 +105,20 @@ namespace elevator
 	class Control::On_Button_Press : public ACE_Method_Request
 	{
 		public:
-			On_Button_Press(button_type_t button) : button_(button)
+			On_Button_Press(button_type_t button, int floor) : button_(button), floor_(floor)
 			{
-				ACE_DEBUG((LM_DEBUG,"Button type press ENQUED %d\n",(int)button));
+				ACE_DEBUG((LM_DEBUG,"Button type %d press ENQUED @ floor %d\n",
+						(int)button,floor_));
 			}
 			virtual int call (void)
 			{
-				ACE_DEBUG((LM_DEBUG,"Button type pressed %d\n",(int)button_));
+				ACE_DEBUG((LM_DEBUG,"Button type pressed %d @ floor %d\n",
+						(int)button_,floor_));
 				return 0;
 			}
 		private:
 			button_type_t button_;
+			int floor_;
 	};
 
 	class Control::On_Floor_Sensor : public ACE_Method_Request
@@ -139,10 +142,10 @@ namespace elevator
 		virtual int call (void) {return -1;}
 	};
 
-	void Control::slot_button_press(button_type_t button)
+	void Control::slot_button_press(button_type_t button, int floor)
 	{
 		ACE_DEBUG((LM_DEBUG, "in slot for button press\n"));
-		slot_queue_.enqueue (new On_Button_Press(button));
+		slot_queue_.enqueue (new On_Button_Press(button,floor));
 		servicing_=true;
 	}
 
