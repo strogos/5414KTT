@@ -7,11 +7,14 @@
  *   About: Elevator control
  */
 
-//#include <array>
+#include "channels.h"
 #include "Driver.h"
+extern "C"
+{
+	#include "io.h"
+}
 
 #include <assert.h>
-#include "channels.h"
 
 namespace elevator
 {
@@ -51,10 +54,10 @@ class Elevator;
 
 	tag_motor_direction Driver::get_last_movement() {return last_direction_;}
 
-	int Driver::init(ElevatorType session)
+	int Driver::init(elevator_type session)
 	{
 		/*because of io.c (c does not support type def. of enum) we must do:*/
-		if (session==ET_comedi)
+		if (session==COMEDI)
 		{
 			// Init hardware
 			if (!io_init(ET_comedi))

@@ -23,8 +23,8 @@ namespace elevator
 	/*FWD DECLARATIONS*/
 	class Control;
 	class Driver;
-	enum ElevatorType : int;
-	typedef ElevatorType ElevatorType;
+	enum  tag_elevator_type : int;
+	typedef tag_elevator_type elevator_type;
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 

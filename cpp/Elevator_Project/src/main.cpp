@@ -40,57 +40,60 @@ int main()
 	//connect signals to slots
 	signal(SIGNAL_INTERVAL,signal_int_timer_test);
 	signal(SIGNAL_ONESHOT,signal_oneshot_timer_test);
-//	elevator::Control crtl(ElevatorType::ET_simulation);
+
+	elevator::Control * ctrl=new elevator::Control(elevator::COMEDI);
+
 
 	//Timer tmr_test(Timer_Type::ONE_SHOT,2000);
-	Timer tmr_test2(Timer_Type::INTERVAL,100);
-	usleep(10000000);
-	tmr_test2.stop();
+//	Timer tmr_test2(Timer_Type::INTERVAL,100);
+//	usleep(10000000);
+//	tmr_test2.stop();
 	//Wait for all the tasks to exit.
 	ACE_Thread_Manager::instance()->wait();
 
 
+	delete ctrl;
 	return 0;
 }
-//
-//int test_driver()
-//{
-//	elevator::Driver drv(1,4);
-//
-//	 // Initialize hardware
-//	    if (!drv.init(ET_Simulation))
-//	    {
-//	        cout<<"Unable to initialize elevator hardware!\n";
-//	        return 1;
-//	    }
-//
-//	    cout<<"Press STOP button to stop elevator and exit program.\n";
-//
-//	    drv.set_motor_direction(elevator::DIRN_UP);
-//
-//	    while (1) {
-//	        // Change direction when we reach top/bottom floor
-//	        if (drv.get_floor_sensor_signal() == drv.get_max_floor() - 1)
-//	        {
-//	            drv.set_motor_direction(elevator::DIRN_DOWN);
-//	        } else if (drv.get_floor_sensor_signal() == 0)
-//	        {
-//	            drv.set_motor_direction(elevator::DIRN_UP);
-//	        }
-//
-//	        // Stop elevator and exit program if the stop button is pressed
-//	        if (drv.get_stop_signal())
-//	        {
-//	            drv.set_motor_direction(elevator::DIRN_STOP);
-//	            break;
-//	        }
-//	        usleep(1000000); std::cout<<"counting sec\n";
-//	    }
-//
-//	    cout<<"DONE!\n";
-//
-//	    return 0;
-//}
+
+int test_driver()
+{
+	elevator::Driver drv(1,4);
+
+	 // Initialize hardware
+	    if (!drv.init(elevator::SIMULATION))
+	    {
+	        cout<<"Unable to initialize elevator hardware!\n";
+	        return 1;
+	    }
+
+	    cout<<"Press STOP button to stop elevator and exit program.\n";
+
+	    drv.set_motor_direction(elevator::DIRN_UP);
+
+	    while (1) {
+	        // Change direction when we reach top/bottom floor
+	        if (drv.get_floor_sensor_signal() == drv.get_max_floor() - 1)
+	        {
+	            drv.set_motor_direction(elevator::DIRN_DOWN);
+	        } else if (drv.get_floor_sensor_signal() == 0)
+	        {
+	            drv.set_motor_direction(elevator::DIRN_UP);
+	        }
+
+	        // Stop elevator and exit program if the stop button is pressed
+	        if (drv.get_stop_signal())
+	        {
+	            drv.set_motor_direction(elevator::DIRN_STOP);
+	            break;
+	        }
+	        usleep(1000000); std::cout<<"counting sec\n";
+	    }
+
+	    cout<<"DONE!\n";
+
+	    return 0;
+}
 
 std::mutex g_mutex;
 int county=0;

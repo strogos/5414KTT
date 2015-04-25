@@ -15,15 +15,13 @@
 
 #include <limits>
 
-extern "C"
-{
-	#include "io.h"
-}
-
 namespace elevator
 {
-//	enum class Button_t : int {CALL_UP=0,CALL_DOWN=1,GOTO_FLOOR=2};
-//	enum class Direction_t : int {DOWN=-1,STOP=0,UP=1};
+	typedef enum tag_elevator_type  :int
+	{
+		COMEDI=0,
+		SIMULATION=1
+	} elevator_type;
 
 	typedef enum tag_lamp_type : int
 	{
@@ -56,7 +54,7 @@ namespace elevator
 			  Initialize elevator.
 			  @return Non-zero on success, 0 on failure.
 			*/
-			int init(ElevatorType session);
+			int init(elevator_type session);
 
 			void stop_elevator();
 

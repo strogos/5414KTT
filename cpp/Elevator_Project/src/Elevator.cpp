@@ -14,6 +14,8 @@
 
 namespace elevator
 {
+	static const int SPEED = 100;
+
 	Elevator::Elevator(Control * ctrl_handle)
 	        : ctrl_handle_(ctrl_handle)
 	{
@@ -21,7 +23,7 @@ namespace elevator
 						   "in elevator constructor\n"));
 
 		//Initiate the driver interface for communicating with HW
-		handle_driver_=std::unique_ptr<Driver>(new Driver);
+		handle_driver_=std::unique_ptr<Driver>(new Driver(1,4));
 
 		//subscribe to signaling slots in the control task
 		signal_control_=ctrl_handle_->signal_subscribe(signal_control_);
@@ -40,7 +42,9 @@ namespace elevator
 	int Elevator::close(u_long)
 	{
 		ACE_DEBUG((LM_DEBUG, "(%t) Active Elevator Object is being closed down \n"));
-		ACE_Thread_Manager::instance()->cancel_task(ctrl_handle_);
+
+		//ACE_Thread_Manager::instance()->cancel_task(ctrl_handle_);
+		signal_control_->stop_task.emit(0);
 
 		return 0;
 	}
@@ -55,7 +59,7 @@ namespace elevator
 	int Elevator::poll_sensor_status()
 	{
 		ACE_Thread_Manager *mgr = this->thr_mgr();
-		//handle_driver_->init(ctrl_handle_->get_session());
+		handle_driver_->init(ctrl_handle_->get_session());
 
 		while(true)
 		{

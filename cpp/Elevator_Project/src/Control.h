@@ -14,6 +14,8 @@
 
 //#include <ace/OS.h>
 #include "ace/Task.h"
+#include "ace/Method_Request.h"
+#include "ace/Activation_Queue.h"
 //#include <ace/Message_Block.h>
 //#include <ace/Reactor.h>
 //#include <ace/Event_Handler.h>
@@ -26,8 +28,8 @@ namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Elevator;
-	enum ElevatorType : int;
-	typedef ElevatorType ElevatorType;
+	enum  tag_elevator_type : int;
+	typedef tag_elevator_type elevator_type;
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
@@ -39,6 +41,7 @@ namespace elevator
 		W::Signal<int> floor_sensor;              //signal for floor proximity sensors
 		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
 		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
+		W::Signal<void*> stop_task;
 	};
 
 	/*CONTROL [ace]TASK */
@@ -47,7 +50,7 @@ namespace elevator
 
 	{
 		public:
-			Control(ElevatorType session);
+			Control(elevator_type session);
 			~Control();
 
 			//Implement the ACE specific service init/termination methods
@@ -56,29 +59,30 @@ namespace elevator
 			int svc(void);
 
 			/*FUNCTIONS*/
-			ElevatorType get_session();
-			//function slots to to launch on signal
+			elevator_type get_session();
+
+			/*SLOTS*/
 			void slot_button_press(button_type_t button);
 			void slot_floor_sensor(int floor);
+			void slot_exit_task(void*);
 
 			/*SIGNALS*/
 			Control_Signals * signal_subscribe(Control_Signals * subscribe);
 
 		private:
 			std::unique_ptr<Elevator> elevator_;
-			std::atomic<bool> servicing_;//(false);
-			std::unique_ptr<Control_Signals> ctrl_signal_=nullptr; //signal memory mgmt shall be done in control task
-			ElevatorType session_;
+			std::atomic<bool> servicing_;
+			std::unique_ptr<Control_Signals> ctrl_signal_; //signal memory mgmt shall be done in control task
+			elevator_type session_;
+			ACE_Activation_Queue slot_queue_;
+
 			//*local network socket handlers
 			//*elevator network handler
 
-			/*FUNCTION*/
-			void svc_on_button_press();
-			void svc_on_floor_sensor();
-
-
-
-
+			/*ACTIVE OBJECT METHODS*/
+			class On_Button_Press;
+			class On_Floor_Sensor;
+			struct On_Exit;
 	};
 }
 #endif /* CONTROL_H_ */
