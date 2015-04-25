@@ -1,4 +1,4 @@
-21:03:37 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:12:32 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/Elevator.cpp
 Invoking: Cross G++ Compiler
@@ -11,5 +11,5 @@ c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/wor
 Finished building target: Elevator_Project
  
 
-21:03:40 Build Finished (took 2s.111ms)
+21:12:35 Build Finished (took 2s.110ms)
 

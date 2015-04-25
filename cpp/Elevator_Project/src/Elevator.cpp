@@ -151,8 +151,9 @@ namespace elevator
 	        		on_stop_sensor(0);
 	        		ACE_DEBUG((LM_DEBUG,
 											"(%t) is stopped! \n"));
+	        		is_stopped=false;
 	        	}
-	        	is_stopped=false;
+
 	        }
 
 			/* check if elevator is obstructed */
@@ -166,7 +167,6 @@ namespace elevator
 	            is_obstructed = false;
 
 		}
-	    usleep(2000000);
 		return 0;
 	}
 
