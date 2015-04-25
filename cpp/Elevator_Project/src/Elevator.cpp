@@ -86,11 +86,10 @@ namespace elevator
 			if ((cur!=last_floor) && (cur!=-1))
 			{
 				floor_=cur;
-			//	on_floor_sensor(); //elevator reached a new floor; update accordingly
+				on_floor_sensor(); //elevator reached a new floor; update accordingly
 				ACE_DEBUG((LM_DEBUG,
 								            "(%t) FLOOR ME! \n"));
 			}
-
 			last_floor=floor_;
 
 			/*cache status of all elevator buttons*/
@@ -138,23 +137,26 @@ namespace elevator
 			{
 	            if (!is_stopped)
 	            {
-	                on_stop_sensor(1);//as of now: this only toggles the stop lamp
+	                on_stop_sensor(true);//as of now: this only toggles the stop lamp
 	                ACE_DEBUG((LM_DEBUG,
 	                				            "(%t) is NOT stopped! \n"));
+	                is_stopped=true;
 	            }
-	            is_stopped=true;
+
 	        }
 	        else
 	        {
 	        	if (is_stopped)
 	        	{
-	        		on_stop_sensor(0);
+	        		on_stop_sensor(false);
 	        		ACE_DEBUG((LM_DEBUG,
 											"(%t) is stopped! \n"));
 	        		is_stopped=false;
 	        	}
-
 	        }
+
+    		ACE_DEBUG((LM_DEBUG,
+									"(%t) is running : %d!\n", (int)is_running_));
 
 			/* check if elevator is obstructed */
 			if (handle_driver_->get_obstruction_signal())
@@ -170,34 +172,61 @@ namespace elevator
 		return 0;
 	}
 
-	void Elevator::read_floor_sensor()
-	{}
+	void Elevator::set_button_indicator(button_type_t button,bool lit,int floor)
+	{
+		/*check button scope*/
+		if (button == BUTTON_CALL_DOWN && floor == 0)
+			return;
+		if (button == BUTTON_CALL_UP &&
+			floor == handle_driver_->get_max_floor()-1)
+				return;
 
-	void Elevator::read_buttons()
-	{}
+		handle_driver_->set_button_lamp(button, floor, static_cast<int>(lit));
+	}
 
-	void Elevator::read_stop_sensor()
-	{}
+	void Elevator::go_to_floor(int floor)
+	{
+		requested_floor_ = floor;
 
-	void Elevator::read_obstruct_sensor()
-	{}
+		    // Set the direction of the elevator
+		    if (requested_floor_ < floor_)
+		        direction_ = DIRN_DOWN;
+		    else if (requested_floor_ > floor_)
+		        direction_ = DIRN_DOWN;
+		    else if (handle_driver_->get_floor_sensor_signal()==-1)
+		        direction_ = -direction_; //correct if elevator goes past the requested floor
+		    else
+		    {
+				handle_driver_->stop_elevator();
+				is_running_=false;
+		        return;
+		    }
+
+		    /*run elevator*/
+		    handle_driver_->set_motor_speed(direction_ * SPEED_);
+		    is_running_ = true;
+	}
 
 	void Elevator::on_floor_sensor()
 	{
 		if ( !((floor_ > 0) || (floor_ < handle_driver_->get_max_floor())) )
 		{
-			handle_driver_->stop_elevator();					//@ stop at last or first floor
+			handle_driver_->stop_elevator();					//stop @ last or first floor
+			is_running_=false;
 		}
 
 		if((floor_==requested_floor_) && (requested_floor_!=-1))
+		{
 			handle_driver_->stop_elevator();					//stop @ requested floor
+			is_running_=false;
+		}
 
 		set_floor_indicator(floor_);
 	}
 
-	void Elevator::on_stop_sensor(int set_lamp) {handle_driver_->set_stop_lamp(set_lamp);}
-
-	/*FORWARDs*/
+	/*pure FORWARDs*/
 	void Elevator::set_floor_indicator(int floor) {handle_driver_->set_floor_indicator(floor);}
+	void Elevator::set_door_open_indicator(bool lit) {handle_driver_->set_door_open_lamp(static_cast<int>(lit));}
+	void Elevator::on_stop_sensor(bool lit) {handle_driver_->set_stop_lamp(static_cast<int>(lit));}
 }
 

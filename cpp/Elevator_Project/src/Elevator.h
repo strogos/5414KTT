@@ -47,6 +47,9 @@ namespace elevator
 
 			/*FUCNTIONS*/
 			void set_floor_indicator(int floor);
+			void set_button_indicator(button_type_t button,bool lit,int floor);
+			void set_door_open_indicator(bool lit);
+			void go_to_floor(int floor);
 
 		private:
 			/*VARIABLES*/
@@ -61,13 +64,9 @@ namespace elevator
 
 			/*FUNCTIONS*/
 			int poll_sensor_status();
-			void read_floor_sensor();
-			void read_buttons();
-			void read_stop_sensor();
-			void read_obstruct_sensor();
 
 			void on_floor_sensor();
-			void on_stop_sensor(int set_lamp);
+			void on_stop_sensor(bool lit);
 			void on_obstruction_sensor();
 
 	};
