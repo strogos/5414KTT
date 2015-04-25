@@ -17,20 +17,21 @@
 
 namespace elevator
 {
-	Control::Control() : servicing_(false)
+	Control::Control(ElevatorType session)
+	       : servicing_(false), session_(session)
 	{
 		ACE_DEBUG((LM_DEBUG,
 						   "in control constructor\n"));
 
-
+		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+		ctrl_signal_ = std::unique_ptr<Control_Signals>(new Control_Signals);
+		ctrl_signal_->button_press.connect(this,&Control::slot_button_press);
+		ctrl_signal_->floor_sensor.connect(this,&Control::slot_floor_sensor);
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
-		elevator_->open(0);
 
-		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
-		ctrl_signal = std::unique_ptr<Control_Signals>(new Control_Signals);
-		ctrl_signal->button_press.connect(this,&Control::slot_button_press);
-		ctrl_signal->floor_sensor.connect(this,&Control::slot_floor_sensor);
+		//start tasks (and their corresponding threads)
+		elevator_->open(0);
 		this->open(0);
 	}
 
@@ -100,9 +101,6 @@ namespace elevator
 			default:
 				break;
 		}
-//		this->resume();
-//		this->activate(THR_NEW_LWP | THR_SUSPENDED,1);
-
 	}
 
 	void Control::slot_floor_sensor(int floor)
@@ -114,7 +112,23 @@ namespace elevator
 	void Control::svc_on_button_press()
 	{
 		usleep(1000000);
+	}
 
+	ElevatorType Control::get_session() {return session_;}
+
+	Control_Signals * Control::signal_subscribe(Control_Signals * subscribe)
+	{
+
+		//memory mgmt on all signaling to slots in control shall be done in the control task itself
+		subscribe=ctrl_signal_.get();
+		if (subscribe)
+			return subscribe;
+		else
+		{
+			ACE_ERROR((LM_EMERGENCY,"PANIC: control SIGNAL subscription FAIL!\n"));
+			throw std::bad_alloc();
+		}
 
 	}
+
 }

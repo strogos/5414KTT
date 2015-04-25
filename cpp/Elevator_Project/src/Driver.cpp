@@ -53,9 +53,19 @@ class Elevator;
 
 	int Driver::init(ElevatorType session)
 	{
-	    // Init hardware
-	    if (!io_init(session))
-	        return 0;
+		/*because of io.c (c does not support type def. of enum) we must do:*/
+		if (session==ET_comedi)
+		{
+			// Init hardware
+			if (!io_init(ET_comedi))
+				return 0;
+		}
+		else
+		{
+			// Init hardware
+			if (!io_init(ET_simulation))
+				return 0;
+		}
 
 	    // Zero all floor button lamps
 	    for (int i = 0; i < N_FLOORS; ++i) {

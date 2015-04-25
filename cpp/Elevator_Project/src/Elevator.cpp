@@ -20,6 +20,11 @@ namespace elevator
 		ACE_DEBUG((LM_DEBUG,
 						   "in elevator constructor\n"));
 
+		//Initiate the driver interface for communicating with HW
+		handle_driver_=std::unique_ptr<Driver>(new Driver);
+
+		//subscribe to signaling slots in the control task
+		signal_control_=ctrl_handle_->signal_subscribe(signal_control_);
 	}
 	Elevator::~Elevator(void){}
 
@@ -49,21 +54,25 @@ namespace elevator
 
 	int Elevator::poll_sensor_status()
 	{
-		ACE_Thread_Manager *mgr = this->thr_mgr (); //cache status
+		ACE_Thread_Manager *mgr = this->thr_mgr();
+		//handle_driver_->init(ctrl_handle_->get_session());
 
 		while(true)
 		{
-			if (mgr->testcancel (mgr->thr_self ()))
+			//check if thread manager wants to abort the current thread.
+			if (mgr->testcancel(mgr->thr_self()))
 				  return 0;
 
-			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_UP);
-//			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_UP);
+
+
+
+
+
+			signal_control_->button_press.emit(button_type_t::BUTTON_CALL_UP);
 			usleep(1000000);
-			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
-//			ctrl_handle_->slot_button_press(button_type_t::BUTTON_CALL_DOWN);
+			signal_control_->button_press.emit(button_type_t::BUTTON_CALL_DOWN);
 			usleep(1000000);
-			ctrl_handle_->ctrl_signal->button_press.emit(button_type_t::BUTTON_COMMAND);
-//			ctrl_handle_->slot_button_press(button_type_t::BUTTON_COMMAND);
+			signal_control_->button_press.emit(button_type_t::BUTTON_COMMAND);
 			usleep(1000000);
 			break;
 		}

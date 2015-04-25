@@ -10,13 +10,13 @@
 /*
 This module is initialized with one of the following ElevatorTypes:
 */
-typedef enum {
+typedef enum  {
     // Interfaces with the hardware at the Real-time Lab using libcomedi
-    ET_comedi,
+    ET_comedi=0,
 
     // Communicates with simulator_interface, that displays the
     // elevator state and handles user input
-    ET_simulation
+    ET_simulation=1
 } ElevatorType;
 
 

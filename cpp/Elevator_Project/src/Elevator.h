@@ -3,6 +3,10 @@
  *
  *  Created on: Apr 22, 2015
  *      Author: bengteh
+ *
+ *  Note:
+ *  	This class is defined as an ACE task with a single thread which
+ *  	polls sensor and button status
  */
 
 #ifndef ELEVATOR_H_
@@ -13,14 +17,14 @@
 
 #include <memory>
 #include "ace/Task.h"
-//#include <ace/Reactor.h>
-//#include <ace/Event_Handler.h>
 
 namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Control;
 	class Driver;
+	enum ElevatorType : int;
+	typedef ElevatorType ElevatorType;
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
@@ -30,10 +34,11 @@ namespace elevator
 	                 public W::Slot
 	{
 		public:
-			Elevator(Control * ctrl_handle);
+			Elevator(Control * ctrl_handle);//TODO: implement Elevator
+											//Object from virtual class
 			~Elevator(void);
 
-			//Implement the ACE specific service init/termination methods
+			//Implement the ACE task specific service init/term methods
 			int open(void*);
 			int close (u_long);
 			int svc(void);
@@ -41,9 +46,9 @@ namespace elevator
 		private:
 			/*VARIABLES*/
 			bool elevator_running_=false;
-//			std::unique_ptr<Control_Signals> ctrl_signal_=nullptr;
 			Control * ctrl_handle_=nullptr;
-			Driver * handle_driver_=nullptr;
+			std::unique_ptr<Driver> handle_driver_=nullptr;
+			Control_Signals * signal_control_=nullptr;
 
 			/*FUNCTIONS*/
 			int poll_sensor_status();

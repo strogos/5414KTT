@@ -26,6 +26,8 @@ namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Elevator;
+	enum ElevatorType : int;
+	typedef ElevatorType ElevatorType;
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
@@ -45,7 +47,7 @@ namespace elevator
 
 	{
 		public:
-			Control();
+			Control(ElevatorType session);
 			~Control();
 
 			//Implement the ACE specific service init/termination methods
@@ -54,17 +56,19 @@ namespace elevator
 			int svc(void);
 
 			/*FUNCTIONS*/
+			ElevatorType get_session();
 			//function slots to to launch on signal
 			void slot_button_press(button_type_t button);
 			void slot_floor_sensor(int floor);
 
 			/*SIGNALS*/
-			int signal_subscribe(Control_Signals * subscribe);
+			Control_Signals * signal_subscribe(Control_Signals * subscribe);
 
 		private:
 			std::unique_ptr<Elevator> elevator_;
 			std::atomic<bool> servicing_;//(false);
-			std::unique_ptr<Control_Signals> ctrl_signal=nullptr;
+			std::unique_ptr<Control_Signals> ctrl_signal_=nullptr; //signal memory mgmt shall be done in control task
+			ElevatorType session_;
 			//*local network socket handlers
 			//*elevator network handler
 
