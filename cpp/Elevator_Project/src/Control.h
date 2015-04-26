@@ -23,12 +23,13 @@
 #include <memory>
 #include <atomic>
 
+/*FWD DECLARATIONS*/
+class Timer;
 
 namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Elevator;
-	class Timer;
 	enum  tag_elevator_type : int;
 	typedef tag_elevator_type elevator_type;
 	enum tag_lamp_type : int;
@@ -80,6 +81,7 @@ namespace elevator
 			elevator_type session_;
 			ACE_Activation_Queue slot_queue_;
 			State  state_;
+			std::unique_ptr<Timer> service_timer_;
 
 
 			//*local network socket handlers

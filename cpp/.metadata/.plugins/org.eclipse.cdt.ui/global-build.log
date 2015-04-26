@@ -1417,3 +1417,310 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
+04:46:51 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In constructor ‘elevator::Control::Control(elevator::elevator_type)’:
+../src/Control.cpp:36:22: error: invalid use of incomplete type ‘class elevator::Timer’
+   service_timer_=new Timer;
+                      ^
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:31:8: error: forward declaration of ‘class elevator::Timer’
+  class Timer;
+        ^
+make: *** [src/Control.o] Error 1
+04:47:40 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In constructor ‘elevator::Control::Control(elevator::elevator_type)’:
+../src/Control.cpp:36:22: error: invalid use of incomplete type ‘class elevator::Timer’
+   service_timer_=new Timer;
+                      ^
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:31:8: error: forward declaration of ‘class elevator::Timer’
+  class Timer;
+        ^
+make: *** [src/Control.o] Error 1
+04:48:53 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In constructor ‘elevator::Control::Control(elevator::elevator_type)’:
+../src/Control.cpp:36:22: error: invalid use of incomplete type ‘class elevator::Timer’
+   service_timer_=new Timer;
+                      ^
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:31:8: error: forward declaration of ‘class elevator::Timer’
+  class Timer;
+        ^
+make: *** [src/Control.o] Error 1
+04:48:59 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In constructor ‘elevator::Control::Control(elevator::elevator_type)’:
+../src/Control.cpp:37:22: error: invalid use of incomplete type ‘class elevator::Timer’
+   service_timer_=new Timer;
+                      ^
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:31:8: error: forward declaration of ‘class elevator::Timer’
+  class Timer;
+        ^
+make: *** [src/Control.o] Error 1
+04:49:08 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In constructor ‘elevator::Control::Control(elevator::elevator_type)’:
+../src/Control.cpp:37:22: error: invalid use of incomplete type ‘class elevator::Timer’
+   service_timer_=new Timer;
+                      ^
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:31:8: error: forward declaration of ‘class elevator::Timer’
+  class Timer;
+        ^
+make: *** [src/Control.o] Error 1
+04:49:53 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In constructor ‘elevator::Control::Control(elevator::elevator_type)’:
+../src/Control.cpp:37:22: error: no matching function for call to ‘Timer::Timer()’
+   service_timer_=new Timer;
+                      ^
+../src/Control.cpp:37:22: note: candidates are:
+In file included from ../src/Control.cpp:13:0:
+../src/Timer.h:33:2: note: Timer::Timer(Timer_Type, long int)
+  Timer(Timer_Type tt, long time_ms);    //one-shot timer or interval timer
+  ^
+../src/Timer.h:33:2: note:   candidate expects 2 arguments, 0 provided
+../src/Timer.h:32:2: note: Timer::Timer(Timer_Type)
+  Timer(Timer_Type tt);               //start stop timer
+  ^
+../src/Timer.h:32:2: note:   candidate expects 1 argument, 0 provided
+make: *** [src/Control.o] Error 1
+04:51:40 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:28:17: error: ‘Elevator’ in namespace ‘elevator’ does not name a type
+ class elevator::Elevator;
+                 ^
+../src/Control.h:30:9: error: ‘tag_elevator_type’ in namespace ‘elevator’ does not name a type
+ typedef elevator::tag_elevator_type elevator_type;
+         ^
+../src/Control.h:54:26: error: expected ‘)’ before ‘session’
+    Control(elevator_type session);
+                          ^
+../src/Control.h:63:4: error: ‘elevator_type’ does not name a type
+    elevator_type get_session();
+    ^
+../src/Control.h:76:20: error: ‘Elevator’ was not declared in this scope
+    std::unique_ptr<Elevator> elevator_;
+                    ^
+../src/Control.h:76:28: error: template argument 1 is invalid
+    std::unique_ptr<Elevator> elevator_;
+                            ^
+../src/Control.h:76:28: error: template argument 2 is invalid
+../src/Control.h:79:4: error: ‘elevator_type’ does not name a type
+    elevator_type session_;
+    ^
+../src/Control.cpp:24:2: error: prototype for ‘elevator::Control::Control(elevator::elevator_type)’ does not match any in class ‘elevator::Control’
+  Control::Control(elevator_type session)
+  ^
+In file included from ../src/Control.cpp:11:0:
+../src/Control.h:49:8: error: candidates are: elevator::Control::Control(const elevator::Control&)
+  class Control : public ACE_Task<ACE_MT_SYNCH>,
+        ^
+../src/Control.h:49:8: error:                 elevator::Control::Control()
+../src/Control.cpp:91:37: error: no ‘elevator::elevator_type elevator::Control::get_session()’ member function declared in class ‘elevator::Control’
+  elevator_type Control::get_session() {return session_;}
+                                     ^
+../src/Control.cpp: In member function ‘virtual int elevator::Control::On_Floor_Sensor::call()’:
+../src/Control.cpp:142:30: error: base operand of ‘->’ is not a pointer
+            handle_->elevator_->stop();
+                              ^
+../src/Control.cpp:145:34: error: base operand of ‘->’ is not a pointer
+            if (handle_->elevator_->get_direction() == DIRN_UP)
+                                  ^
+../src/Control.cpp: In member function ‘bool elevator::Control::should_service(int)’:
+../src/Control.cpp:165:19: error: base operand of ‘->’ is not a pointer
+      if (elevator_->get_direction() == DIRN_UP && state_.call[BUTTON_CALL_UP][floor].second)
+                   ^
+../src/Control.cpp:169:19: error: base operand of ‘->’ is not a pointer
+      if (elevator_->get_direction() == DIRN_DOWN && state_.call[BUTTON_CALL_DOWN][floor].second)
+                   ^
+../src/Control.cpp:173:19: error: base operand of ‘->’ is not a pointer
+      if (elevator_->get_direction() == DIRN_UP && !is_call_up(floor) && state_.call[BUTTON_CALL_DOWN][floor].second)
+                   ^
+../src/Control.cpp:176:19: error: base operand of ‘->’ is not a pointer
+          elevator_->set_direction(DIRN_DOWN);
+                   ^
+../src/Control.cpp:181:19: error: base operand of ‘->’ is not a pointer
+      if (elevator_->get_direction() == DIRN_DOWN && !is_call_down(floor) && state_.call[BUTTON_CALL_UP][floor].second)
+                   ^
+../src/Control.cpp:184:19: error: base operand of ‘->’ is not a pointer
+          elevator_->set_direction(DIRN_UP);
+                   ^
+../src/Control.cpp:193:19: error: base operand of ‘->’ is not a pointer
+      if (elevator_->get_direction() == DIRN_DOWN && !is_call_down(floor) && !is_call_up(floor))
+                   ^
+../src/Control.cpp:194:19: error: base operand of ‘->’ is not a pointer
+          elevator_->stop();
+                   ^
+../src/Control.cpp:195:24: error: base operand of ‘->’ is not a pointer
+      else if (elevator_->get_direction() == DIRN_UP && !is_call_up(floor) && !is_call_down(floor))
+                        ^
+../src/Control.cpp:196:19: error: base operand of ‘->’ is not a pointer
+          elevator_->stop();
+                   ^
+../src/Control.cpp: In member function ‘void elevator::Control::service_floor(int, elevator::button_type_t)’:
+../src/Control.cpp:208:12: error: base operand of ‘->’ is not a pointer
+   elevator_->set_button_indicator(BUTTON_COMMAND,false,floor);
+            ^
+../src/Control.cpp:213:12: error: base operand of ‘->’ is not a pointer
+   elevator_->set_button_indicator(button,false, floor);
+            ^
+../src/Control.cpp:220:12: error: base operand of ‘->’ is not a pointer
+   elevator_->set_door_open_indicator(true);
+            ^
+../src/Control.cpp: In member function ‘bool elevator::Control::is_call_up(int)’:
+../src/Control.cpp:236:41: error: base operand of ‘->’ is not a pointer
+      for (int i = floor+1; i < elevator_->get_floor_count(); i++)
+                                         ^
+../src/Control.cpp:240:23: error: base operand of ‘->’ is not a pointer
+              elevator_->go_to_floor(i);
+                       ^
+../src/Control.cpp:246:41: error: base operand of ‘->’ is not a pointer
+      for (int i = floor+1; i < elevator_->get_floor_count(); i++)
+                                         ^
+../src/Control.cpp:250:23: error: base operand of ‘->’ is not a pointer
+              elevator_->go_to_floor(i);
+                       ^
+../src/Control.cpp: In member function ‘bool elevator::Control::is_call_down(int)’:
+../src/Control.cpp:272:14: error: base operand of ‘->’ is not a pointer
+     elevator_->go_to_floor(i);
+              ^
+../src/Control.cpp:282:14: error: base operand of ‘->’ is not a pointer
+     elevator_->go_to_floor(i);
+              ^
+make: *** [src/Control.o] Error 1
+04:52:49 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building file: ../src/Driver.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
+Finished building: ../src/Driver.cpp
+ 
+Building file: ../src/Elevator.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+Finished building: ../src/Elevator.cpp
+ 
+Building file: ../src/Scheduler.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Scheduler.d" -MT"src/Scheduler.d" -o "src/Scheduler.o" "../src/Scheduler.cpp"
+Finished building: ../src/Scheduler.cpp
+ 
+Building file: ../src/State.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+Finished building: ../src/State.cpp
+ 
+Building file: ../src/Timer.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
+Finished building: ../src/Timer.cpp
+ 
+Building file: ../src/io.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -MMD -MP -MF"src/io.d" -MT"src/io.d" -o "src/io.o" "../src/io.c"
+Finished building: ../src/io.c
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+04:57:24 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+../src/Control.cpp: In member function ‘void elevator::Control::service_floor(int, elevator::button_type_t)’:
+../src/Control.cpp:222:3: error: ‘service_timer’ was not declared in this scope
+   service_timer=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
+   ^
+make: *** [src/Control.o] Error 1
+04:57:33 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+05:00:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building file: ../src/Timer.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
+Finished building: ../src/Timer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+05:07:52 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 

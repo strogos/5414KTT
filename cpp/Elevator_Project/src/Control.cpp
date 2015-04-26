@@ -10,8 +10,9 @@
 
 #include "Control.h"
 #include "Driver.h"
-#include "Elevator.h"
 #include "Timer.h"
+#include "Elevator.h"
+
 
 
 #include <unistd.h>//sleep
@@ -26,7 +27,8 @@ namespace elevator
 		ACE_DEBUG((LM_DEBUG,
 						   "in control constructor\n"));
 
-		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+		/*handle elevator IO using the signal/slot principle
+		 * (inspired by Qt's implementation)*/
 		ctrl_signal_ = std::unique_ptr<Control_Signals>(new Control_Signals);
 		ctrl_signal_->button_press.connect(this,&Control::slot_button_press);
 		ctrl_signal_->floor_sensor.connect(this,&Control::slot_floor_sensor);
@@ -34,10 +36,18 @@ namespace elevator
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
-		//start tasks (and their corresponding threads)
-		//Note the order in which tasks are opened [memory leaks can happen here if not careful]
+		/*start tasks (and their corresponding threads)
+		 * Note the order in which tasks are opened
+		 * [memory leaks can happen here if not careful]*/
 		elevator_->open(0);
 		this->open(0);
+
+		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
+		//signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
+		//interrupt timer
+
+
+
 	}
 
 	Control::~Control()
@@ -218,8 +228,9 @@ namespace elevator
 		// Set the open door lamp
 		elevator_->set_door_open_indicator(true);
 
-		// Start the service timer
-		//service_timer->start(SERVICE_TIME_); TODO:
+		// Start the service timer (raises posix signal)
+		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
+											 	 	 static_cast<long>(SERVICE_TIME_)));
 	}
 
 	bool Control::is_call_up(int floor)

@@ -1,9 +1,9 @@
-04:44:09 **** Incremental Build of configuration Debug for project Elevator_Project ****
+05:07:52 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-Building file: ../src/Timer.cpp
+Building file: ../src/Control.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
-Finished building: ../src/Timer.cpp
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
@@ -11,5 +11,5 @@ c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/wor
 Finished building target: Elevator_Project
  
 
-04:44:11 Build Finished (took 1s.968ms)
+05:07:55 Build Finished (took 2s.518ms)
 

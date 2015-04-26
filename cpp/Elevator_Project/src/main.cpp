@@ -36,8 +36,8 @@ int main()
 	ACE_DEBUG((LM_DEBUG,
 					   "in main\n"));
 	//connect signals to slots
-	signal(SIGNAL_INTERVAL,signal_int_timer_test);
-	signal(SIGNAL_ONESHOT,signal_oneshot_timer_test);
+	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
+	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
 
 	elevator::Control ctrl(elevator::SIMULATION);
 

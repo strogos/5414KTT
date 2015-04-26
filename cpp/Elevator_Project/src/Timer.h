@@ -21,8 +21,8 @@
 #include  <memory>
 #include <signal.h>
 
-#define SIGNAL_INTERVAL 10 //SIGUSR1
-#define SIGNAL_ONESHOT 12 //SIGUSR2
+#define SIG_INTERVAL_TIMER 10 //SIGUSR1
+#define SIG_ONESHOT_TIMER 12 //SIGUSR2
 
 enum class Timer_Type : int {ONE_SHOT=0,INTERVAL=1, RUNNING=2};
 

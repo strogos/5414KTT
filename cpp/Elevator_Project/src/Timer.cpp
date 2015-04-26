@@ -60,11 +60,11 @@ class Timer::Handler : public ACE_Event_Handler
 			Timer_Type tt=static_cast<Timer_Type>(reinterpret_cast<long>(arg));
 			if (tt==Timer_Type::ONE_SHOT)
 			{
-				raise(SIGNAL_ONESHOT);
+				raise(SIG_ONESHOT_TIMER);
 				done_=true;
 			}
 			else if (tt==Timer_Type::INTERVAL)
-				raise(SIGNAL_INTERVAL);
+				raise(SIG_INTERVAL_TIMER);
 
 			//Keep yourself registered with the Reactor.
 			return 0;
