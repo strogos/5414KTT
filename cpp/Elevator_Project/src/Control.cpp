@@ -12,7 +12,8 @@
 #include "Driver.h"
 #include "Timer.h"
 #include "Elevator.h"
-
+#include "IPC_Client.h"
+#include "IPC_Server.h"
 
 
 #include <unistd.h>//sleep
@@ -36,6 +37,13 @@ namespace elevator
 		ctrl_signal_->stop_task.connect(this,&Control::slot_exit_task);
 		ctrl_signal_->interval_timer.connect(this,&Control::slot_heartbeat_timer);
 		ctrl_signal_->oneshot_timer.connect(this,&Control::slot_service_timer);
+
+
+		dgram_localhost_= std::unique_ptr<IPC_Client_Unicast::Client>(
+										new IPC_Client_Unicast::Client("localhost:42024"));
+
+		dgram_lan_= std::unique_ptr<IPC_Client_Broadcast::Client>(
+												new IPC_Client_Broadcast::Client((ushort)421124));
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
@@ -64,7 +72,7 @@ namespace elevator
 
 
 		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
-	//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
+		//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
 		//interrupt timer
 		heartbeat_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
 													100,
@@ -384,20 +392,20 @@ namespace elevator
 
 	}
 
-	int Control::thread_prepare_join(std::vector<std::thread>& my_threads)
-	{
-	    std::for_each(my_threads.begin(),my_threads.end(),thread_do_join);
-
-	    return 1;
-	}
-
-	void Control::thread_do_join(std::thread& t){t.join();}
-
-	void thread_dgram_worker(int tid)
-	{
-			IPC_Server::Server srv(42000);
-			srv.accept_data();
-	}
+//	int Control::thread_prepare_join(std::vector<std::thread>& my_threads)
+//	{
+//	    std::for_each(my_threads.begin(),my_threads.end(),thread_do_join());
+//
+//	    return 1;
+//	}
+//
+//	void Control::thread_do_join(std::thread& t){t.join();}
+//
+//	void thread_dgram_worker(int tid)
+//	{
+//			IPC_Server::Server srv(42000);
+//			srv.accept_data();
+//	}
 
 	void Control::slot_button_press(button_type_t button, int floor)
 	{

@@ -12,102 +12,100 @@
 //}
 #pragma once
 
-#include "Elevator_Object.h"
 #include "Control.h"
-#include "Timer.h"
-#include <unistd.h>//sleep
+#include "Driver.h"
+#include "IPC_Client.h"
+#include "IPC_Server.h"
+#include "State.h"
+
+
+#include "ace/Log_Msg.h"
 #include <iostream>
-#include "Driver.h"//A quick class wrapper based on elev.c;
-#include <mutex>
-#include "io.h"
-
-using namespace std;
 
 
-int test_driver();
-void signal_int_timer_test(int);
-void signal_oneshot_timer_test(int);
+void listener(int child_tid);
+void primary_service(int,std::stringstream&);
+void new_primary_service(int,std::stringstream&);
 
 int main()
 {
 	ACE_DEBUG((LM_DEBUG,
 					   "in main\n"));
-	//connect signals to slots
-	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
-	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
 
 	std::stringstream ss;
-	State test;
+	new_primary_service(0,ss);
+
+	//Wait for all the tasks to exit.
+	ACE_Thread_Manager::instance()->wait();
+	return 0;
+}
+
+void new_primary_service(int new_pid,std::stringstream& ss)
+{
+	pid_t pid=fork();//vfork(); //create child process
+
+	if (pid==0)
+		primary_service(new_pid,ss); //child
+	else if (pid>0)
+		listener(pid);//parent
+	else
+		ACE_ERROR((LM_WARNING, "failed creating child(primary_service) process\n"));
+}
+
+void primary_service(int id,std::stringstream& ss)
+{
+	//connect signals to slots
+//	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
+//	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
+
+	//std::stringstream ss;
+	elevator::State test;
 	test.do_serialize(ss,test);
 	std::cout<<"data in binary form: "<<ss.str()<<"\n";
 
 	test.do_deserialize(ss,test);
 	std::cout<<"data in converted back to normal form now?????\n";
 
-		elevator::Control ctrl(elevator::SIMULATION,ss);
-	//	elevator::Control ctrl(elevator::COMEDI,ss);
+	elevator::Control ctrl(elevator::SIMULATION,ss);
+//	elevator::Control ctrl(elevator::COMEDI,ss);
 
 
-	//Timer tmr_test(Timer_Type::INTERVAL,2000);
-	//elevator::Timer tm(elevator::Timer_Type::INTERVAL);
+	IPC_Client_Unicast::Client udp("localhost:42000");
 
-//	Timer tmr_test2(Timer_Type::INTERVAL,1000);
-//	usleep(10000000);
-//	tmr_test2.stop();
-	//Wait for all the tasks to exit.
-	ACE_Thread_Manager::instance()->wait();
+	while(true)
+	{
+		udp.send_data("123456789012345678901324567");//std::to_string(count+1));//"ALIVE");
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-	return 0;
+		id++;
+	}
 }
 
-int test_driver()
+void listener(int child_pid)
 {
-	elevator::Driver drv(1,4);
+	int count=0;
+	ACE_DEBUG((LM_DEBUG, "LISTENER IS ALIVE\n"));
+	IPC_Server::Server listener(42024);
+	unsigned int miss=0;
+	std::stringstream ss;
 
-	 // Initialize hardware
-	    if (!drv.init(elevator::SIMULATION))
-	    {
-	        cout<<"Unable to initialize elevator hardware!\n";
-	        return 1;
-	    }
+	/*check whether primary is alive*/
+	while(true)
+	{
+		if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+			miss++;
 
-	    cout<<"Press STOP button to stop elevator and exit program.\n";
+		//count=atoi(listener.get_data().c_str());
+	}
 
-	    drv.set_motor_direction(elevator::DIRN_UP);
-
-	    while (1) {
-	        // Change direction when we reach top/bottom floor
-	        if (drv.get_floor_sensor_signal() == drv.get_max_floor() - 1)
-	        {
-	            drv.set_motor_direction(elevator::DIRN_DOWN);
-	        } else if (drv.get_floor_sensor_signal() == 0)
-	        {
-	            drv.set_motor_direction(elevator::DIRN_UP);
-	        }
-
-	        // Stop elevator and exit program if the stop button is pressed
-	        if (drv.get_stop_signal())
-	        {
-	            drv.set_motor_direction(elevator::DIRN_STOP);
-	            break;
-	        }
-	        usleep(1000000); std::cout<<"counting sec\n";
-	    }
-
-	    cout<<"DONE!\n";
-
-	    return 0;
+	if (child_pid!=0)
+	{
+		/*Burn,loot, rape and kill primary_service (child process); it's not responding */
+		kill(child_pid,SIGKILL);
+		/*Wait for primary_service (child process to terminate)*/
+		waitpid(child_pid,NULL,0);
+	}
+	new_primary_service(count,ss);//get the backup rolling as new
+								//primary and init it with the last known counter status
 }
-
-std::mutex g_mutex;
-int county=0;
-void signal_int_timer_test(int signum)
-{
-	std::unique_lock<std::mutex> lock(g_mutex);
-	county++;
-	ACE_DEBUG((LM_DEBUG,
-						   "timer interrupt no %d\n",
-						   county));
-}
-void signal_oneshot_timer_test(int signum){std::cout<<"timer one shot\n";}
 

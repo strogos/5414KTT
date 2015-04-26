@@ -1,6 +1,18 @@
-20:13:50 **** Incremental Build of configuration Debug for project Elevator_Project ****
+22:02:39 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
 
-20:13:50 Build Finished (took 114ms)
+22:02:42 Build Finished (took 2s.513ms)
 

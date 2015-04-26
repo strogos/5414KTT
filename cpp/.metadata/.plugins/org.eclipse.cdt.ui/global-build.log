@@ -1,8 +1,4 @@
-19:52:45 **** Clean-only build of configuration Debug for project Elevator_Project ****
-make clean 
-rm -rf  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  ./src/io.d  ./src/Control.d ./src/Driver.d ./src/Elevator.d ./src/IPC_Client.d ./src/IPC_Server.d ./src/Scheduler.d ./src/State.d ./src/Timer.d ./src/main.d  Elevator_Project
- 
-19:52:47 **** Build of configuration Debug for project Elevator_Project ****
+21:21:06 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/Control.cpp
 Invoking: Cross G++ Compiler
@@ -66,34 +62,574 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-19:53:01 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:32:10 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-make: Nothing to be done for `all'.
-19:55:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-19:56:36 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
+Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:56:55 **** Incremental Build of configuration Debug for project Elevator_Project ****
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:41:2: error: ‘State’ was not declared in this scope
+  State test;
+  ^
+../src/main.cpp:41:2: note: suggested alternative:
+In file included from ../src/Control.h:13:0,
+                 from ../src/main.cpp:15:
+../src/State.h:42:9: note:   ‘elevator::State’
+  struct State //task
+         ^
+../src/main.cpp:41:8: error: expected ‘;’ before ‘test’
+  State test;
+        ^
+../src/main.cpp:42:2: error: ‘test’ was not declared in this scope
+  test.do_serialize(ss,test);
+  ^
+../src/main.cpp:48:25: error: ‘SIMULATION’ is not a member of ‘elevator’
+  elevator::Control ctrl(elevator::SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:73:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:79:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:79:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:89:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:89:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:98:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:101:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:86:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:90:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:92:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:32:12 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 make: Nothing to be done for `all'.
-20:01:30 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:33:04 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-Building file: ../src/Control.cpp
+Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:48:25: error: ‘SIMULATION’ is not a member of ‘elevator::elevator_type {aka elevator::tag_elevator_type}’
+  elevator::Control ctrl(elevator::elevator_type::SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:73:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:79:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:79:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:89:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:89:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:98:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:101:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:86:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:90:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:92:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:33:05 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:33:25 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:48:25: error: ‘SIMULATION’ is not a member of ‘elevator::tag_elevator_type’
+  elevator::Control ctrl(elevator::tag_elevator_type::SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:73:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:79:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:79:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:89:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:89:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:98:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:101:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:86:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:90:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:92:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:33:26 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:33:36 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:48:25: error: ‘tag_elevator_type’ has not been declared
+  elevator::Control ctrl(tag_elevator_type::SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:73:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:79:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:79:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:89:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:89:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:98:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:101:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:86:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:90:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:92:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:33:37 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:34:08 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:49:25: error: ‘SIMULATION’ was not declared in this scope
+  elevator::Control ctrl(SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:74:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:80:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:80:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:90:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:90:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:99:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:102:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:87:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:91:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:93:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:34:10 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:34:17 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:49:25: error: ‘SIMULATION’ was not declared in this scope
+  elevator::Control ctrl(SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:74:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:80:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:80:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:90:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:90:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:99:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:102:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:87:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:91:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:93:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:34:19 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:34:45 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:49:25: error: ‘SIMULATION’ is not a member of ‘elevator::elevator_type {aka elevator::tag_elevator_type}’
+  elevator::Control ctrl(elevator::elevator_type::SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:74:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:80:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:80:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:90:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:90:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:99:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:102:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:87:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:91:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:93:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:34:47 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:35:15 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+In file included from ../src/main.cpp:16:0:
+../src/Elevator.h:65:23: error: ‘DIRN_DOWN’ was not declared in this scope
+       int direction_= DIRN_DOWN;
+                       ^
+../src/main.cpp: In function ‘int main()’:
+../src/main.cpp:50:25: error: ‘SIMULATION’ is not a member of ‘elevator’
+  elevator::Control ctrl(elevator::SIMULATION,ss);
+                         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:75:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:81:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:81:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:91:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:91:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:100:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:103:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:88:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:92:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:94:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:35:16 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:35:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:75:32: error: variable ‘IPC_Client_Unicast::Client udp’ has initializer but incomplete type
+  IPC_Client_Unicast::Client udp("localhost:42000");
+                                ^
+../src/main.cpp:81:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:81:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:91:2: error: ‘IPC_Server’ has not been declared
+  IPC_Server::Server listener(42000);
+  ^
+../src/main.cpp:91:21: error: expected ‘;’ before ‘listener’
+  IPC_Server::Server listener(42000);
+                     ^
+../src/main.cpp:100:18: error: request for member ‘accept_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+                  ^
+../src/main.cpp:103:23: error: request for member ‘get_data’ in ‘listener’, which is of non-class type ‘void(int)’
+   count=atoi(listener.get_data().c_str());
+                       ^
+../src/main.cpp:88:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:92:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:94:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:35:57 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:37:58 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘void primary_service(int)’:
+../src/main.cpp:83:21: error: ‘endl’ was not declared in this scope
+   std::cout<<count<<endl;
+                     ^
+../src/main.cpp:83:21: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:90:6: warning: unused variable ‘fake_primary_fail’ [-Wunused-variable]
+  int fake_primary_fail=0;
+      ^
+../src/main.cpp:94:15: warning: unused variable ‘miss_rate_second’ [-Wunused-variable]
+  unsigned int miss_rate_second=0;
+               ^
+../src/main.cpp:96:15: warning: unused variable ‘miss_check_counter’ [-Wunused-variable]
+  unsigned int miss_check_counter=0;
+               ^
+make: *** [src/main.o] Error 1
+21:37:59 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+21:38:51 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
 Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
 c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
@@ -107,25 +643,10 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-20:02:03 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:38:54 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 make: Nothing to be done for `all'.
-20:08:02 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-20:08:08 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-20:08:29 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:54:04 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
@@ -140,33 +661,78 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-20:08:35 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:56:17 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘void new_primary_service(int)’:
+../src/main.cpp:45:8: error: declaration of ‘pid_t pid’ shadows a parameter
+  pid_t pid=fork();//vfork(); //create child process
+        ^
+make: *** [src/main.o] Error 1
+21:56:18 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 make: Nothing to be done for `all'.
-20:10:11 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:56:52 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-Building file: ../src/Control.cpp
+Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-20:13:37 **** Incremental Build of configuration Debug for project Elevator_Project ****
+21:56:55 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
-Building file: ../src/Control.cpp
+make: Nothing to be done for `all'.
+22:02:09 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+../src/main.cpp: In function ‘void primary_service(int, std::stringstream&)’:
+../src/main.cpp:61:20: error: declaration of ‘std::stringstream ss’ shadows a parameter
+  std::stringstream ss;
+                    ^
+../src/main.cpp: In function ‘void listener(int)’:
+../src/main.cpp:107:27: error: too few arguments to function ‘void new_primary_service(int, std::stringstream&)’
+  new_primary_service(count);//get the backup rolling as new
+                           ^
+../src/main.cpp:43:6: note: declared here
+ void new_primary_service(int new_pid,std::stringstream& ss)
+      ^
+make: *** [src/main.o] Error 1
+22:02:11 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
+make all 
+make: Nothing to be done for `all'.
+22:02:39 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-20:13:50 **** Incremental Build of configuration Debug for project Elevator_Project ****
+22:02:42 **** Incremental Build of configuration Debug for project exercise6_phoenix ****
 make all 
 make: Nothing to be done for `all'.

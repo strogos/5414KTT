@@ -109,11 +109,11 @@ namespace elevator
 			bool is_call_up(int floor);
 
 			/*thread tools*/
-			int thread_prepare_join(std::vector<std::thread>& my_threads);
-			void thread_do_join(std::thread& t);
-
-			/*Additional joinable worker threads*/
-			void thread_dgram_worker(int tid); //listen for dgrams
+//			int thread_prepare_join(std::vector<std::thread>& my_threads);
+//			void thread_do_join(std::thread& t);
+//
+//			/*Additional joinable worker threads*/
+//			void thread_dgram_worker(int tid); //listen for dgrams
 
 
 	};

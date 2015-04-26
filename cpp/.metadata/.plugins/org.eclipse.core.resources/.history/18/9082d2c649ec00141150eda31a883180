@@ -1,0 +1,52 @@
+//============================================================================
+// Name        : main.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+//extern "C"
+//{
+//	#include"elev.h"
+//}
+#pragma once
+
+#include "Elevator_Object.h"
+#include "Control.h"
+#include "Timer.h"
+#include <unistd.h>//sleep
+#include <iostream>
+#include "Driver.h"//A quick class wrapper based on elev.c;
+#include <mutex>
+#include "io.h"
+
+using namespace std;
+
+
+
+int main()
+{
+	ACE_DEBUG((LM_DEBUG,
+					   "in main\n"));
+	//connect signals to slots
+//	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
+//	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
+
+	std::stringstream ss;
+	State test;
+	test.do_serialize(ss,test);
+	std::cout<<"data in binary form: "<<ss.str()<<"\n";
+
+	test.do_deserialize(ss,test);
+	std::cout<<"data in converted back to normal form now?????\n";
+
+	elevator::Control ctrl(elevator::SIMULATION,ss);
+//	elevator::Control ctrl(elevator::COMEDI,ss);
+
+
+	//Wait for all the tasks to exit.
+	ACE_Thread_Manager::instance()->wait();
+
+	return 0;
+}
