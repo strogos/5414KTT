@@ -56,9 +56,6 @@ void new_primary_service(int new_pid,std::stringstream& ss, std::stringstream& s
 
 void primary_service(int id,std::stringstream& ss,std::stringstream& ss_lan)
 {
-	//connect signals to slots
-//	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
-//	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
 
 	elevator::State state;
 	state.do_serialize(ss,state);
@@ -71,13 +68,15 @@ void primary_service(int id,std::stringstream& ss,std::stringstream& ss_lan)
 //	elevator::Control ctrl(elevator::COMEDI,ss);
 
 	//Wait for all the tasks to exit.
-	//ACE_Thread_Manager::instance()->wait();
+//	ACE_Thread_Manager::instance()->wait();
 
 	IPC_Client_Unicast::Client udp("localhost:42024");
+	IPC_Client_Unicast::Client udp_2("localhost:42124");
 
 	while(true)
 	{
-		udp.send_data(ss.str());//std::to_string(count+1));//"ALIVE");
+		udp.send_data(ss.str());
+		udp_2.send_data(ss.str());
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
 		id++;
@@ -114,6 +113,8 @@ void listener(int child_pid)
 		else
 			miss++;
 		//count=atoi(listener.get_data().c_str());
+//		if (miss==10)
+//			break;
 	}
 
 	if (child_pid!=0)

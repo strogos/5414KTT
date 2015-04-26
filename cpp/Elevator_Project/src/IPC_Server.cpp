@@ -52,7 +52,7 @@ namespace IPC_Server
 		ssize_t bytes_received=0;
 
 
-//		ACE_Time_Value timeout(1,0);//500000);//TODO: REMOVE.. only for ex6
+		ACE_Time_Value timeout(2,0);//500000);//TODO: REMOVE.. only for ex6
 		if((bytes_received = this->socket_.recv(this->data_buff_,this->dgram_byte_size_,this->remote_addr_))!=-1)//!=-1)
 		{
 			data_buff_[bytes_received]=0;

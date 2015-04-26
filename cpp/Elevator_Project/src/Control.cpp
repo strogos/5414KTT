@@ -94,7 +94,6 @@ namespace elevator
 		ACE_DEBUG((LM_DEBUG,
 							"(%t) Active Control Object opened \n"));
 		//activate object with a thread in it
-		//this->activate(THR_NEW_LWP | THR_SUSPENDED,1); //using a kernel thread
 		activate();
 		return 0;
 	}
@@ -246,11 +245,11 @@ namespace elevator
 				std::stringstream ss;
 				handle_->state_.do_serialize(ss,handle_->state_);
 
-//			    // Send elevator state (imAlive message) to backup TODO::::::::::
-//			    local_network->sendMessage(elev_state);
-//
-//			    // Send elevator state to other elevators
-//			    elevator_network->sendMessage(elev_state);
+			    // Send elevator state
+			    handle_->dgram_localhost_->send_data(ss.str());
+
+			    // Send elevator state to other elevators
+			    handle_->dgram_lan_->send_data(ss.str());
 
 				return 0;
 			}
