@@ -38,15 +38,16 @@ namespace elevator
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
-//		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
-//				static_cast<long>(SERVICE_TIME_),
-//				this));
+		heartbeat_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
+													100,
+													this));
+		//heartbeat_timer_->open(0);
 
 		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::ONE_SHOT,
 					static_cast<long>(SERVICE_TIME_),
 					this));
 
-
+	//	service_timer_->open(0);
 		/*start tasks (and their corresponding threads)
 		 * Note the order in which tasks are opened
 		 * [memory leaks can happen here if not careful]*/

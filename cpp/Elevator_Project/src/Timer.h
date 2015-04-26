@@ -52,6 +52,8 @@ public:
 	clock_time::msec get_start_time();
 	bool is_running();
 	void stop();
+	void suspend();
+	void resume();
 
 	private:
 //		/*if we want to copy an object to a new object when using a unique_ptr we must do the following*/

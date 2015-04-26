@@ -94,14 +94,14 @@ Timer::Timer(Timer_Type tt, Control * ctrl)
      : timer_type_(tt), ctrl_(ctrl)
 {
 	ctrl_signal_=ctrl->signal_subscribe(ctrl_signal_);
-	open(0);
+//	open(0);
 }
 
 Timer::Timer(Timer_Type tt, long time_ms, Control * ctrl)
 	 :time_ms_(time_ms), timer_type_(tt), ctrl_(ctrl)
 {
 	ctrl_signal_=ctrl->signal_subscribe(ctrl_signal_);
-	open(0);
+//	open(0);
 }
 
 Timer::~Timer(){delete handler_;}
@@ -134,6 +134,16 @@ int Timer::svc(void)
 		reac->handle_events();
 	}
 	return 0;
+}
+
+void Timer::suspend()
+{
+	this->suspend();
+}
+
+void Timer::resume()
+{
+	this->resume();
 }
 
 /*FORWARDs*/

@@ -86,6 +86,7 @@ namespace elevator
 			ACE_Activation_Queue slot_queue_;
 			State  state_;
 			std::unique_ptr<Timer> service_timer_;
+			std::unique_ptr<Timer> heartbeat_timer_;
 
 
 			//*local network socket handlers
