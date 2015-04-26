@@ -24,8 +24,8 @@
 
 
 void listener(int child_tid);
-void primary_service(int,std::stringstream&);
-void new_primary_service(int,std::stringstream&);
+void primary_service(int,std::stringstream&,std::stringstream& ss);
+void new_primary_service(int,std::stringstream&,std::stringstream&);
 
 int main()
 {
@@ -33,48 +33,51 @@ int main()
 					   "in main\n"));
 
 	std::stringstream ss;
-	new_primary_service(0,ss);
+	std::stringstream ss_lan;
+
+	new_primary_service(0,ss,ss_lan);
 
 	//Wait for all the tasks to exit.
 	ACE_Thread_Manager::instance()->wait();
 	return 0;
 }
 
-void new_primary_service(int new_pid,std::stringstream& ss)
+void new_primary_service(int new_pid,std::stringstream& ss, std::stringstream& ss_lan)
 {
 	pid_t pid=fork();//vfork(); //create child process
 
 	if (pid==0)
-		primary_service(new_pid,ss); //child
+		primary_service(new_pid,ss,ss_lan); //child
 	else if (pid>0)
 		listener(pid);//parent
 	else
 		ACE_ERROR((LM_WARNING, "failed creating child(primary_service) process\n"));
 }
 
-void primary_service(int id,std::stringstream& ss)
+void primary_service(int id,std::stringstream& ss,std::stringstream& ss_lan)
 {
 	//connect signals to slots
 //	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
 //	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
 
-	//std::stringstream ss;
-	elevator::State test;
-	test.do_serialize(ss,test);
+	elevator::State state;
+	state.do_serialize(ss,state);
 	std::cout<<"data in binary form: "<<ss.str()<<"\n";
 
-	test.do_deserialize(ss,test);
+	state.do_deserialize(ss,state);
 	std::cout<<"data in converted back to normal form now?????\n";
 
 	elevator::Control ctrl(elevator::SIMULATION,ss);
 //	elevator::Control ctrl(elevator::COMEDI,ss);
 
+	//Wait for all the tasks to exit.
+	//ACE_Thread_Manager::instance()->wait();
 
-	IPC_Client_Unicast::Client udp("localhost:42000");
+	IPC_Client_Unicast::Client udp("localhost:42024");
 
 	while(true)
 	{
-		udp.send_data("123456789012345678901324567");//std::to_string(count+1));//"ALIVE");
+		udp.send_data(ss.str());//std::to_string(count+1));//"ALIVE");
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
 		id++;
@@ -86,15 +89,30 @@ void listener(int child_pid)
 	int count=0;
 	ACE_DEBUG((LM_DEBUG, "LISTENER IS ALIVE\n"));
 	IPC_Server::Server listener(42024);
+	IPC_Server::Server listener_lan(42124);
 	unsigned int miss=0;
 	std::stringstream ss;
+	std::stringstream ss_lan;
+	elevator::State state;
 
 	/*check whether primary is alive*/
 	while(true)
 	{
-		if (!(listener.accept_data()))// && listener.get_data()=="$ALIVE€"))
+		if ((listener.accept_data()))
+		{
+			ss<<listener.get_data();
+			state.do_deserialize(ss,state);
+		}
+		else
 			miss++;
 
+		if ((listener_lan.accept_data()))
+		{
+			ss_lan<<listener_lan.get_data();
+			state.do_deserialize(ss_lan,state);
+		}
+		else
+			miss++;
 		//count=atoi(listener.get_data().c_str());
 	}
 
@@ -105,7 +123,7 @@ void listener(int child_pid)
 		/*Wait for primary_service (child process to terminate)*/
 		waitpid(child_pid,NULL,0);
 	}
-	new_primary_service(count,ss);//get the backup rolling as new
-								//primary and init it with the last known counter status
+	new_primary_service(count,ss,ss_lan);//get the backup rolling as new
+								//primary and send over the elevator state
 }
 

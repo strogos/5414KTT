@@ -75,10 +75,6 @@ namespace IPC_Client_Broadcast
 			char *data_buff_;
 			const unsigned short dgram_byte_size_;
 			const unsigned short remote_port_;
-			const std::string data_msg_end_="€";
-			const std::string data_msg_start_="$";
-			int found_msg_end_=0;
-			int found_msg_start_=0;
 
 			int accept_data_(const std::string msg_sent);
 		};

@@ -46,8 +46,6 @@ namespace IPC_Server
 		ACE_SOCK_Dgram socket_;
 		char *data_buff_;
 		std::string data_string_;
-		const std::string data_msg_end_="€";
-		const std::string data_msg_start_="$";
 		int found_msg_end_=0;
 		int found_msg_start_=0;
 		const unsigned short dgram_byte_size_;

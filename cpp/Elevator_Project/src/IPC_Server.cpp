@@ -11,6 +11,7 @@
 
 #include "IPC_Server.h"
 
+
 #include <iostream>
 
 #include <cstring>
@@ -50,10 +51,8 @@ namespace IPC_Server
 	{
 		ssize_t bytes_received=0;
 
-		//std::memset(this->data_buff_,0,ACE_OS::strlen(this->data_buff_));//Clean data buffer
 
-		//std::cout<<"...listening on host: "<<this->remote_addr_.get_host_addr()<<std::endl;
-		ACE_Time_Value timeout(1,0);//500000);//TODO: REMOVE.. only for ex6
+//		ACE_Time_Value timeout(1,0);//500000);//TODO: REMOVE.. only for ex6
 		if((bytes_received = this->socket_.recv(this->data_buff_,this->dgram_byte_size_,this->remote_addr_))!=-1)//!=-1)
 		{
 			data_buff_[bytes_received]=0;
@@ -66,17 +65,14 @@ namespace IPC_Server
 
 			data_string_.assign(this->data_buff_,ACE_OS::strlen (this->data_buff_));
 
-			this->found_msg_start_=data_string_.find(this->data_msg_start_);
-			this->found_msg_end_=data_string_.find(this->data_msg_end_);
-			if ((this->found_msg_start_>-1) && (this->found_msg_end_>-1))//is message valid?
-			{
 				ACE_DEBUG((LM_DEBUG,"Server got a complete message!\n"));
 				if(this->send_data()==-1)//send ack!
 					return 1;//break;
-			}
 		}
 		else
 			return -1;
+
+		return 0;
 	}
 
 	int Server::send_data()

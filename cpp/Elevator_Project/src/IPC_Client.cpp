@@ -43,20 +43,10 @@ namespace IPC_Client_Unicast
 		{
 			data_string.assign(data_buff_,ACE_OS::strlen (this->data_buff_));
 
-			found_msg_start_=data_string.find(data_msg_start_);
-			found_msg_end_=data_string.find(data_msg_end_);
-			if ((found_msg_start_>-1) && (found_msg_end_>-1))/*is message valid?*/
-			{
 				ACE_DEBUG((LM_DEBUG,
 						"Data received from remote server %s was: %s \n" ,
 						remote_addr_.get_host_addr(), this->data_buff_));
 				return 0;
-			}
-			else
-			{
-				ACE_ERROR ((LM_WARNING,"%p\n","did not rcv ACK"));
-				return -1;
-			}
 		}
 		else
 		{
@@ -67,12 +57,6 @@ namespace IPC_Client_Unicast
 
 	int Client::send_data(std::string msg)
 	{
-		/*add message integrity markers to message*/
-		std::stringstream *ss = new std::stringstream;
-		*ss<<"$"<<msg<<"€";
-		msg=ss->str();
-
-		delete ss;
 		ACE_DEBUG((LM_DEBUG,"Preparing to send data to server %s:%d\n",
 				this->remote_addr_.get_host_addr(),this->remote_addr_.get_port_number()));
 
@@ -138,20 +122,10 @@ namespace IPC_Client_Broadcast
 			{
 				data_string.assign(data_buff_,ACE_OS::strlen (this->data_buff_));
 
-				found_msg_start_=data_string.find(data_msg_start_);
-				found_msg_end_=data_string.find(data_msg_end_);
-				if ((found_msg_start_>-1) && (found_msg_end_>-1))/*is message valid?*/
-				{
 					ACE_DEBUG((LM_DEBUG,
 							"Client rcv data from remote server %s; DATA_MSG: %s \n" ,
 							remote_addr_.get_host_addr(), this->data_buff_));
 					return 0;
-				}
-				else
-				{
-					ACE_ERROR ((LM_WARNING,"%p\n","did not rcv ACK"));
-					return -1;
-				}
 			}
 			else
 			{
@@ -162,12 +136,6 @@ namespace IPC_Client_Broadcast
 
 	int Client::send_data(std::string msg)
 	{
-		/*add message integrity markers to message*/
-		std::unique_ptr<std::stringstream> ss(new std::stringstream);
-		//std::stringstream *ss = new std::stringstream;
-		*ss<<"$"<<msg<<"€";
-		msg=ss->str();
-		//delete ss;
 
 		ACE_DEBUG((LM_DEBUG,"Client preparing to broadcast data over port %hu\n",
 				this->remote_port_));
@@ -189,9 +157,6 @@ namespace IPC_Client_Broadcast
 										   "%p\n",
 										   "Server not responding to hail from client"),
 											-1);
-
-				/*TODO: QUESTION SERVER INTEGRITY HERE! (...or maybe in main?)*/
-					//->Wait for I am alive? then try re-sending?
 			}
 		}
 

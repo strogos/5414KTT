@@ -71,9 +71,7 @@ namespace elevator
 		 }
 
 
-		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
-		//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
-		//interrupt timer
+		/*init timers*/
 		heartbeat_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
 													100,
 													this));
@@ -214,8 +212,6 @@ namespace elevator
 
 			virtual int call (void)
 			{
-//			    //service_timer->stop(); //no need...
-
 //				handle_->elevator_->set_door_open_indicator(false); //SIMULATOR IS CRAP
 
 			    // Done servicing: more to do?
