@@ -33,8 +33,19 @@ namespace elevator
 		ctrl_signal_->button_press.connect(this,&Control::slot_button_press);
 		ctrl_signal_->floor_sensor.connect(this,&Control::slot_floor_sensor);
 		ctrl_signal_->stop_task.connect(this,&Control::slot_exit_task);
+		ctrl_signal_->interval_timer.connect(this,&Control::slot_heartbeat_timer);
+		ctrl_signal_->oneshot_timer.connect(this,&Control::slot_service_timer);
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
+
+//		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
+//				static_cast<long>(SERVICE_TIME_),
+//				this));
+
+		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::ONE_SHOT,
+					static_cast<long>(SERVICE_TIME_),
+					this));
+
 
 		/*start tasks (and their corresponding threads)
 		 * Note the order in which tasks are opened
@@ -43,9 +54,8 @@ namespace elevator
 		this->open(0);
 
 		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
-		//signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
+	//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
 		//interrupt timer
-
 
 
 	}
@@ -101,7 +111,6 @@ namespace elevator
 
 	Control_Signals * Control::signal_subscribe(Control_Signals * subscribe)
 	{
-
 		//memory mgmt on all signaling to slots in control shall be done in the control task itself
 		subscribe=ctrl_signal_.get();
 		if (subscribe)
@@ -111,7 +120,6 @@ namespace elevator
 			ACE_ERROR((LM_EMERGENCY,"PANIC: control task SIGNAL subscription FAIL!\n"));
 			throw std::bad_alloc();
 		}
-
 	}
 
 	class Control::On_Button_Press : public ACE_Method_Request
@@ -166,6 +174,38 @@ namespace elevator
 	struct Exit_Method : public ACE_Method_Request
 	{
 		virtual int call (void) {return -1;}
+	};
+
+	class Control::On_Service_Timer : public ACE_Method_Request
+	{
+		public:
+			On_Service_Timer(Control * handle) : handle_(handle)
+			{
+				ACE_DEBUG((LM_DEBUG,"oneshot enqued %d\n", floor));
+			}
+
+			virtual int call (void) {return -1;}//TODO
+
+		private:
+			Control * handle_;
+	};
+
+	class Control::On_Heartbeat_Timer : public ACE_Method_Request
+	{
+		public:
+			On_Heartbeat_Timer(Control * handle) : handle_(handle)
+			{
+				ACE_DEBUG((LM_DEBUG,"Interval enqued %d\n", floor));
+			}
+
+			virtual int call (void)
+			{
+				//TODO
+				return 0;
+			}
+
+		private:
+			Control * handle_;
 	};
 
 	bool Control::should_service(int floor)
@@ -229,8 +269,8 @@ namespace elevator
 		elevator_->set_door_open_indicator(true);
 
 		// Start the service timer (raises posix signal)
-		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
-											 	 	 static_cast<long>(SERVICE_TIME_)));
+//		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
+//											 	 	 static_cast<long>(SERVICE_TIME_)));
 	}
 
 	bool Control::is_call_up(int floor)
@@ -315,4 +355,13 @@ namespace elevator
 	{
 		slot_queue_.enqueue(new Exit_Method);
 	}
+	void Control::slot_service_timer(void*)
+	{
+		slot_queue_.enqueue(new On_Service_Timer(this));
+	}
+	void Control::slot_heartbeat_timer(void*)
+	{
+		slot_queue_.enqueue(new On_Heartbeat_Timer(this));
+	}
+
 }

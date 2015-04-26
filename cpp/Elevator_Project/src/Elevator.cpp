@@ -155,9 +155,6 @@ namespace elevator
 	        	}
 	        }
 
-    		ACE_DEBUG((LM_DEBUG,
-									"(%t) is running : %d!\n", (int)is_running_));
-
 			/* check if elevator is obstructed */
 			if (handle_driver_->get_obstruction_signal())
 			{

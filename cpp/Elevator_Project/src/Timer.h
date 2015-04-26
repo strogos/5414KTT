@@ -17,6 +17,7 @@
 
 #include "ace/Task.h"
 #include "time.h"
+#include "Control.h"
 
 #include  <memory>
 #include <signal.h>
@@ -24,13 +25,14 @@
 #define SIG_INTERVAL_TIMER 10 //SIGUSR1
 #define SIG_ONESHOT_TIMER 12 //SIGUSR2
 
+using namespace elevator;
 enum class Timer_Type : int {ONE_SHOT=0,INTERVAL=1, RUNNING=2};
 
 class Timer : public ACE_Task<ACE_MT_SYNCH>
 {
 public:
-	Timer(Timer_Type tt);               //start stop timer
-	Timer(Timer_Type tt, long time_ms);    //one-shot timer or interval timer
+	Timer(Timer_Type tt, Control * ctrl);               //start stop timer
+	Timer(Timer_Type tt, long time_ms, Control * ctrl);    //one-shot timer or interval timer
 
 
 
@@ -62,6 +64,8 @@ public:
 		Handler *handler_=nullptr;
 		long time_ms_=0;
 		Timer_Type timer_type_;
+		Control * ctrl_=nullptr;
+		Control_Signals *ctrl_signal_=nullptr;
 };
 
 #endif /* TIMER_H_ */

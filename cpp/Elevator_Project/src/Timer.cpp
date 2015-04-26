@@ -16,8 +16,8 @@
 class Timer::Handler : public ACE_Event_Handler
 {
 	public:
-		Handler(Timer_Type tt, long time_ms, ACE_Reactor * reac)
-					: done_(false), reactor_(reac)
+		Handler(Timer_Type tt, long time_ms, ACE_Reactor *reac, Control_Signals *ctrl_sig)
+					: done_(false), reactor_(reac), ctrl_sig_(ctrl_sig)
 		{
 			long arg=(long)tt;
 			switch (tt)
@@ -60,12 +60,13 @@ class Timer::Handler : public ACE_Event_Handler
 			Timer_Type tt=static_cast<Timer_Type>(reinterpret_cast<long>(arg));
 			if (tt==Timer_Type::ONE_SHOT)
 			{
-				raise(SIG_ONESHOT_TIMER);
+				//raise(SIG_ONESHOT_TIMER);
+				ctrl_sig_->oneshot_timer.emit(0);
 				done_=true;
 			}
 			else if (tt==Timer_Type::INTERVAL)
-				raise(SIG_INTERVAL_TIMER);
-
+				//raise(SIG_INTERVAL_TIMER);
+				ctrl_sig_->interval_timer.emit(0);
 			//Keep yourself registered with the Reactor.
 			return 0;
 		}
@@ -85,18 +86,21 @@ class Timer::Handler : public ACE_Event_Handler
 		ACE_Time_Value time_value_;
 		clock_time::msec time_ms_=0;
 		clock_time::msec last_epoch_=0;
+		Control_Signals *ctrl_sig_=nullptr;
 };
 
 /*PROXY CLASS (semi-pimpl style)*/
-Timer::Timer(Timer_Type tt)
-     : timer_type_(tt)
+Timer::Timer(Timer_Type tt, Control * ctrl)
+     : timer_type_(tt), ctrl_(ctrl)
 {
+	ctrl_signal_=ctrl->signal_subscribe(ctrl_signal_);
 	open(0);
 }
 
-Timer::Timer(Timer_Type tt, long time_ms)
-	 :time_ms_(time_ms), timer_type_(tt)
+Timer::Timer(Timer_Type tt, long time_ms, Control * ctrl)
+	 :time_ms_(time_ms), timer_type_(tt), ctrl_(ctrl)
 {
+	ctrl_signal_=ctrl->signal_subscribe(ctrl_signal_);
 	open(0);
 }
 
@@ -123,7 +127,7 @@ int Timer::svc(void)
 	//handler MUST be allocated here as this is where new threads will run
 	//(ACE events does not (sadly) trigger for all threads in an ACE Task Object)
 	std::unique_ptr<ACE_Reactor> reac(new ACE_Reactor);
-	std::unique_ptr<Timer::Handler> handle(new Timer::Handler(timer_type_,time_ms_,reac.get()));
+	std::unique_ptr<Timer::Handler> handle(new Timer::Handler(timer_type_,time_ms_,reac.get(),ctrl_signal_));
 	handler_=handle.get();
 	while (!handle->is_done())
 	{

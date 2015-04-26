@@ -25,9 +25,6 @@ using namespace std;
 
 
 int test_driver();
-int test_ACE_event_handler();
-int test_ACE_Task();
-
 void signal_int_timer_test(int);
 void signal_oneshot_timer_test(int);
 
@@ -39,10 +36,13 @@ int main()
 	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
 	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
 
-	elevator::Control ctrl(elevator::SIMULATION);
+//	elevator::Control ctrl(elevator::SIMULATION);
+	elevator::Control ctrl(elevator::COMEDI);
 
-	//Timer tmr_test(Timer_Type::ONE_SHOT,2000);
-//	Timer tmr_test2(Timer_Type::INTERVAL,100);
+	//Timer tmr_test(Timer_Type::INTERVAL,2000);
+	//elevator::Timer tm(elevator::Timer_Type::INTERVAL);
+
+//	Timer tmr_test2(Timer_Type::INTERVAL,1000);
 //	usleep(10000000);
 //	tmr_test2.stop();
 	//Wait for all the tasks to exit.

@@ -23,13 +23,13 @@
 #include <memory>
 #include <atomic>
 
-/*FWD DECLARATIONS*/
 class Timer;
 
 namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Elevator;
+
 	enum  tag_elevator_type : int;
 	typedef tag_elevator_type elevator_type;
 	enum tag_lamp_type : int;
@@ -45,6 +45,8 @@ namespace elevator
 		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
 		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
 		W::Signal<void*> stop_task;
+		W::Signal<void*> oneshot_timer;
+		W::Signal<void*> interval_timer;
 	};
 
 	/*CONTROL [ace]TASK */
@@ -68,6 +70,8 @@ namespace elevator
 			void slot_button_press(button_type_t button, int floor);
 			void slot_floor_sensor(int floor);
 			void slot_exit_task(void*);
+			void slot_service_timer(void*);
+			void slot_heartbeat_timer(void*);
 
 			/*SIGNALS*/
 			Control_Signals * signal_subscribe(Control_Signals * subscribe);
@@ -91,6 +95,8 @@ namespace elevator
 			class On_Button_Press;
 			class On_Floor_Sensor;
 			struct On_Exit;
+			class On_Service_Timer;
+			class On_Heartbeat_Timer;
 
 			/*FUNCTIONS*/
 			bool should_service(int floor);

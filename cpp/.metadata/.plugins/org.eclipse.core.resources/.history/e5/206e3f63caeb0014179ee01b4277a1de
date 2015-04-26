@@ -1,0 +1,105 @@
+/*
+ * Control.h
+ *
+ *  Created on: Feb 11, 2015
+ *      Author: bengteh
+ */
+#ifndef CONTROL_H_
+#define CONTROL_H_
+
+
+#include "tools/signalslot/W_Slot.h"
+#include "tools/signalslot/W_Signal.h"
+#include "State.h"
+
+//#include <ace/OS.h>
+#include "ace/Task.h"
+#include "ace/Method_Request.h"
+#include "ace/Activation_Queue.h"
+//#include <ace/Message_Block.h>
+//#include <ace/Reactor.h>
+//#include <ace/Event_Handler.h>
+//#include <ace/Thread_Manager.h>
+#include <memory>
+#include <atomic>
+
+/*FWD DECLARATIONS*/
+class Timer;
+
+namespace elevator
+{
+	/*FWD DECLARATIONS*/
+	class Elevator;
+	enum  tag_elevator_type : int;
+	typedef tag_elevator_type elevator_type;
+	enum tag_lamp_type : int;
+	typedef tag_lamp_type button_type_t;
+
+	enum class Serviced_Slot : int {ON_BUTTON, ON_FLOOR};
+
+	/*SIGNAL CONTAINER*/
+	struct Control_Signals /*thread-safe*/
+	{
+		W::Signal<button_type_t,int>button_press;     //signal for user input
+		W::Signal<int> floor_sensor;              //signal for floor proximity sensors
+		W::Signal<int> stop_sensor;               //signal for stop proximity sensors
+		W::Signal<int> obstruct_sensor;           //signal for obstruction proximity sensor
+		W::Signal<void*> stop_task;
+	};
+
+	/*CONTROL [ace]TASK */
+	class Control : public ACE_Task<ACE_MT_SYNCH>,
+		            public W::Slot
+
+	{
+		public:
+			Control(elevator_type session);
+			~Control();
+
+			//Implement the ACE specific service init/termination methods
+			int open(void*);
+			int close (u_long);
+			int svc(void);
+
+			/*FUNCTIONS*/
+			elevator_type get_session();
+
+			/*SLOTS*/
+			void slot_button_press(button_type_t button, int floor);
+			void slot_floor_sensor(int floor);
+			void slot_exit_task(void*);
+			void slot_oneshot_timer();
+			void slot_interval_timer();
+
+			/*SIGNALS*/
+			Control_Signals * signal_subscribe(Control_Signals * subscribe);
+
+		private:
+			const int SERVICE_TIME_ = 2000;
+			const int IDLE_DELAY_TIME_ = 500;
+			std::unique_ptr<Elevator> elevator_;
+			std::atomic<bool> servicing_;
+			std::unique_ptr<Control_Signals> ctrl_signal_; //signal container memory mgmt shall be done in control task
+			elevator_type session_;
+			ACE_Activation_Queue slot_queue_;
+			State  state_;
+			std::unique_ptr<Timer> service_timer_;
+
+
+			//*local network socket handlers
+			//*elevator network handler
+
+			/*ACTIVE OBJECT METHODS*/
+			class On_Button_Press;
+			class On_Floor_Sensor;
+			struct On_Exit;
+
+			/*FUNCTIONS*/
+			bool should_service(int floor);
+			void service_floor(int floor, button_type_t button);
+			bool is_call_down(int floor);
+			bool is_call_up(int floor);
+	};
+}
+#endif /* CONTROL_H_ */
+
