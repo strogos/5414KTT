@@ -28,6 +28,7 @@ namespace elevator
 {
 	/*FWD DECLARATIONS*/
 	class Elevator;
+	class Timer;
 	enum  tag_elevator_type : int;
 	typedef tag_elevator_type elevator_type;
 	enum tag_lamp_type : int;
@@ -79,6 +80,7 @@ namespace elevator
 			elevator_type session_;
 			ACE_Activation_Queue slot_queue_;
 			State  state_;
+
 
 			//*local network socket handlers
 			//*elevator network handler

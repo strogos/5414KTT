@@ -1,0 +1,139 @@
+/*
+ * Timer.cpp
+ *
+ *  Created on: Apr 23, 2015
+ *      Author: bengteh
+ */
+
+#include "Timer.h"
+
+#include "ace/Log_Msg.h"
+#include "ace/Reactor.h"
+
+#include <atomic>
+
+/*HANDLER CLASS*/
+class Timer::Handler : public ACE_Event_Handler
+{
+	public:
+		Handler(Timer_Type tt, long time_ms, ACE_Reactor * reac)
+					: done_(false), reactor_(reac)
+		{
+			long arg=(long)tt;
+			switch (tt)
+			{
+				case Timer_Type::ONE_SHOT:
+					timer_id_=reactor_->schedule_timer(this, //timer handler
+                                  (const void *)arg,           // argument (arg) sent to handle_timeout()
+                                  ACE_Time_Value(0,time_ms*1000));//time to timeout
+					break;
+				case Timer_Type::INTERVAL:
+						timer_id_=reactor_->schedule_timer(this, //timer handler
+									  (const void *)arg,           // argument (arg) sent to handle_timeout()
+									  ACE_Time_Value(0),//time to timeout
+									  ACE_Time_Value(0,time_ms*1000));//interval
+					break;
+				case Timer_Type::RUNNING:
+						timer_id_=reactor_->schedule_timer(this, //timer handler
+									  (const void *)arg,           // argument (arg) sent to handle_timeout()
+									  ACE_Time_Value(0),//time to timeout
+									  ACE_Time_Value(0,1000));//sample current time once per ms
+					break;
+				default:
+					break;
+			}
+
+			if (timer_id_==-1)
+				done_=true; //failed to create timer TODO:throw exception
+
+			time_ms_=clock_time::now();
+		}
+		~Handler(){}
+
+		int handle_timeout (const ACE_Time_Value &tv,const void *arg) //Method which is called back
+		{															  //by the Reactor when timeout occurs.
+
+			last_epoch_=clock_time::now()-time_ms_;
+			if (last_epoch_<0)
+				last_epoch_=0;
+
+			Timer_Type tt=static_cast<Timer_Type>(reinterpret_cast<long>(arg));
+			if (tt==Timer_Type::ONE_SHOT)
+			{
+				raise(SIGNAL_ONESHOT);
+				done_=true;
+			}
+			else if (tt==Timer_Type::INTERVAL)
+				raise(SIGNAL_INTERVAL);
+
+			//Keep yourself registered with the Reactor.
+			return 0;
+		}
+		int get_id(){return timer_id_;}
+		long long get_ms_time(){return last_epoch_;}
+		clock_time::msec get_start_time(){return time_ms_;}
+		bool is_done(){return done_;}
+		void stop(int timer_id)
+		{
+			reactor_->cancel_timer(timer_id);
+			done_=true;
+		}
+	private:
+		std::atomic<bool> done_;
+		ACE_Reactor *reactor_=nullptr;
+		int timer_id_=0;
+		ACE_Time_Value time_value_;
+		clock_time::msec time_ms_=0;
+		clock_time::msec last_epoch_=0;
+};
+
+/*PROXY CLASS (semi-pimpl style)*/
+Timer::Timer(Timer_Type tt)
+     : timer_type_(tt)
+{
+	open(0);
+}
+
+Timer::Timer(Timer_Type tt, long time_ms)
+	 :time_ms_(time_ms), timer_type_(tt)
+{
+	open(0);
+}
+
+Timer::~Timer(){delete handler_;}
+
+int Timer::open(void*)
+{
+	ACE_DEBUG((LM_DEBUG,
+						"(%t) Timer Implementation opened \n"));
+	activate();
+	return 0;
+}
+
+int Timer::close(u_long)
+{
+	ACE_DEBUG((LM_DEBUG, "(%t) Timer Implementation is being closed down \n"));
+	return 0;
+}
+
+int Timer::svc(void)
+{
+	ACE_DEBUG((LM_DEBUG, "(%t) servicing Timer events \n"));
+
+	//handler MUST be allocated here as this is where new threads will run
+	//(ACE events does not (sadly) trigger for all threads in an ACE Task Object)
+	std::unique_ptr<ACE_Reactor> reac(new ACE_Reactor);
+	std::unique_ptr<Timer::Handler> handle(new Timer::Handler(timer_type_,time_ms_,reac.get()));
+	handler_=handle.get();
+	while (!handle->is_done())
+	{
+		reac->handle_events();
+	}
+	return 0;
+}
+
+/*FORWARDs*/
+int Timer::get_id(){return handler_->get_id();}
+long long Timer::get_ms_time(){return handler_->get_ms_time();}
+bool Timer::is_running(){return handler_->is_done();}
+void Timer::stop(){handler_->stop(handler_->get_id());}

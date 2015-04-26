@@ -6,7 +6,6 @@
  */
 
 #include "Timer.h"
-#include "time.h"
 
 #include "ace/Log_Msg.h"
 #include "ace/Reactor.h"
@@ -72,6 +71,7 @@ class Timer::Handler : public ACE_Event_Handler
 		}
 		int get_id(){return timer_id_;}
 		long long get_ms_time(){return last_epoch_;}
+		clock_time::msec get_start_time(){return time_ms_;}
 		bool is_done(){return done_;}
 		void stop(int timer_id)
 		{
@@ -135,5 +135,6 @@ int Timer::svc(void)
 /*FORWARDs*/
 int Timer::get_id(){return handler_->get_id();}
 long long Timer::get_ms_time(){return handler_->get_ms_time();}
+clock_time::msec Timer::get_start_time(){return handler_->get_start_time();}
 bool Timer::is_running(){return handler_->is_done();}
 void Timer::stop(){handler_->stop(handler_->get_id());}

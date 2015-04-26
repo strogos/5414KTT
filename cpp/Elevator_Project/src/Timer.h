@@ -16,6 +16,7 @@
 #define TIMER_H_
 
 #include "ace/Task.h"
+#include "time.h"
 
 #include  <memory>
 #include <signal.h>
@@ -46,6 +47,7 @@ public:
 	/*FUNCTIONS*/
 	int get_id();
 	long long get_ms_time();
+	clock_time::msec get_start_time();
 	bool is_running();
 	void stop();
 
