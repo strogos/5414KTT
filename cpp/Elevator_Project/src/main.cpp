@@ -36,15 +36,17 @@ int main()
 	signal(SIG_INTERVAL_TIMER,signal_int_timer_test);
 	signal(SIG_ONESHOT_TIMER,signal_oneshot_timer_test);
 
-//	elevator::Control ctrl(elevator::SIMULATION);
-//	elevator::Control ctrl(elevator::COMEDI);
-
 	std::stringstream ss;
-	{
-		cereal::BinaryOutputArchive oarchive(ss);
-		State m1;
-		oarchive(m1);
-	}
+	State test;
+	test.do_serialize(ss,test);
+	std::cout<<"data in binary form: "<<ss.str()<<"\n";
+	test.floor=1; test.direction=0;
+	test.do_deserialize(ss,test);
+	std::cout<<"data in converted back to normal form now?????\n";
+
+		elevator::Control ctrl(elevator::tag_elevator_type::SIMULATION,ss);
+	//	elevator::Control ctrl(elevator::tag_elevator_type::COMEDI,ss);
+
 
 	//Timer tmr_test(Timer_Type::INTERVAL,2000);
 	//elevator::Timer tm(elevator::Timer_Type::INTERVAL);

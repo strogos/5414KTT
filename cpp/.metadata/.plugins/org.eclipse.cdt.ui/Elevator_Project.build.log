@@ -1,9 +1,12 @@
-17:17:15 **** Incremental Build of configuration Debug for project Elevator_Project ****
+19:30:29 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-Building file: ../src/State.cpp
+Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
@@ -11,5 +14,5 @@ c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/wor
 Finished building target: Elevator_Project
  
 
-17:17:17 Build Finished (took 2s.12ms)
+19:30:32 Build Finished (took 2s.367ms)
 

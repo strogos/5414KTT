@@ -9,7 +9,39 @@
 
 namespace elevator
 {
+	std::stringstream& State::do_serialize(std::stringstream &ss,State &state)
+	{
 
+		state.set_serialize();
+		state.manage_call_containers();
+		state.manage_remote_containers();
+
+		//data_= std::unique_ptr<std::stringstream>(new std::stringstream);
+		//do the actual serialization
+		{
+		//	cereal::BinaryOutputArchive oarchive(*state.data_);
+			cereal::BinaryOutputArchive oarchive(ss);
+			oarchive(state);
+		}
+		//data_=&ss;
+
+		return ss;
+	}
+
+	bool State::do_deserialize(std::stringstream &ss, State &state)
+	{
+		state.set_deserialize();
+		//do the actual deserialization
+		{
+			cereal::BinaryInputArchive iarchive(ss);
+			iarchive(state);
+		}
+
+		state.manage_call_containers();
+		state.manage_remote_containers();
+
+		return true;
+	}
 
 	void State::manage_call_containers()
 	{
@@ -28,16 +60,16 @@ namespace elevator
 		{
 			for (int i = 0; i < 3; i++)
 			{
-						for (int j = 0; j < 4; j++)
-						{
-							call[i][j].first=call_container_frst[i][j];
-							call[i][j].second=call_container_sec[i][j];
-						}
+				for (int j = 0; j < 4; j++)
+				{
+					call[i][j].first=call_container_frst[i][j];
+					call[i][j].second=call_container_sec[i][j];
+				}
 			}
 		}
 	}
 
-	void State::manage_remote_containers(Command_Button_State &int_state)
+	void State::manage_remote_containers()//Command_Button_State &int_state)
 	{
 		int j=0;
 		std::map <uint32_t, Command_Button_State>::iterator it;
@@ -54,8 +86,8 @@ namespace elevator
 		{
 			for (it = remote.begin(); it != remote.end(); ++it)
 			{
-				//remote[it->first]=remote_container_frst[j];
-				remote[it->first].call[j]=remote_container_sec[j];
+				remote[remote_container_frst[j]].call[j]=remote_container_sec[j];
+				//remote[it->first].call[j]=remote_container_sec[j];
 				j++;
 			}
 		}
@@ -63,9 +95,4 @@ namespace elevator
 
 	void State::set_serialize(){serialize_=true;}
 	void State::set_deserialize(){serialize_=false;}
-
-
-	//struct State_Scheduler
-
-
 }

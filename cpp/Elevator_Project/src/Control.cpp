@@ -21,11 +21,11 @@
 
 namespace elevator
 {
-	Control::Control(elevator_type session)
+	Control::Control(elevator_type session,std::stringstream& elev_state)
 	       : servicing_(false), session_(session)
 	{
 		ACE_DEBUG((LM_DEBUG,
-						   "in control constructor\n"));
+						   "in control constructor .. state: %s \n",elev_state.str().c_str()));
 
 		/*handle elevator IO using the signal/slot principle
 		 * (inspired by Qt's implementation)*/
@@ -43,6 +43,25 @@ namespace elevator
 		 * [memory leaks can happen here if not careful]*/
 		elevator_->open(0);
 		this->open(0);
+
+		/*Update Elevator State*/
+		if (state_.do_deserialize(elev_state,state_))
+		 {
+			for (int j = 0; j < N_FLOORS; j++)
+			{
+				if (state_.call[BUTTON_CALL_UP][j].second)
+					elevator_->set_button_indicator(BUTTON_CALL_UP, true,j);
+				if (state_.call[BUTTON_CALL_DOWN][j].second)
+					elevator_->set_button_indicator(BUTTON_CALL_DOWN,true, j);
+				if (state_.call[BUTTON_COMMAND][j].second)
+					elevator_->set_button_indicator(BUTTON_COMMAND, true,j);
+			}
+
+			elevator_->set_direction((tag_motor_direction)state_.direction);
+			elevator_->set_floor_indicator(state_.floor);
+		 }
+
+
 		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
 	//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
 		//interrupt timer

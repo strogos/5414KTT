@@ -41,48 +41,36 @@ namespace elevator
 
 	struct State //task
 	{
-		  int direction=0;
+		  int floor=4;
+		  int direction=1;
 		  Button call[3][N_FLOORS];
 		  clock_time::msec call_container_frst[3][N_FLOORS];
 		  bool call_container_sec[3][N_FLOORS];
-
 
 		  std::map<uint32_t,Command_Button_State> remote;
 		  uint32_t remote_container_frst[N_FLOORS];
 		  Button remote_container_sec[N_FLOORS];
 
 		  button_type_t button_type;
-		  int floor=3;
 
-		  std::stringstream ss;
 		  template<class Archive>
 		  void serialize(Archive & archive)
 		  {
 			  archive(floor,direction,call_container_frst,call_container_sec); // serialize things by passing them to the archive
-
 		  }
 
-		  void manage_call_containers();
-		  void manage_remote_containers(Command_Button_State &int_state);
-		  void set_serialize();
-		  void set_deserialize();
-
-		 // std::stringstream serialize();
-		  bool deserialize(const std::stringstream &ss);
+		  std::stringstream &do_serialize(std::stringstream &ss,State &state);
+		  bool do_deserialize(std::stringstream &ss, State &state);
 
 		private:
 		  bool serialize_=false;
-		  //queue
+		  //std::unique_ptr<std::stringstream> data_;
+		  std::stringstream data_;
+		  void set_serialize();
+		  void set_deserialize();
+		  void manage_call_containers();
+		  void manage_remote_containers();//Command_Button_State &int_state);
 	};
-
-
-//	struct State; //: public ACE_Data_Block
-//	{
-//		//use DAta block object and change udp to send message_block (essentially pointer to data blocks)?
-//		//
-//		//dataBlock=direction;
-//		//dataBlock2=floor;
-//	};
 }
 
 

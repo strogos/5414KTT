@@ -56,7 +56,7 @@ namespace elevator
 
 	{
 		public:
-			Control(elevator_type session);
+			Control(elevator_type session, std::stringstream&);
 			~Control();
 
 			//Implement the ACE specific service init/termination methods
