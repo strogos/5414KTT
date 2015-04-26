@@ -218,7 +218,11 @@ namespace elevator
 
 			virtual int call (void)
 			{
-				//TODO
+
+
+				handle_->state_.direction = handle_->elevator_->get_direction();
+				//state_.get_data_stream;//TODO
+
 				return 0;
 			}
 

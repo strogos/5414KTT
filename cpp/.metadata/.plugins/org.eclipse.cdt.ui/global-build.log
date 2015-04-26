@@ -1,37 +1,51 @@
-11:04:33 **** Clean-only build of configuration Debug for project Elevator_Project ****
+14:49:12 **** Clean-only build of configuration Debug for project Elevator_Project ****
 make clean 
-rm -rf  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  ./src/io.d  ./src/Control.d ./src/Driver.d ./src/Elevator.d ./src/Scheduler.d ./src/State.d ./src/Timer.d ./src/main.d  Elevator_Project
+rm -rf  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  ./src/io.d  ./src/Control.d ./src/Driver.d ./src/Elevator.d ./src/IPC_Client.d ./src/IPC_Server.d ./src/Scheduler.d ./src/State.d ./src/Timer.d ./src/main.d  Elevator_Project
  
-11:04:34 **** Build of configuration Debug for project Elevator_Project ****
+14:49:15 **** Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/Control.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
 Finished building: ../src/Control.cpp
  
 Building file: ../src/Driver.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
 Finished building: ../src/Driver.cpp
  
 Building file: ../src/Elevator.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
 Finished building: ../src/Elevator.cpp
+ 
+Building file: ../src/IPC_Client.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
+Finished building: ../src/IPC_Client.cpp
+ 
+Building file: ../src/IPC_Server.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
+../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
+../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/IPC_Server.cpp
  
 Building file: ../src/Scheduler.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Scheduler.d" -MT"src/Scheduler.d" -o "src/Scheduler.o" "../src/Scheduler.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Scheduler.d" -MT"src/Scheduler.d" -o "src/Scheduler.o" "../src/Scheduler.cpp"
 Finished building: ../src/Scheduler.cpp
  
 Building file: ../src/State.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
 Finished building: ../src/State.cpp
  
 Building file: ../src/Timer.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
 Finished building: ../src/Timer.cpp
  
 Building file: ../src/io.c
@@ -41,7 +55,170 @@ Finished building: ../src/io.c
  
 Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+In file included from ../src/tools/cereal/archives/binary.hpp:32:0,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:16:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp: In instantiation of ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool>; typename cereal::traits::detail::EnableIfHelper<(cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value || ((! cereal::traits::is_output_serializable<T, ArchiveType>::value) && ((!(Flags & AllowEmptyClassElision)) || ((Flags & AllowEmptyClassElision) && (! std::is_empty<T>::value)))))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = std::pair<long int, bool>&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {std::pair<long int, bool>&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:53:15:   required from ‘void cereal::common_detail::serializeArray(Archive&, T&, std::false_type) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [4]; std::false_type = std::integral_constant<bool, false>]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:125:110:   required from ‘typename std::enable_if<std::is_array<_To>::value, void>::type cereal::serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [4]; typename std::enable_if<std::is_array<_To>::value, void>::type = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:394:65:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool> [4]; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_non_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_non_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   [ skipping 8 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {int&, elevator::tag_lamp_type&, std::pair<long int, bool> (&)[3][4]}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/State.h:55:36:   required from ‘void elevator::State::serialize(Archive&) [with Archive = cereal::BinaryOutputArchive]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:229:51:   required from ‘static decltype (t.serialize(ar)) cereal::access::member_serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = elevator::State; decltype (t.serialize(ar)) = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:386:59:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = elevator::State; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = elevator::State&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {elevator::State&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/main.cpp:46:14:   required from here
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:448:9: error: static assertion failed: cereal could not find any output serialization functions for the provided type and archive combination. 
+
+ Types must either have a serialize function, load/save pair, or load_minimal/save_minimal pair (you may not mix these). 
+ Serialize functions generally have the following signature: 
+
+ template<class Archive> 
+   void serialize(Archive & ar) 
+   { 
+     ar( member1, member2, member3 ); 
+   } 
+
+ 
+         static_assert(traits::detail::count_output_serializers<T, ArchiveType>::value != 0,
+         ^
+make: *** [src/main.o] Error 1
+14:51:48 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+In file included from ../src/tools/cereal/archives/binary.hpp:32:0,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:16:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp: In instantiation of ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool>; typename cereal::traits::detail::EnableIfHelper<(cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value || ((! cereal::traits::is_output_serializable<T, ArchiveType>::value) && ((!(Flags & AllowEmptyClassElision)) || ((Flags & AllowEmptyClassElision) && (! std::is_empty<T>::value)))))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = std::pair<long int, bool>&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {std::pair<long int, bool>&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:53:15:   required from ‘void cereal::common_detail::serializeArray(Archive&, T&, std::false_type) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [4]; std::false_type = std::integral_constant<bool, false>]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:125:110:   required from ‘typename std::enable_if<std::is_array<_To>::value, void>::type cereal::serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [4]; typename std::enable_if<std::is_array<_To>::value, void>::type = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:394:65:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool> [4]; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_non_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_non_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   [ skipping 8 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {int&, elevator::tag_lamp_type&, std::pair<long int, bool> (&)[3][4]}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/State.h:55:36:   required from ‘void elevator::State::serialize(Archive&) [with Archive = cereal::BinaryOutputArchive]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:229:51:   required from ‘static decltype (t.serialize(ar)) cereal::access::member_serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = elevator::State; decltype (t.serialize(ar)) = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:386:59:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = elevator::State; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = elevator::State&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {elevator::State&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/main.cpp:46:14:   required from here
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:448:9: error: static assertion failed: cereal could not find any output serialization functions for the provided type and archive combination. 
+
+ Types must either have a serialize function, load/save pair, or load_minimal/save_minimal pair (you may not mix these). 
+ Serialize functions generally have the following signature: 
+
+ template<class Archive> 
+   void serialize(Archive & ar) 
+   { 
+     ar( member1, member2, member3 ); 
+   } 
+
+ 
+         static_assert(traits::detail::count_output_serializers<T, ArchiveType>::value != 0,
+         ^
+make: *** [src/main.o] Error 1
+14:52:58 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+In file included from ../src/tools/cereal/archives/binary.hpp:32:0,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:16:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp: In instantiation of ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool>; typename cereal::traits::detail::EnableIfHelper<(cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value || ((! cereal::traits::is_output_serializable<T, ArchiveType>::value) && ((!(Flags & AllowEmptyClassElision)) || ((Flags & AllowEmptyClassElision) && (! std::is_empty<T>::value)))))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = std::pair<long int, bool>&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {std::pair<long int, bool>&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:53:15:   required from ‘void cereal::common_detail::serializeArray(Archive&, T&, std::false_type) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [3]; std::false_type = std::integral_constant<bool, false>]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:125:110:   required from ‘typename std::enable_if<std::is_array<_To>::value, void>::type cereal::serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [3]; typename std::enable_if<std::is_array<_To>::value, void>::type = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:394:65:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool> [3]; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_non_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_non_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   [ skipping 3 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {int&, elevator::tag_lamp_type&, std::pair<long int, bool> (&)[3]}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/State.h:55:36:   required from ‘void elevator::State::serialize(Archive&) [with Archive = cereal::BinaryOutputArchive]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:229:51:   required from ‘static decltype (t.serialize(ar)) cereal::access::member_serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = elevator::State; decltype (t.serialize(ar)) = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:386:59:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = elevator::State; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = elevator::State&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {elevator::State&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/main.cpp:46:14:   required from here
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:448:9: error: static assertion failed: cereal could not find any output serialization functions for the provided type and archive combination. 
+
+ Types must either have a serialize function, load/save pair, or load_minimal/save_minimal pair (you may not mix these). 
+ Serialize functions generally have the following signature: 
+
+ template<class Archive> 
+   void serialize(Archive & ar) 
+   { 
+     ar( member1, member2, member3 ); 
+   } 
+
+ 
+         static_assert(traits::detail::count_output_serializers<T, ArchiveType>::value != 0,
+         ^
+make: *** [src/main.o] Error 1
+14:53:39 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+In file included from ../src/tools/cereal/archives/binary.hpp:32:0,
+                 from ../src/State.h:14,
+                 from ../src/Control.h:13,
+                 from ../src/main.cpp:16:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp: In instantiation of ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool>; typename cereal::traits::detail::EnableIfHelper<(cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value || ((! cereal::traits::is_output_serializable<T, ArchiveType>::value) && ((!(Flags & AllowEmptyClassElision)) || ((Flags & AllowEmptyClassElision) && (! std::is_empty<T>::value)))))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’:
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = std::pair<long int, bool>&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {std::pair<long int, bool>&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:53:15:   required from ‘void cereal::common_detail::serializeArray(Archive&, T&, std::false_type) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [3]; std::false_type = std::integral_constant<bool, false>]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/types/common.hpp:125:110:   required from ‘typename std::enable_if<std::is_array<_To>::value, void>::type cereal::serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = std::pair<long int, bool> [3]; typename std::enable_if<std::is_array<_To>::value, void>::type = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:394:65:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = std::pair<long int, bool> [3]; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_non_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_non_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   [ skipping 2 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+../src/State.h:55:18:   required from ‘void elevator::State::serialize(Archive&) [with Archive = cereal::BinaryOutputArchive]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:229:51:   required from ‘static decltype (t.serialize(ar)) cereal::access::member_serialize(Archive&, T&) [with Archive = cereal::BinaryOutputArchive; T = elevator::State; decltype (t.serialize(ar)) = void]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:386:59:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::processImpl(const T&) [with T = elevator::State; typename cereal::traits::detail::EnableIfHelper<cereal::traits::has_member_serialize<T, ArchiveType>::value, (! cereal::traits::has_invalid_output_versioning<T, ArchiveType>::value), (cereal::traits::is_output_serializable<T, ArchiveType>::value && (cereal::traits::is_specialized_member_serialize<T, ArchiveType>::value || (! cereal::traits::is_specialized<T, ArchiveType>::value)))>::type <anonymous> = (cereal::traits::detail::type)0; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:333:9:   required from ‘void cereal::OutputArchive<ArchiveType, Flags>::process(T&&) [with T = elevator::State&; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:249:9:   required from ‘ArchiveType& cereal::OutputArchive<ArchiveType, Flags>::operator()(Types&& ...) [with Types = {elevator::State&}; ArchiveType = cereal::BinaryOutputArchive; unsigned int Flags = 1u]’
+../src/main.cpp:46:14:   required from here
+/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:448:9: error: static assertion failed: cereal could not find any output serialization functions for the provided type and archive combination. 
+
+ Types must either have a serialize function, load/save pair, or load_minimal/save_minimal pair (you may not mix these). 
+ Serialize functions generally have the following signature: 
+
+ template<class Archive> 
+   void serialize(Archive & ar) 
+   { 
+     ar( member1, member2, member3 ); 
+   } 
+
+ 
+         static_assert(traits::detail::count_output_serializers<T, ArchiveType>::value != 0,
+         ^
+make: *** [src/main.o] Error 1
+14:53:53 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 ../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
  #pragma once
          ^
@@ -49,49 +226,96 @@ Finished building: ../src/main.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-11:05:03 **** Incremental Build of configuration Debug for project Elevator_Project ****
+16:12:18 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+16:23:45 **** Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/State.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+Finished building: ../src/State.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+16:50:44 **** Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/State.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+../src/State.cpp: In member function ‘void elevator::State::manage_remote_containers()’:
+../src/State.cpp:31:27: error: no match for ‘operator=’ (operand types are ‘elevator::Button {aka std::pair<long int, bool>}’ and ‘elevator::Command_Button_State’)
+    remote_container_sec[j]=it->second;
+                           ^
+../src/State.cpp:31:27: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/string:40,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:33,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:158:7: note: std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(const std::pair<_T1, _T2>&) [with _T1 = long int; _T2 = bool]
+       operator=(const pair& __p)
+       ^
+/usr/include/c++/4.8/bits/stl_pair.h:158:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘const std::pair<long int, bool>&’
+/usr/include/c++/4.8/bits/stl_pair.h:166:7: note: std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(std::pair<_T1, _T2>&&) [with _T1 = long int; _T2 = bool]
+       operator=(pair&& __p)
+       ^
+/usr/include/c++/4.8/bits/stl_pair.h:166:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘std::pair<long int, bool>&&’
+/usr/include/c++/4.8/bits/stl_pair.h:177:2: note: template<class _U1, class _U2> std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; _T1 = long int; _T2 = bool]
+  operator=(const pair<_U1, _U2>& __p)
+  ^
+/usr/include/c++/4.8/bits/stl_pair.h:177:2: note:   template argument deduction/substitution failed:
+../src/State.cpp:31:27: note:   ‘elevator::Command_Button_State’ is not derived from ‘const std::pair<_T1, _T2>’
+    remote_container_sec[j]=it->second;
+                           ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/string:40,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:33,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:186:2: note: template<class _U1, class _U2> std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = long int; _T2 = bool]
+  operator=(pair<_U1, _U2>&& __p)
+  ^
+/usr/include/c++/4.8/bits/stl_pair.h:186:2: note:   template argument deduction/substitution failed:
+../src/State.cpp:31:27: note:   ‘elevator::Command_Button_State’ is not derived from ‘std::pair<_T1, _T2>’
+    remote_container_sec[j]=it->second;
+                           ^
+make: *** [src/State.o] Error 1
+16:54:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/Control.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
 Finished building: ../src/Control.cpp
- 
-Building file: ../src/Driver.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
-Finished building: ../src/Driver.cpp
  
 Building file: ../src/Elevator.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Elevator.d" -MT"src/Elevator.d" -o "src/Elevator.o" "../src/Elevator.cpp"
 Finished building: ../src/Elevator.cpp
- 
-Building file: ../src/Scheduler.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Scheduler.d" -MT"src/Scheduler.d" -o "src/Scheduler.o" "../src/Scheduler.cpp"
-Finished building: ../src/Scheduler.cpp
  
 Building file: ../src/State.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
 Finished building: ../src/State.cpp
  
 Building file: ../src/Timer.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
 Finished building: ../src/Timer.cpp
  
-Building file: ../src/io.c
-Invoking: Cross GCC Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -MMD -MP -MF"src/io.d" -MT"src/io.d" -o "src/io.o" "../src/io.c"
-Finished building: ../src/io.c
- 
 Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 ../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
  #pragma once
          ^
@@ -99,299 +323,190 @@ Finished building: ../src/main.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-11:05:14 **** Incremental Build of configuration Debug for project Elevator_Project ****
+17:06:32 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-make: Nothing to be done for `all'.
-11:07:41 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
+Building file: ../src/State.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:07:46 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:14:36 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-../src/Control.cpp: In member function ‘virtual int elevator::Control::On_Service_Timer::call()’:
-../src/Control.cpp:190:52: error: ‘set_door_open_lamp’ is not a member of ‘elevator::Elevator’
-     fuck_the_simulator.connect(handle_->elevator_,&Elevator::set_door_open_lamp);
-                                                    ^
-make: *** [src/Control.o] Error 1
-11:14:57 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-../src/Control.cpp: In member function ‘virtual int elevator::Control::On_Service_Timer::call()’:
-../src/Control.cpp:190:85: error: no matching function for call to ‘W::Signal<bool>::connect(std::unique_ptr<elevator::Elevator>&, void (elevator::Elevator::*)(bool))’
-     fuck_the_simulator.connect(handle_->elevator_,&Elevator::set_door_open_indicator);
-                                                                                     ^
-../src/Control.cpp:190:85: note: candidates are:
-In file included from ../src/Control.h:12:0,
-                 from ../src/Control.cpp:11:
-../src/tools/signalslot/W_Signal.h:36:18: note: void W::Signal<T>::connect(void (*)(T ...)) [with T = {bool}]
-             void connect(void (*memfun)(T...)) {
-                  ^
-../src/tools/signalslot/W_Signal.h:36:18: note:   candidate expects 1 argument, 2 provided
-../src/tools/signalslot/W_Signal.h:50:18: note: template<class DestType> void W::Signal<T>::connect(DestType*, void (DestType::*)(T ...)) [with DestType = DestType; T = {bool}]
-             void connect(DestType* pclass, void (DestType::*memfun)(T...)) {
-                  ^
-../src/tools/signalslot/W_Signal.h:50:18: note:   template argument deduction/substitution failed:
-../src/Control.cpp:190:85: note:   mismatched types ‘DestType*’ and ‘std::unique_ptr<elevator::Elevator>’
-     fuck_the_simulator.connect(handle_->elevator_,&Elevator::set_door_open_indicator);
-                                                                                     ^
-make: *** [src/Control.o] Error 1
-11:18:11 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:18:23 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:18:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:19:06 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:19:24 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-../src/Control.cpp: In member function ‘virtual int elevator::Control::On_Service_Timer::call()’:
-../src/Control.cpp:190:42: error: invalid use of non-static member function ‘void elevator::Elevator::set_door_open_indicator(bool)’
-     fuck_the_simulator.connect(Elevator::set_door_open_indicator);
-                                          ^
-make: *** [src/Control.o] Error 1
-11:21:46 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-In file included from ../src/Control.cpp:11:0:
-../src/Control.h: In member function ‘void elevator::Control::slot_simulator_door_lamp(bool)’:
-../src/Control.h:75:53: error: invalid use of incomplete type ‘class elevator::Elevator’
-    void slot_simulator_door_lamp(bool lit){elevator_->set_door_open_indicator(lit);}
-                                                     ^
-../src/Control.h:31:8: error: forward declaration of ‘class elevator::Elevator’
-  class Elevator;
-        ^
-make: *** [src/Control.o] Error 1
-11:22:24 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:22:33 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:23:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:23:47 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:27:57 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:28:09 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:29:37 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-In file included from ../src/Control.cpp:11:0:
-../src/Control.h: In member function ‘virtual int elevator::Control::On_Service_Timer::call()’:
-../src/Control.h:92:29: error: invalid use of non-static data member ‘elevator::Control::elevator_buff_’
-    Elevator *elevator_buff_=nullptr;
-                             ^
-../src/Control.cpp:191:9: error: from this location
-     if (elevator_buff_==nullptr)
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+../src/State.cpp: In member function ‘void elevator::State::manage_remote_containers(elevator::Command_Button_State&)’:
+../src/State.cpp:53:22: error: no match for ‘operator=’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ and ‘uint32_t {aka unsigned int}’)
+     remote[it->first]=remote_container_frst[j];
+                      ^
+../src/State.cpp:53:22: note: candidates are:
+In file included from ../src/State.cpp:8:0:
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(const elevator::Command_Button_State&)
+  struct Command_Button_State
          ^
-make: *** [src/Control.o] Error 1
-11:29:50 **** Incremental Build of configuration Debug for project Elevator_Project ****
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘uint32_t {aka unsigned int}’ to ‘const elevator::Command_Button_State&’
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(elevator::Command_Button_State&&)
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘uint32_t {aka unsigned int}’ to ‘elevator::Command_Button_State&&’
+../src/State.cpp:54:11: error: no match for ‘operator[]’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>’ and ‘elevator::Command_Button_State’)
+     remote[it->second]=remote_container_sec[j];
+           ^
+../src/State.cpp:54:11: note: candidates are:
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/State.h:18,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](const key_type& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘const key_type& {aka const unsigned int&}’
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](key_type&& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘std::map<unsigned int, elevator::Command_Button_State>::key_type&& {aka unsigned int&&}’
+make: *** [src/State.o] Error 1
+17:11:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-Building file: ../src/Control.cpp
+Building file: ../src/State.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:29:55 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:30:14 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:30:18 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:31:02 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:31:06 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:31:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:32:00 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:34:16 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:35:08 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+../src/State.cpp: In member function ‘void elevator::State::manage_remote_containers(elevator::Command_Button_State&)’:
+../src/State.cpp:53:22: error: no match for ‘operator=’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ and ‘uint32_t {aka unsigned int}’)
+     remote[it->first]=remote_container_frst[j];
+                      ^
+../src/State.cpp:53:22: note: candidates are:
+In file included from ../src/State.cpp:8:0:
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(const elevator::Command_Button_State&)
+  struct Command_Button_State
          ^
-Finished building: ../src/main.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:35:12 **** Incremental Build of configuration Debug for project Elevator_Project ****
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘uint32_t {aka unsigned int}’ to ‘const elevator::Command_Button_State&’
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(elevator::Command_Button_State&&)
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘uint32_t {aka unsigned int}’ to ‘elevator::Command_Button_State&&’
+../src/State.cpp:54:11: error: no match for ‘operator[]’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>’ and ‘elevator::Command_Button_State’)
+     remote[it->second]=remote_container_sec[j];
+           ^
+../src/State.cpp:54:11: note: candidates are:
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/State.h:18,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](const key_type& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘const key_type& {aka const unsigned int&}’
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](key_type&& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘std::map<unsigned int, elevator::Command_Button_State>::key_type&& {aka unsigned int&&}’
+make: *** [src/State.o] Error 1
+17:12:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
-make: Nothing to be done for `all'.
-11:40:10 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
+Building file: ../src/State.cpp
 Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-Finished building: ../src/Control.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-11:40:15 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.
-11:40:51 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+../src/State.cpp: In member function ‘void elevator::State::manage_remote_containers(elevator::Command_Button_State&)’:
+../src/State.cpp:53:22: error: no match for ‘operator=’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ and ‘elevator::Button {aka std::pair<long int, bool>}’)
+     remote[it->first]=remote_container_sec[j];
+                      ^
+../src/State.cpp:53:22: note: candidates are:
+In file included from ../src/State.cpp:8:0:
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(const elevator::Command_Button_State&)
+  struct Command_Button_State
          ^
-Finished building: ../src/main.cpp
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘elevator::Button {aka std::pair<long int, bool>}’ to ‘const elevator::Command_Button_State&’
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(elevator::Command_Button_State&&)
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘elevator::Button {aka std::pair<long int, bool>}’ to ‘elevator::Command_Button_State&&’
+../src/State.cpp:54:11: error: no match for ‘operator[]’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>’ and ‘elevator::Command_Button_State’)
+     remote[it->second]=remote_container_sec[j];
+           ^
+../src/State.cpp:54:11: note: candidates are:
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/State.h:18,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](const key_type& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘const key_type& {aka const unsigned int&}’
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](key_type&& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘std::map<unsigned int, elevator::Command_Button_State>::key_type&& {aka unsigned int&&}’
+make: *** [src/State.o] Error 1
+17:14:55 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/State.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+../src/State.cpp: In member function ‘void elevator::State::manage_remote_containers(elevator::Command_Button_State&)’:
+../src/State.cpp:45:28: error: no match for ‘operator=’ (operand types are ‘elevator::Button {aka std::pair<long int, bool>}’ and ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’)
+     remote_container_sec[j]=remote[it->first];//it->second.call[j];
+                            ^
+../src/State.cpp:45:28: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/string:40,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:33,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:158:7: note: std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(const std::pair<_T1, _T2>&) [with _T1 = long int; _T2 = bool]
+       operator=(const pair& __p)
+       ^
+/usr/include/c++/4.8/bits/stl_pair.h:158:7: note:   no known conversion for argument 1 from ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ to ‘const std::pair<long int, bool>&’
+/usr/include/c++/4.8/bits/stl_pair.h:166:7: note: std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(std::pair<_T1, _T2>&&) [with _T1 = long int; _T2 = bool]
+       operator=(pair&& __p)
+       ^
+/usr/include/c++/4.8/bits/stl_pair.h:166:7: note:   no known conversion for argument 1 from ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ to ‘std::pair<long int, bool>&&’
+/usr/include/c++/4.8/bits/stl_pair.h:177:2: note: template<class _U1, class _U2> std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; _T1 = long int; _T2 = bool]
+  operator=(const pair<_U1, _U2>& __p)
+  ^
+/usr/include/c++/4.8/bits/stl_pair.h:177:2: note:   template argument deduction/substitution failed:
+../src/State.cpp:45:28: note:   ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ is not derived from ‘const std::pair<_T1, _T2>’
+     remote_container_sec[j]=remote[it->first];//it->second.call[j];
+                            ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/string:40,
+                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:33,
+                 from ../src/tools/cereal/archives/binary.hpp:32,
+                 from ../src/State.h:14,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:186:2: note: template<class _U1, class _U2> std::pair<_T1, _T2>& std::pair<_T1, _T2>::operator=(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; _T1 = long int; _T2 = bool]
+  operator=(pair<_U1, _U2>&& __p)
+  ^
+/usr/include/c++/4.8/bits/stl_pair.h:186:2: note:   template argument deduction/substitution failed:
+../src/State.cpp:45:28: note:   ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ is not derived from ‘std::pair<_T1, _T2>’
+     remote_container_sec[j]=remote[it->first];//it->second.call[j];
+                            ^
+../src/State.cpp:53:22: error: no match for ‘operator=’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>::mapped_type {aka elevator::Command_Button_State}’ and ‘uint32_t {aka unsigned int}’)
+     remote[it->first]=remote_container_frst[j];
+                      ^
+../src/State.cpp:53:22: note: candidates are:
+In file included from ../src/State.cpp:8:0:
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(const elevator::Command_Button_State&)
+  struct Command_Button_State
+         ^
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘uint32_t {aka unsigned int}’ to ‘const elevator::Command_Button_State&’
+../src/State.h:31:9: note: elevator::Command_Button_State& elevator::Command_Button_State::operator=(elevator::Command_Button_State&&)
+../src/State.h:31:9: note:   no known conversion for argument 1 from ‘uint32_t {aka unsigned int}’ to ‘elevator::Command_Button_State&&’
+../src/State.cpp:54:11: error: no match for ‘operator[]’ (operand types are ‘std::map<unsigned int, elevator::Command_Button_State>’ and ‘elevator::Command_Button_State’)
+     remote[it->second]=remote_container_sec[j];
+           ^
+../src/State.cpp:54:11: note: candidates are:
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/State.h:18,
+                 from ../src/State.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](const key_type& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:456:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘const key_type& {aka const unsigned int&}’
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note: std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](std::map<_Key, _Tp, _Compare, _Alloc>::key_type&&) [with _Key = unsigned int; _Tp = elevator::Command_Button_State; _Compare = std::less<unsigned int>; _Alloc = std::allocator<std::pair<const unsigned int, elevator::Command_Button_State> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = elevator::Command_Button_State; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = unsigned int]
+       operator[](key_type&& __k)
+       ^
+/usr/include/c++/4.8/bits/stl_map.h:476:7: note:   no known conversion for argument 1 from ‘elevator::Command_Button_State’ to ‘std::map<unsigned int, elevator::Command_Button_State>::key_type&& {aka unsigned int&&}’
+make: *** [src/State.o] Error 1
+17:17:15 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/State.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
+Finished building: ../src/State.cpp
  
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-11:40:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-make: Nothing to be done for `all'.

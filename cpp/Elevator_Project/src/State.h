@@ -11,6 +11,9 @@
 #include "time.h"
 #include "io.h"
 
+#include "tools/cereal/archives/binary.hpp"
+#include <sstream>
+
 #include <utility>
 #include <map>
 #include <ace/Message_Block.h>
@@ -25,25 +28,50 @@ namespace elevator
 	enum tag_lamp_type : int;
 	typedef tag_lamp_type button_type_t;
 
-	struct Command_Button_State { Button call[N_FLOORS];};
+	struct Command_Button_State
+	{
+		Button call[N_FLOORS];
+		  template<class Archive>
+			  void serialize(Archive & archive)
+			  {
+				  archive(call);
+			//    archive( direction, call, remote, button_type,floor ); // serialize things by passing them to the archive
+			  }
+	};
 
 	struct State //task
 	{
-		  int direction;
-		  Button call[N_BUTTONS][N_FLOORS];
+		  int direction=0;
+		  Button call[3][N_FLOORS];
+		  clock_time::msec call_container_frst[3][N_FLOORS];
+		  bool call_container_sec[3][N_FLOORS];
+
+
 		  std::map<uint32_t,Command_Button_State> remote;
+		  uint32_t remote_container_frst[N_FLOORS];
+		  Button remote_container_sec[N_FLOORS];
+
 		  button_type_t button_type;
-		  int floor;
+		  int floor=3;
 
+		  std::stringstream ss;
+		  template<class Archive>
+		  void serialize(Archive & archive)
+		  {
+			  archive(floor,direction,call_container_frst,call_container_sec); // serialize things by passing them to the archive
 
-//		  bool dequeue_state();
-//		  bool enqueue_state();
+		  }
 
-//		  ACE_InputCDR ace_icdr()
-//		  bool deserialize(const QByteArray &state);
-//		  QByteArray serialize();
+		  void manage_call_containers();
+		  void manage_remote_containers(Command_Button_State &int_state);
+		  void set_serialize();
+		  void set_deserialize();
+
+		 // std::stringstream serialize();
+		  bool deserialize(const std::stringstream &ss);
 
 		private:
+		  bool serialize_=false;
 		  //queue
 	};
 
@@ -61,3 +89,4 @@ namespace elevator
 
 
 #endif /* STATE_H_ */
+

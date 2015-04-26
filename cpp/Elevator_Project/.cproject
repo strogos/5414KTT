@@ -33,6 +33,7 @@
 								<option id="gnu.cpp.compiler.option.other.other.1903564773" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++11" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1207859995" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/"/>
+									<listOptionValue builtIn="false" value="/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.674783286" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>

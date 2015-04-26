@@ -12,6 +12,7 @@
 #include "tools/signalslot/W_Signal.h"
 #include "State.h"
 
+
 //#include <ace/OS.h>
 #include "ace/Task.h"
 #include "ace/Method_Request.h"
@@ -72,7 +73,6 @@ namespace elevator
 			void slot_exit_task(void*);
 			void slot_service_timer(void*);
 			void slot_heartbeat_timer(void*);
-			void slot_simulator_door_lamp(bool lit);
 
 			/*SIGNALS*/
 			Control_Signals * signal_subscribe(Control_Signals * subscribe);
