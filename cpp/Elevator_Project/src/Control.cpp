@@ -11,6 +11,8 @@
 #include "Control.h"
 #include "Driver.h"
 #include "Elevator.h"
+#include "Timer.h"
+
 
 #include <unistd.h>//sleep
 #include "ace/Log_Msg.h"
@@ -124,23 +126,167 @@ namespace elevator
 	class Control::On_Floor_Sensor : public ACE_Method_Request
 	{
 		public:
-			On_Floor_Sensor(int floor) : floor_(floor)
+			On_Floor_Sensor(int floor, Control * handle) : floor_(floor), handle_(handle)
 			{
 				ACE_DEBUG((LM_DEBUG,"on floor sensor enqued %d\n", floor));
 			}
 			virtual int call (void)
 			{
 				ACE_DEBUG((LM_DEBUG,"Reached floor %d\n", floor_));
+				handle_->state_.floor=floor_;
+
+			    // Check if the current floor should be serviced
+			    if (handle_->should_service(floor_))
+			    {
+			        handle_->elevator_->stop();
+
+			        // Service the floor
+			        if (handle_->elevator_->get_direction() == DIRN_UP)
+			        	handle_->service_floor(floor_,BUTTON_CALL_UP);
+			        else
+			        	handle_->service_floor(floor_,BUTTON_CALL_DOWN);
+			    }
 				return 0;
 			}
 		private:
 			int floor_;
+			Control * handle_;
 	};
 
 	struct Exit_Method : public ACE_Method_Request
 	{
 		virtual int call (void) {return -1;}
 	};
+
+	bool Control::should_service(int floor)
+	{
+	    // Going up and there is a call up
+	    if (elevator_->get_direction() == DIRN_UP && state_.call[BUTTON_CALL_UP][floor].second)
+	        return true;
+
+	    // Going down and there is a call down
+	    if (elevator_->get_direction() == DIRN_DOWN && state_.call[BUTTON_CALL_DOWN][floor].second)
+	        return true;
+
+	    // Going up and there are no calls above, but there is call down
+	    if (elevator_->get_direction() == DIRN_UP && !is_call_up(floor) && state_.call[BUTTON_CALL_DOWN][floor].second)
+	    {
+	        // change direction
+	        elevator_->set_direction(DIRN_DOWN);
+	        return true;
+	    }
+
+	    // Going down and there are not calls below, but there is call up
+	    if (elevator_->get_direction() == DIRN_DOWN && !is_call_down(floor) && state_.call[BUTTON_CALL_UP][floor].second)
+	    {
+	        // change direction
+	        elevator_->set_direction(DIRN_UP);
+	        return true;
+	    }
+
+	    // There is an internal call
+	    if (state_.call[BUTTON_COMMAND][floor].second)
+	        return true;
+
+	    // If there are no more requests, stop the elevator
+	    if (elevator_->get_direction() == DIRN_DOWN && !is_call_down(floor) && !is_call_up(floor))
+	        elevator_->stop();
+	    else if (elevator_->get_direction() == DIRN_UP && !is_call_up(floor) && !is_call_down(floor))
+	        elevator_->stop();
+
+	    // default case is to not service
+	    return false;
+	}
+
+	void Control::service_floor(int floor, button_type_t button)
+	{
+		/* Note: setting time stamp to +service time -
+		 * button presses when servicing should be ignored*/
+
+		// Internal calls are always serviced
+		elevator_->set_button_indicator(BUTTON_COMMAND,false,floor);
+		state_.call[BUTTON_COMMAND][floor].first = clock_time::now()+SERVICE_TIME_;
+		state_.call[BUTTON_COMMAND][floor].second = false;
+
+		// If there is an external call, service it!
+		elevator_->set_button_indicator(button,false, floor);
+		state_.call[button][floor].first = clock_time::now()+SERVICE_TIME_;
+		state_.call[button][floor].second = false;
+
+		state_.button_type = button;
+
+		// Set the open door lamp
+		elevator_->set_door_open_indicator(true);
+
+		// Start the service timer
+		//service_timer->start(SERVICE_TIME_); TODO:
+	}
+
+	bool Control::is_call_up(int floor)
+	{
+	    // check if there is a call up at the current floor and service it
+	    if (state_.call[BUTTON_CALL_UP][floor].second)
+	    {
+	        service_floor(floor,BUTTON_CALL_UP);
+	        return true;
+	    }
+
+	    // check calls going up
+	    for (int i = floor+1; i < elevator_->get_floor_count(); i++)
+	    {
+	        if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_UP][i].second)
+	        {
+	            elevator_->go_to_floor(i);
+	            return true;
+	        }
+	    }
+
+	    // check calls going down
+	    for (int i = floor+1; i < elevator_->get_floor_count(); i++)
+	    {
+	        if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_DOWN][i].second)
+	        {
+	            elevator_->go_to_floor(i);
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+
+	bool Control::is_call_down(int floor)
+	{
+		//check if there is a call down at the current floor and service it
+		if (state_.call[BUTTON_CALL_DOWN][floor].second)
+		{
+			service_floor(floor,BUTTON_CALL_DOWN);
+			return true;
+		}
+
+		// check calls going down
+		for (int i = floor-1; i >=0; i--)
+		{
+			if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_DOWN][i].second)
+			{
+				elevator_->go_to_floor(i);
+				return true;
+			}
+		}
+
+		// check calls going up
+		for (int i = floor-1; i >= 0; i--)
+		{
+			if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_UP][i].second)
+			{
+				elevator_->go_to_floor(i);
+				return true;
+			}
+		}
+
+		return false;
+
+	}
+
 
 	void Control::slot_button_press(button_type_t button, int floor)
 	{
@@ -151,7 +297,7 @@ namespace elevator
 
 	void Control::slot_floor_sensor(int floor)
 	{
-		slot_queue_.enqueue (new On_Floor_Sensor(floor));
+		slot_queue_.enqueue (new On_Floor_Sensor(floor,this));
 	}
 
 	void Control::slot_exit_task(void*)

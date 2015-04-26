@@ -6,7 +6,8 @@
 #ifndef __INCLUDE_IO_H__
 #define __INCLUDE_IO_H__
 
-
+#define N_FLOORS 4
+#define N_BUTTONS 3
 /*
 This module is initialized with one of the following ElevatorTypes:
 */

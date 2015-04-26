@@ -1,0 +1,242 @@
+/*
+ * Elevator.cpp
+ *
+ *  Created on: Apr 22, 2015
+ *      Author: bengteh
+ */
+
+#include "Control.h"
+#include "Driver.h"
+#include "Elevator.h"
+
+#include <unistd.h>//sleep
+#include "ace/Log_Msg.h"
+
+namespace elevator
+{
+	Elevator::Elevator(Control * ctrl_handle)
+	        : ctrl_handle_(ctrl_handle)
+	{
+		ACE_DEBUG((LM_DEBUG,
+						   "in elevator constructor\n"));
+
+		//Initiate the driver interface for communicating with HW
+		handle_driver_=std::unique_ptr<Driver>(new Driver(1,4));
+
+		//subscribe to signaling slots in the control task
+		signal_control_=ctrl_handle_->signal_subscribe(signal_control_);
+	}
+	Elevator::~Elevator(void){}
+
+	int Elevator::open(void*)
+	{
+		ACE_DEBUG((LM_DEBUG,
+				            "(%t) Active Elevator Object opened \n"));
+		//activate object with a thread in it
+		activate(THR_NEW_LWP,1); //using a kernel thread
+		return 0;
+	}
+
+	int Elevator::close(u_long)
+	{
+		ACE_DEBUG((LM_DEBUG, "(%t) Active Elevator Object is being closed down \n"));
+
+		//ACE_Thread_Manager::instance()->cancel_task(ctrl_handle_);
+		signal_control_->stop_task.emit(0);
+
+		return 0;
+	}
+
+	int Elevator::svc(void)
+	{
+		poll_sensor_status(); //service the sensor/switch IO (this runs in it's own thread)
+		return 0; //service done; ACE_Task will call Elevator::close() and close off
+				  //any threads in this object
+	}
+
+	int Elevator::poll_sensor_status()
+	{
+		ACE_Thread_Manager *mgr = this->thr_mgr();
+		handle_driver_->init(ctrl_handle_->get_session());
+		handle_driver_->set_motor_speed(0);
+
+		/*status variables*/
+	    int last_floor = -1;
+	    int last_up = 0;
+	    int last_down = 0;
+	    int last_cmd = 0;
+	    bool is_stopped = false;
+	    bool is_obstructed = false;
+
+	    if (handle_driver_->get_floor_sensor_signal()==-1)
+	    {
+	    	handle_driver_->set_motor_speed(direction_*SPEED_);
+	    	is_running_=true;
+	    }
+
+		while(true)
+		{
+			//check if thread manager wants to abort the current thread.
+			if (mgr->testcancel(mgr->thr_self()))
+				  return 0;
+
+			int cur, up, down, tmp;
+
+			cur = handle_driver_->get_floor_sensor_signal();
+			if ((cur!=last_floor) && (cur!=-1))
+			{
+				floor_=cur;
+				on_floor_sensor(); //elevator reached a new floor; update accordingly
+				ACE_DEBUG((LM_DEBUG,
+								            "(%t) FLOOR ME! \n"));
+			}
+			last_floor=floor_;
+
+			/*cache status of all elevator buttons*/
+			cur = up = down = 0;
+			for (int i = 0; i < handle_driver_->get_max_floor(); i++)
+			{
+				if (handle_driver_->get_button_signal(BUTTON_COMMAND, i))
+					cur |= (1 << i); // cache passenger command calls for every floor
+
+				if ((i != handle_driver_->get_max_floor()-1) &&
+					handle_driver_->get_button_signal(BUTTON_CALL_UP, i))
+	                	up |= (1 << i); // cache "goin' up calls" for floors 1-2 (0-2)
+
+				if (i != 0 &&
+					handle_driver_->get_button_signal(BUTTON_CALL_DOWN, i))
+	                	down |= (1 << i); // cache "goin' up calls" for floors 2-4 (1-3)
+	        }
+
+			/*signal control task if buttons are detected
+			 * DO NOT SIGNAL IF BUTTON WAS ALREADY PRESSED*/
+			tmp = cur & (cur ^ last_cmd);
+			for (int i = 0; i < handle_driver_->get_max_floor(); i++)
+			{
+				if (tmp & (1 << i))
+					signal_control_->button_press.emit(BUTTON_COMMAND, i);
+			}
+			tmp = up & (up ^ last_up);
+			for (int i = 0; i < handle_driver_->get_max_floor(); i++)
+			{
+				if (tmp & (1 << i))
+					signal_control_->button_press.emit(BUTTON_CALL_UP, i);
+			}
+			tmp = down & (down ^ last_down);
+			for (int i = 0; i < handle_driver_->get_max_floor(); i++)
+			{
+				if (tmp & (1 << i))
+					signal_control_->button_press.emit(BUTTON_CALL_DOWN, i);
+			}
+			last_cmd = cur;
+			last_down = down;
+			last_up = up;
+
+			/* check if elevator is stopped */
+			if (handle_driver_->get_stop_signal())
+			{
+	            if (!is_stopped)
+	            {
+	                on_stop_sensor(true);//as of now: this only toggles the stop lamp
+	                ACE_DEBUG((LM_DEBUG,
+	                				            "(%t) is NOT stopped! \n"));
+	                is_stopped=true;
+	            }
+
+	        }
+	        else
+	        {
+	        	if (is_stopped)
+	        	{
+	        		on_stop_sensor(false);
+	        		ACE_DEBUG((LM_DEBUG,
+											"(%t) is stopped! \n"));
+	        		is_stopped=false;
+	        	}
+	        }
+
+    		ACE_DEBUG((LM_DEBUG,
+									"(%t) is running : %d!\n", (int)is_running_));
+
+			/* check if elevator is obstructed */
+			if (handle_driver_->get_obstruction_signal())
+			{
+	            if (!is_obstructed)
+	               //TODO if time: on_obstruction_sensor();
+	            is_obstructed = true;
+			}
+	        else
+	            is_obstructed = false;
+
+		}
+		return 0;
+	}
+
+	void Elevator::set_button_indicator(button_type_t button,bool lit,int floor)
+	{
+		/*check button scope*/
+		if (button == BUTTON_CALL_DOWN && floor == 0)
+			return;
+		if (button == BUTTON_CALL_UP &&
+			floor == handle_driver_->get_max_floor()-1)
+				return;
+
+		handle_driver_->set_button_lamp(button, floor, static_cast<int>(lit));
+	}
+
+	void Elevator::go_to_floor(int floor)
+	{
+		requested_floor_ = floor;
+
+		    // Set the direction of the elevator
+		    if (requested_floor_ < floor_)
+		        direction_ = DIRN_DOWN;
+		    else if (requested_floor_ > floor_)
+		        direction_ = DIRN_UP;
+		    else if (handle_driver_->get_floor_sensor_signal()==-1)
+		        direction_ = -direction_; //correct if elevator goes past the requested floor
+		    else
+		    {
+				handle_driver_->stop_elevator();
+				is_running_=false;
+		        return;
+		    }
+
+		    /*run elevator*/
+		    handle_driver_->set_motor_speed(direction_ * SPEED_);
+		    is_running_ = true;
+	}
+
+	void Elevator::stop()
+	{
+		handle_driver_->stop_elevator();
+		is_running_=false;
+	}
+
+	motor_direction_t Elevator::get_direction() {return direction_;}
+	void Elevator::set_direction(motor_direction_t direction) {direction_=direction;}
+
+	void Elevator::on_floor_sensor()
+	{
+		if ( !((floor_ > 0) || (floor_ < handle_driver_->get_max_floor())) )
+		{
+			handle_driver_->stop_elevator();					//stop @ last or first floor
+			is_running_=false;
+		}
+
+		if((floor_==requested_floor_) && (requested_floor_!=-1))
+		{
+			handle_driver_->stop_elevator();					//stop @ requested floor
+			is_running_=false;
+		}
+
+		set_floor_indicator(floor_);
+	}
+
+	/*pure FORWARDs*/
+	int Elevator::get_floor_count() {return handle_driver_->get_max_floor();}
+	void Elevator::set_floor_indicator(int floor) {handle_driver_->set_floor_indicator(floor);}
+	void Elevator::set_door_open_indicator(bool lit) {handle_driver_->set_door_open_lamp(static_cast<int>(lit));}
+	void Elevator::on_stop_sensor(bool lit) {handle_driver_->set_stop_lamp(static_cast<int>(lit));}
+}
+

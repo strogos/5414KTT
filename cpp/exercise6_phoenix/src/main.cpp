@@ -6,12 +6,12 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#ifndef ACE_NDEBUG
-#define ACE_NDEBUG 1
-#endif
-#ifndef ACE_NLOGGING
-#define ACE_NLOGGING 1
-#endif
+//#ifndef ACE_NDEBUG
+//#define ACE_NDEBUG 1
+//#endif
+//#ifndef ACE_NLOGGING
+//#define ACE_NLOGGING 1
+//#endif
 
 #include "IPC_Server.h"
 #include "IPC_Client.h"
@@ -117,13 +117,11 @@ void primary_service(int count)
 
 	while(true)
 	{
-		udp.send_data(std::to_string(count+1));//"ALIVE");
-		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		udp.send_data("123456789012345678901324567");//std::to_string(count+1));//"ALIVE");
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 		std::cout<<count<<endl;
 		count++;
 	}
-
-	udp.~Client();
 }
 
 void listener(int child_pid)
@@ -161,10 +159,10 @@ void listener(int child_pid)
 			miss_check_counter=0;
 		}
 
-		if (fake_primary_fail>0)
+/*		if (fake_primary_fail>0)
 			fake_primary_fail++;
 
-		/*10% miss rate acceptable?*/
+		10% miss rate acceptable?
 		if ((miss_rate_second>10) || (fake_primary_fail==5))
 		{
 			ACE_DEBUG((LM_DEBUG, "Miss rate: %d assume primary process is dead; spawn new..\n",miss_rate_second));
@@ -174,7 +172,7 @@ void listener(int child_pid)
 			if (fake_primary_fail>0)
 				fake_primary_fail=0;
 			break;
-		}
+		}*/
 	}
 
 	if (child_pid!=0)

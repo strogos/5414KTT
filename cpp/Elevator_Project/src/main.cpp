@@ -15,8 +15,6 @@
 #include "Elevator_Object.h"
 #include "Control.h"
 #include "Timer.h"
-#include "ACE_event_test.h"
-#include "Ace_Task_producer_consumer_test.h"
 #include <unistd.h>//sleep
 #include <iostream>
 #include "Driver.h"//A quick class wrapper based on elev.c;
@@ -104,37 +102,3 @@ void signal_int_timer_test(int signum)
 }
 void signal_oneshot_timer_test(int signum){std::cout<<"timer one shot\n";}
 
-
-
-int test_ACE_event_handler()
-{
-	MyEventHandler *eh = new MyEventHandler;
-	//Register the handler asking to call back when either SIGWINCH
-	//or SIGINT signals occur. Note that in both the cases we asked the
-	//Reactor to call back the same Event_Handler i.e., MyEventHandler.
-	//This is the reason why we had to write a switch statement in the
-	//handle_signal() method above. Also note that the ACE_Reactor is
-	//being used as a Singleton object (Singleton pattern)
-
-	ACE_Reactor::instance()->register_handler(SIGWINCH,eh);//eh to be called back on terminal window change
-	ACE_Reactor::instance()->register_handler(SIGINT,eh); // eh to be called back on interrupt signal
-
-	/*start the reactors event loop*/
-	while(true)
-		ACE_Reactor::instance()->handle_events();
-
-	return 0;
-}
-
-int test_ACE_Task()
-{
-	Consumer *consumer = new Consumer;
-	Producer *producer = new Producer(consumer);
-
-	producer->open(0);
-	consumer->open(0);
-	//Wait for all the tasks to exit.
-	ACE_Thread_Manager::instance()->wait();
-
-	return 0;
-}

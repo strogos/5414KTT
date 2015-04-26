@@ -18,10 +18,8 @@ extern "C"
 
 namespace elevator
 {
-class Elevator;
+	class Elevator;
 	//TODO IF TIME: get rid of arrays as it hinders portability
-	static const int N_FLOORS = 4;
-	static const int N_BUTTONS = 3;
 
 	static const int lamp_channel_matrix[N_FLOORS][N_BUTTONS] = {
 		{LIGHT_UP1, LIGHT_DOWN1, LIGHT_COMMAND1},

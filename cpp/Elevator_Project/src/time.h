@@ -13,21 +13,21 @@
 
 namespace clock_time
 {
-	using time_m_seconds = int64_t;
+	using msec = int64_t;
 
-	static inline time_m_seconds now()
+	static inline msec now()
 	{
 		return std::chrono::duration_cast< std::chrono::milliseconds >(
 			std::chrono::steady_clock::now().time_since_epoch()).count();
 	}
 
-	static inline std::chrono::milliseconds to_system_time(time_m_seconds mtime)
+	static inline std::chrono::milliseconds to_system_time(msec mtime)
 	{
 		return std::chrono::milliseconds(mtime);
 	}
 
 	template<class Rep, class Period>
-	static time_m_seconds from_system_time(const std::chrono::duration< Rep, Period >& d)
+	static msec from_system_time(const std::chrono::duration< Rep, Period >& d)
 	{
 		return std::chrono::duration_cast< std::chrono::milliseconds >(d).count();
 	}

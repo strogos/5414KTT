@@ -10,7 +10,7 @@
 
 #include "tools/signalslot/W_Slot.h"
 #include "tools/signalslot/W_Signal.h"
-
+#include "State.h"
 
 //#include <ace/OS.h>
 #include "ace/Task.h"
@@ -71,11 +71,14 @@ namespace elevator
 			Control_Signals * signal_subscribe(Control_Signals * subscribe);
 
 		private:
+			const int SERVICE_TIME_ = 2000;
+			const int IDLE_DELAY_TIME_ = 500;
 			std::unique_ptr<Elevator> elevator_;
 			std::atomic<bool> servicing_;
 			std::unique_ptr<Control_Signals> ctrl_signal_; //signal container memory mgmt shall be done in control task
 			elevator_type session_;
 			ACE_Activation_Queue slot_queue_;
+			State  state_;
 
 			//*local network socket handlers
 			//*elevator network handler
@@ -84,6 +87,12 @@ namespace elevator
 			class On_Button_Press;
 			class On_Floor_Sensor;
 			struct On_Exit;
+
+			/*FUNCTIONS*/
+			bool should_service(int floor);
+			void service_floor(int floor, button_type_t button);
+			bool is_call_down(int floor);
+			bool is_call_up(int floor);
 	};
 }
 #endif /* CONTROL_H_ */

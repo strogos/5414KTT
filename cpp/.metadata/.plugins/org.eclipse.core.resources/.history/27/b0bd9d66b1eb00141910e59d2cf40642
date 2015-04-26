@@ -1,0 +1,308 @@
+/*
+ * Control.cpp
+ *
+ *  Created on: Feb 11, 2015
+ *      Author: bengteh
+ *
+ *      Note:
+ *      This is an elevator control module.
+ */
+
+#include "Control.h"
+#include "Driver.h"
+#include "Elevator.h"
+#include "State.h"
+#include "Timer.h"
+#include "time.h"
+
+#include <unistd.h>//sleep
+#include "ace/Log_Msg.h"
+#include "ace/Auto_Ptr.h"
+
+namespace elevator
+{
+	Control::Control(elevator_type session)
+	       : servicing_(false), session_(session)
+	{
+		ACE_DEBUG((LM_DEBUG,
+						   "in control constructor\n"));
+
+		//handle elevator IO using the signal/slot principle (inspired by Qt's implementation)
+		ctrl_signal_ = std::unique_ptr<Control_Signals>(new Control_Signals);
+		ctrl_signal_->button_press.connect(this,&Control::slot_button_press);
+		ctrl_signal_->floor_sensor.connect(this,&Control::slot_floor_sensor);
+		ctrl_signal_->stop_task.connect(this,&Control::slot_exit_task);
+
+		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
+
+		//start tasks (and their corresponding threads)
+		//Note the order in which tasks are opened [memory leaks can happen here if not careful]
+		elevator_->open(0);
+		this->open(0);
+	}
+
+	Control::~Control()
+	{
+		// TODO Auto-generated destructor stub
+	}
+
+	int Control::open(void*)
+	{
+		ACE_DEBUG((LM_DEBUG,
+							"(%t) Active Control Object opened \n"));
+		//activate object with a thread in it
+		//this->activate(THR_NEW_LWP | THR_SUSPENDED,1); //using a kernel thread
+		activate(THR_NEW_LWP);
+		return 0;
+	}
+
+	int Control::close(u_long)
+	{
+		ACE_DEBUG((LM_DEBUG, "(%t) Active Control Object is being closed down \n"));
+
+		return 0;
+	}
+
+	int Control::svc(void)
+	{
+		ACE_Thread_Manager *mgr = this->thr_mgr ();
+		while (true)
+		{
+			if (servicing_)
+			{
+				ACE_DEBUG((LM_DEBUG, "(%t) Control thread IS servicing : %d\n",(int)servicing_));
+				servicing_=false;
+			}
+
+			std::unique_ptr<ACE_Method_Request>
+			request (this->slot_queue_.dequeue ()); // Dequeue the next method object
+
+			if (request->call () == -1)  // Invoke the method request
+				break;
+
+			if (mgr->testcancel (mgr->thr_self ())) //check if thread manager wants to stop
+				break;
+		}
+		ACE_DEBUG((LM_DEBUG, "(%t) Control thread GOING DOWN\n"));
+		return 0; //service done; ACE_Task will call elevator::close() and close off
+				  //any threads in this object
+	}
+
+	elevator_type Control::get_session() {return session_;}
+
+	Control_Signals * Control::signal_subscribe(Control_Signals * subscribe)
+	{
+
+		//memory mgmt on all signaling to slots in control shall be done in the control task itself
+		subscribe=ctrl_signal_.get();
+		if (subscribe)
+			return subscribe;
+		else
+		{
+			ACE_ERROR((LM_EMERGENCY,"PANIC: control task SIGNAL subscription FAIL!\n"));
+			throw std::bad_alloc();
+		}
+
+	}
+
+	class Control::On_Button_Press : public ACE_Method_Request
+	{
+		public:
+			On_Button_Press(button_type_t button, int floor) : button_(button), floor_(floor)
+			{
+				ACE_DEBUG((LM_DEBUG,"Button type %d press ENQUED @ floor %d\n",
+						(int)button,floor_));
+			}
+			virtual int call (void)
+			{
+				ACE_DEBUG((LM_DEBUG,"Button type pressed %d @ floor %d\n",
+						(int)button_,floor_));
+				return 0;
+			}
+		private:
+			button_type_t button_;
+			int floor_;
+	};
+
+	class Control::On_Floor_Sensor : public ACE_Method_Request
+	{
+		public:
+			On_Floor_Sensor(int floor, Control * handle) : floor_(floor), handle_(handle)
+			{
+				ACE_DEBUG((LM_DEBUG,"on floor sensor enqued %d\n", floor));
+			}
+			virtual int call (void)
+			{
+				ACE_DEBUG((LM_DEBUG,"Reached floor %d\n", floor_));
+				state_.floor=floor_;
+
+			    // Check if the current floor should be serviced
+			    if (handle_->should_service(floor_))
+			    {
+			        elevator_->stop();
+
+			        // Service the floor
+			        if (elevator_->get_direction() == DIRN_UP)
+			        	handle_->service_floor(floor_,BUTTON_CALL_UP);
+			        else
+			        	handle_->service_floor(floor_,BUTTON_CALL_DOWN);
+			    }
+				return 0;
+			}
+		private:
+			int floor_;
+			Control * handle_;
+	};
+
+	struct Exit_Method : public ACE_Method_Request
+	{
+		virtual int call (void) {return -1;}
+	};
+
+	bool Control::should_service(int floor)
+	{
+	    // Going up and there is a call up
+	    if (elevator_->get_direction() == DIRN_UP && state_.call[BUTTON_CALL_UP][floor].second)
+	        return true;
+
+	    // Going down and there is a call down
+	    if (elevator_->get_direction() == DIRN_DOWN && state_.call[BUTTON_CALL_DOWN][floor].second)
+	        return true;
+
+	    // Going up and there are no calls above, but there is call down
+	    if (elevator_->get_direction() == DIRN_UP && !is_call_up(floor) && state_.call[BUTTON_CALL_DOWN][floor].second)
+	    {
+	        // change direction
+	        elevator_->get_direction() = DIRN_DOWN;
+	        return true;
+	    }
+
+	    // Going down and there are not calls below, but there is call up
+	    if (elevator_->get_direction() == DIRN_DOWN && !is_call_down(floor) && state_.call[BUTTON_CALL_UP][floor].second)
+	    {
+	        // change direction
+	        elevator_->get_direction() = DIRN_UP;
+	        return true;
+	    }
+
+	    // There is an internal call
+	    if (state_.call[BUTTON_COMMAND][floor].second)
+	        return true;
+
+	    // If there are no more requests, stop the elevator
+	    if (elevator_->get_direction() == DIRN_DOWN && !is_call_down(floor) && !is_call_up(floor))
+	        elevator_->stop();
+	    else if (elevator_->get_direction() == DIRN_UP && !is_call_up(floor) && !is_call_down(floor))
+	        elevator_->stop();
+
+	    // default case is to not service
+	    return false;
+	}
+
+	void Control::service_floor(int floor, button_type_t button)
+	{
+		/* Note: setting time stamp to +service time -
+		 * button presses when servicing should be ignored*/
+
+		// Internal calls are always serviced
+		elevator_->set_button_indicator(BUTTON_COMMAND,false,floor);
+		state_.call[BUTTON_COMMAND][floor].first = clock_time::now()+SERVICE_TIME_;
+		state_.call[BUTTON_COMMAND][floor].second = false;
+
+		// If there is an external call, service it!
+		elevator_->set_button_indicator(button,false, floor);
+		state_.call[button][floor].first = clock_time::now()+SERVICE_TIME_;
+		state_.call[button][floor].second = false;
+
+		state_.button_type = button;
+
+		// Set the open door lamp
+		elevator_->set_door_open_indicator(true);
+
+		// Start the service timer
+		//service_timer->start(SERVICE_TIME_); TODO:
+	}
+
+	bool Control::is_call_up(int floor)
+	{
+	    // check if there is a call up at the current floor and service it
+	    if (state_.call[BUTTON_CALL_UP][floor].second)
+	    {
+	        service_floor(floor,BUTTON_CALL_UP);
+	        return true;
+	    }
+
+	    // check calls going up
+	    for (int i = floor+1; i < elevator_->get_floor_count(); i++)
+	    {
+	        if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_UP][i].second)
+	        {
+	            elevator_->go_to_floor(i);
+	            return true;
+	        }
+	    }
+
+	    // check calls going down
+	    for (int i = floor+1; i < elevator_->get_floor_count(); i++)
+	    {
+	        if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_DOWN][i].second)
+	        {
+	            elevator_->go_to_floor(i);
+	            return true;
+	        }
+	    }
+
+	    return false;
+	}
+
+	bool Control::is_call_down(int floor)
+	{
+		//check if there is a call down at the current floor and service it
+		if (state_.call[BUTTON_CALL_DOWN][floor].second)
+		{
+			service_floor(floor,BUTTON_CALL_DOWN);
+			return true;
+		}
+
+		// check calls going down
+		for (int i = floor-1; i >=0; i--)
+		{
+			if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_DOWN][i].second)
+			{
+				elevator_->go_to_floor(i);
+				return true;
+			}
+		}
+
+		// check calls going up
+		for (int i = floor-1; i >= 0; i--)
+		{
+			if (state_.call[BUTTON_COMMAND][i].second || state_.call[BUTTON_CALL_UP][i].second)
+			{
+				elevator_->go_to_floor(i);
+				return true;
+			}
+		}
+
+		return false;
+
+	}
+
+
+	void Control::slot_button_press(button_type_t button, int floor)
+	{
+		ACE_DEBUG((LM_DEBUG, "in slot for button press\n"));
+		slot_queue_.enqueue (new On_Button_Press(button,floor));
+		servicing_=true;
+	}
+
+	void Control::slot_floor_sensor(int floor)
+	{
+		slot_queue_.enqueue (new On_Floor_Sensor(floor,this));
+	}
+
+	void Control::slot_exit_task(void*)
+	{
+		slot_queue_.enqueue(new Exit_Method);
+	}
+}

@@ -46,10 +46,14 @@ namespace elevator
 			int svc(void);
 
 			/*FUCNTIONS*/
+			int get_floor_count();
+			int get_direction();
+			void set_direction(motor_direction_t direction);
 			void set_floor_indicator(int floor);
 			void set_button_indicator(button_type_t button,bool lit,int floor);
 			void set_door_open_indicator(bool lit);
 			void go_to_floor(int floor);
+			void stop();
 
 		private:
 			/*VARIABLES*/

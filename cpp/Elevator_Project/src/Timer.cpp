@@ -83,8 +83,8 @@ class Timer::Handler : public ACE_Event_Handler
 		ACE_Reactor *reactor_=nullptr;
 		int timer_id_=0;
 		ACE_Time_Value time_value_;
-		clock_time::time_m_seconds time_ms_=0;
-		clock_time::time_m_seconds last_epoch_=0;
+		clock_time::msec time_ms_=0;
+		clock_time::msec last_epoch_=0;
 };
 
 /*PROXY CLASS (semi-pimpl style)*/

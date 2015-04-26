@@ -188,24 +188,34 @@ namespace elevator
 	{
 		requested_floor_ = floor;
 
-		    // Set the direction of the elevator
-		    if (requested_floor_ < floor_)
-		        direction_ = DIRN_DOWN;
-		    else if (requested_floor_ > floor_)
-		        direction_ = DIRN_DOWN;
-		    else if (handle_driver_->get_floor_sensor_signal()==-1)
-		        direction_ = -direction_; //correct if elevator goes past the requested floor
-		    else
-		    {
-				handle_driver_->stop_elevator();
-				is_running_=false;
-		        return;
-		    }
+		// Set the direction of the elevator
+		if (requested_floor_ < floor_)
+			direction_ = DIRN_DOWN;
+		else if (requested_floor_ > floor_)
+			direction_ = DIRN_UP;
+		else if (handle_driver_->get_floor_sensor_signal()==-1)
+			direction_ = -direction_; //correct if elevator goes past the requested floor
+		else
+		{
+			handle_driver_->stop_elevator();
+			is_running_=false;
+			return;
+		}
 
-		    /*run elevator*/
-		    handle_driver_->set_motor_speed(direction_ * SPEED_);
-		    is_running_ = true;
+		/*run elevator*/
+		handle_driver_->set_motor_speed(direction_ * SPEED_);
+		is_running_ = true;
 	}
+
+	void Elevator::stop()
+	{
+		handle_driver_->stop_elevator();
+		is_running_=false;
+	}
+
+	int Elevator::get_direction() {return direction_;}
+
+	void Elevator::set_direction(motor_direction_t direction) {direction_=direction;}
 
 	void Elevator::on_floor_sensor()
 	{
@@ -225,6 +235,7 @@ namespace elevator
 	}
 
 	/*pure FORWARDs*/
+	int Elevator::get_floor_count() {return handle_driver_->get_max_floor();}
 	void Elevator::set_floor_indicator(int floor) {handle_driver_->set_floor_indicator(floor);}
 	void Elevator::set_door_open_indicator(bool lit) {handle_driver_->set_door_open_lamp(static_cast<int>(lit));}
 	void Elevator::on_stop_sensor(bool lit) {handle_driver_->set_stop_lamp(static_cast<int>(lit));}
