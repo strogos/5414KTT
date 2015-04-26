@@ -41,7 +41,7 @@ namespace elevator
 
 	struct State //task
 	{
-		  int floor=4;
+		  int floor=1;
 		  int direction=1;
 		  Button call[3][N_FLOORS];
 		  clock_time::msec call_container_frst[3][N_FLOORS];

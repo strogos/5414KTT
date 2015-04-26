@@ -1,4 +1,8 @@
-18:38:25 **** Build of configuration Debug for project Elevator_Project ****
+19:52:45 **** Clean-only build of configuration Debug for project Elevator_Project ****
+make clean 
+rm -rf  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  ./src/io.d  ./src/Control.d ./src/Driver.d ./src/Elevator.d ./src/IPC_Client.d ./src/IPC_Server.d ./src/Scheduler.d ./src/State.d ./src/Timer.d ./src/main.d  Elevator_Project
+ 
+19:52:47 **** Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/Control.cpp
 Invoking: Cross G++ Compiler
@@ -62,900 +66,13 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
-18:45:38 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp:12:53: error: expected initializer before ‘)’ token
-  std::stringstream& State::do_serialize(State state))
-                                                     ^
-../src/State.cpp:88:1: error: expected ‘}’ at end of input
- }
- ^
-make: *** [src/State.o] Error 1
-18:45:50 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(elevator::State)’:
-../src/State.cpp:21:46: error: no matching function for call to ‘cereal::BinaryOutputArchive::BinaryOutputArchive(std::unique_ptr<std::basic_stringstream<char> >&)’
-    cereal::BinaryOutputArchive oarchive(data_);
-                                              ^
-../src/State.cpp:21:46: note: candidates are:
-In file included from ../src/State.h:14:0,
-                 from ../src/State.cpp:8:
-../src/tools/cereal/archives/binary.hpp:57:7: note: cereal::BinaryOutputArchive::BinaryOutputArchive(std::ostream&)
-       BinaryOutputArchive(std::ostream & stream) :
-       ^
-../src/tools/cereal/archives/binary.hpp:57:7: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-../src/tools/cereal/archives/binary.hpp:51:9: note: cereal::BinaryOutputArchive::BinaryOutputArchive(const cereal::BinaryOutputArchive&)
-   class BinaryOutputArchive : public OutputArchive<BinaryOutputArchive, AllowEmptyClassElision>
-         ^
-../src/tools/cereal/archives/binary.hpp:51:9: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >’ to ‘const cereal::BinaryOutputArchive&’
-../src/tools/cereal/archives/binary.hpp:51:9: note: cereal::BinaryOutputArchive::BinaryOutputArchive(cereal::BinaryOutputArchive&&)
-../src/tools/cereal/archives/binary.hpp:51:9: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >’ to ‘cereal::BinaryOutputArchive&&’
-../src/State.cpp:23:3: error: expected unqualified-id before ‘}’ token
-   }
-   ^
-make: *** [src/State.o] Error 1
-18:50:33 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(elevator::State)’:
-../src/State.cpp:21:46: error: no matching function for call to ‘cereal::BinaryOutputArchive::BinaryOutputArchive(std::unique_ptr<std::basic_stringstream<char> >&)’
-    cereal::BinaryOutputArchive oarchive(data_);
-                                              ^
-../src/State.cpp:21:46: note: candidates are:
-In file included from ../src/State.h:14:0,
-                 from ../src/State.cpp:8:
-../src/tools/cereal/archives/binary.hpp:57:7: note: cereal::BinaryOutputArchive::BinaryOutputArchive(std::ostream&)
-       BinaryOutputArchive(std::ostream & stream) :
-       ^
-../src/tools/cereal/archives/binary.hpp:57:7: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-../src/tools/cereal/archives/binary.hpp:51:9: note: cereal::BinaryOutputArchive::BinaryOutputArchive(const cereal::BinaryOutputArchive&)
-   class BinaryOutputArchive : public OutputArchive<BinaryOutputArchive, AllowEmptyClassElision>
-         ^
-../src/tools/cereal/archives/binary.hpp:51:9: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >’ to ‘const cereal::BinaryOutputArchive&’
-../src/tools/cereal/archives/binary.hpp:51:9: note: cereal::BinaryOutputArchive::BinaryOutputArchive(cereal::BinaryOutputArchive&&)
-../src/tools/cereal/archives/binary.hpp:51:9: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >’ to ‘cereal::BinaryOutputArchive&&’
-make: *** [src/State.o] Error 1
-18:51:11 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building file: ../src/Driver.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Driver.d" -MT"src/Driver.d" -o "src/Driver.o" "../src/Driver.cpp"
-Finished building: ../src/Driver.cpp
- 
-Building file: ../src/IPC_Client.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Client.d" -MT"src/IPC_Client.d" -o "src/IPC_Client.o" "../src/IPC_Client.cpp"
-Finished building: ../src/IPC_Client.cpp
- 
-Building file: ../src/IPC_Server.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IPC_Server.d" -MT"src/IPC_Server.d" -o "src/IPC_Server.o" "../src/IPC_Server.cpp"
-../src/IPC_Server.cpp: In member function ‘int IPC_Server::Server::accept_data()’:
-../src/IPC_Server.cpp:80:2: warning: control reaches end of non-void function [-Wreturn-type]
-  }
-  ^
-Finished building: ../src/IPC_Server.cpp
- 
-Building file: ../src/Scheduler.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Scheduler.d" -MT"src/Scheduler.d" -o "src/Scheduler.o" "../src/Scheduler.cpp"
-Finished building: ../src/Scheduler.cpp
- 
-Building file: ../src/io.c
-Invoking: Cross GCC Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -MMD -MP -MF"src/io.d" -MT"src/io.d" -o "src/io.o" "../src/io.c"
-Finished building: ../src/io.c
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-18:51:25 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(elevator::State)’:
-../src/State.cpp:21:47: error: no matching function for call to ‘cereal::BinaryOutputArchive::BinaryOutputArchive(std::unique_ptr<std::basic_stringstream<char> >*)’
-    cereal::BinaryOutputArchive oarchive(&data_);
-                                               ^
-../src/State.cpp:21:47: note: candidates are:
-In file included from ../src/State.h:14:0,
-                 from ../src/State.cpp:8:
-../src/tools/cereal/archives/binary.hpp:57:7: note: cereal::BinaryOutputArchive::BinaryOutputArchive(std::ostream&)
-       BinaryOutputArchive(std::ostream & stream) :
-       ^
-../src/tools/cereal/archives/binary.hpp:57:7: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >*’ to ‘std::ostream& {aka std::basic_ostream<char>&}’
-../src/tools/cereal/archives/binary.hpp:51:9: note: cereal::BinaryOutputArchive::BinaryOutputArchive(const cereal::BinaryOutputArchive&)
-   class BinaryOutputArchive : public OutputArchive<BinaryOutputArchive, AllowEmptyClassElision>
-         ^
-../src/tools/cereal/archives/binary.hpp:51:9: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >*’ to ‘const cereal::BinaryOutputArchive&’
-../src/tools/cereal/archives/binary.hpp:51:9: note: cereal::BinaryOutputArchive::BinaryOutputArchive(cereal::BinaryOutputArchive&&)
-../src/tools/cereal/archives/binary.hpp:51:9: note:   no known conversion for argument 1 from ‘std::unique_ptr<std::basic_stringstream<char> >*’ to ‘cereal::BinaryOutputArchive&&’
-make: *** [src/State.o] Error 1
-18:51:29 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-18:57:27 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(elevator::State&)’:
-../src/State.cpp:25:17: error: ‘((elevator::State*)this)->elevator::State::data_’ cannot be used as a member pointer, since it is of type ‘std::unique_ptr<std::basic_stringstream<char> >’
-   return state.*data_;
-                 ^
-../src/State.cpp: In member function ‘bool elevator::State::do_deserialize(const stringstream&, elevator::State&)’:
-../src/State.cpp:33:47: error: ‘((elevator::State*)this)->elevator::State::data_’ cannot be used as a member pointer, since it is of type ‘std::unique_ptr<std::basic_stringstream<char> >’
-    cereal::BinaryInputArchive iarchive(state.*data_);
-                                               ^
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(elevator::State&)’:
-../src/State.cpp:26:2: warning: control reaches end of non-void function [-Wreturn-type]
-  }
-  ^
-make: *** [src/State.o] Error 1
-18:58:01 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:03:24 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:41:4: error: use of deleted function ‘std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&)’
-  ss=test.do_serialize(test);
-    ^
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/sstream:502:11: note: ‘std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:502:11: error: use of deleted function ‘std::basic_iostream<char>& std::basic_iostream<char>::operator=(const std::basic_iostream<char>&)’
-In file included from /usr/include/c++/4.8/iostream:40:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/istream:795:11: note: ‘std::basic_iostream<char>& std::basic_iostream<char>::operator=(const std::basic_iostream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_iostream
-           ^
-/usr/include/c++/4.8/istream:795:11: error: use of deleted function ‘std::basic_istream<char>& std::basic_istream<char>::operator=(const std::basic_istream<char>&)’
-/usr/include/c++/4.8/istream:58:11: note: ‘std::basic_istream<char>& std::basic_istream<char>::operator=(const std::basic_istream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_istream : virtual public basic_ios<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/istream:58:11: error: use of deleted function ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’
-In file included from /usr/include/c++/4.8/ios:44:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/bits/basic_ios.h:66:11: note: ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_ios : public ios_base
-           ^
-In file included from /usr/include/c++/4.8/ios:42:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/bits/ios_base.h:789:5: error: ‘std::ios_base& std::ios_base::operator=(const std::ios_base&)’ is private
-     operator=(const ios_base&);
-     ^
-In file included from /usr/include/c++/4.8/ios:44:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/bits/basic_ios.h:66:11: error: within this context
-     class basic_ios : public ios_base
-           ^
-In file included from /usr/include/c++/4.8/iostream:40:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/istream:795:11: error: use of deleted function ‘std::basic_ostream<char>& std::basic_ostream<char>::operator=(const std::basic_ostream<char>&)’
-     class basic_iostream
-           ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/ostream:58:11: note: ‘std::basic_ostream<char>& std::basic_ostream<char>::operator=(const std::basic_ostream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_ostream : virtual public basic_ios<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/ostream:58:11: error: use of deleted function ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/sstream:502:11: error: use of deleted function ‘std::basic_stringbuf<char>& std::basic_stringbuf<char>::operator=(const std::basic_stringbuf<char>&)’
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:64:11: note: ‘std::basic_stringbuf<char>& std::basic_stringbuf<char>::operator=(const std::basic_stringbuf<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-           ^
-In file included from /usr/include/c++/4.8/ios:43:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/streambuf:810:7: error: ‘std::basic_streambuf<_CharT, _Traits>& std::basic_streambuf<_CharT, _Traits>::operator=(const std::basic_streambuf<_CharT, _Traits>&) [with _CharT = char; _Traits = std::char_traits<char>]’ is private
-       operator=(const basic_streambuf&) { return *this; };
-       ^
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/sstream:64:11: error: within this context
-     class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-           ^
-make: *** [src/main.o] Error 1
-19:04:44 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-../src/main.cpp: In function ‘int main()’:
-../src/main.cpp:41:4: error: use of deleted function ‘std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&)’
-  ss=test.do_serialize(test);
-    ^
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/sstream:502:11: note: ‘std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:502:11: error: use of deleted function ‘std::basic_iostream<char>& std::basic_iostream<char>::operator=(const std::basic_iostream<char>&)’
-In file included from /usr/include/c++/4.8/iostream:40:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/istream:795:11: note: ‘std::basic_iostream<char>& std::basic_iostream<char>::operator=(const std::basic_iostream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_iostream
-           ^
-/usr/include/c++/4.8/istream:795:11: error: use of deleted function ‘std::basic_istream<char>& std::basic_istream<char>::operator=(const std::basic_istream<char>&)’
-/usr/include/c++/4.8/istream:58:11: note: ‘std::basic_istream<char>& std::basic_istream<char>::operator=(const std::basic_istream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_istream : virtual public basic_ios<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/istream:58:11: error: use of deleted function ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’
-In file included from /usr/include/c++/4.8/ios:44:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/bits/basic_ios.h:66:11: note: ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_ios : public ios_base
-           ^
-In file included from /usr/include/c++/4.8/ios:42:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/bits/ios_base.h:789:5: error: ‘std::ios_base& std::ios_base::operator=(const std::ios_base&)’ is private
-     operator=(const ios_base&);
-     ^
-In file included from /usr/include/c++/4.8/ios:44:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/bits/basic_ios.h:66:11: error: within this context
-     class basic_ios : public ios_base
-           ^
-In file included from /usr/include/c++/4.8/iostream:40:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/istream:795:11: error: use of deleted function ‘std::basic_ostream<char>& std::basic_ostream<char>::operator=(const std::basic_ostream<char>&)’
-     class basic_iostream
-           ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/ostream:58:11: note: ‘std::basic_ostream<char>& std::basic_ostream<char>::operator=(const std::basic_ostream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_ostream : virtual public basic_ios<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/ostream:58:11: error: use of deleted function ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/sstream:502:11: error: use of deleted function ‘std::basic_stringbuf<char>& std::basic_stringbuf<char>::operator=(const std::basic_stringbuf<char>&)’
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:64:11: note: ‘std::basic_stringbuf<char>& std::basic_stringbuf<char>::operator=(const std::basic_stringbuf<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-           ^
-In file included from /usr/include/c++/4.8/ios:43:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/streambuf:810:7: error: ‘std::basic_streambuf<_CharT, _Traits>& std::basic_streambuf<_CharT, _Traits>::operator=(const std::basic_streambuf<_CharT, _Traits>&) [with _CharT = char; _Traits = std::char_traits<char>]’ is private
-       operator=(const basic_streambuf&) { return *this; };
-       ^
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/Control.h:13,
-                 from ../src/main.cpp:16:
-/usr/include/c++/4.8/sstream:64:11: error: within this context
-     class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-           ^
-make: *** [src/main.o] Error 1
-19:04:57 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-Finished building: ../src/main.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:06:57 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:23:43: error: redeclaration of ‘cereal::BinaryOutputArchive oarchive’
-    cereal::BinaryOutputArchive oarchive(ss);
-                                           ^
-../src/State.cpp:22:32: error: ‘cereal::BinaryOutputArchive oarchive’ previously declared here
-    cereal::BinaryOutputArchive oarchive(*state.data_);
-                                ^
-make: *** [src/State.o] Error 1
-19:07:08 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:23:43: error: redeclaration of ‘cereal::BinaryOutputArchive oarchive’
-    cereal::BinaryOutputArchive oarchive(ss);
-                                           ^
-../src/State.cpp:22:32: error: ‘cereal::BinaryOutputArchive oarchive’ previously declared here
-    cereal::BinaryOutputArchive oarchive(*state.data_);
-                                ^
-make: *** [src/State.o] Error 1
-19:07:24 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-Finished building: ../src/main.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:08:10 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:26:8: error: no match for ‘operator=’ (operand types are ‘std::unique_ptr<std::basic_stringstream<char> >’ and ‘std::stringstream* {aka std::basic_stringstream<char>*}’)
-   data_=&ss;
-        ^
-../src/State.cpp:26:8: note: candidates are:
-In file included from /usr/include/c++/4.8/memory:81:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:34,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/unique_ptr.h:190:7: note: std::unique_ptr<_Tp, _Dp>& std::unique_ptr<_Tp, _Dp>::operator=(std::unique_ptr<_Tp, _Dp>&&) [with _Tp = std::basic_stringstream<char>; _Dp = std::default_delete<std::basic_stringstream<char> >]
-       operator=(unique_ptr&& __u) noexcept
-       ^
-/usr/include/c++/4.8/bits/unique_ptr.h:190:7: note:   no known conversion for argument 1 from ‘std::stringstream* {aka std::basic_stringstream<char>*}’ to ‘std::unique_ptr<std::basic_stringstream<char> >&&’
-/usr/include/c++/4.8/bits/unique_ptr.h:203:2: note: template<class _Up, class _Ep> typename std::enable_if<std::__and_<std::is_convertible<typename std::unique_ptr<_Up, _Ep>::pointer, typename std::unique_ptr<_Tp, _Dp>::_Pointer::type>, std::__not_<std::is_array<_Up> > >::value, std::unique_ptr<_Tp, _Dp>&>::type std::unique_ptr<_Tp, _Dp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Up = _Up; _Ep = _Ep; _Tp = std::basic_stringstream<char>; _Dp = std::default_delete<std::basic_stringstream<char> >]
-  operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
-  ^
-/usr/include/c++/4.8/bits/unique_ptr.h:203:2: note:   template argument deduction/substitution failed:
-../src/State.cpp:26:8: note:   mismatched types ‘std::unique_ptr<_Tp, _Dp>’ and ‘std::stringstream* {aka std::basic_stringstream<char>*}’
-   data_=&ss;
-        ^
-In file included from /usr/include/c++/4.8/memory:81:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:34,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/unique_ptr.h:211:7: note: std::unique_ptr<_Tp, _Dp>& std::unique_ptr<_Tp, _Dp>::operator=(std::nullptr_t) [with _Tp = std::basic_stringstream<char>; _Dp = std::default_delete<std::basic_stringstream<char> >; std::nullptr_t = std::nullptr_t]
-       operator=(nullptr_t) noexcept
-       ^
-/usr/include/c++/4.8/bits/unique_ptr.h:211:7: note:   no known conversion for argument 1 from ‘std::stringstream* {aka std::basic_stringstream<char>*}’ to ‘std::nullptr_t’
-make: *** [src/State.o] Error 1
-19:08:33 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:26:8: error: no match for ‘operator=’ (operand types are ‘std::unique_ptr<std::basic_stringstream<char> >’ and ‘std::stringstream {aka std::basic_stringstream<char>}’)
-   data_=ss;
-        ^
-../src/State.cpp:26:8: note: candidates are:
-In file included from /usr/include/c++/4.8/memory:81:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:34,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/unique_ptr.h:190:7: note: std::unique_ptr<_Tp, _Dp>& std::unique_ptr<_Tp, _Dp>::operator=(std::unique_ptr<_Tp, _Dp>&&) [with _Tp = std::basic_stringstream<char>; _Dp = std::default_delete<std::basic_stringstream<char> >]
-       operator=(unique_ptr&& __u) noexcept
-       ^
-/usr/include/c++/4.8/bits/unique_ptr.h:190:7: note:   no known conversion for argument 1 from ‘std::stringstream {aka std::basic_stringstream<char>}’ to ‘std::unique_ptr<std::basic_stringstream<char> >&&’
-/usr/include/c++/4.8/bits/unique_ptr.h:203:2: note: template<class _Up, class _Ep> typename std::enable_if<std::__and_<std::is_convertible<typename std::unique_ptr<_Up, _Ep>::pointer, typename std::unique_ptr<_Tp, _Dp>::_Pointer::type>, std::__not_<std::is_array<_Up> > >::value, std::unique_ptr<_Tp, _Dp>&>::type std::unique_ptr<_Tp, _Dp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Up = _Up; _Ep = _Ep; _Tp = std::basic_stringstream<char>; _Dp = std::default_delete<std::basic_stringstream<char> >]
-  operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
-  ^
-/usr/include/c++/4.8/bits/unique_ptr.h:203:2: note:   template argument deduction/substitution failed:
-../src/State.cpp:26:8: note:   ‘std::stringstream {aka std::basic_stringstream<char>}’ is not derived from ‘std::unique_ptr<_Tp, _Dp>’
-   data_=ss;
-        ^
-In file included from /usr/include/c++/4.8/memory:81:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:34,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/unique_ptr.h:211:7: note: std::unique_ptr<_Tp, _Dp>& std::unique_ptr<_Tp, _Dp>::operator=(std::nullptr_t) [with _Tp = std::basic_stringstream<char>; _Dp = std::default_delete<std::basic_stringstream<char> >; std::nullptr_t = std::nullptr_t]
-       operator=(nullptr_t) noexcept
-       ^
-/usr/include/c++/4.8/bits/unique_ptr.h:211:7: note:   no known conversion for argument 1 from ‘std::stringstream {aka std::basic_stringstream<char>}’ to ‘std::nullptr_t’
-make: *** [src/State.o] Error 1
-19:08:49 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:09:26 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:26:8: error: use of deleted function ‘std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&)’
-   data_=ss;
-        ^
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/sstream:502:11: note: ‘std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:502:11: error: use of deleted function ‘std::basic_iostream<char>& std::basic_iostream<char>::operator=(const std::basic_iostream<char>&)’
-In file included from /usr/include/c++/4.8/iostream:40:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/istream:795:11: note: ‘std::basic_iostream<char>& std::basic_iostream<char>::operator=(const std::basic_iostream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_iostream
-           ^
-/usr/include/c++/4.8/istream:795:11: error: use of deleted function ‘std::basic_istream<char>& std::basic_istream<char>::operator=(const std::basic_istream<char>&)’
-/usr/include/c++/4.8/istream:58:11: note: ‘std::basic_istream<char>& std::basic_istream<char>::operator=(const std::basic_istream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_istream : virtual public basic_ios<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/istream:58:11: error: use of deleted function ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’
-In file included from /usr/include/c++/4.8/ios:44:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/basic_ios.h:66:11: note: ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_ios : public ios_base
-           ^
-In file included from /usr/include/c++/4.8/ios:42:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/ios_base.h:789:5: error: ‘std::ios_base& std::ios_base::operator=(const std::ios_base&)’ is private
-     operator=(const ios_base&);
-     ^
-In file included from /usr/include/c++/4.8/ios:44:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/bits/basic_ios.h:66:11: error: within this context
-     class basic_ios : public ios_base
-           ^
-In file included from /usr/include/c++/4.8/iostream:40:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/istream:795:11: error: use of deleted function ‘std::basic_ostream<char>& std::basic_ostream<char>::operator=(const std::basic_ostream<char>&)’
-     class basic_iostream
-           ^
-In file included from /usr/include/c++/4.8/iostream:39:0,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/ostream:58:11: note: ‘std::basic_ostream<char>& std::basic_ostream<char>::operator=(const std::basic_ostream<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_ostream : virtual public basic_ios<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/ostream:58:11: error: use of deleted function ‘std::basic_ios<char>& std::basic_ios<char>::operator=(const std::basic_ios<char>&)’
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/sstream:502:11: error: use of deleted function ‘std::basic_stringbuf<char>& std::basic_stringbuf<char>::operator=(const std::basic_stringbuf<char>&)’
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:64:11: note: ‘std::basic_stringbuf<char>& std::basic_stringbuf<char>::operator=(const std::basic_stringbuf<char>&)’ is implicitly deleted because the default definition would be ill-formed:
-     class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-           ^
-In file included from /usr/include/c++/4.8/ios:43:0,
-                 from /usr/include/c++/4.8/ostream:38,
-                 from /usr/include/c++/4.8/iostream:39,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/access.hpp:33,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/details/traits.hpp:43,
-                 from /home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/cereal/cereal.hpp:43,
-                 from ../src/tools/cereal/archives/binary.hpp:32,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/streambuf:810:7: error: ‘std::basic_streambuf<_CharT, _Traits>& std::basic_streambuf<_CharT, _Traits>::operator=(const std::basic_streambuf<_CharT, _Traits>&) [with _CharT = char; _Traits = std::char_traits<char>]’ is private
-       operator=(const basic_streambuf&) { return *this; };
-       ^
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/sstream:64:11: error: within this context
-     class basic_stringbuf : public basic_streambuf<_CharT, _Traits>
-           ^
-../src/State.cpp: In member function ‘bool elevator::State::do_deserialize(const stringstream&, elevator::State&)’:
-../src/State.cpp:36:40: error: no match for ‘operator*’ (operand type is ‘std::stringstream {aka std::basic_stringstream<char>}’)
-    cereal::BinaryInputArchive iarchive(*state.data_);
-                                        ^
-../src/State.cpp:36:40: note: candidates are:
-In file included from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.h:416:0,
-                 from /home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Message_Block.h:27,
-                 from ../src/State.h:19,
-                 from ../src/State.cpp:8:
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note: ACE_Time_Value operator*(double, const ACE_Time_Value&)
- operator * (double d, const ACE_Time_Value &tv)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:219:1: note:   candidate expects 2 arguments, 1 provided
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note: ACE_Time_Value operator*(const ACE_Time_Value&, double)
- operator * (const ACE_Time_Value &tv, double d)
- ^
-/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ace/Time_Value.inl:225:1: note:   candidate expects 2 arguments, 1 provided
-make: *** [src/State.o] Error 1
-19:10:03 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:26:9: error: lvalue required as left operand of assignment
-   &data_=ss;
-         ^
-../src/State.cpp: In member function ‘bool elevator::State::do_deserialize(const stringstream&, elevator::State&)’:
-../src/State.cpp:36:42: error: no matching function for call to ‘cereal::BinaryInputArchive::BinaryInputArchive(const stringstream&)’
-    cereal::BinaryInputArchive iarchive(ss);
-                                          ^
-../src/State.cpp:36:42: note: candidates are:
-In file included from ../src/State.h:14:0,
-                 from ../src/State.cpp:8:
-../src/tools/cereal/archives/binary.hpp:90:7: note: cereal::BinaryInputArchive::BinaryInputArchive(std::istream&)
-       BinaryInputArchive(std::istream & stream) :
-       ^
-../src/tools/cereal/archives/binary.hpp:90:7: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘std::istream& {aka std::basic_istream<char>&}’
-../src/tools/cereal/archives/binary.hpp:86:9: note: cereal::BinaryInputArchive::BinaryInputArchive(const cereal::BinaryInputArchive&)
-   class BinaryInputArchive : public InputArchive<BinaryInputArchive, AllowEmptyClassElision>
-         ^
-../src/tools/cereal/archives/binary.hpp:86:9: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘const cereal::BinaryInputArchive&’
-../src/tools/cereal/archives/binary.hpp:86:9: note: cereal::BinaryInputArchive::BinaryInputArchive(cereal::BinaryInputArchive&&)
-../src/tools/cereal/archives/binary.hpp:86:9: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘cereal::BinaryInputArchive&&’
-make: *** [src/State.o] Error 1
-19:10:10 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘std::stringstream& elevator::State::do_serialize(std::stringstream&, elevator::State&)’:
-../src/State.cpp:26:8: error: no match for ‘operator=’ (operand types are ‘std::stringstream {aka std::basic_stringstream<char>}’ and ‘std::stringstream* {aka std::basic_stringstream<char>*}’)
-   data_=&ss;
-        ^
-../src/State.cpp:26:8: note: candidate is:
-In file included from ../src/tools/cereal/archives/binary.hpp:33:0,
-                 from ../src/State.h:14,
-                 from ../src/State.cpp:8:
-/usr/include/c++/4.8/sstream:502:11: note: std::basic_stringstream<char>& std::basic_stringstream<char>::operator=(const std::basic_stringstream<char>&) <deleted>
-     class basic_stringstream : public basic_iostream<_CharT, _Traits>
-           ^
-/usr/include/c++/4.8/sstream:502:11: note:   no known conversion for argument 1 from ‘std::stringstream* {aka std::basic_stringstream<char>*}’ to ‘const std::basic_stringstream<char>&’
-../src/State.cpp: In member function ‘bool elevator::State::do_deserialize(const stringstream&, elevator::State&)’:
-../src/State.cpp:36:42: error: no matching function for call to ‘cereal::BinaryInputArchive::BinaryInputArchive(const stringstream&)’
-    cereal::BinaryInputArchive iarchive(ss);
-                                          ^
-../src/State.cpp:36:42: note: candidates are:
-In file included from ../src/State.h:14:0,
-                 from ../src/State.cpp:8:
-../src/tools/cereal/archives/binary.hpp:90:7: note: cereal::BinaryInputArchive::BinaryInputArchive(std::istream&)
-       BinaryInputArchive(std::istream & stream) :
-       ^
-../src/tools/cereal/archives/binary.hpp:90:7: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘std::istream& {aka std::basic_istream<char>&}’
-../src/tools/cereal/archives/binary.hpp:86:9: note: cereal::BinaryInputArchive::BinaryInputArchive(const cereal::BinaryInputArchive&)
-   class BinaryInputArchive : public InputArchive<BinaryInputArchive, AllowEmptyClassElision>
-         ^
-../src/tools/cereal/archives/binary.hpp:86:9: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘const cereal::BinaryInputArchive&’
-../src/tools/cereal/archives/binary.hpp:86:9: note: cereal::BinaryInputArchive::BinaryInputArchive(cereal::BinaryInputArchive&&)
-../src/tools/cereal/archives/binary.hpp:86:9: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘cereal::BinaryInputArchive&&’
-make: *** [src/State.o] Error 1
-19:10:20 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-../src/State.cpp: In member function ‘bool elevator::State::do_deserialize(const stringstream&, elevator::State&)’:
-../src/State.cpp:36:42: error: no matching function for call to ‘cereal::BinaryInputArchive::BinaryInputArchive(const stringstream&)’
-    cereal::BinaryInputArchive iarchive(ss);
-                                          ^
-../src/State.cpp:36:42: note: candidates are:
-In file included from ../src/State.h:14:0,
-                 from ../src/State.cpp:8:
-../src/tools/cereal/archives/binary.hpp:90:7: note: cereal::BinaryInputArchive::BinaryInputArchive(std::istream&)
-       BinaryInputArchive(std::istream & stream) :
-       ^
-../src/tools/cereal/archives/binary.hpp:90:7: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘std::istream& {aka std::basic_istream<char>&}’
-../src/tools/cereal/archives/binary.hpp:86:9: note: cereal::BinaryInputArchive::BinaryInputArchive(const cereal::BinaryInputArchive&)
-   class BinaryInputArchive : public InputArchive<BinaryInputArchive, AllowEmptyClassElision>
-         ^
-../src/tools/cereal/archives/binary.hpp:86:9: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘const cereal::BinaryInputArchive&’
-../src/tools/cereal/archives/binary.hpp:86:9: note: cereal::BinaryInputArchive::BinaryInputArchive(cereal::BinaryInputArchive&&)
-../src/tools/cereal/archives/binary.hpp:86:9: note:   no known conversion for argument 1 from ‘const stringstream {aka const std::basic_stringstream<char>}’ to ‘cereal::BinaryInputArchive&&’
-make: *** [src/State.o] Error 1
-19:11:09 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/State.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/State.d" -MT"src/State.d" -o "src/State.o" "../src/State.cpp"
-Finished building: ../src/State.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-./src/main.o: In function `main':
-/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/Debug/../src/main.cpp:44: undefined reference to `elevator::State::do_deserialize(std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&, elevator::State&)'
-collect2: error: ld returned 1 exit status
-make: *** [Elevator_Project] Error 1
-19:11:48 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-Finished building: ../src/main.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:11:56 **** Incremental Build of configuration Debug for project Elevator_Project ****
+19:53:01 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 make: Nothing to be done for `all'.
-19:12:47 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-Finished building: ../src/main.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:14:17 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/main.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
- #pragma once
-         ^
-Finished building: ../src/main.cpp
- 
-Building target: Elevator_Project
-Invoking: Cross G++ Linker
-c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-Finished building target: Elevator_Project
- 
-19:14:23 **** Incremental Build of configuration Debug for project Elevator_Project ****
+19:55:43 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 make: Nothing to be done for `all'.
-19:26:59 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-../src/Control.cpp:24:2: error: prototype for ‘elevator::Control::Control(elevator::elevator_type, std::stringstream&)’ does not match any in class ‘elevator::Control’
-  Control::Control(elevator_type session,std::stringstream& elev_state)
-  ^
-In file included from ../src/Control.cpp:11:0:
-../src/Control.h:54:8: error: candidates are: elevator::Control::Control(const elevator::Control&)
-  class Control : public ACE_Task<ACE_MT_SYNCH>,
-        ^
-../src/Control.h:59:4: error:                 elevator::Control::Control(elevator::elevator_type, const stringstream&)
-    Control(elevator_type session, const std::stringstream&);
-    ^
-../src/Control.cpp: In member function ‘void elevator::Control::service_floor(int, elevator::button_type_t)’:
-../src/Control.cpp:307:10: error: ‘struct elevator::State’ has no member named ‘button_type’
-   state_.button_type = button;
-          ^
-make: *** [src/Control.o] Error 1
-19:27:28 **** Incremental Build of configuration Debug for project Elevator_Project ****
-make all 
-Building file: ../src/Control.cpp
-Invoking: Cross G++ Compiler
-c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
-../src/Control.cpp: In member function ‘void elevator::Control::service_floor(int, elevator::button_type_t)’:
-../src/Control.cpp:307:10: error: ‘struct elevator::State’ has no member named ‘button_type’
-   state_.button_type = button;
-          ^
-make: *** [src/Control.o] Error 1
-19:29:17 **** Incremental Build of configuration Debug for project Elevator_Project ****
+19:56:36 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/Control.cpp
 Invoking: Cross G++ Compiler
@@ -965,11 +82,50 @@ Finished building: ../src/Control.cpp
 Building target: Elevator_Project
 Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
-./src/main.o: In function `main':
-/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/Debug/../src/main.cpp:47: undefined reference to `elevator::Control::Control(elevator::tag_elevator_type, std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> > const&)'
-collect2: error: ld returned 1 exit status
-make: *** [Elevator_Project] Error 1
-19:30:29 **** Incremental Build of configuration Debug for project Elevator_Project ****
+Finished building target: Elevator_Project
+ 
+19:56:55 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:01:30 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp:13:9: warning: #pragma once in main file [enabled by default]
+ #pragma once
+         ^
+Finished building: ../src/main.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:02:03 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:08:02 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:08:08 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:08:29 **** Incremental Build of configuration Debug for project Elevator_Project ****
 make all 
 Building file: ../src/main.cpp
 Invoking: Cross G++ Compiler
@@ -984,3 +140,33 @@ Invoking: Cross G++ Linker
 c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
 Finished building target: Elevator_Project
  
+20:08:35 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.
+20:10:11 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:13:37 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+Building file: ../src/Control.cpp
+Invoking: Cross G++ Compiler
+c++ -I/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/ -I/home/bengteh/workspace/5414KTT/cpp/Elevator_Project/src/tools/ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Control.d" -MT"src/Control.d" -o "src/Control.o" "../src/Control.cpp"
+Finished building: ../src/Control.cpp
+ 
+Building target: Elevator_Project
+Invoking: Cross G++ Linker
+c++ -L/home/bengteh/workspace/5414KTT/libraries/elevator_sim -L/home/bengteh/workspace/5414KTT/libraries/ACE_wrappers/lib -lcomedi -lm simulation_elevator.a -std=c++11 -o "Elevator_Project"  ./src/Control.o ./src/Driver.o ./src/Elevator.o ./src/IPC_Client.o ./src/IPC_Server.o ./src/Scheduler.o ./src/State.o ./src/Timer.o ./src/io.o ./src/main.o  /home/bengteh/workspace/5414KTT/libraries/elevator_sim/simulation_elevator.a -lphobos2 -lpthread -lcomedi -lACE
+Finished building target: Elevator_Project
+ 
+20:13:50 **** Incremental Build of configuration Debug for project Elevator_Project ****
+make all 
+make: Nothing to be done for `all'.

@@ -32,8 +32,10 @@ namespace elevator
 	{
 		state.set_deserialize();
 		//do the actual deserialization
+		std::string tmp= ss.str();
+		data_<<tmp;
 		{
-			cereal::BinaryInputArchive iarchive(ss);
+			cereal::BinaryInputArchive iarchive(data_);
 			iarchive(state);
 		}
 

@@ -40,12 +40,12 @@ int main()
 	State test;
 	test.do_serialize(ss,test);
 	std::cout<<"data in binary form: "<<ss.str()<<"\n";
-	test.floor=1; test.direction=0;
+
 	test.do_deserialize(ss,test);
 	std::cout<<"data in converted back to normal form now?????\n";
 
-		elevator::Control ctrl(elevator::tag_elevator_type::SIMULATION,ss);
-	//	elevator::Control ctrl(elevator::tag_elevator_type::COMEDI,ss);
+		elevator::Control ctrl(elevator::SIMULATION,ss);
+	//	elevator::Control ctrl(elevator::COMEDI,ss);
 
 
 	//Timer tmr_test(Timer_Type::INTERVAL,2000);

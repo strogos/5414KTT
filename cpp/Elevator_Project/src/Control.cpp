@@ -21,11 +21,11 @@
 
 namespace elevator
 {
-	Control::Control(elevator_type session,std::stringstream& elev_state)
+	Control::Control(elevator_type session,std::stringstream& init_state)
 	       : servicing_(false), session_(session)
 	{
 		ACE_DEBUG((LM_DEBUG,
-						   "in control constructor .. state: %s \n",elev_state.str().c_str()));
+						   "in control constructor .. state: %s \n",init_state.str().c_str()));
 
 		/*handle elevator IO using the signal/slot principle
 		 * (inspired by Qt's implementation)*/
@@ -44,8 +44,8 @@ namespace elevator
 		elevator_->open(0);
 		this->open(0);
 
-		/*Update Elevator State*/
-		if (state_.do_deserialize(elev_state,state_))
+//		/*Update Elevator State*/
+		if (state_.do_deserialize(init_state,state_))
 		 {
 			for (int j = 0; j < N_FLOORS; j++)
 			{
@@ -68,7 +68,7 @@ namespace elevator
 		heartbeat_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
 													100,
 													this));
-		//heartbeat_timer_->open(0);
+		heartbeat_timer_->open(0);
 
 		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::ONE_SHOT,
 					static_cast<long>(SERVICE_TIME_),
@@ -232,15 +232,20 @@ namespace elevator
 		public:
 			On_Heartbeat_Timer(Control * handle) : handle_(handle)
 			{
-				ACE_DEBUG((LM_DEBUG,"Interval enqued %d\n", floor));
+			//	ACE_DEBUG((LM_DEBUG,"Interval enqued %d\n", floor));
 			}
 
 			virtual int call (void)
 			{
-
-
 				handle_->state_.direction = handle_->elevator_->get_direction();
-				//state_.get_data_stream;//TODO
+				std::stringstream ss;
+				handle_->state_.do_serialize(ss,handle_->state_);
+
+//			    // Send elevator state (imAlive message) to backup TODO::::::::::
+//			    local_network->sendMessage(elev_state);
+//
+//			    // Send elevator state to other elevators
+//			    elevator_network->sendMessage(elev_state);
 
 				return 0;
 			}
