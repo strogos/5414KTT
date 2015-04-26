@@ -12,19 +12,19 @@
 #include "tools/signalslot/W_Signal.h"
 #include "State.h"
 
-
-//#include <ace/OS.h>
 #include "ace/Task.h"
 #include "ace/Method_Request.h"
 #include "ace/Activation_Queue.h"
-//#include <ace/Message_Block.h>
-//#include <ace/Reactor.h>
-//#include <ace/Event_Handler.h>
-//#include <ace/Thread_Manager.h>
-#include <memory>
+
 #include <atomic>
+#include <memory>
+#include <thread>
+#include <vector>
+
 
 class Timer;
+namespace IPC_Client_Unicast {class Client;}
+namespace IPC_Client_Broadcast {class Client;}
 
 namespace elevator
 {
@@ -62,7 +62,7 @@ namespace elevator
 			//Implement the ACE specific service init/termination methods
 			int open(void*);
 			int close (u_long);
-			int svc(void);
+			int svc(void);//main object thread starts in svc
 
 			/*FUNCTIONS*/
 			elevator_type get_session();
@@ -89,6 +89,9 @@ namespace elevator
 			std::unique_ptr<Timer> service_timer_;
 			std::unique_ptr<Timer> heartbeat_timer_;
 
+			std::unique_ptr<IPC_Client_Unicast::Client> dgram_localhost_;
+			std::unique_ptr<IPC_Client_Broadcast::Client> dgram_lan_;
+
 			//*local network socket handlers
 			//*elevator network handler
 
@@ -104,6 +107,15 @@ namespace elevator
 			void service_floor(int floor, button_type_t button);
 			bool is_call_down(int floor);
 			bool is_call_up(int floor);
+
+			/*thread tools*/
+			int thread_prepare_join(std::vector<std::thread>& my_threads);
+			void thread_do_join(std::thread& t);
+
+			/*Additional joinable worker threads*/
+			void thread_dgram_worker(int tid); //listen for dgrams
+
+
 	};
 }
 #endif /* CONTROL_H_ */

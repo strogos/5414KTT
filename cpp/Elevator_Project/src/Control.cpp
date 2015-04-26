@@ -16,6 +16,7 @@
 
 
 #include <unistd.h>//sleep
+#include <algorithm>
 #include "ace/Log_Msg.h"
 #include "ace/Auto_Ptr.h"
 
@@ -205,7 +206,7 @@ namespace elevator
 
 			virtual int call (void)
 			{
-//			    //service_timer->stop(); //TODO
+//			    //service_timer->stop(); //no need...
 
 //				handle_->elevator_->set_door_open_indicator(false); //SIMULATOR IS CRAP
 
@@ -383,6 +384,20 @@ namespace elevator
 
 	}
 
+	int Control::thread_prepare_join(std::vector<std::thread>& my_threads)
+	{
+	    std::for_each(my_threads.begin(),my_threads.end(),thread_do_join);
+
+	    return 1;
+	}
+
+	void Control::thread_do_join(std::thread& t){t.join();}
+
+	void thread_dgram_worker(int tid)
+	{
+			IPC_Server::Server srv(42000);
+			srv.accept_data();
+	}
 
 	void Control::slot_button_press(button_type_t button, int floor)
 	{
