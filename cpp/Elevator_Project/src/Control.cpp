@@ -38,6 +38,14 @@ namespace elevator
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
+		/*start tasks (and their corresponding threads)
+		 * Note the order in which tasks are opened
+		 * [memory leaks can happen here if not careful]*/
+		elevator_->open(0);
+		this->open(0);
+		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
+	//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
+		//interrupt timer
 		heartbeat_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
 													100,
 													this));
@@ -47,18 +55,7 @@ namespace elevator
 					static_cast<long>(SERVICE_TIME_),
 					this));
 
-	//	service_timer_->open(0);
-		/*start tasks (and their corresponding threads)
-		 * Note the order in which tasks are opened
-		 * [memory leaks can happen here if not careful]*/
-		elevator_->open(0);
-		this->open(0);
-
-		/*connect POSIX signals dedicated to timer interrupts to "slots"*/
-	//	signal(SIG_ONESHOT_TIMER,this->)//TODO connect(service_timer, SIGNAL(timeout()), this, SLOT(onServiceTimer()));
-		//interrupt timer
-
-
+		service_timer_->open(0);
 	}
 
 	Control::~Control()
@@ -72,7 +69,7 @@ namespace elevator
 							"(%t) Active Control Object opened \n"));
 		//activate object with a thread in it
 		//this->activate(THR_NEW_LWP | THR_SUSPENDED,1); //using a kernel thread
-		activate(THR_NEW_LWP);
+		activate();
 		return 0;
 	}
 
@@ -86,6 +83,7 @@ namespace elevator
 	int Control::svc(void)
 	{
 		ACE_Thread_Manager *mgr = this->thr_mgr ();
+
 		while (true)
 		{
 			if (servicing_)
@@ -180,15 +178,34 @@ namespace elevator
 	class Control::On_Service_Timer : public ACE_Method_Request
 	{
 		public:
-			On_Service_Timer(Control * handle) : handle_(handle)
+			On_Service_Timer(Control *handle)
+							: handle_(handle)
 			{
 				ACE_DEBUG((LM_DEBUG,"oneshot enqued %d\n", floor));
 			}
 
-			virtual int call (void) {return -1;}//TODO
+			virtual int call (void)
+			{
+//			    //service_timer->stop(); //TODO
+
+//				handle_->elevator_->set_door_open_indicator(false); //SIMULATOR IS CRAP
+
+			    // Done servicing: more to do?
+			    if (handle_->elevator_->get_direction() == DIRN_UP)
+			    {
+			        if (!handle_->is_call_up(handle_->elevator_->get_floor()))
+			        	handle_->is_call_down(handle_->elevator_->get_floor());
+			    }
+			    else
+			    {
+			        if (!handle_->is_call_down(handle_->elevator_->get_floor()))
+			        	handle_->is_call_up(handle_->elevator_->get_floor());
+			    }
+			    return 0;
+			}
 
 		private:
-			Control * handle_;
+			Control *handle_=nullptr;
 	};
 
 	class Control::On_Heartbeat_Timer : public ACE_Method_Request
@@ -269,9 +286,8 @@ namespace elevator
 		// Set the open door lamp
 		elevator_->set_door_open_indicator(true);
 
-		// Start the service timer (raises posix signal)
-//		service_timer_=std::unique_ptr<Timer>(new Timer(Timer_Type::INTERVAL,
-//											 	 	 static_cast<long>(SERVICE_TIME_)));
+		// Start the service timer
+		service_timer_->restart();
 	}
 
 	bool Control::is_call_up(int floor)
@@ -358,7 +374,7 @@ namespace elevator
 	}
 	void Control::slot_service_timer(void*)
 	{
-		slot_queue_.enqueue(new On_Service_Timer(this));
+		slot_queue_.enqueue(new On_Service_Timer(this));//this->elevator_.get()));
 	}
 	void Control::slot_heartbeat_timer(void*)
 	{

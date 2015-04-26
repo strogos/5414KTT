@@ -72,6 +72,7 @@ namespace elevator
 			void slot_exit_task(void*);
 			void slot_service_timer(void*);
 			void slot_heartbeat_timer(void*);
+			void slot_simulator_door_lamp(bool lit);
 
 			/*SIGNALS*/
 			Control_Signals * signal_subscribe(Control_Signals * subscribe);
@@ -87,7 +88,6 @@ namespace elevator
 			State  state_;
 			std::unique_ptr<Timer> service_timer_;
 			std::unique_ptr<Timer> heartbeat_timer_;
-
 
 			//*local network socket handlers
 			//*elevator network handler

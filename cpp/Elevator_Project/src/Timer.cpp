@@ -17,7 +17,7 @@ class Timer::Handler : public ACE_Event_Handler
 {
 	public:
 		Handler(Timer_Type tt, long time_ms, ACE_Reactor *reac, Control_Signals *ctrl_sig)
-					: done_(false), reactor_(reac), ctrl_sig_(ctrl_sig)
+					: done_(false), restart_(false), reactor_(reac), ctrl_sig_(ctrl_sig)
 		{
 			long arg=(long)tt;
 			switch (tt)
@@ -25,7 +25,8 @@ class Timer::Handler : public ACE_Event_Handler
 				case Timer_Type::ONE_SHOT:
 					timer_id_=reactor_->schedule_timer(this, //timer handler
                                   (const void *)arg,           // argument (arg) sent to handle_timeout()
-                                  ACE_Time_Value(0,time_ms*1000));//time to timeout
+                                  ACE_Time_Value(0,time_ms*1000),//);//time to timeout
+								  ACE_Time_Value(0,time_ms*1000));//time to timeout
 					break;
 				case Timer_Type::INTERVAL:
 						timer_id_=reactor_->schedule_timer(this, //timer handler
@@ -60,13 +61,19 @@ class Timer::Handler : public ACE_Event_Handler
 			Timer_Type tt=static_cast<Timer_Type>(reinterpret_cast<long>(arg));
 			if (tt==Timer_Type::ONE_SHOT)
 			{
+				//if(restart_)
+					restart_=false;
 				//raise(SIG_ONESHOT_TIMER);
 				ctrl_sig_->oneshot_timer.emit(0);
-				done_=true;
+				while(!restart_);
+				restart_=true;
+			//	done_=true;
 			}
 			else if (tt==Timer_Type::INTERVAL)
+			{
 				//raise(SIG_INTERVAL_TIMER);
 				ctrl_sig_->interval_timer.emit(0);
+			}
 			//Keep yourself registered with the Reactor.
 			return 0;
 		}
@@ -79,14 +86,17 @@ class Timer::Handler : public ACE_Event_Handler
 			reactor_->cancel_timer(timer_id);
 			done_=true;
 		}
+		void restart(){restart_=true;}
 	private:
 		std::atomic<bool> done_;
+		std::atomic<bool> restart_;
 		ACE_Reactor *reactor_=nullptr;
 		int timer_id_=0;
 		ACE_Time_Value time_value_;
 		clock_time::msec time_ms_=0;
 		clock_time::msec last_epoch_=0;
 		Control_Signals *ctrl_sig_=nullptr;
+
 };
 
 /*PROXY CLASS (semi-pimpl style)*/
@@ -136,19 +146,10 @@ int Timer::svc(void)
 	return 0;
 }
 
-void Timer::suspend()
-{
-	this->suspend();
-}
-
-void Timer::resume()
-{
-	this->resume();
-}
-
 /*FORWARDs*/
 int Timer::get_id(){return handler_->get_id();}
 long long Timer::get_ms_time(){return handler_->get_ms_time();}
 clock_time::msec Timer::get_start_time(){return handler_->get_start_time();}
 bool Timer::is_running(){return handler_->is_done();}
 void Timer::stop(){handler_->stop(handler_->get_id());}
+void Timer::restart(){handler_->restart();}
