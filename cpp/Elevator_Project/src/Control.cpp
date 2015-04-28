@@ -43,7 +43,7 @@ namespace elevator
 										new IPC_Client_Unicast::Client("localhost:42024"));
 
 		dgram_lan_= std::unique_ptr<IPC_Client_Broadcast::Client>(
-												new IPC_Client_Broadcast::Client((ushort)421124));
+										new IPC_Client_Broadcast::Client((ushort)42124));
 
 		elevator_=std::unique_ptr<Elevator>(new Elevator(this));
 
